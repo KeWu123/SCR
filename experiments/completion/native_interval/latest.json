@@ -1,0 +1,6 @@
+{
+  "results": "experiments/completion/native_interval/run_20261016_181517/results.json",
+  "sha256": "d6243c20f532e3a725229951bfb742e7b4a9d5caace8e6325b525762ea39d124",
+  "historical_sha256": "ee859c950dc7ac6828208be2893bc5b5dd862772c04f36294ededdc4151f90f6",
+  "record_kind": "Anonymized historical measurement; no fresh physical replay claimed."
+}

@@ -1,0 +1,4985 @@
+{
+  "scope": "Native FAISS 1.15.1 IndexHNSWFlat::search with observational hooks; controlled builds and local rewrite, not production maintenance prevalence",
+  "source": "https://github.com/facebookresearch/faiss/tree/v1.15.1",
+  "seeds": [
+    {
+      "seed": 11,
+      "rewritten_node_count": 100,
+      "changed_base_neighbor_lists": 100,
+      "cells": [
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "full_neighbor_set_no_embedding": 200,
+          "answer_agree": 54,
+          "certified_and_answer_agree": 54,
+          "ef": 16,
+          "pair": "A/B",
+          "positive_edge_no_embedding_rate": 1.0,
+          "full_neighbor_set_no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.27,
+          "positive_edge_no_embedding_given_answer_agreement": 1.0,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": false,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    30,
+                    9
+                  ],
+                  [
+                    0,
+                    30,
+                    268
+                  ],
+                  [
+                    0,
+                    30,
+                    292
+                  ],
+                  [
+                    0,
+                    30,
+                    329
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    30,
+                    507
+                  ],
+                  [
+                    0,
+                    30,
+                    719
+                  ],
+                  [
+                    0,
+                    30,
+                    815
+                  ],
+                  [
+                    0,
+                    30,
+                    1553
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    30,
+                    9
+                  ],
+                  [
+                    0,
+                    30,
+                    268
+                  ],
+                  [
+                    0,
+                    30,
+                    292
+                  ],
+                  [
+                    0,
+                    30,
+                    329
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 656
+            },
+            {
+              "query": 1,
+              "answer_agrees": false,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    254,
+                    475
+                  ],
+                  [
+                    0,
+                    254,
+                    1507
+                  ],
+                  [
+                    0,
+                    302,
+                    846
+                  ],
+                  [
+                    0,
+                    302,
+                    1807
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    197,
+                    765
+                  ],
+                  [
+                    0,
+                    197,
+                    1035
+                  ],
+                  [
+                    0,
+                    197,
+                    1831
+                  ],
+                  [
+                    0,
+                    254,
+                    370
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    254,
+                    475
+                  ],
+                  [
+                    0,
+                    254,
+                    1507
+                  ],
+                  [
+                    0,
+                    302,
+                    846
+                  ],
+                  [
+                    0,
+                    302,
+                    1807
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 778
+            },
+            {
+              "query": 2,
+              "answer_agrees": false,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    34,
+                    75
+                  ],
+                  [
+                    0,
+                    34,
+                    248
+                  ],
+                  [
+                    0,
+                    34,
+                    643
+                  ],
+                  [
+                    0,
+                    34,
+                    677
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    34,
+                    155
+                  ],
+                  [
+                    0,
+                    34,
+                    462
+                  ],
+                  [
+                    0,
+                    34,
+                    811
+                  ],
+                  [
+                    0,
+                    34,
+                    874
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    34,
+                    75
+                  ],
+                  [
+                    0,
+                    34,
+                    248
+                  ],
+                  [
+                    0,
+                    34,
+                    643
+                  ],
+                  [
+                    0,
+                    34,
+                    677
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 576
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 115,
+          "full_neighbor_set_no_embedding": 115,
+          "answer_agree": 181,
+          "certified_and_answer_agree": 96,
+          "ef": 16,
+          "pair": "A/C",
+          "positive_edge_no_embedding_rate": 0.575,
+          "full_neighbor_set_no_embedding_rate": 0.575,
+          "answer_agree_rate": 0.905,
+          "positive_edge_no_embedding_given_answer_agreement": 0.5303867403314917,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    435,
+                    1610
+                  ],
+                  [
+                    0,
+                    1784,
+                    85
+                  ],
+                  [
+                    0,
+                    1784,
+                    451
+                  ],
+                  [
+                    0,
+                    1784,
+                    664
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    30,
+                    507
+                  ],
+                  [
+                    0,
+                    30,
+                    719
+                  ],
+                  [
+                    0,
+                    30,
+                    815
+                  ],
+                  [
+                    0,
+                    30,
+                    1553
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    435,
+                    204
+                  ],
+                  [
+                    0,
+                    435,
+                    302
+                  ],
+                  [
+                    0,
+                    435,
+                    996
+                  ],
+                  [
+                    0,
+                    435,
+                    1412
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 442
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    1130,
+                    599
+                  ],
+                  [
+                    0,
+                    1130,
+                    636
+                  ],
+                  [
+                    0,
+                    1130,
+                    693
+                  ],
+                  [
+                    0,
+                    1130,
+                    937
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    197,
+                    765
+                  ],
+                  [
+                    0,
+                    197,
+                    1035
+                  ],
+                  [
+                    0,
+                    197,
+                    1831
+                  ],
+                  [
+                    0,
+                    254,
+                    370
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    1130,
+                    72
+                  ],
+                  [
+                    0,
+                    1130,
+                    651
+                  ],
+                  [
+                    0,
+                    1130,
+                    781
+                  ],
+                  [
+                    0,
+                    1130,
+                    1362
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 497
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    677,
+                    34
+                  ],
+                  [
+                    0,
+                    677,
+                    215
+                  ],
+                  [
+                    0,
+                    677,
+                    290
+                  ],
+                  [
+                    0,
+                    677,
+                    358
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    34,
+                    155
+                  ],
+                  [
+                    0,
+                    34,
+                    462
+                  ],
+                  [
+                    0,
+                    34,
+                    811
+                  ],
+                  [
+                    0,
+                    34,
+                    874
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    677,
+                    469
+                  ],
+                  [
+                    0,
+                    677,
+                    798
+                  ],
+                  [
+                    0,
+                    677,
+                    836
+                  ],
+                  [
+                    0,
+                    677,
+                    995
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 439
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 0,
+          "full_neighbor_set_no_embedding": 0,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 0,
+          "ef": 16,
+          "pair": "A/AA",
+          "positive_edge_no_embedding_rate": 0.0,
+          "full_neighbor_set_no_embedding_rate": 0.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 0.0,
+          "witnesses": []
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "full_neighbor_set_no_embedding": 200,
+          "answer_agree": 184,
+          "certified_and_answer_agree": 184,
+          "ef": 64,
+          "pair": "A/B",
+          "positive_edge_no_embedding_rate": 1.0,
+          "full_neighbor_set_no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.92,
+          "positive_edge_no_embedding_given_answer_agreement": 1.0,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    6,
+                    218
+                  ],
+                  [
+                    0,
+                    6,
+                    923
+                  ],
+                  [
+                    0,
+                    6,
+                    1025
+                  ],
+                  [
+                    0,
+                    6,
+                    1137
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    6,
+                    37
+                  ],
+                  [
+                    0,
+                    6,
+                    270
+                  ],
+                  [
+                    0,
+                    6,
+                    849
+                  ],
+                  [
+                    0,
+                    6,
+                    865
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    6,
+                    218
+                  ],
+                  [
+                    0,
+                    6,
+                    923
+                  ],
+                  [
+                    0,
+                    6,
+                    1025
+                  ],
+                  [
+                    0,
+                    6,
+                    1137
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 2014
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    9,
+                    90
+                  ],
+                  [
+                    0,
+                    9,
+                    459
+                  ],
+                  [
+                    0,
+                    9,
+                    508
+                  ],
+                  [
+                    0,
+                    9,
+                    658
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    9,
+                    278
+                  ],
+                  [
+                    0,
+                    9,
+                    746
+                  ],
+                  [
+                    0,
+                    9,
+                    1077
+                  ],
+                  [
+                    0,
+                    9,
+                    1269
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    9,
+                    90
+                  ],
+                  [
+                    0,
+                    9,
+                    459
+                  ],
+                  [
+                    0,
+                    9,
+                    508
+                  ],
+                  [
+                    0,
+                    9,
+                    658
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 2133
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    9,
+                    90
+                  ],
+                  [
+                    0,
+                    9,
+                    459
+                  ],
+                  [
+                    0,
+                    9,
+                    508
+                  ],
+                  [
+                    0,
+                    9,
+                    658
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    9,
+                    278
+                  ],
+                  [
+                    0,
+                    9,
+                    746
+                  ],
+                  [
+                    0,
+                    9,
+                    1077
+                  ],
+                  [
+                    0,
+                    9,
+                    1269
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    9,
+                    90
+                  ],
+                  [
+                    0,
+                    9,
+                    459
+                  ],
+                  [
+                    0,
+                    9,
+                    508
+                  ],
+                  [
+                    0,
+                    9,
+                    658
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 1979
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 191,
+          "full_neighbor_set_no_embedding": 191,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 191,
+          "ef": 64,
+          "pair": "A/C",
+          "positive_edge_no_embedding_rate": 0.955,
+          "full_neighbor_set_no_embedding_rate": 0.955,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 0.955,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    435,
+                    1610
+                  ],
+                  [
+                    0,
+                    1397,
+                    432
+                  ],
+                  [
+                    0,
+                    1397,
+                    563
+                  ],
+                  [
+                    0,
+                    1397,
+                    771
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    6,
+                    37
+                  ],
+                  [
+                    0,
+                    6,
+                    270
+                  ],
+                  [
+                    0,
+                    6,
+                    849
+                  ],
+                  [
+                    0,
+                    6,
+                    865
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    435,
+                    204
+                  ],
+                  [
+                    0,
+                    435,
+                    302
+                  ],
+                  [
+                    0,
+                    435,
+                    996
+                  ],
+                  [
+                    0,
+                    435,
+                    1412
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 1513
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    435,
+                    1610
+                  ],
+                  [
+                    0,
+                    891,
+                    81
+                  ],
+                  [
+                    0,
+                    891,
+                    114
+                  ],
+                  [
+                    0,
+                    891,
+                    127
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    9,
+                    278
+                  ],
+                  [
+                    0,
+                    9,
+                    746
+                  ],
+                  [
+                    0,
+                    9,
+                    1077
+                  ],
+                  [
+                    0,
+                    9,
+                    1269
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    435,
+                    204
+                  ],
+                  [
+                    0,
+                    435,
+                    302
+                  ],
+                  [
+                    0,
+                    435,
+                    996
+                  ],
+                  [
+                    0,
+                    435,
+                    1412
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 1603
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    677,
+                    34
+                  ],
+                  [
+                    0,
+                    677,
+                    215
+                  ],
+                  [
+                    0,
+                    677,
+                    290
+                  ],
+                  [
+                    0,
+                    677,
+                    358
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    9,
+                    278
+                  ],
+                  [
+                    0,
+                    9,
+                    746
+                  ],
+                  [
+                    0,
+                    9,
+                    1077
+                  ],
+                  [
+                    0,
+                    9,
+                    1269
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    677,
+                    469
+                  ],
+                  [
+                    0,
+                    677,
+                    798
+                  ],
+                  [
+                    0,
+                    677,
+                    836
+                  ],
+                  [
+                    0,
+                    677,
+                    995
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 1558
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 0,
+          "full_neighbor_set_no_embedding": 0,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 0,
+          "ef": 64,
+          "pair": "A/AA",
+          "positive_edge_no_embedding_rate": 0.0,
+          "full_neighbor_set_no_embedding_rate": 0.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 0.0,
+          "witnesses": []
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "full_neighbor_set_no_embedding": 200,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 200,
+          "ef": 128,
+          "pair": "A/B",
+          "positive_edge_no_embedding_rate": 1.0,
+          "full_neighbor_set_no_embedding_rate": 1.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 1.0,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    6,
+                    218
+                  ],
+                  [
+                    0,
+                    6,
+                    923
+                  ],
+                  [
+                    0,
+                    6,
+                    1025
+                  ],
+                  [
+                    0,
+                    6,
+                    1137
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    6,
+                    37
+                  ],
+                  [
+                    0,
+                    6,
+                    270
+                  ],
+                  [
+                    0,
+                    6,
+                    849
+                  ],
+                  [
+                    0,
+                    6,
+                    865
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    6,
+                    218
+                  ],
+                  [
+                    0,
+                    6,
+                    923
+                  ],
+                  [
+                    0,
+                    6,
+                    1025
+                  ],
+                  [
+                    0,
+                    6,
+                    1137
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3923
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    9,
+                    90
+                  ],
+                  [
+                    0,
+                    9,
+                    459
+                  ],
+                  [
+                    0,
+                    9,
+                    508
+                  ],
+                  [
+                    0,
+                    9,
+                    658
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    9,
+                    278
+                  ],
+                  [
+                    0,
+                    9,
+                    746
+                  ],
+                  [
+                    0,
+                    9,
+                    1077
+                  ],
+                  [
+                    0,
+                    9,
+                    1269
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    9,
+                    90
+                  ],
+                  [
+                    0,
+                    9,
+                    459
+                  ],
+                  [
+                    0,
+                    9,
+                    508
+                  ],
+                  [
+                    0,
+                    9,
+                    658
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 4044
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    9,
+                    90
+                  ],
+                  [
+                    0,
+                    9,
+                    459
+                  ],
+                  [
+                    0,
+                    9,
+                    508
+                  ],
+                  [
+                    0,
+                    9,
+                    658
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    9,
+                    278
+                  ],
+                  [
+                    0,
+                    9,
+                    746
+                  ],
+                  [
+                    0,
+                    9,
+                    1077
+                  ],
+                  [
+                    0,
+                    9,
+                    1269
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    9,
+                    90
+                  ],
+                  [
+                    0,
+                    9,
+                    459
+                  ],
+                  [
+                    0,
+                    9,
+                    508
+                  ],
+                  [
+                    0,
+                    9,
+                    658
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3791
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 199,
+          "full_neighbor_set_no_embedding": 199,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 199,
+          "ef": 128,
+          "pair": "A/C",
+          "positive_edge_no_embedding_rate": 0.995,
+          "full_neighbor_set_no_embedding_rate": 0.995,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 0.995,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    435,
+                    1610
+                  ],
+                  [
+                    0,
+                    1397,
+                    432
+                  ],
+                  [
+                    0,
+                    1397,
+                    563
+                  ],
+                  [
+                    0,
+                    1397,
+                    771
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    6,
+                    37
+                  ],
+                  [
+                    0,
+                    6,
+                    270
+                  ],
+                  [
+                    0,
+                    6,
+                    849
+                  ],
+                  [
+                    0,
+                    6,
+                    865
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    435,
+                    204
+                  ],
+                  [
+                    0,
+                    435,
+                    302
+                  ],
+                  [
+                    0,
+                    435,
+                    996
+                  ],
+                  [
+                    0,
+                    435,
+                    1412
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 2955
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    435,
+                    1610
+                  ],
+                  [
+                    0,
+                    891,
+                    81
+                  ],
+                  [
+                    0,
+                    891,
+                    114
+                  ],
+                  [
+                    0,
+                    891,
+                    127
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    9,
+                    278
+                  ],
+                  [
+                    0,
+                    9,
+                    746
+                  ],
+                  [
+                    0,
+                    9,
+                    1077
+                  ],
+                  [
+                    0,
+                    9,
+                    1269
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    435,
+                    204
+                  ],
+                  [
+                    0,
+                    435,
+                    302
+                  ],
+                  [
+                    0,
+                    435,
+                    996
+                  ],
+                  [
+                    0,
+                    435,
+                    1412
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3089
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    247,
+                    746
+                  ],
+                  [
+                    0,
+                    247,
+                    1726
+                  ],
+                  [
+                    0,
+                    435,
+                    1610
+                  ],
+                  [
+                    0,
+                    488,
+                    794
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    9,
+                    278
+                  ],
+                  [
+                    0,
+                    9,
+                    746
+                  ],
+                  [
+                    0,
+                    9,
+                    1077
+                  ],
+                  [
+                    0,
+                    9,
+                    1269
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    247,
+                    123
+                  ],
+                  [
+                    0,
+                    247,
+                    609
+                  ],
+                  [
+                    0,
+                    247,
+                    945
+                  ],
+                  [
+                    0,
+                    247,
+                    1100
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3031
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 0,
+          "full_neighbor_set_no_embedding": 0,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 0,
+          "ef": 128,
+          "pair": "A/AA",
+          "positive_edge_no_embedding_rate": 0.0,
+          "full_neighbor_set_no_embedding_rate": 0.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 0.0,
+          "witnesses": []
+        }
+      ],
+      "triples": [
+        {
+          "ef": 16,
+          "episodes": 200,
+          "triple_no_embedding": 200,
+          "all_pairs_embed_somewhere": 0,
+          "triple_only_residue": 0
+        },
+        {
+          "ef": 64,
+          "episodes": 200,
+          "triple_no_embedding": 200,
+          "all_pairs_embed_somewhere": 0,
+          "triple_only_residue": 0
+        },
+        {
+          "ef": 128,
+          "episodes": 200,
+          "triple_no_embedding": 200,
+          "all_pairs_embed_somewhere": 0,
+          "triple_only_residue": 0
+        }
+      ],
+      "native_search_means": [
+        {
+          "ef": 16,
+          "generation": "A",
+          "recall_at_10": 0.869,
+          "expansions": 22.87,
+          "positive_edges": 457.005,
+          "first_visited": 341.055
+        },
+        {
+          "ef": 16,
+          "generation": "B",
+          "recall_at_10": 0.8695,
+          "expansions": 22.82,
+          "positive_edges": 442.72,
+          "first_visited": 331.23
+        },
+        {
+          "ef": 16,
+          "generation": "C",
+          "recall_at_10": 0.872,
+          "expansions": 22.845,
+          "positive_edges": 456.975,
+          "first_visited": 340.91
+        },
+        {
+          "ef": 64,
+          "generation": "A",
+          "recall_at_10": 0.9965,
+          "expansions": 69.585,
+          "positive_edges": 1543.065,
+          "first_visited": 871.4
+        },
+        {
+          "ef": 64,
+          "generation": "B",
+          "recall_at_10": 0.9945,
+          "expansions": 69.585,
+          "positive_edges": 1514.28,
+          "first_visited": 864.14
+        },
+        {
+          "ef": 64,
+          "generation": "C",
+          "recall_at_10": 0.9965,
+          "expansions": 69.615,
+          "positive_edges": 1544.54,
+          "first_visited": 871.805
+        },
+        {
+          "ef": 128,
+          "generation": "A",
+          "recall_at_10": 1.0,
+          "expansions": 133.315,
+          "positive_edges": 2998.51,
+          "first_visited": 1269.85
+        },
+        {
+          "ef": 128,
+          "generation": "B",
+          "recall_at_10": 1.0,
+          "expansions": 133.41,
+          "positive_edges": 2948.29,
+          "first_visited": 1264.1
+        },
+        {
+          "ef": 128,
+          "generation": "C",
+          "recall_at_10": 1.0,
+          "expansions": 133.31,
+          "positive_edges": 3000.625,
+          "first_visited": 1270.17
+        }
+      ]
+    },
+    {
+      "seed": 29,
+      "rewritten_node_count": 100,
+      "changed_base_neighbor_lists": 100,
+      "cells": [
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "full_neighbor_set_no_embedding": 200,
+          "answer_agree": 57,
+          "certified_and_answer_agree": 57,
+          "ef": 16,
+          "pair": "A/B",
+          "positive_edge_no_embedding_rate": 1.0,
+          "full_neighbor_set_no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.285,
+          "positive_edge_no_embedding_given_answer_agreement": 1.0,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": false,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    37,
+                    296
+                  ],
+                  [
+                    0,
+                    37,
+                    570
+                  ],
+                  [
+                    0,
+                    201,
+                    9
+                  ],
+                  [
+                    0,
+                    201,
+                    388
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    37,
+                    86
+                  ],
+                  [
+                    0,
+                    37,
+                    257
+                  ],
+                  [
+                    0,
+                    37,
+                    524
+                  ],
+                  [
+                    0,
+                    37,
+                    722
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    37,
+                    296
+                  ],
+                  [
+                    0,
+                    37,
+                    570
+                  ],
+                  [
+                    0,
+                    201,
+                    9
+                  ],
+                  [
+                    0,
+                    201,
+                    388
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 859
+            },
+            {
+              "query": 1,
+              "answer_agrees": false,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    56,
+                    370
+                  ],
+                  [
+                    0,
+                    56,
+                    581
+                  ],
+                  [
+                    0,
+                    56,
+                    1041
+                  ],
+                  [
+                    0,
+                    56,
+                    1327
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    56,
+                    502
+                  ],
+                  [
+                    0,
+                    56,
+                    516
+                  ],
+                  [
+                    0,
+                    56,
+                    523
+                  ],
+                  [
+                    0,
+                    56,
+                    527
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    56,
+                    370
+                  ],
+                  [
+                    0,
+                    56,
+                    581
+                  ],
+                  [
+                    0,
+                    56,
+                    1041
+                  ],
+                  [
+                    0,
+                    56,
+                    1327
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 598
+            },
+            {
+              "query": 2,
+              "answer_agrees": false,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    51,
+                    14
+                  ],
+                  [
+                    0,
+                    51,
+                    110
+                  ],
+                  [
+                    0,
+                    51,
+                    241
+                  ],
+                  [
+                    0,
+                    51,
+                    251
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    51,
+                    1011
+                  ],
+                  [
+                    0,
+                    51,
+                    1488
+                  ],
+                  [
+                    0,
+                    51,
+                    1877
+                  ],
+                  [
+                    0,
+                    51,
+                    1971
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    51,
+                    14
+                  ],
+                  [
+                    0,
+                    51,
+                    110
+                  ],
+                  [
+                    0,
+                    51,
+                    241
+                  ],
+                  [
+                    0,
+                    51,
+                    251
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 742
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 116,
+          "full_neighbor_set_no_embedding": 122,
+          "answer_agree": 181,
+          "certified_and_answer_agree": 97,
+          "ef": 16,
+          "pair": "A/C",
+          "positive_edge_no_embedding_rate": 0.58,
+          "full_neighbor_set_no_embedding_rate": 0.61,
+          "answer_agree_rate": 0.905,
+          "positive_edge_no_embedding_given_answer_agreement": 0.5359116022099447,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    1447,
+                    167
+                  ],
+                  [
+                    0,
+                    1447,
+                    203
+                  ],
+                  [
+                    0,
+                    1447,
+                    1030
+                  ],
+                  [
+                    0,
+                    1447,
+                    1471
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    37,
+                    86
+                  ],
+                  [
+                    0,
+                    37,
+                    257
+                  ],
+                  [
+                    0,
+                    37,
+                    524
+                  ],
+                  [
+                    0,
+                    37,
+                    722
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    1447,
+                    334
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 607
+            },
+            {
+              "query": 3,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    1352,
+                    424
+                  ],
+                  [
+                    0,
+                    1352,
+                    525
+                  ],
+                  [
+                    0,
+                    1352,
+                    697
+                  ],
+                  [
+                    0,
+                    1352,
+                    954
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    204,
+                    349
+                  ],
+                  [
+                    0,
+                    204,
+                    931
+                  ],
+                  [
+                    0,
+                    204,
+                    991
+                  ],
+                  [
+                    0,
+                    204,
+                    1748
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    1352,
+                    239
+                  ],
+                  [
+                    0,
+                    1352,
+                    451
+                  ],
+                  [
+                    0,
+                    1352,
+                    494
+                  ],
+                  [
+                    0,
+                    1352,
+                    540
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 445
+            },
+            {
+              "query": 4,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    510,
+                    301
+                  ],
+                  [
+                    0,
+                    510,
+                    594
+                  ],
+                  [
+                    0,
+                    510,
+                    627
+                  ],
+                  [
+                    0,
+                    510,
+                    767
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    81,
+                    86
+                  ],
+                  [
+                    0,
+                    81,
+                    267
+                  ],
+                  [
+                    0,
+                    81,
+                    589
+                  ],
+                  [
+                    0,
+                    81,
+                    606
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    510,
+                    95
+                  ],
+                  [
+                    0,
+                    510,
+                    358
+                  ],
+                  [
+                    0,
+                    510,
+                    481
+                  ],
+                  [
+                    0,
+                    510,
+                    635
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 501
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 0,
+          "full_neighbor_set_no_embedding": 0,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 0,
+          "ef": 16,
+          "pair": "A/AA",
+          "positive_edge_no_embedding_rate": 0.0,
+          "full_neighbor_set_no_embedding_rate": 0.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 0.0,
+          "witnesses": []
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "full_neighbor_set_no_embedding": 200,
+          "answer_agree": 193,
+          "certified_and_answer_agree": 193,
+          "ef": 64,
+          "pair": "A/B",
+          "positive_edge_no_embedding_rate": 1.0,
+          "full_neighbor_set_no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.965,
+          "positive_edge_no_embedding_given_answer_agreement": 1.0,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    8,
+                    332
+                  ],
+                  [
+                    0,
+                    8,
+                    487
+                  ],
+                  [
+                    0,
+                    8,
+                    814
+                  ],
+                  [
+                    0,
+                    8,
+                    955
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    8,
+                    666
+                  ],
+                  [
+                    0,
+                    37,
+                    86
+                  ],
+                  [
+                    0,
+                    37,
+                    257
+                  ],
+                  [
+                    0,
+                    37,
+                    524
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    8,
+                    332
+                  ],
+                  [
+                    0,
+                    8,
+                    487
+                  ],
+                  [
+                    0,
+                    8,
+                    814
+                  ],
+                  [
+                    0,
+                    8,
+                    955
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 2046
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    27,
+                    869
+                  ],
+                  [
+                    0,
+                    27,
+                    1610
+                  ],
+                  [
+                    0,
+                    27,
+                    1669
+                  ],
+                  [
+                    0,
+                    56,
+                    370
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    27,
+                    341
+                  ],
+                  [
+                    0,
+                    27,
+                    713
+                  ],
+                  [
+                    0,
+                    27,
+                    877
+                  ],
+                  [
+                    0,
+                    27,
+                    1960
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    27,
+                    869
+                  ],
+                  [
+                    0,
+                    27,
+                    1610
+                  ],
+                  [
+                    0,
+                    27,
+                    1669
+                  ],
+                  [
+                    0,
+                    56,
+                    370
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 2000
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    51,
+                    14
+                  ],
+                  [
+                    0,
+                    51,
+                    110
+                  ],
+                  [
+                    0,
+                    51,
+                    241
+                  ],
+                  [
+                    0,
+                    51,
+                    251
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    51,
+                    1011
+                  ],
+                  [
+                    0,
+                    51,
+                    1488
+                  ],
+                  [
+                    0,
+                    51,
+                    1877
+                  ],
+                  [
+                    0,
+                    51,
+                    1971
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    51,
+                    14
+                  ],
+                  [
+                    0,
+                    51,
+                    110
+                  ],
+                  [
+                    0,
+                    51,
+                    241
+                  ],
+                  [
+                    0,
+                    51,
+                    251
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 2046
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 189,
+          "full_neighbor_set_no_embedding": 191,
+          "answer_agree": 199,
+          "certified_and_answer_agree": 188,
+          "ef": 64,
+          "pair": "A/C",
+          "positive_edge_no_embedding_rate": 0.945,
+          "full_neighbor_set_no_embedding_rate": 0.955,
+          "answer_agree_rate": 0.995,
+          "positive_edge_no_embedding_given_answer_agreement": 0.9447236180904522,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    756,
+                    417
+                  ],
+                  [
+                    0,
+                    756,
+                    456
+                  ],
+                  [
+                    0,
+                    756,
+                    1362
+                  ],
+                  [
+                    0,
+                    756,
+                    1528
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    8,
+                    666
+                  ],
+                  [
+                    0,
+                    37,
+                    86
+                  ],
+                  [
+                    0,
+                    37,
+                    257
+                  ],
+                  [
+                    0,
+                    37,
+                    524
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    756,
+                    135
+                  ],
+                  [
+                    0,
+                    756,
+                    563
+                  ],
+                  [
+                    0,
+                    756,
+                    640
+                  ],
+                  [
+                    0,
+                    756,
+                    913
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 1594
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    1589,
+                    162
+                  ],
+                  [
+                    0,
+                    1589,
+                    527
+                  ],
+                  [
+                    0,
+                    1589,
+                    883
+                  ],
+                  [
+                    0,
+                    1589,
+                    1977
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    27,
+                    341
+                  ],
+                  [
+                    0,
+                    27,
+                    713
+                  ],
+                  [
+                    0,
+                    27,
+                    877
+                  ],
+                  [
+                    0,
+                    27,
+                    1960
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    1589,
+                    786
+                  ],
+                  [
+                    0,
+                    1589,
+                    819
+                  ],
+                  [
+                    0,
+                    1589,
+                    1357
+                  ],
+                  [
+                    0,
+                    1589,
+                    1541
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 1543
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    1650,
+                    946
+                  ],
+                  [
+                    0,
+                    1650,
+                    1214
+                  ],
+                  [
+                    0,
+                    1650,
+                    1306
+                  ],
+                  [
+                    0,
+                    1650,
+                    1406
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    51,
+                    1011
+                  ],
+                  [
+                    0,
+                    51,
+                    1488
+                  ],
+                  [
+                    0,
+                    51,
+                    1877
+                  ],
+                  [
+                    0,
+                    51,
+                    1971
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    1650,
+                    251
+                  ],
+                  [
+                    0,
+                    1650,
+                    458
+                  ],
+                  [
+                    0,
+                    1650,
+                    868
+                  ],
+                  [
+                    0,
+                    1650,
+                    1424
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 1576
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 0,
+          "full_neighbor_set_no_embedding": 0,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 0,
+          "ef": 64,
+          "pair": "A/AA",
+          "positive_edge_no_embedding_rate": 0.0,
+          "full_neighbor_set_no_embedding_rate": 0.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 0.0,
+          "witnesses": []
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "full_neighbor_set_no_embedding": 200,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 200,
+          "ef": 128,
+          "pair": "A/B",
+          "positive_edge_no_embedding_rate": 1.0,
+          "full_neighbor_set_no_embedding_rate": 1.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 1.0,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    8,
+                    332
+                  ],
+                  [
+                    0,
+                    8,
+                    487
+                  ],
+                  [
+                    0,
+                    8,
+                    814
+                  ],
+                  [
+                    0,
+                    8,
+                    955
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    8,
+                    666
+                  ],
+                  [
+                    0,
+                    37,
+                    86
+                  ],
+                  [
+                    0,
+                    37,
+                    257
+                  ],
+                  [
+                    0,
+                    37,
+                    524
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    8,
+                    332
+                  ],
+                  [
+                    0,
+                    8,
+                    487
+                  ],
+                  [
+                    0,
+                    8,
+                    814
+                  ],
+                  [
+                    0,
+                    8,
+                    955
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3918
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    18,
+                    45
+                  ],
+                  [
+                    0,
+                    18,
+                    305
+                  ],
+                  [
+                    0,
+                    18,
+                    425
+                  ],
+                  [
+                    0,
+                    18,
+                    665
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    18,
+                    365
+                  ],
+                  [
+                    0,
+                    18,
+                    882
+                  ],
+                  [
+                    0,
+                    18,
+                    1825
+                  ],
+                  [
+                    0,
+                    27,
+                    341
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    18,
+                    45
+                  ],
+                  [
+                    0,
+                    18,
+                    305
+                  ],
+                  [
+                    0,
+                    18,
+                    425
+                  ],
+                  [
+                    0,
+                    18,
+                    665
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3865
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    12,
+                    385
+                  ],
+                  [
+                    0,
+                    15,
+                    143
+                  ],
+                  [
+                    0,
+                    15,
+                    314
+                  ],
+                  [
+                    0,
+                    15,
+                    470
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    12,
+                    566
+                  ],
+                  [
+                    0,
+                    12,
+                    1284
+                  ],
+                  [
+                    0,
+                    15,
+                    23
+                  ],
+                  [
+                    0,
+                    15,
+                    60
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    12,
+                    385
+                  ],
+                  [
+                    0,
+                    15,
+                    143
+                  ],
+                  [
+                    0,
+                    15,
+                    314
+                  ],
+                  [
+                    0,
+                    15,
+                    470
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3921
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "full_neighbor_set_no_embedding": 200,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 200,
+          "ef": 128,
+          "pair": "A/C",
+          "positive_edge_no_embedding_rate": 1.0,
+          "full_neighbor_set_no_embedding_rate": 1.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 1.0,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    756,
+                    417
+                  ],
+                  [
+                    0,
+                    756,
+                    456
+                  ],
+                  [
+                    0,
+                    756,
+                    1362
+                  ],
+                  [
+                    0,
+                    756,
+                    1528
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    8,
+                    666
+                  ],
+                  [
+                    0,
+                    37,
+                    86
+                  ],
+                  [
+                    0,
+                    37,
+                    257
+                  ],
+                  [
+                    0,
+                    37,
+                    524
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    756,
+                    135
+                  ],
+                  [
+                    0,
+                    756,
+                    563
+                  ],
+                  [
+                    0,
+                    756,
+                    640
+                  ],
+                  [
+                    0,
+                    756,
+                    913
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3056
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    926,
+                    58
+                  ],
+                  [
+                    0,
+                    926,
+                    139
+                  ],
+                  [
+                    0,
+                    926,
+                    938
+                  ],
+                  [
+                    0,
+                    926,
+                    1000
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    18,
+                    365
+                  ],
+                  [
+                    0,
+                    18,
+                    882
+                  ],
+                  [
+                    0,
+                    18,
+                    1825
+                  ],
+                  [
+                    0,
+                    27,
+                    341
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    926,
+                    14
+                  ],
+                  [
+                    0,
+                    926,
+                    408
+                  ],
+                  [
+                    0,
+                    926,
+                    533
+                  ],
+                  [
+                    0,
+                    926,
+                    826
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 2934
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    251,
+                    51
+                  ],
+                  [
+                    0,
+                    251,
+                    315
+                  ],
+                  [
+                    0,
+                    251,
+                    375
+                  ],
+                  [
+                    0,
+                    251,
+                    633
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    12,
+                    566
+                  ],
+                  [
+                    0,
+                    12,
+                    1284
+                  ],
+                  [
+                    0,
+                    15,
+                    23
+                  ],
+                  [
+                    0,
+                    15,
+                    60
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    251,
+                    146
+                  ],
+                  [
+                    0,
+                    251,
+                    445
+                  ],
+                  [
+                    0,
+                    251,
+                    567
+                  ],
+                  [
+                    0,
+                    251,
+                    1213
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3053
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 0,
+          "full_neighbor_set_no_embedding": 0,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 0,
+          "ef": 128,
+          "pair": "A/AA",
+          "positive_edge_no_embedding_rate": 0.0,
+          "full_neighbor_set_no_embedding_rate": 0.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 0.0,
+          "witnesses": []
+        }
+      ],
+      "triples": [
+        {
+          "ef": 16,
+          "episodes": 200,
+          "triple_no_embedding": 200,
+          "all_pairs_embed_somewhere": 0,
+          "triple_only_residue": 0
+        },
+        {
+          "ef": 64,
+          "episodes": 200,
+          "triple_no_embedding": 200,
+          "all_pairs_embed_somewhere": 0,
+          "triple_only_residue": 0
+        },
+        {
+          "ef": 128,
+          "episodes": 200,
+          "triple_no_embedding": 200,
+          "all_pairs_embed_somewhere": 0,
+          "triple_only_residue": 0
+        }
+      ],
+      "native_search_means": [
+        {
+          "ef": 16,
+          "generation": "A",
+          "recall_at_10": 0.8705,
+          "expansions": 22.785,
+          "positive_edges": 450.67,
+          "first_visited": 337.97
+        },
+        {
+          "ef": 16,
+          "generation": "B",
+          "recall_at_10": 0.87,
+          "expansions": 23.03,
+          "positive_edges": 455.86,
+          "first_visited": 340.175
+        },
+        {
+          "ef": 16,
+          "generation": "C",
+          "recall_at_10": 0.874,
+          "expansions": 22.825,
+          "positive_edges": 452.005,
+          "first_visited": 339.18
+        },
+        {
+          "ef": 64,
+          "generation": "A",
+          "recall_at_10": 0.9975,
+          "expansions": 69.475,
+          "positive_edges": 1529.64,
+          "first_visited": 866.19
+        },
+        {
+          "ef": 64,
+          "generation": "B",
+          "recall_at_10": 0.9955,
+          "expansions": 69.57,
+          "positive_edges": 1522.245,
+          "first_visited": 862.06
+        },
+        {
+          "ef": 64,
+          "generation": "C",
+          "recall_at_10": 0.997,
+          "expansions": 69.475,
+          "positive_edges": 1527.275,
+          "first_visited": 866.015
+        },
+        {
+          "ef": 128,
+          "generation": "A",
+          "recall_at_10": 1.0,
+          "expansions": 133.22,
+          "positive_edges": 2976.935,
+          "first_visited": 1261.97
+        },
+        {
+          "ef": 128,
+          "generation": "B",
+          "recall_at_10": 1.0,
+          "expansions": 133.305,
+          "positive_edges": 2958.3,
+          "first_visited": 1256.485
+        },
+        {
+          "ef": 128,
+          "generation": "C",
+          "recall_at_10": 1.0,
+          "expansions": 133.23,
+          "positive_edges": 2972.89,
+          "first_visited": 1261.91
+        }
+      ]
+    },
+    {
+      "seed": 47,
+      "rewritten_node_count": 100,
+      "changed_base_neighbor_lists": 100,
+      "cells": [
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "full_neighbor_set_no_embedding": 200,
+          "answer_agree": 45,
+          "certified_and_answer_agree": 45,
+          "ef": 16,
+          "pair": "A/B",
+          "positive_edge_no_embedding_rate": 1.0,
+          "full_neighbor_set_no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.225,
+          "positive_edge_no_embedding_given_answer_agreement": 1.0,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": false,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    185,
+                    295
+                  ],
+                  [
+                    0,
+                    185,
+                    436
+                  ],
+                  [
+                    0,
+                    185,
+                    1954
+                  ],
+                  [
+                    0,
+                    186,
+                    25
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    185,
+                    501
+                  ],
+                  [
+                    0,
+                    185,
+                    1021
+                  ],
+                  [
+                    0,
+                    186,
+                    463
+                  ],
+                  [
+                    0,
+                    186,
+                    501
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    185,
+                    295
+                  ],
+                  [
+                    0,
+                    185,
+                    436
+                  ],
+                  [
+                    0,
+                    185,
+                    1954
+                  ],
+                  [
+                    0,
+                    186,
+                    25
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 580
+            },
+            {
+              "query": 1,
+              "answer_agrees": false,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    171,
+                    883
+                  ],
+                  [
+                    0,
+                    260,
+                    171
+                  ],
+                  [
+                    0,
+                    260,
+                    536
+                  ],
+                  [
+                    0,
+                    260,
+                    759
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    171,
+                    371
+                  ],
+                  [
+                    0,
+                    171,
+                    661
+                  ],
+                  [
+                    0,
+                    171,
+                    909
+                  ],
+                  [
+                    0,
+                    171,
+                    1330
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    171,
+                    883
+                  ],
+                  [
+                    0,
+                    260,
+                    171
+                  ],
+                  [
+                    0,
+                    260,
+                    536
+                  ],
+                  [
+                    0,
+                    260,
+                    759
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 633
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    312,
+                    597
+                  ],
+                  [
+                    0,
+                    312,
+                    818
+                  ],
+                  [
+                    0,
+                    312,
+                    1510
+                  ],
+                  [
+                    0,
+                    312,
+                    1629
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    249,
+                    132
+                  ],
+                  [
+                    0,
+                    249,
+                    235
+                  ],
+                  [
+                    0,
+                    249,
+                    456
+                  ],
+                  [
+                    0,
+                    249,
+                    533
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    312,
+                    597
+                  ],
+                  [
+                    0,
+                    312,
+                    818
+                  ],
+                  [
+                    0,
+                    312,
+                    1510
+                  ],
+                  [
+                    0,
+                    312,
+                    1629
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 633
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 118,
+          "full_neighbor_set_no_embedding": 119,
+          "answer_agree": 179,
+          "certified_and_answer_agree": 97,
+          "ef": 16,
+          "pair": "A/C",
+          "positive_edge_no_embedding_rate": 0.59,
+          "full_neighbor_set_no_embedding_rate": 0.595,
+          "answer_agree_rate": 0.895,
+          "positive_edge_no_embedding_given_answer_agreement": 0.5418994413407822,
+          "witnesses": [
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    1320,
+                    95
+                  ],
+                  [
+                    0,
+                    1320,
+                    265
+                  ],
+                  [
+                    0,
+                    1320,
+                    444
+                  ],
+                  [
+                    0,
+                    1320,
+                    767
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    171,
+                    371
+                  ],
+                  [
+                    0,
+                    171,
+                    661
+                  ],
+                  [
+                    0,
+                    171,
+                    909
+                  ],
+                  [
+                    0,
+                    171,
+                    1330
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    1320,
+                    855
+                  ],
+                  [
+                    0,
+                    1320,
+                    1137
+                  ],
+                  [
+                    0,
+                    1320,
+                    1226
+                  ],
+                  [
+                    0,
+                    1320,
+                    1246
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 495
+            },
+            {
+              "query": 4,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    231,
+                    65
+                  ],
+                  [
+                    0,
+                    231,
+                    323
+                  ],
+                  [
+                    0,
+                    231,
+                    430
+                  ],
+                  [
+                    0,
+                    231,
+                    485
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    91,
+                    689
+                  ],
+                  [
+                    0,
+                    91,
+                    1604
+                  ],
+                  [
+                    0,
+                    91,
+                    1862
+                  ],
+                  [
+                    0,
+                    186,
+                    463
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    231,
+                    214
+                  ],
+                  [
+                    0,
+                    231,
+                    752
+                  ],
+                  [
+                    0,
+                    231,
+                    1072
+                  ],
+                  [
+                    0,
+                    231,
+                    1405
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 406
+            },
+            {
+              "query": 5,
+              "answer_agrees": false,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    847,
+                    551
+                  ],
+                  [
+                    0,
+                    847,
+                    1120
+                  ],
+                  [
+                    0,
+                    847,
+                    1996
+                  ],
+                  [
+                    0,
+                    1879,
+                    666
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    194,
+                    164
+                  ],
+                  [
+                    0,
+                    194,
+                    459
+                  ],
+                  [
+                    0,
+                    194,
+                    463
+                  ],
+                  [
+                    0,
+                    194,
+                    616
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    847,
+                    62
+                  ],
+                  [
+                    0,
+                    847,
+                    153
+                  ],
+                  [
+                    0,
+                    847,
+                    197
+                  ],
+                  [
+                    0,
+                    847,
+                    241
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 462
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 0,
+          "full_neighbor_set_no_embedding": 0,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 0,
+          "ef": 16,
+          "pair": "A/AA",
+          "positive_edge_no_embedding_rate": 0.0,
+          "full_neighbor_set_no_embedding_rate": 0.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 0.0,
+          "witnesses": []
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "full_neighbor_set_no_embedding": 200,
+          "answer_agree": 183,
+          "certified_and_answer_agree": 183,
+          "ef": 64,
+          "pair": "A/B",
+          "positive_edge_no_embedding_rate": 1.0,
+          "full_neighbor_set_no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.915,
+          "positive_edge_no_embedding_given_answer_agreement": 1.0,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    54,
+                    700
+                  ],
+                  [
+                    0,
+                    54,
+                    1024
+                  ],
+                  [
+                    0,
+                    54,
+                    1211
+                  ],
+                  [
+                    0,
+                    54,
+                    1264
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    54,
+                    503
+                  ],
+                  [
+                    0,
+                    54,
+                    712
+                  ],
+                  [
+                    0,
+                    54,
+                    726
+                  ],
+                  [
+                    0,
+                    54,
+                    981
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    54,
+                    700
+                  ],
+                  [
+                    0,
+                    54,
+                    1024
+                  ],
+                  [
+                    0,
+                    54,
+                    1211
+                  ],
+                  [
+                    0,
+                    54,
+                    1264
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 1958
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    171,
+                    883
+                  ],
+                  [
+                    0,
+                    175,
+                    421
+                  ],
+                  [
+                    0,
+                    175,
+                    1012
+                  ],
+                  [
+                    0,
+                    175,
+                    1072
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    171,
+                    371
+                  ],
+                  [
+                    0,
+                    171,
+                    661
+                  ],
+                  [
+                    0,
+                    171,
+                    909
+                  ],
+                  [
+                    0,
+                    171,
+                    1330
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    171,
+                    883
+                  ],
+                  [
+                    0,
+                    175,
+                    421
+                  ],
+                  [
+                    0,
+                    175,
+                    1012
+                  ],
+                  [
+                    0,
+                    175,
+                    1072
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 2010
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    5,
+                    265
+                  ],
+                  [
+                    0,
+                    5,
+                    309
+                  ],
+                  [
+                    0,
+                    5,
+                    422
+                  ],
+                  [
+                    0,
+                    5,
+                    1194
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    5,
+                    3
+                  ],
+                  [
+                    0,
+                    5,
+                    497
+                  ],
+                  [
+                    0,
+                    5,
+                    976
+                  ],
+                  [
+                    0,
+                    5,
+                    1072
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    5,
+                    265
+                  ],
+                  [
+                    0,
+                    5,
+                    309
+                  ],
+                  [
+                    0,
+                    5,
+                    422
+                  ],
+                  [
+                    0,
+                    5,
+                    1194
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 1959
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 188,
+          "full_neighbor_set_no_embedding": 189,
+          "answer_agree": 196,
+          "certified_and_answer_agree": 184,
+          "ef": 64,
+          "pair": "A/C",
+          "positive_edge_no_embedding_rate": 0.94,
+          "full_neighbor_set_no_embedding_rate": 0.945,
+          "answer_agree_rate": 0.98,
+          "positive_edge_no_embedding_given_answer_agreement": 0.9387755102040817,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    819,
+                    707
+                  ],
+                  [
+                    0,
+                    819,
+                    1231
+                  ],
+                  [
+                    0,
+                    819,
+                    1254
+                  ],
+                  [
+                    0,
+                    819,
+                    1922
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    54,
+                    503
+                  ],
+                  [
+                    0,
+                    54,
+                    712
+                  ],
+                  [
+                    0,
+                    54,
+                    726
+                  ],
+                  [
+                    0,
+                    54,
+                    981
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    819,
+                    609
+                  ],
+                  [
+                    0,
+                    819,
+                    1181
+                  ],
+                  [
+                    0,
+                    819,
+                    1529
+                  ],
+                  [
+                    0,
+                    1366,
+                    104
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 1465
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    305,
+                    430
+                  ],
+                  [
+                    0,
+                    305,
+                    1294
+                  ],
+                  [
+                    0,
+                    305,
+                    1373
+                  ],
+                  [
+                    0,
+                    305,
+                    1448
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    171,
+                    371
+                  ],
+                  [
+                    0,
+                    171,
+                    661
+                  ],
+                  [
+                    0,
+                    171,
+                    909
+                  ],
+                  [
+                    0,
+                    171,
+                    1330
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    305,
+                    303
+                  ],
+                  [
+                    0,
+                    305,
+                    319
+                  ],
+                  [
+                    0,
+                    305,
+                    392
+                  ],
+                  [
+                    0,
+                    305,
+                    997
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 1514
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    332,
+                    95
+                  ],
+                  [
+                    0,
+                    332,
+                    213
+                  ],
+                  [
+                    0,
+                    332,
+                    446
+                  ],
+                  [
+                    0,
+                    332,
+                    705
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    5,
+                    3
+                  ],
+                  [
+                    0,
+                    5,
+                    497
+                  ],
+                  [
+                    0,
+                    5,
+                    976
+                  ],
+                  [
+                    0,
+                    5,
+                    1072
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    332,
+                    607
+                  ],
+                  [
+                    0,
+                    332,
+                    1166
+                  ],
+                  [
+                    0,
+                    332,
+                    1251
+                  ],
+                  [
+                    0,
+                    332,
+                    1330
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 1506
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 0,
+          "full_neighbor_set_no_embedding": 0,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 0,
+          "ef": 64,
+          "pair": "A/AA",
+          "positive_edge_no_embedding_rate": 0.0,
+          "full_neighbor_set_no_embedding_rate": 0.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 0.0,
+          "witnesses": []
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "full_neighbor_set_no_embedding": 200,
+          "answer_agree": 199,
+          "certified_and_answer_agree": 199,
+          "ef": 128,
+          "pair": "A/B",
+          "positive_edge_no_embedding_rate": 1.0,
+          "full_neighbor_set_no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.995,
+          "positive_edge_no_embedding_given_answer_agreement": 1.0,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    32,
+                    560
+                  ],
+                  [
+                    0,
+                    32,
+                    836
+                  ],
+                  [
+                    0,
+                    32,
+                    852
+                  ],
+                  [
+                    0,
+                    54,
+                    700
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    32,
+                    181
+                  ],
+                  [
+                    0,
+                    32,
+                    753
+                  ],
+                  [
+                    0,
+                    32,
+                    1081
+                  ],
+                  [
+                    0,
+                    32,
+                    1180
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    32,
+                    560
+                  ],
+                  [
+                    0,
+                    32,
+                    836
+                  ],
+                  [
+                    0,
+                    32,
+                    852
+                  ],
+                  [
+                    0,
+                    54,
+                    700
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3823
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    10,
+                    196
+                  ],
+                  [
+                    0,
+                    10,
+                    222
+                  ],
+                  [
+                    0,
+                    10,
+                    681
+                  ],
+                  [
+                    0,
+                    10,
+                    892
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    10,
+                    448
+                  ],
+                  [
+                    0,
+                    10,
+                    817
+                  ],
+                  [
+                    0,
+                    10,
+                    950
+                  ],
+                  [
+                    0,
+                    10,
+                    966
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    10,
+                    196
+                  ],
+                  [
+                    0,
+                    10,
+                    222
+                  ],
+                  [
+                    0,
+                    10,
+                    681
+                  ],
+                  [
+                    0,
+                    10,
+                    892
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3956
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    5,
+                    265
+                  ],
+                  [
+                    0,
+                    5,
+                    309
+                  ],
+                  [
+                    0,
+                    5,
+                    422
+                  ],
+                  [
+                    0,
+                    5,
+                    1194
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    5,
+                    3
+                  ],
+                  [
+                    0,
+                    5,
+                    497
+                  ],
+                  [
+                    0,
+                    5,
+                    976
+                  ],
+                  [
+                    0,
+                    5,
+                    1072
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    5,
+                    265
+                  ],
+                  [
+                    0,
+                    5,
+                    309
+                  ],
+                  [
+                    0,
+                    5,
+                    422
+                  ],
+                  [
+                    0,
+                    5,
+                    1194
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3916
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "full_neighbor_set_no_embedding": 200,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 200,
+          "ef": 128,
+          "pair": "A/C",
+          "positive_edge_no_embedding_rate": 1.0,
+          "full_neighbor_set_no_embedding_rate": 1.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 1.0,
+          "witnesses": [
+            {
+              "query": 0,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    461,
+                    319
+                  ],
+                  [
+                    0,
+                    461,
+                    996
+                  ],
+                  [
+                    0,
+                    461,
+                    1775
+                  ],
+                  [
+                    0,
+                    819,
+                    707
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    32,
+                    181
+                  ],
+                  [
+                    0,
+                    32,
+                    753
+                  ],
+                  [
+                    0,
+                    32,
+                    1081
+                  ],
+                  [
+                    0,
+                    32,
+                    1180
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    461,
+                    48
+                  ],
+                  [
+                    0,
+                    461,
+                    363
+                  ],
+                  [
+                    0,
+                    461,
+                    405
+                  ],
+                  [
+                    0,
+                    461,
+                    585
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 2867
+            },
+            {
+              "query": 1,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    243,
+                    14
+                  ],
+                  [
+                    0,
+                    243,
+                    212
+                  ],
+                  [
+                    0,
+                    243,
+                    313
+                  ],
+                  [
+                    0,
+                    243,
+                    624
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    10,
+                    448
+                  ],
+                  [
+                    0,
+                    10,
+                    817
+                  ],
+                  [
+                    0,
+                    10,
+                    950
+                  ],
+                  [
+                    0,
+                    10,
+                    966
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    243,
+                    753
+                  ],
+                  [
+                    0,
+                    243,
+                    1097
+                  ],
+                  [
+                    0,
+                    243,
+                    1144
+                  ],
+                  [
+                    0,
+                    243,
+                    1992
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3063
+            },
+            {
+              "query": 2,
+              "answer_agrees": true,
+              "escape_edges_by_generation": {
+                "A": [
+                  [
+                    0,
+                    332,
+                    95
+                  ],
+                  [
+                    0,
+                    332,
+                    213
+                  ],
+                  [
+                    0,
+                    332,
+                    446
+                  ],
+                  [
+                    0,
+                    332,
+                    705
+                  ]
+                ],
+                "B": [
+                  [
+                    0,
+                    5,
+                    3
+                  ],
+                  [
+                    0,
+                    5,
+                    497
+                  ],
+                  [
+                    0,
+                    5,
+                    976
+                  ],
+                  [
+                    0,
+                    5,
+                    1072
+                  ]
+                ],
+                "C": [
+                  [
+                    0,
+                    332,
+                    607
+                  ],
+                  [
+                    0,
+                    332,
+                    1166
+                  ],
+                  [
+                    0,
+                    332,
+                    1251
+                  ],
+                  [
+                    0,
+                    332,
+                    1330
+                  ]
+                ]
+              },
+              "observed_positive_edge_union_count": 3029
+            }
+          ]
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 0,
+          "full_neighbor_set_no_embedding": 0,
+          "answer_agree": 200,
+          "certified_and_answer_agree": 0,
+          "ef": 128,
+          "pair": "A/AA",
+          "positive_edge_no_embedding_rate": 0.0,
+          "full_neighbor_set_no_embedding_rate": 0.0,
+          "answer_agree_rate": 1.0,
+          "positive_edge_no_embedding_given_answer_agreement": 0.0,
+          "witnesses": []
+        }
+      ],
+      "triples": [
+        {
+          "ef": 16,
+          "episodes": 200,
+          "triple_no_embedding": 200,
+          "all_pairs_embed_somewhere": 0,
+          "triple_only_residue": 0
+        },
+        {
+          "ef": 64,
+          "episodes": 200,
+          "triple_no_embedding": 200,
+          "all_pairs_embed_somewhere": 0,
+          "triple_only_residue": 0
+        },
+        {
+          "ef": 128,
+          "episodes": 200,
+          "triple_no_embedding": 200,
+          "all_pairs_embed_somewhere": 0,
+          "triple_only_residue": 0
+        }
+      ],
+      "native_search_means": [
+        {
+          "ef": 16,
+          "generation": "A",
+          "recall_at_10": 0.853,
+          "expansions": 22.795,
+          "positive_edges": 451.95,
+          "first_visited": 337.51
+        },
+        {
+          "ef": 16,
+          "generation": "B",
+          "recall_at_10": 0.8515,
+          "expansions": 22.86,
+          "positive_edges": 448.29,
+          "first_visited": 335.085
+        },
+        {
+          "ef": 16,
+          "generation": "C",
+          "recall_at_10": 0.85,
+          "expansions": 22.855,
+          "positive_edges": 450.485,
+          "first_visited": 336.71
+        },
+        {
+          "ef": 64,
+          "generation": "A",
+          "recall_at_10": 0.9945,
+          "expansions": 69.4,
+          "positive_edges": 1527.22,
+          "first_visited": 863.77
+        },
+        {
+          "ef": 64,
+          "generation": "B",
+          "recall_at_10": 0.992,
+          "expansions": 69.465,
+          "positive_edges": 1523.46,
+          "first_visited": 863.57
+        },
+        {
+          "ef": 64,
+          "generation": "C",
+          "recall_at_10": 0.9925,
+          "expansions": 69.385,
+          "positive_edges": 1520.49,
+          "first_visited": 861.675
+        },
+        {
+          "ef": 128,
+          "generation": "A",
+          "recall_at_10": 0.9995,
+          "expansions": 133.2,
+          "positive_edges": 2978.025,
+          "first_visited": 1263.54
+        },
+        {
+          "ef": 128,
+          "generation": "B",
+          "recall_at_10": 1.0,
+          "expansions": 133.275,
+          "positive_edges": 2962.755,
+          "first_visited": 1261.315
+        },
+        {
+          "ef": 128,
+          "generation": "C",
+          "recall_at_10": 0.9995,
+          "expansions": 133.195,
+          "positive_edges": 2966.165,
+          "first_visited": 1261.455
+        }
+      ]
+    }
+  ],
+  "total_native_traces": 7200,
+  "total_trace_on_off_bit_identical": 7200,
+  "same_generation_controls": 1800,
+  "same_generation_control_failures": 0,
+  "verification_passes": [
+    "C++ native harness invariants and trace-on/off memcmp",
+    "independent saved-input/graph/trace Python verification"
+  ],
+  "aggregate": [
+    {
+      "ef": 16,
+      "pair": "A/B",
+      "episodes": 600,
+      "positive_edge_no_embedding_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "full_neighbor_set_no_embedding_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "answer_agree_rate": {
+        "mean": 0.26,
+        "min": 0.225,
+        "max": 0.285,
+        "per_seed": [
+          0.27,
+          0.285,
+          0.225
+        ]
+      },
+      "certified_among_answer_agree_count": 156,
+      "answer_agree_count": 156
+    },
+    {
+      "ef": 16,
+      "pair": "A/C",
+      "episodes": 600,
+      "positive_edge_no_embedding_rate": {
+        "mean": 0.5816666666666667,
+        "min": 0.575,
+        "max": 0.59,
+        "per_seed": [
+          0.575,
+          0.58,
+          0.59
+        ]
+      },
+      "full_neighbor_set_no_embedding_rate": {
+        "mean": 0.5933333333333333,
+        "min": 0.575,
+        "max": 0.61,
+        "per_seed": [
+          0.575,
+          0.61,
+          0.595
+        ]
+      },
+      "answer_agree_rate": {
+        "mean": 0.9016666666666667,
+        "min": 0.895,
+        "max": 0.905,
+        "per_seed": [
+          0.905,
+          0.905,
+          0.895
+        ]
+      },
+      "certified_among_answer_agree_count": 290,
+      "answer_agree_count": 541
+    },
+    {
+      "ef": 16,
+      "pair": "A/AA",
+      "episodes": 600,
+      "positive_edge_no_embedding_rate": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "per_seed": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "full_neighbor_set_no_embedding_rate": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "per_seed": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "answer_agree_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "certified_among_answer_agree_count": 0,
+      "answer_agree_count": 600
+    },
+    {
+      "ef": 64,
+      "pair": "A/B",
+      "episodes": 600,
+      "positive_edge_no_embedding_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "full_neighbor_set_no_embedding_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "answer_agree_rate": {
+        "mean": 0.9333333333333333,
+        "min": 0.915,
+        "max": 0.965,
+        "per_seed": [
+          0.92,
+          0.965,
+          0.915
+        ]
+      },
+      "certified_among_answer_agree_count": 560,
+      "answer_agree_count": 560
+    },
+    {
+      "ef": 64,
+      "pair": "A/C",
+      "episodes": 600,
+      "positive_edge_no_embedding_rate": {
+        "mean": 0.9466666666666667,
+        "min": 0.94,
+        "max": 0.955,
+        "per_seed": [
+          0.955,
+          0.945,
+          0.94
+        ]
+      },
+      "full_neighbor_set_no_embedding_rate": {
+        "mean": 0.9516666666666667,
+        "min": 0.945,
+        "max": 0.955,
+        "per_seed": [
+          0.955,
+          0.955,
+          0.945
+        ]
+      },
+      "answer_agree_rate": {
+        "mean": 0.9916666666666667,
+        "min": 0.98,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          0.995,
+          0.98
+        ]
+      },
+      "certified_among_answer_agree_count": 563,
+      "answer_agree_count": 595
+    },
+    {
+      "ef": 64,
+      "pair": "A/AA",
+      "episodes": 600,
+      "positive_edge_no_embedding_rate": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "per_seed": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "full_neighbor_set_no_embedding_rate": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "per_seed": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "answer_agree_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "certified_among_answer_agree_count": 0,
+      "answer_agree_count": 600
+    },
+    {
+      "ef": 128,
+      "pair": "A/B",
+      "episodes": 600,
+      "positive_edge_no_embedding_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "full_neighbor_set_no_embedding_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "answer_agree_rate": {
+        "mean": 0.9983333333333333,
+        "min": 0.995,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          0.995
+        ]
+      },
+      "certified_among_answer_agree_count": 599,
+      "answer_agree_count": 599
+    },
+    {
+      "ef": 128,
+      "pair": "A/C",
+      "episodes": 600,
+      "positive_edge_no_embedding_rate": {
+        "mean": 0.9983333333333333,
+        "min": 0.995,
+        "max": 1.0,
+        "per_seed": [
+          0.995,
+          1.0,
+          1.0
+        ]
+      },
+      "full_neighbor_set_no_embedding_rate": {
+        "mean": 0.9983333333333333,
+        "min": 0.995,
+        "max": 1.0,
+        "per_seed": [
+          0.995,
+          1.0,
+          1.0
+        ]
+      },
+      "answer_agree_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "certified_among_answer_agree_count": 599,
+      "answer_agree_count": 600
+    },
+    {
+      "ef": 128,
+      "pair": "A/AA",
+      "episodes": 600,
+      "positive_edge_no_embedding_rate": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "per_seed": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "full_neighbor_set_no_embedding_rate": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "per_seed": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "answer_agree_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "certified_among_answer_agree_count": 0,
+      "answer_agree_count": 600
+    }
+  ],
+  "passed": true
+}

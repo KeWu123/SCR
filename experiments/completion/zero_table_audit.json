@@ -1,0 +1,1207 @@
+{
+  "status": "passed",
+  "mode": "physical-native",
+  "checker_sha256": "a57a7f9ffac51e027cfd36afd34ef125e790935c73b6df6d6645274ffa76fc68",
+  "evidence_run_dir": "experiments",
+  "recorded_native_dbdir": "experiments/cross_store_db/20261016155416284521",
+  "native_dbdir": "experiments/cross_store_db/20261016155416284521",
+  "native_dbdir_explicit_override": false,
+  "scratch": "experiments/completion/za_20261016_175323_194131",
+  "raw_sha256": "648212f9212113a3616932bc15570e2764cc839ffbab54646741461bf2e166e7",
+  "original_file_hashes": {
+    "experiments/cross_store_results.json": "648212f9212113a3616932bc15570e2764cc839ffbab54646741461bf2e166e7",
+    "experiments/cross_store.py": "bbe67e25eb5d19735a2f7472a33b31e197e508b91dd3b36016fdd0a7a0a487ad",
+    "experiments/verify_cross_store.py": "f156f62e07b5faa2ca51c7360918e8083f7fc3f937200f222fb1a398b4e944f6",
+    "experiments/cross_store_protocol.md": "0ec8b6a41e67047b7db5526d7c85e2d44ec25f675c8717988d8a2c3e8a7fdc03",
+    "experiments/digits_11_inputs.npz": "e4c7d5f43823fa94fa0fdc0a74867481e805e1247913897baaf44be8518bebf1",
+    "experiments/digits_29_inputs.npz": "c5540f11539cc640088ef093ba48749c49c3d7ad9475a04d7795a94f497fa0fb",
+    "experiments/digits_47_inputs.npz": "69141f2da92575025fc91d89bea270d783f62de088f67e8b6a82e14739a60e95",
+    "experiments/uniform_11_inputs.npz": "9fbcf683646b3ae2232979762b913f825c6c7faa928f841fbe9612e892d9a4c3",
+    "experiments/uniform_29_inputs.npz": "fe7267127083fa64d93a17fe1f5526e12cd2ee6a162cc0adc3b899be8884fce3",
+    "experiments/uniform_47_inputs.npz": "ce181626f9ceb1cef5964fb45d17d42c627ba97873ff781584c333f31f780cb1"
+  },
+  "pinned_runtime": {
+    "numpy": {
+      "version": "1.26.4",
+      "origin": "experiments/vendor/numpy/__init__.py"
+    },
+    "pyarrow": {
+      "version": "21.0.0",
+      "origin": "experiments/vendor/pyarrow/__init__.py"
+    },
+    "lancedb": {
+      "version": "0.40.0",
+      "origin": "experiments/vendor/lancedb/__init__.py"
+    }
+  },
+  "lancedb_version": "0.40.0",
+  "sqlite_version": "3.50.1",
+  "original_files_unchanged": true,
+  "native_persisted_files_unchanged": true,
+  "records_checked": 2400,
+  "returned_keys_checked": 24000,
+  "zero_row_returned_keys": 18000,
+  "mismatch_row_returned_keys": 6000,
+  "table": [
+    {
+      "dataset": "digits",
+      "policy": "admitted_old",
+      "invalid": 0,
+      "returned": 3000,
+      "coverage": 1.0,
+      "recall": 0.9993333333333334,
+      "fill": 1.0,
+      "per_seed_invalid": [
+        0,
+        0,
+        0
+      ],
+      "per_seed_recall": [
+        1.0,
+        0.9990000000000001,
+        0.9990000000000001
+      ],
+      "seed_recall_range": [
+        0.9990000000000001,
+        1.0
+      ],
+      "zero_semantics": "empirically observed against aligned source map"
+    },
+    {
+      "dataset": "digits",
+      "policy": "mismatched",
+      "invalid": 895,
+      "returned": 3000,
+      "coverage": 0.6505598114319388,
+      "recall": 0.617,
+      "fill": 1.0,
+      "per_seed_invalid": [
+        307,
+        298,
+        290
+      ],
+      "per_seed_recall": [
+        0.609,
+        0.618,
+        0.624
+      ],
+      "seed_recall_range": [
+        0.609,
+        0.624
+      ],
+      "zero_semantics": "deliberately mismatched source and candidate populations"
+    },
+    {
+      "dataset": "digits",
+      "policy": "mismatched_filter",
+      "invalid": 0,
+      "returned": 3000,
+      "coverage": 0.6505598114319388,
+      "recall": 0.6493333333333333,
+      "fill": 1.0,
+      "per_seed_invalid": [
+        0,
+        0,
+        0
+      ],
+      "per_seed_recall": [
+        0.642,
+        0.652,
+        0.654
+      ],
+      "seed_recall_range": [
+        0.642,
+        0.654
+      ],
+      "zero_semantics": "exact output-version filter guarantees returned-key validity under the declared old-source map"
+    },
+    {
+      "dataset": "digits",
+      "policy": "aligned_current",
+      "invalid": 0,
+      "returned": 3000,
+      "coverage": 1.0,
+      "recall": 0.9986666666666667,
+      "fill": 1.0,
+      "per_seed_invalid": [
+        0,
+        0,
+        0
+      ],
+      "per_seed_recall": [
+        0.998,
+        1.0,
+        0.998
+      ],
+      "seed_recall_range": [
+        0.998,
+        1.0
+      ],
+      "zero_semantics": "empirically observed against aligned source map"
+    },
+    {
+      "dataset": "uniform",
+      "policy": "admitted_old",
+      "invalid": 0,
+      "returned": 3000,
+      "coverage": 1.0,
+      "recall": 1.0,
+      "fill": 1.0,
+      "per_seed_invalid": [
+        0,
+        0,
+        0
+      ],
+      "per_seed_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "seed_recall_range": [
+        1.0,
+        1.0
+      ],
+      "zero_semantics": "empirically observed against aligned source map"
+    },
+    {
+      "dataset": "uniform",
+      "policy": "mismatched",
+      "invalid": 911,
+      "returned": 3000,
+      "coverage": 0.65,
+      "recall": 0.605,
+      "fill": 1.0,
+      "per_seed_invalid": [
+        290,
+        308,
+        313
+      ],
+      "per_seed_recall": [
+        0.621,
+        0.598,
+        0.596
+      ],
+      "seed_recall_range": [
+        0.596,
+        0.621
+      ],
+      "zero_semantics": "deliberately mismatched source and candidate populations"
+    },
+    {
+      "dataset": "uniform",
+      "policy": "mismatched_filter",
+      "invalid": 0,
+      "returned": 3000,
+      "coverage": 0.65,
+      "recall": 0.6346666666666666,
+      "fill": 1.0,
+      "per_seed_invalid": [
+        0,
+        0,
+        0
+      ],
+      "per_seed_recall": [
+        0.659,
+        0.631,
+        0.614
+      ],
+      "seed_recall_range": [
+        0.614,
+        0.659
+      ],
+      "zero_semantics": "exact output-version filter guarantees returned-key validity under the declared old-source map"
+    },
+    {
+      "dataset": "uniform",
+      "policy": "aligned_current",
+      "invalid": 0,
+      "returned": 3000,
+      "coverage": 1.0,
+      "recall": 0.9983333333333334,
+      "fill": 1.0,
+      "per_seed_invalid": [
+        0,
+        0,
+        0
+      ],
+      "per_seed_recall": [
+        0.998,
+        0.997,
+        1.0
+      ],
+      "seed_recall_range": [
+        0.997,
+        1.0
+      ],
+      "zero_semantics": "empirically observed against aligned source map"
+    }
+  ],
+  "per_seed": [
+    {
+      "dataset": "digits",
+      "seed": 11,
+      "n": 1697,
+      "current_n": 1612,
+      "old_lance_version": 2,
+      "current_lance_version": 9,
+      "old_native_vectors_byte_equal": 1697,
+      "current_native_vectors_byte_equal": 1612,
+      "current_sqlite_rows_checked": 1612,
+      "sql_epoch": 1,
+      "metrics": {
+        "admitted_old": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 1.0,
+          "fill": 1.0,
+          "coverage": 1.0,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            1.0,
+            1.0
+          ]
+        },
+        "mismatched": {
+          "invalid": 307,
+          "returned": 1000,
+          "recall": 0.609,
+          "fill": 1.0,
+          "coverage": 0.6505598114319388,
+          "query_invalid_range": [
+            1,
+            5
+          ],
+          "query_recall_range": [
+            0.2,
+            0.8
+          ]
+        },
+        "mismatched_filter": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 0.642,
+          "fill": 1.0,
+          "coverage": 0.6505598114319388,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            0.2,
+            1.0
+          ]
+        },
+        "aligned_current": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 0.998,
+          "fill": 1.0,
+          "coverage": 1.0,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            0.9,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "digits",
+      "seed": 29,
+      "n": 1697,
+      "current_n": 1612,
+      "old_lance_version": 2,
+      "current_lance_version": 9,
+      "old_native_vectors_byte_equal": 1697,
+      "current_native_vectors_byte_equal": 1612,
+      "current_sqlite_rows_checked": 1612,
+      "sql_epoch": 1,
+      "metrics": {
+        "admitted_old": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 0.9990000000000001,
+          "fill": 1.0,
+          "coverage": 1.0,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            0.9,
+            1.0
+          ]
+        },
+        "mismatched": {
+          "invalid": 298,
+          "returned": 1000,
+          "recall": 0.618,
+          "fill": 1.0,
+          "coverage": 0.6505598114319388,
+          "query_invalid_range": [
+            0,
+            5
+          ],
+          "query_recall_range": [
+            0.4,
+            0.9
+          ]
+        },
+        "mismatched_filter": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 0.652,
+          "fill": 1.0,
+          "coverage": 0.6505598114319388,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            0.4,
+            1.0
+          ]
+        },
+        "aligned_current": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 1.0,
+          "fill": 1.0,
+          "coverage": 1.0,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "digits",
+      "seed": 47,
+      "n": 1697,
+      "current_n": 1612,
+      "old_lance_version": 2,
+      "current_lance_version": 9,
+      "old_native_vectors_byte_equal": 1697,
+      "current_native_vectors_byte_equal": 1612,
+      "current_sqlite_rows_checked": 1612,
+      "sql_epoch": 1,
+      "metrics": {
+        "admitted_old": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 0.9990000000000001,
+          "fill": 1.0,
+          "coverage": 1.0,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            0.9,
+            1.0
+          ]
+        },
+        "mismatched": {
+          "invalid": 290,
+          "returned": 1000,
+          "recall": 0.624,
+          "fill": 1.0,
+          "coverage": 0.6505598114319388,
+          "query_invalid_range": [
+            0,
+            6
+          ],
+          "query_recall_range": [
+            0.3,
+            0.9
+          ]
+        },
+        "mismatched_filter": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 0.654,
+          "fill": 1.0,
+          "coverage": 0.6505598114319388,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            0.3,
+            1.0
+          ]
+        },
+        "aligned_current": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 0.998,
+          "fill": 1.0,
+          "coverage": 1.0,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            0.9,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "uniform",
+      "seed": 11,
+      "n": 2000,
+      "current_n": 1900,
+      "old_lance_version": 2,
+      "current_lance_version": 9,
+      "old_native_vectors_byte_equal": 2000,
+      "current_native_vectors_byte_equal": 1900,
+      "current_sqlite_rows_checked": 1900,
+      "sql_epoch": 1,
+      "metrics": {
+        "admitted_old": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 1.0,
+          "fill": 1.0,
+          "coverage": 1.0,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            1.0,
+            1.0
+          ]
+        },
+        "mismatched": {
+          "invalid": 290,
+          "returned": 1000,
+          "recall": 0.621,
+          "fill": 1.0,
+          "coverage": 0.65,
+          "query_invalid_range": [
+            0,
+            6
+          ],
+          "query_recall_range": [
+            0.3,
+            0.8
+          ]
+        },
+        "mismatched_filter": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 0.659,
+          "fill": 1.0,
+          "coverage": 0.65,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            0.3,
+            0.9
+          ]
+        },
+        "aligned_current": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 0.998,
+          "fill": 1.0,
+          "coverage": 1.0,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            0.9,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "uniform",
+      "seed": 29,
+      "n": 2000,
+      "current_n": 1900,
+      "old_lance_version": 2,
+      "current_lance_version": 9,
+      "old_native_vectors_byte_equal": 2000,
+      "current_native_vectors_byte_equal": 1900,
+      "current_sqlite_rows_checked": 1900,
+      "sql_epoch": 1,
+      "metrics": {
+        "admitted_old": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 1.0,
+          "fill": 1.0,
+          "coverage": 1.0,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            1.0,
+            1.0
+          ]
+        },
+        "mismatched": {
+          "invalid": 308,
+          "returned": 1000,
+          "recall": 0.598,
+          "fill": 1.0,
+          "coverage": 0.65,
+          "query_invalid_range": [
+            0,
+            7
+          ],
+          "query_recall_range": [
+            0.3,
+            0.9
+          ]
+        },
+        "mismatched_filter": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 0.631,
+          "fill": 1.0,
+          "coverage": 0.65,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            0.3,
+            1.0
+          ]
+        },
+        "aligned_current": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 0.997,
+          "fill": 1.0,
+          "coverage": 1.0,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            0.9,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "uniform",
+      "seed": 47,
+      "n": 2000,
+      "current_n": 1900,
+      "old_lance_version": 2,
+      "current_lance_version": 9,
+      "old_native_vectors_byte_equal": 2000,
+      "current_native_vectors_byte_equal": 1900,
+      "current_sqlite_rows_checked": 1900,
+      "sql_epoch": 1,
+      "metrics": {
+        "admitted_old": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 1.0,
+          "fill": 1.0,
+          "coverage": 1.0,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            1.0,
+            1.0
+          ]
+        },
+        "mismatched": {
+          "invalid": 313,
+          "returned": 1000,
+          "recall": 0.596,
+          "fill": 1.0,
+          "coverage": 0.65,
+          "query_invalid_range": [
+            1,
+            6
+          ],
+          "query_recall_range": [
+            0.2,
+            0.9
+          ]
+        },
+        "mismatched_filter": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 0.614,
+          "fill": 1.0,
+          "coverage": 0.65,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            0.2,
+            0.9
+          ]
+        },
+        "aligned_current": {
+          "invalid": 0,
+          "returned": 1000,
+          "recall": 1.0,
+          "fill": 1.0,
+          "coverage": 1.0,
+          "query_invalid_range": [
+            0,
+            0
+          ],
+          "query_recall_range": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    }
+  ],
+  "native_vector_byte_checks": 21627,
+  "physical_pointer_controls": [
+    {
+      "test": "missing_native_pointer",
+      "rejected": true,
+      "error": "Native database pointer does not exist: experiments/completion/za_20261016_175323_194131/missing_native_pointer"
+    },
+    {
+      "test": "incorrect_native_pointer",
+      "rejected": true,
+      "error": "Native database pointer has no lance/ directory: experiments/completion/za_20261016_175323_194131/wrong_native_pointer"
+    }
+  ],
+  "native_plans": [
+    {
+      "dataset": "digits",
+      "seed": 11,
+      "cut": "old",
+      "version": 2,
+      "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/digits_11.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=9649a6c4-b686-448b-8f8c-47535c9eb170, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+    },
+    {
+      "dataset": "digits",
+      "seed": 11,
+      "cut": "current",
+      "version": 9,
+      "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/digits_11.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=bb9d2ef9-8369-4326-a327-6aed6bf1c8e5, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+    },
+    {
+      "dataset": "digits",
+      "seed": 29,
+      "cut": "old",
+      "version": 2,
+      "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/digits_29.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=8032ad23-df3c-4af3-b583-3572ee394c9d, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+    },
+    {
+      "dataset": "digits",
+      "seed": 29,
+      "cut": "current",
+      "version": 9,
+      "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/digits_29.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=d2adf217-c935-4d6c-8a1f-134216b39102, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+    },
+    {
+      "dataset": "digits",
+      "seed": 47,
+      "cut": "old",
+      "version": 2,
+      "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/digits_47.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=00f5ef16-4708-4216-b581-d1d37255f2c7, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+    },
+    {
+      "dataset": "digits",
+      "seed": 47,
+      "cut": "current",
+      "version": 9,
+      "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/digits_47.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=00983cd2-9e78-4348-80fe-b0237a081e90, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+    },
+    {
+      "dataset": "uniform",
+      "seed": 11,
+      "cut": "old",
+      "version": 2,
+      "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/uniform_11.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=49f5d57c-3597-4605-855f-0f584eb6a677, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+    },
+    {
+      "dataset": "uniform",
+      "seed": 11,
+      "cut": "current",
+      "version": 9,
+      "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/uniform_11.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=0cead9a7-26fc-4115-a4b9-5cb8fded132f, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+    },
+    {
+      "dataset": "uniform",
+      "seed": 29,
+      "cut": "old",
+      "version": 2,
+      "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/uniform_29.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=667d4a54-bf1c-4a47-9fd5-4cc1d9fd6a3e, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+    },
+    {
+      "dataset": "uniform",
+      "seed": 29,
+      "cut": "current",
+      "version": 9,
+      "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/uniform_29.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=e232e2b1-a8a7-4f67-ae20-389a124b4c8d, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+    },
+    {
+      "dataset": "uniform",
+      "seed": 47,
+      "cut": "old",
+      "version": 2,
+      "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/uniform_47.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=6b2ab822-a288-4ced-97a8-f177dd5ac3d5, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+    },
+    {
+      "dataset": "uniform",
+      "seed": 47,
+      "cut": "current",
+      "version": 9,
+      "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/uniform_47.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=2beeba01-5d23-41eb-9013-047a3c96e02e, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+    }
+  ],
+  "independent_mutation_controls": [
+    {
+      "dataset": "digits",
+      "seed": 11,
+      "policy": "admitted_old",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "digits",
+      "seed": 11,
+      "policy": "mismatched_filter",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "digits",
+      "seed": 11,
+      "policy": "aligned_current",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "digits",
+      "seed": 29,
+      "policy": "admitted_old",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "digits",
+      "seed": 29,
+      "policy": "mismatched_filter",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "digits",
+      "seed": 29,
+      "policy": "aligned_current",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "digits",
+      "seed": 47,
+      "policy": "admitted_old",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "digits",
+      "seed": 47,
+      "policy": "mismatched_filter",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "digits",
+      "seed": 47,
+      "policy": "aligned_current",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "uniform",
+      "seed": 11,
+      "policy": "admitted_old",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "uniform",
+      "seed": 11,
+      "policy": "mismatched_filter",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "uniform",
+      "seed": 11,
+      "policy": "aligned_current",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "uniform",
+      "seed": 29,
+      "policy": "admitted_old",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "uniform",
+      "seed": 29,
+      "policy": "mismatched_filter",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "uniform",
+      "seed": 29,
+      "policy": "aligned_current",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "uniform",
+      "seed": 47,
+      "policy": "admitted_old",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "uniform",
+      "seed": 47,
+      "policy": "mismatched_filter",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    },
+    {
+      "dataset": "uniform",
+      "seed": 47,
+      "policy": "aligned_current",
+      "original_invalid": 0,
+      "outcomes": {
+        "wrong_version": 1,
+        "absent_id": 1,
+        "changed_declared_source": 1
+      }
+    }
+  ],
+  "source_cut_swap_controls": [
+    {
+      "dataset": "digits",
+      "seed": 11,
+      "policy": "admitted_old",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 358
+    },
+    {
+      "dataset": "digits",
+      "seed": 11,
+      "policy": "mismatched",
+      "invalid_with_declared_cut": 307,
+      "invalid_with_other_cut": 0
+    },
+    {
+      "dataset": "digits",
+      "seed": 11,
+      "policy": "mismatched_filter",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 0
+    },
+    {
+      "dataset": "digits",
+      "seed": 11,
+      "policy": "aligned_current",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 307
+    },
+    {
+      "dataset": "digits",
+      "seed": 29,
+      "policy": "admitted_old",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 348
+    },
+    {
+      "dataset": "digits",
+      "seed": 29,
+      "policy": "mismatched",
+      "invalid_with_declared_cut": 298,
+      "invalid_with_other_cut": 0
+    },
+    {
+      "dataset": "digits",
+      "seed": 29,
+      "policy": "mismatched_filter",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 0
+    },
+    {
+      "dataset": "digits",
+      "seed": 29,
+      "policy": "aligned_current",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 298
+    },
+    {
+      "dataset": "digits",
+      "seed": 47,
+      "policy": "admitted_old",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 346
+    },
+    {
+      "dataset": "digits",
+      "seed": 47,
+      "policy": "mismatched",
+      "invalid_with_declared_cut": 290,
+      "invalid_with_other_cut": 0
+    },
+    {
+      "dataset": "digits",
+      "seed": 47,
+      "policy": "mismatched_filter",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 0
+    },
+    {
+      "dataset": "digits",
+      "seed": 47,
+      "policy": "aligned_current",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 290
+    },
+    {
+      "dataset": "uniform",
+      "seed": 11,
+      "policy": "admitted_old",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 338
+    },
+    {
+      "dataset": "uniform",
+      "seed": 11,
+      "policy": "mismatched",
+      "invalid_with_declared_cut": 290,
+      "invalid_with_other_cut": 0
+    },
+    {
+      "dataset": "uniform",
+      "seed": 11,
+      "policy": "mismatched_filter",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 0
+    },
+    {
+      "dataset": "uniform",
+      "seed": 11,
+      "policy": "aligned_current",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 290
+    },
+    {
+      "dataset": "uniform",
+      "seed": 29,
+      "policy": "admitted_old",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 368
+    },
+    {
+      "dataset": "uniform",
+      "seed": 29,
+      "policy": "mismatched",
+      "invalid_with_declared_cut": 308,
+      "invalid_with_other_cut": 0
+    },
+    {
+      "dataset": "uniform",
+      "seed": 29,
+      "policy": "mismatched_filter",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 0
+    },
+    {
+      "dataset": "uniform",
+      "seed": 29,
+      "policy": "aligned_current",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 308
+    },
+    {
+      "dataset": "uniform",
+      "seed": 47,
+      "policy": "admitted_old",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 386
+    },
+    {
+      "dataset": "uniform",
+      "seed": 47,
+      "policy": "mismatched",
+      "invalid_with_declared_cut": 313,
+      "invalid_with_other_cut": 0
+    },
+    {
+      "dataset": "uniform",
+      "seed": 47,
+      "policy": "mismatched_filter",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 0
+    },
+    {
+      "dataset": "uniform",
+      "seed": 47,
+      "policy": "aligned_current",
+      "invalid_with_declared_cut": 0,
+      "invalid_with_other_cut": 313
+    }
+  ],
+  "existing_checker_controls": [
+    {
+      "test": "native_dbdir_missing",
+      "exit_code": 0,
+      "passed": true,
+      "output_tail": "{'status': 'passed', 'cells': 6, 'records': 2400, 'independent_scalar_oracles': 1200, 'checker_sha256': 'f156f62e07b5faa2ca51c7360918e8083f7fc3f937200f222fb1a398b4e944f6', 'experiment_sha256': 'bbe67e25eb5d19735a2f7472a33b31e197e508b91dd3b36016fdd0a7a0a487ad'}\n"
+    },
+    {
+      "test": "returned_version_corrupted",
+      "exit_code": 1,
+      "passed": false,
+      "output_tail": "Traceback (most recent call last):\n  File \"experiments/completion/za_20261016_175323_194131/existing_checker_controls/verify_cross_store.py\", line 21, in <module>\n    assert target==list(map(tuple,z['truth'])) and z['invalid']==sum(versions.get(i)!=v for i,v in ans) and abs(z['recall']-len(set(ans)&set(target))/10)<1e-12 and z['fill']==len(ans)/10\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "test": "returned_id_absent",
+      "exit_code": 1,
+      "passed": false,
+      "output_tail": "Traceback (most recent call last):\n  File \"experiments/completion/za_20261016_175323_194131/existing_checker_controls/verify_cross_store.py\", line 21, in <module>\n    assert target==list(map(tuple,z['truth'])) and z['invalid']==sum(versions.get(i)!=v for i,v in ans) and abs(z['recall']-len(set(ans)&set(target))/10)<1e-12 and z['fill']==len(ans)/10\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "test": "declared_source_map_corrupted",
+      "exit_code": 1,
+      "passed": false,
+      "output_tail": "Traceback (most recent call last):\n  File \"experiments/completion/za_20261016_175323_194131/existing_checker_controls/verify_cross_store.py\", line 10, in <module>\n    assert c['old_sqlite']==c['old_sqlite_after_writer_commit'] and {int(k):v for k,v in c['old_sqlite'].items()}==old and {int(k):v for k,v in c['current_sqlite'].items()}==new\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    }
+  ],
+  "same_key_wrong_vector_native_control": {
+    "native_key_population_equal": true,
+    "invalid_key_count_correct": 0,
+    "invalid_key_count_wrong_vector": 0,
+    "vector_byte_mismatches": 1,
+    "expected_top1": [
+      [
+        0,
+        1
+      ]
+    ],
+    "wrong_vector_top1": [
+      [
+        1,
+        1
+      ]
+    ],
+    "recall_at_1_correct": 1,
+    "recall_at_1_wrong_vector": 0
+  },
+  "limitations": [
+    "Historical SQLite epoch-0 read transaction was closed by the original experiment; this audit checks its recorded full map and payloads against an independently reconstructed old source, while the surviving SQLite DB is verified directly at epoch 1. This is not a replay of the old WAL transaction.",
+    "Returned-version invalid counts check declared (ID, version) membership. They do not detect wrong embeddings retaining the same key; full native vector-byte identity is checked separately.",
+    "Recorded native answers were replayed from the exact persisted Lance table versions 2 and 9, with the same search parameters; all 2,400 arm-query records matched. These seeded workload results are not a production anomaly-rate estimate.",
+    "Zero is guaranteed only for the explicit exact postfilter under a correct source map. Pinned/aligned zeros are observed native results under aligned populations and immutable version checkout; the table does not establish universal implementation correctness."
+  ],
+  "elapsed_seconds": 56.68206834793091
+}

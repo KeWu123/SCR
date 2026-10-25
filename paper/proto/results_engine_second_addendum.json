@@ -1,0 +1,68 @@
+{
+ "meta": {
+  "comment": "compaction-only control + A-native-anchored recall match, HnswFlat, 3 seeds",
+  "engine": "LanceDB 0.40.0"
+ },
+ "seeds": {
+  "20261008": {
+   "n_fragments_before_compact": null,
+   "n_fragments_after_compact": null,
+   "index_uuid_A": "0a65a1bb-4701-485c-b1cc-5c289d26f360",
+   "index_size_A": 8932347,
+   "index_uuid_after_compact": "7527ba1c-f3c9-4d04-adb9-ef0a772f8805",
+   "index_size_after_compact": 8934323,
+   "index_rewritten_by_compact_only": true,
+   "compact_only_tear_rate": 0.0,
+   "compact_only_mean_symdiff": 0.0,
+   "compact_only_recall": 0.94,
+   "after_optimize_index_uuid": "b2d96135-163e-4991-b15c-2846f0bdaa58",
+   "after_optimize_size": 9167620,
+   "recall_A_default": 0.94,
+   "recall_B_default": 0.4715,
+   "anchored_match_ef_B": 150,
+   "anchored_match_recall_B": 0.958,
+   "anchored_match_tear_rate": 0.59,
+   "anchored_match_mean_symdiff": 1.57
+  },
+  "20261009": {
+   "n_fragments_before_compact": null,
+   "n_fragments_after_compact": null,
+   "index_uuid_A": "49985a69-c651-4e2f-91a1-ea0a227a77b5",
+   "index_size_A": 8932347,
+   "index_uuid_after_compact": "b9020700-dbc9-4829-80e6-4cee2d2c8920",
+   "index_size_after_compact": 8934323,
+   "index_rewritten_by_compact_only": true,
+   "compact_only_tear_rate": 0.0,
+   "compact_only_mean_symdiff": 0.0,
+   "compact_only_recall": 0.932,
+   "after_optimize_index_uuid": "3352bf56-d952-4f32-8e5e-6cc8717548e0",
+   "after_optimize_size": 9161476,
+   "recall_A_default": 0.932,
+   "recall_B_default": 0.445,
+   "anchored_match_ef_B": 100,
+   "anchored_match_recall_B": 0.906,
+   "anchored_match_tear_rate": 0.76,
+   "anchored_match_mean_symdiff": 2.35
+  },
+  "20261010": {
+   "n_fragments_before_compact": null,
+   "n_fragments_after_compact": null,
+   "index_uuid_A": "bcc07b7d-f686-4fbb-8e4e-d39cbdfa1ab6",
+   "index_size_A": 8932347,
+   "index_uuid_after_compact": "1b197bc7-59c2-42b9-a3e3-13f9f830a69e",
+   "index_size_after_compact": 8934323,
+   "index_rewritten_by_compact_only": true,
+   "compact_only_tear_rate": 0.0,
+   "compact_only_mean_symdiff": 0.0,
+   "compact_only_recall": 0.929,
+   "after_optimize_index_uuid": "8c34eeb1-30a0-45ad-a045-2ccf2e6760e1",
+   "after_optimize_size": 9173764,
+   "recall_A_default": 0.929,
+   "recall_B_default": 0.4735,
+   "anchored_match_ef_B": 100,
+   "anchored_match_recall_B": 0.926,
+   "anchored_match_tear_rate": 0.705,
+   "anchored_match_mean_symdiff": 2.09
+  }
+ }
+}

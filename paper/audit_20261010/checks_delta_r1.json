@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "reader_finishes_early_writer_still_completes",
+      "writes_at_reader_end": 1,
+      "writes_completed": 25
+    },
+    {
+      "check": "writer_and_query_streams_schedule_independent",
+      "write_trace_sha256": "0665b2e552370a80d9141953a82230b9f7d3049aa3e9e9c6c8e8c700c6b641a0",
+      "query_trace_sha256": "047d070ba8f1bfea8b73bff9447088fcd29144418792a2f5cdf0fdbe4837baef",
+      "overlap_counts": [
+        0,
+        12
+      ]
+    },
+    {
+      "check": "writer_exception_propagated_no_score_result",
+      "exception": "workload writer failed; no scores published",
+      "cause": "injected third publication failure",
+      "table_appended_writes": 3,
+      "index_appended_writes": 2
+    },
+    {
+      "check": "atomic_publication_begin_query_and_oracle_refresh",
+      "begin_blocked_at_partial_publication": true,
+      "oracle_sync_calls": 6,
+      "query_cuts": [
+        1,
+        1,
+        1
+      ],
+      "writes_completed": 5
+    },
+    {
+      "check": "zero_counts_and_explicit_dummy_lock_rejection",
+      "passed": true
+    }
+  ],
+  "scope": "finite fault injections and schedule checks; no production-engine proof",
+  "run_experiments_sha256": "af73edacbedb097dddd61c27685c202af270d81d3581cd6e6d54b9c5ea7668c3",
+  "audit_driver_sha256": "9eab627f6b8078e5fb7cf6140bbd2d285d7e568f37f0dbd595b0273a31b6c816"
+}

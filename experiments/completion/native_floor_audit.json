@@ -1,0 +1,2323 @@
+{
+  "audit_date": "2026-10-16",
+  "scope": "Read-only independent arithmetic/provenance audit of saved shipped-engine controls. No experiment was rerun. No survey source was read.",
+  "sources": [
+    {
+      "path": "paper\\proto\\results_engine_floor_disjoint.json",
+      "sha256": "5f608cdd2d25ede7717486e1c892af5b0a1c153fd34bd35f3139715292f0bb10"
+    },
+    {
+      "path": "paper\\proto\\results_engine_matched2_lance_part.json",
+      "sha256": "02d6d71c5d998f5450d5b72a3c2b80af8aa467f357114b6bda56dd4d9864b913"
+    },
+    {
+      "path": "paper\\proto\\results_engine_recall_conditioned.json",
+      "sha256": "8fdeae7c593201b73d86e5aa766a088b2a981df9940135531cc4e3782e4dfd7f"
+    }
+  ],
+  "R095_per_seed": [
+    {
+      "n": 200,
+      "n_changed": 130,
+      "answer_change_all": 0.65,
+      "recall_A_raw": 0.9505,
+      "recall_B_raw": 0.9485,
+      "n_equal_recall": 86,
+      "n_equal_recall_changed": 16,
+      "answer_change_equal_recall": 0.18604651162790697,
+      "n_unequal_recall": 114,
+      "n_unequal_recall_changed": 114,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.9": {
+          "n": 17,
+          "changed": 15
+        },
+        "1.0": {
+          "n": 68,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 22, \"nprobes\": 14}",
+        "kB": "{\"ef\": 134, \"nprobes\": null}",
+        "recall_A": 0.9505,
+        "recall_B": 0.9485,
+        "gap": 0.002,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0005
+      },
+      "family": "hnsw",
+      "seed": 20261008,
+      "dataset": "floor_disjoint",
+      "pair": "matched",
+      "cell": "hnsw_s20261008_matched_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 121,
+      "answer_change_all": 0.605,
+      "recall_A_raw": 0.9515,
+      "recall_B_raw": 0.9485,
+      "n_equal_recall": 104,
+      "n_equal_recall_changed": 25,
+      "answer_change_equal_recall": 0.2403846153846154,
+      "n_unequal_recall": 96,
+      "n_unequal_recall_changed": 96,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 2,
+          "changed": 2
+        },
+        "0.9": {
+          "n": 27,
+          "changed": 23
+        },
+        "1.0": {
+          "n": 75,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 17, \"nprobes\": 16}",
+        "kB": "{\"ef\": 24, \"nprobes\": 14}",
+        "recall_A": 0.9515,
+        "recall_B": 0.9485,
+        "gap": 0.003,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      },
+      "family": "hnsw",
+      "seed": 20261008,
+      "dataset": "floor_disjoint",
+      "pair": "disjointfloor",
+      "cell": "hnsw_s20261008_disjointfloor_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 129,
+      "answer_change_all": 0.645,
+      "recall_A_raw": 0.9485,
+      "recall_B_raw": 0.9515,
+      "n_equal_recall": 91,
+      "n_equal_recall_changed": 20,
+      "answer_change_equal_recall": 0.21978021978021978,
+      "n_unequal_recall": 109,
+      "n_unequal_recall_changed": 109,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 2,
+          "changed": 2
+        },
+        "0.9": {
+          "n": 20,
+          "changed": 18
+        },
+        "1.0": {
+          "n": 69,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 134, \"nprobes\": null}",
+        "kB": "{\"ef\": 17, \"nprobes\": 16}",
+        "recall_A": 0.9485,
+        "recall_B": 0.9515,
+        "gap": 0.003,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      },
+      "family": "hnsw",
+      "seed": 20261008,
+      "dataset": "floor_disjoint",
+      "pair": "sharedfloor",
+      "cell": "hnsw_s20261008_sharedfloor_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 115,
+      "answer_change_all": 0.575,
+      "recall_A_raw": 0.95,
+      "recall_B_raw": 0.95,
+      "n_equal_recall": 101,
+      "n_equal_recall_changed": 16,
+      "answer_change_equal_recall": 0.15841584158415842,
+      "n_unequal_recall": 99,
+      "n_unequal_recall_changed": 99,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.9": {
+          "n": 18,
+          "changed": 15
+        },
+        "1.0": {
+          "n": 82,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 35, \"nprobes\": 13}",
+        "kB": "{\"ef\": 138, \"nprobes\": null}",
+        "recall_A": 0.95,
+        "recall_B": 0.95,
+        "gap": 0.0,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      },
+      "family": "hnsw",
+      "seed": 20261008,
+      "dataset": "matched2_lance_part",
+      "pair": "recallmatched",
+      "cell": "match2_hnsw_s20261008_recallmatched_R095",
+      "source_file": "paper\\proto\\results_engine_matched2_lance_part.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 76,
+      "answer_change_all": 0.38,
+      "recall_A_raw": 0.955,
+      "recall_B_raw": 0.966,
+      "n_equal_recall": 133,
+      "n_equal_recall_changed": 9,
+      "answer_change_equal_recall": 0.06766917293233082,
+      "n_unequal_recall": 67,
+      "n_unequal_recall_changed": 67,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 2,
+          "changed": 0
+        },
+        "0.9": {
+          "n": 22,
+          "changed": 9
+        },
+        "1.0": {
+          "n": 109,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"ef\": 160, \"nprobes\": null}",
+        "kB": "{\"ef\": 160, \"nprobes\": null}",
+        "recall_A": 0.955,
+        "recall_B": 0.966,
+        "gap": 0.011,
+        "reached_le_0p004": false
+      },
+      "family": "hnsw",
+      "seed": 20261008,
+      "dataset": "matched2_lance_part",
+      "pair": "floor_lance",
+      "cell": "match2_hnsw_s20261008_floor_lance_R095",
+      "source_file": "paper\\proto\\results_engine_matched2_lance_part.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 127,
+      "answer_change_all": 0.635,
+      "recall_A_raw": 0.9505,
+      "recall_B_raw": 0.9495,
+      "n_equal_recall": 90,
+      "n_equal_recall_changed": 17,
+      "answer_change_equal_recall": 0.18888888888888888,
+      "n_unequal_recall": 110,
+      "n_unequal_recall_changed": 110,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 2,
+          "changed": 2
+        },
+        "0.9": {
+          "n": 19,
+          "changed": 15
+        },
+        "1.0": {
+          "n": 69,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 22, \"nprobes\": 14}",
+        "kB": "{\"ef\": 134, \"nprobes\": null}",
+        "recall_A": 0.9505,
+        "recall_B": 0.9495,
+        "gap": 0.001,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      },
+      "family": "hnsw",
+      "seed": 20261009,
+      "dataset": "floor_disjoint",
+      "pair": "matched",
+      "cell": "hnsw_s20261009_matched_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 128,
+      "answer_change_all": 0.64,
+      "recall_A_raw": 0.951,
+      "recall_B_raw": 0.949,
+      "n_equal_recall": 93,
+      "n_equal_recall_changed": 21,
+      "answer_change_equal_recall": 0.22580645161290322,
+      "n_unequal_recall": 107,
+      "n_unequal_recall_changed": 107,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 3,
+          "changed": 3
+        },
+        "0.9": {
+          "n": 20,
+          "changed": 18
+        },
+        "1.0": {
+          "n": 70,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 30, \"nprobes\": 13}",
+        "kB": "{\"ef\": 23, \"nprobes\": 14}",
+        "recall_A": 0.951,
+        "recall_B": 0.949,
+        "gap": 0.002,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      },
+      "family": "hnsw",
+      "seed": 20261009,
+      "dataset": "floor_disjoint",
+      "pair": "disjointfloor",
+      "cell": "hnsw_s20261009_disjointfloor_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 127,
+      "answer_change_all": 0.635,
+      "recall_A_raw": 0.9495,
+      "recall_B_raw": 0.951,
+      "n_equal_recall": 92,
+      "n_equal_recall_changed": 19,
+      "answer_change_equal_recall": 0.20652173913043478,
+      "n_unequal_recall": 108,
+      "n_unequal_recall_changed": 108,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 2,
+          "changed": 2
+        },
+        "0.9": {
+          "n": 17,
+          "changed": 17
+        },
+        "1.0": {
+          "n": 73,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 134, \"nprobes\": null}",
+        "kB": "{\"ef\": 30, \"nprobes\": 13}",
+        "recall_A": 0.9495,
+        "recall_B": 0.951,
+        "gap": 0.0015,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0003
+      },
+      "family": "hnsw",
+      "seed": 20261009,
+      "dataset": "floor_disjoint",
+      "pair": "sharedfloor",
+      "cell": "hnsw_s20261009_sharedfloor_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 119,
+      "answer_change_all": 0.595,
+      "recall_A_raw": 0.9485,
+      "recall_B_raw": 0.9515,
+      "n_equal_recall": 100,
+      "n_equal_recall_changed": 19,
+      "answer_change_equal_recall": 0.19,
+      "n_unequal_recall": 100,
+      "n_unequal_recall_changed": 100,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 2,
+          "changed": 2
+        },
+        "0.9": {
+          "n": 21,
+          "changed": 17
+        },
+        "1.0": {
+          "n": 77,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 21, \"nprobes\": 14}",
+        "kB": "{\"ef\": 126, \"nprobes\": null}",
+        "recall_A": 0.9485,
+        "recall_B": 0.9515,
+        "gap": 0.003,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      },
+      "family": "hnsw",
+      "seed": 20261009,
+      "dataset": "matched2_lance_part",
+      "pair": "recallmatched",
+      "cell": "match2_hnsw_s20261009_recallmatched_R095",
+      "source_file": "paper\\proto\\results_engine_matched2_lance_part.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 97,
+      "answer_change_all": 0.485,
+      "recall_A_raw": 0.96,
+      "recall_B_raw": 0.9395,
+      "n_equal_recall": 117,
+      "n_equal_recall_changed": 14,
+      "answer_change_equal_recall": 0.11965811965811966,
+      "n_unequal_recall": 83,
+      "n_unequal_recall_changed": 83,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 3,
+          "changed": 2
+        },
+        "0.9": {
+          "n": 28,
+          "changed": 12
+        },
+        "1.0": {
+          "n": 86,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"ef\": 160, \"nprobes\": null}",
+        "kB": "{\"ef\": 120, \"nprobes\": null}",
+        "recall_A": 0.96,
+        "recall_B": 0.9395,
+        "gap": 0.0205,
+        "reached_le_0p004": false
+      },
+      "family": "hnsw",
+      "seed": 20261009,
+      "dataset": "matched2_lance_part",
+      "pair": "floor_lance",
+      "cell": "match2_hnsw_s20261009_floor_lance_R095",
+      "source_file": "paper\\proto\\results_engine_matched2_lance_part.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 121,
+      "answer_change_all": 0.605,
+      "recall_A_raw": 0.9515,
+      "recall_B_raw": 0.9485,
+      "n_equal_recall": 95,
+      "n_equal_recall_changed": 16,
+      "answer_change_equal_recall": 0.16842105263157894,
+      "n_unequal_recall": 105,
+      "n_unequal_recall_changed": 105,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.9": {
+          "n": 19,
+          "changed": 15
+        },
+        "1.0": {
+          "n": 75,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 18, \"nprobes\": 16}",
+        "kB": "{\"ef\": 122, \"nprobes\": null}",
+        "recall_A": 0.9515,
+        "recall_B": 0.9485,
+        "gap": 0.003,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      },
+      "family": "hnsw",
+      "seed": 20261010,
+      "dataset": "floor_disjoint",
+      "pair": "matched",
+      "cell": "hnsw_s20261010_matched_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 121,
+      "answer_change_all": 0.605,
+      "recall_A_raw": 0.9485,
+      "recall_B_raw": 0.9515,
+      "n_equal_recall": 99,
+      "n_equal_recall_changed": 20,
+      "answer_change_equal_recall": 0.20202020202020202,
+      "n_unequal_recall": 101,
+      "n_unequal_recall_changed": 101,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.9": {
+          "n": 20,
+          "changed": 19
+        },
+        "1.0": {
+          "n": 78,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 27, \"nprobes\": 13}",
+        "kB": "{\"ef\": 22, \"nprobes\": 14}",
+        "recall_A": 0.9485,
+        "recall_B": 0.9515,
+        "gap": 0.003,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      },
+      "family": "hnsw",
+      "seed": 20261010,
+      "dataset": "floor_disjoint",
+      "pair": "disjointfloor",
+      "cell": "hnsw_s20261010_disjointfloor_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 123,
+      "answer_change_all": 0.615,
+      "recall_A_raw": 0.9485,
+      "recall_B_raw": 0.9515,
+      "n_equal_recall": 91,
+      "n_equal_recall_changed": 14,
+      "answer_change_equal_recall": 0.15384615384615385,
+      "n_unequal_recall": 109,
+      "n_unequal_recall_changed": 109,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 3,
+          "changed": 3
+        },
+        "0.9": {
+          "n": 15,
+          "changed": 11
+        },
+        "1.0": {
+          "n": 73,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 122, \"nprobes\": null}",
+        "kB": "{\"ef\": 17, \"nprobes\": 16}",
+        "recall_A": 0.9485,
+        "recall_B": 0.9515,
+        "gap": 0.003,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      },
+      "family": "hnsw",
+      "seed": 20261010,
+      "dataset": "floor_disjoint",
+      "pair": "sharedfloor",
+      "cell": "hnsw_s20261010_sharedfloor_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 127,
+      "answer_change_all": 0.635,
+      "recall_A_raw": 0.951,
+      "recall_B_raw": 0.9490000000000001,
+      "n_equal_recall": 89,
+      "n_equal_recall_changed": 16,
+      "answer_change_equal_recall": 0.1797752808988764,
+      "n_unequal_recall": 111,
+      "n_unequal_recall_changed": 111,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.9": {
+          "n": 18,
+          "changed": 15
+        },
+        "1.0": {
+          "n": 70,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 24, \"nprobes\": 14}",
+        "kB": "{\"ef\": 128, \"nprobes\": null}",
+        "recall_A": 0.951,
+        "recall_B": 0.949,
+        "gap": 0.002,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      },
+      "family": "hnsw",
+      "seed": 20261010,
+      "dataset": "matched2_lance_part",
+      "pair": "recallmatched",
+      "cell": "match2_hnsw_s20261010_recallmatched_R095",
+      "source_file": "paper\\proto\\results_engine_matched2_lance_part.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 115,
+      "answer_change_all": 0.575,
+      "recall_A_raw": 0.9405,
+      "recall_B_raw": 0.9415,
+      "n_equal_recall": 101,
+      "n_equal_recall_changed": 16,
+      "answer_change_equal_recall": 0.15841584158415842,
+      "n_unequal_recall": 99,
+      "n_unequal_recall_changed": 99,
+      "equal_recall_strata": {
+        "0.7": {
+          "n": 1,
+          "changed": 0
+        },
+        "0.8": {
+          "n": 4,
+          "changed": 2
+        },
+        "0.9": {
+          "n": 27,
+          "changed": 14
+        },
+        "1.0": {
+          "n": 69,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 120, \"nprobes\": null}",
+        "kB": "{\"ef\": 120, \"nprobes\": null}",
+        "recall_A": 0.9405,
+        "recall_B": 0.9415,
+        "gap": 0.001,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.009
+      },
+      "family": "hnsw",
+      "seed": 20261010,
+      "dataset": "matched2_lance_part",
+      "pair": "floor_lance",
+      "cell": "match2_hnsw_s20261010_floor_lance_R095",
+      "source_file": "paper\\proto\\results_engine_matched2_lance_part.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 138,
+      "answer_change_all": 0.69,
+      "recall_A_raw": 0.9415,
+      "recall_B_raw": 0.9405,
+      "n_equal_recall": 80,
+      "n_equal_recall_changed": 18,
+      "answer_change_equal_recall": 0.225,
+      "n_unequal_recall": 120,
+      "n_unequal_recall_changed": 120,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 3,
+          "changed": 3
+        },
+        "0.9": {
+          "n": 16,
+          "changed": 15
+        },
+        "1.0": {
+          "n": 61,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"nprobes\": 12, \"refine_factor\": 12}",
+        "kB": "{\"nprobes\": null, \"refine_factor\": 6}",
+        "recall_A": 0.9415,
+        "recall_B": 0.9405,
+        "gap": 0.001,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.009
+      },
+      "family": "ivfpq",
+      "seed": 20261008,
+      "dataset": "floor_disjoint",
+      "pair": "matched",
+      "cell": "ivfpq_s20261008_matched_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 136,
+      "answer_change_all": 0.68,
+      "recall_A_raw": 0.9390000000000001,
+      "recall_B_raw": 0.9415,
+      "n_equal_recall": 86,
+      "n_equal_recall_changed": 22,
+      "answer_change_equal_recall": 0.2558139534883721,
+      "n_unequal_recall": 114,
+      "n_unequal_recall_changed": 114,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 3,
+          "changed": 3
+        },
+        "0.9": {
+          "n": 19,
+          "changed": 19
+        },
+        "1.0": {
+          "n": 64,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": 12, \"refine_factor\": 20}",
+        "kB": "{\"nprobes\": 12, \"refine_factor\": 30}",
+        "recall_A": 0.939,
+        "recall_B": 0.9415,
+        "gap": 0.0025,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0097,
+        "note": "no in-window pair; genuine <=0.004 match elsewhere"
+      },
+      "family": "ivfpq",
+      "seed": 20261008,
+      "dataset": "floor_disjoint",
+      "pair": "disjointfloor",
+      "cell": "ivfpq_s20261008_disjointfloor_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 129,
+      "answer_change_all": 0.645,
+      "recall_A_raw": 0.9405,
+      "recall_B_raw": 0.9390000000000001,
+      "n_equal_recall": 88,
+      "n_equal_recall_changed": 17,
+      "answer_change_equal_recall": 0.19318181818181818,
+      "n_unequal_recall": 112,
+      "n_unequal_recall_changed": 112,
+      "equal_recall_strata": {
+        "0.7": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.8": {
+          "n": 2,
+          "changed": 2
+        },
+        "0.9": {
+          "n": 19,
+          "changed": 14
+        },
+        "1.0": {
+          "n": 66,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": null, \"refine_factor\": 6}",
+        "kB": "{\"nprobes\": 12, \"refine_factor\": 20}",
+        "recall_A": 0.9405,
+        "recall_B": 0.939,
+        "gap": 0.0015,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0102,
+        "note": "no in-window pair; genuine <=0.004 match elsewhere"
+      },
+      "family": "ivfpq",
+      "seed": 20261008,
+      "dataset": "floor_disjoint",
+      "pair": "sharedfloor",
+      "cell": "ivfpq_s20261008_sharedfloor_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 126,
+      "answer_change_all": 0.63,
+      "recall_A_raw": 0.9450000000000001,
+      "recall_B_raw": 0.9475,
+      "n_equal_recall": 97,
+      "n_equal_recall_changed": 23,
+      "answer_change_equal_recall": 0.23711340206185566,
+      "n_unequal_recall": 103,
+      "n_unequal_recall_changed": 103,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 2,
+          "changed": 2
+        },
+        "0.9": {
+          "n": 22,
+          "changed": 21
+        },
+        "1.0": {
+          "n": 73,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"nprobes\": 14, \"refine_factor\": 6}",
+        "kB": "{\"nprobes\": null, \"refine_factor\": 7}",
+        "recall_A": 0.945,
+        "recall_B": 0.9475,
+        "gap": 0.0025,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0037
+      },
+      "family": "ivfpq",
+      "seed": 20261008,
+      "dataset": "matched2_lance_part",
+      "pair": "recallmatched",
+      "cell": "match2_ivfpq_s20261008_recallmatched_R095",
+      "source_file": "paper\\proto\\results_engine_matched2_lance_part.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 117,
+      "answer_change_all": 0.585,
+      "recall_A_raw": 0.96,
+      "recall_B_raw": 0.9420000000000001,
+      "n_equal_recall": 105,
+      "n_equal_recall_changed": 22,
+      "answer_change_equal_recall": 0.20952380952380953,
+      "n_unequal_recall": 95,
+      "n_unequal_recall_changed": 95,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 3,
+          "changed": 3
+        },
+        "0.9": {
+          "n": 20,
+          "changed": 19
+        },
+        "1.0": {
+          "n": 82,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": null, \"refine_factor\": 8}",
+        "kB": "{\"nprobes\": null, \"refine_factor\": 6}",
+        "recall_A": 0.96,
+        "recall_B": 0.942,
+        "gap": 0.018,
+        "reached_le_0p004": false
+      },
+      "family": "ivfpq",
+      "seed": 20261008,
+      "dataset": "matched2_lance_part",
+      "pair": "floor_lance",
+      "cell": "match2_ivfpq_s20261008_floor_lance_R095",
+      "source_file": "paper\\proto\\results_engine_matched2_lance_part.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 99,
+      "answer_change_all": 0.495,
+      "recall_A_raw": 0.9625,
+      "recall_B_raw": 0.961,
+      "n_equal_recall": 110,
+      "n_equal_recall_changed": 9,
+      "answer_change_equal_recall": 0.08181818181818182,
+      "n_unequal_recall": 90,
+      "n_unequal_recall_changed": 90,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.9": {
+          "n": 13,
+          "changed": 8
+        },
+        "1.0": {
+          "n": 96,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": 16, \"refine_factor\": 6}",
+        "kB": "{\"nprobes\": null, \"refine_factor\": 8}",
+        "recall_A": 0.9625,
+        "recall_B": 0.961,
+        "gap": 0.0015,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0118,
+        "note": "no in-window pair; genuine <=0.004 match elsewhere"
+      },
+      "family": "ivfpq",
+      "seed": 20261009,
+      "dataset": "floor_disjoint",
+      "pair": "matched",
+      "cell": "ivfpq_s20261009_matched_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 145,
+      "answer_change_all": 0.725,
+      "recall_A_raw": 0.927,
+      "recall_B_raw": 0.9295,
+      "n_equal_recall": 78,
+      "n_equal_recall_changed": 23,
+      "answer_change_equal_recall": 0.2948717948717949,
+      "n_unequal_recall": 122,
+      "n_unequal_recall_changed": 122,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.9": {
+          "n": 24,
+          "changed": 22
+        },
+        "1.0": {
+          "n": 53,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": 12, \"refine_factor\": 8}",
+        "kB": "{\"nprobes\": 12, \"refine_factor\": 30}",
+        "recall_A": 0.927,
+        "recall_B": 0.9295,
+        "gap": 0.0025,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0217,
+        "note": "no in-window pair; genuine <=0.004 match elsewhere"
+      },
+      "family": "ivfpq",
+      "seed": 20261009,
+      "dataset": "floor_disjoint",
+      "pair": "disjointfloor",
+      "cell": "ivfpq_s20261009_disjointfloor_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 91,
+      "answer_change_all": 0.455,
+      "recall_A_raw": 0.961,
+      "recall_B_raw": 0.961,
+      "n_equal_recall": 123,
+      "n_equal_recall_changed": 14,
+      "answer_change_equal_recall": 0.11382113821138211,
+      "n_unequal_recall": 77,
+      "n_unequal_recall_changed": 77,
+      "equal_recall_strata": {
+        "0.9": {
+          "n": 17,
+          "changed": 14
+        },
+        "1.0": {
+          "n": 106,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": null, \"refine_factor\": 8}",
+        "kB": "{\"nprobes\": 16, \"refine_factor\": 6}",
+        "recall_A": 0.961,
+        "recall_B": 0.961,
+        "gap": 0.0,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.011,
+        "note": "no in-window pair; genuine <=0.004 match elsewhere"
+      },
+      "family": "ivfpq",
+      "seed": 20261009,
+      "dataset": "floor_disjoint",
+      "pair": "sharedfloor",
+      "cell": "ivfpq_s20261009_sharedfloor_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 114,
+      "answer_change_all": 0.57,
+      "recall_A_raw": 0.9495,
+      "recall_B_raw": 0.9515,
+      "n_equal_recall": 106,
+      "n_equal_recall_changed": 20,
+      "answer_change_equal_recall": 0.18867924528301888,
+      "n_unequal_recall": 94,
+      "n_unequal_recall_changed": 94,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 3,
+          "changed": 3
+        },
+        "0.9": {
+          "n": 20,
+          "changed": 17
+        },
+        "1.0": {
+          "n": 83,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"nprobes\": 13, \"refine_factor\": 8}",
+        "kB": "{\"nprobes\": null, \"refine_factor\": 7}",
+        "recall_A": 0.9495,
+        "recall_B": 0.9515,
+        "gap": 0.002,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0005
+      },
+      "family": "ivfpq",
+      "seed": 20261009,
+      "dataset": "matched2_lance_part",
+      "pair": "recallmatched",
+      "cell": "match2_ivfpq_s20261009_recallmatched_R095",
+      "source_file": "paper\\proto\\results_engine_matched2_lance_part.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 124,
+      "answer_change_all": 0.62,
+      "recall_A_raw": 0.9435,
+      "recall_B_raw": 0.9435,
+      "n_equal_recall": 101,
+      "n_equal_recall_changed": 25,
+      "answer_change_equal_recall": 0.24752475247524752,
+      "n_unequal_recall": 99,
+      "n_unequal_recall_changed": 99,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 6,
+          "changed": 6
+        },
+        "0.9": {
+          "n": 21,
+          "changed": 19
+        },
+        "1.0": {
+          "n": 74,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"nprobes\": null, \"refine_factor\": 6}",
+        "kB": "{\"nprobes\": null, \"refine_factor\": 6}",
+        "recall_A": 0.9435,
+        "recall_B": 0.9435,
+        "gap": 0.0,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0065
+      },
+      "family": "ivfpq",
+      "seed": 20261009,
+      "dataset": "matched2_lance_part",
+      "pair": "floor_lance",
+      "cell": "match2_ivfpq_s20261009_floor_lance_R095",
+      "source_file": "paper\\proto\\results_engine_matched2_lance_part.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 135,
+      "answer_change_all": 0.675,
+      "recall_A_raw": 0.9415,
+      "recall_B_raw": 0.9455,
+      "n_equal_recall": 83,
+      "n_equal_recall_changed": 18,
+      "answer_change_equal_recall": 0.21686746987951808,
+      "n_unequal_recall": 117,
+      "n_unequal_recall_changed": 117,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 3,
+          "changed": 3
+        },
+        "0.9": {
+          "n": 15,
+          "changed": 15
+        },
+        "1.0": {
+          "n": 65,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"nprobes\": 12, \"refine_factor\": 30}",
+        "kB": "{\"nprobes\": null, \"refine_factor\": 6}",
+        "recall_A": 0.9415,
+        "recall_B": 0.9455,
+        "gap": 0.004,
+        "reached_le_0p004": false,
+        "dist_to_target": 0.0065
+      },
+      "family": "ivfpq",
+      "seed": 20261010,
+      "dataset": "floor_disjoint",
+      "pair": "matched",
+      "cell": "ivfpq_s20261010_matched_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 103,
+      "answer_change_all": 0.515,
+      "recall_A_raw": 0.966,
+      "recall_B_raw": 0.966,
+      "n_equal_recall": 109,
+      "n_equal_recall_changed": 12,
+      "answer_change_equal_recall": 0.11009174311926606,
+      "n_unequal_recall": 91,
+      "n_unequal_recall_changed": 91,
+      "equal_recall_strata": {
+        "0.9": {
+          "n": 13,
+          "changed": 12
+        },
+        "1.0": {
+          "n": 96,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": 16, \"refine_factor\": 6}",
+        "kB": "{\"nprobes\": 16, \"refine_factor\": 6}",
+        "recall_A": 0.966,
+        "recall_B": 0.966,
+        "gap": 0.0,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.016,
+        "note": "no in-window pair; genuine <=0.004 match elsewhere"
+      },
+      "family": "ivfpq",
+      "seed": 20261010,
+      "dataset": "floor_disjoint",
+      "pair": "disjointfloor",
+      "cell": "ivfpq_s20261010_disjointfloor_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 6,
+      "answer_change_all": 0.03,
+      "recall_A_raw": 0.9985,
+      "recall_B_raw": 0.9985,
+      "n_equal_recall": 194,
+      "n_equal_recall_changed": 0,
+      "answer_change_equal_recall": 0.0,
+      "n_unequal_recall": 6,
+      "n_unequal_recall_changed": 6,
+      "equal_recall_strata": {
+        "1.0": {
+          "n": 194,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": null, \"refine_factor\": 20}",
+        "kB": "{\"nprobes\": 16, \"refine_factor\": 20}",
+        "recall_A": 0.9985,
+        "recall_B": 0.9985,
+        "gap": 0.0,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0485,
+        "note": "no in-window pair; genuine <=0.004 match elsewhere"
+      },
+      "family": "ivfpq",
+      "seed": 20261010,
+      "dataset": "floor_disjoint",
+      "pair": "sharedfloor",
+      "cell": "ivfpq_s20261010_sharedfloor_R095",
+      "source_file": "paper\\proto\\results_engine_floor_disjoint.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 112,
+      "answer_change_all": 0.56,
+      "recall_A_raw": 0.955,
+      "recall_B_raw": 0.955,
+      "n_equal_recall": 107,
+      "n_equal_recall_changed": 19,
+      "answer_change_equal_recall": 0.17757009345794392,
+      "n_unequal_recall": 93,
+      "n_unequal_recall_changed": 93,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.9": {
+          "n": 21,
+          "changed": 18
+        },
+        "1.0": {
+          "n": 85,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"nprobes\": 16, \"refine_factor\": 5}",
+        "kB": "{\"nprobes\": 1, \"refine_factor\": 8}",
+        "recall_A": 0.955,
+        "recall_B": 0.955,
+        "gap": 0.0,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.005
+      },
+      "family": "ivfpq",
+      "seed": 20261010,
+      "dataset": "matched2_lance_part",
+      "pair": "recallmatched",
+      "cell": "match2_ivfpq_s20261010_recallmatched_R095",
+      "source_file": "paper\\proto\\results_engine_matched2_lance_part.json"
+    },
+    {
+      "n": 200,
+      "n_changed": 122,
+      "answer_change_all": 0.61,
+      "recall_A_raw": 0.9535,
+      "recall_B_raw": 0.9410000000000001,
+      "n_equal_recall": 98,
+      "n_equal_recall_changed": 20,
+      "answer_change_equal_recall": 0.20408163265306123,
+      "n_unequal_recall": 102,
+      "n_unequal_recall_changed": 102,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 6,
+          "changed": 6
+        },
+        "0.9": {
+          "n": 15,
+          "changed": 14
+        },
+        "1.0": {
+          "n": 77,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"nprobes\": null, \"refine_factor\": 6}",
+        "kB": "{\"nprobes\": null, \"refine_factor\": 6}",
+        "recall_A": 0.9535,
+        "recall_B": 0.941,
+        "gap": 0.0125,
+        "reached_le_0p004": false,
+        "dist_to_target": 0.0028
+      },
+      "family": "ivfpq",
+      "seed": 20261010,
+      "dataset": "matched2_lance_part",
+      "pair": "floor_lance",
+      "cell": "match2_ivfpq_s20261010_floor_lance_R095",
+      "source_file": "paper\\proto\\results_engine_matched2_lance_part.json"
+    }
+  ],
+  "R095_summary": [
+    {
+      "family": "hnsw",
+      "dataset": "matched2_lance_part",
+      "pair": "recallmatched",
+      "mean_equal_recall_change": 0.17606370749434494,
+      "pooled_equal_recall_change": 0.17586206896551723,
+      "n_equal_recall_total": 290,
+      "n_equal_recall_changed_total": 51,
+      "raw_recall_A_per_seed": [
+        0.95,
+        0.9485,
+        0.951
+      ],
+      "raw_recall_B_per_seed": [
+        0.95,
+        0.9515,
+        0.9490000000000001
+      ],
+      "target_placeable_per_seed": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "family": "hnsw",
+      "dataset": "floor_disjoint",
+      "pair": "matched",
+      "mean_equal_recall_change": 0.18111881771612492,
+      "pooled_equal_recall_change": 0.18081180811808117,
+      "n_equal_recall_total": 271,
+      "n_equal_recall_changed_total": 49,
+      "raw_recall_A_per_seed": [
+        0.9505,
+        0.9505,
+        0.9515
+      ],
+      "raw_recall_B_per_seed": [
+        0.9485,
+        0.9495,
+        0.9485
+      ],
+      "target_placeable_per_seed": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "family": "hnsw",
+      "dataset": "floor_disjoint",
+      "pair": "disjointfloor",
+      "mean_equal_recall_change": 0.22273708967257355,
+      "pooled_equal_recall_change": 0.22297297297297297,
+      "n_equal_recall_total": 296,
+      "n_equal_recall_changed_total": 66,
+      "raw_recall_A_per_seed": [
+        0.9515,
+        0.951,
+        0.9485
+      ],
+      "raw_recall_B_per_seed": [
+        0.9485,
+        0.949,
+        0.9515
+      ],
+      "target_placeable_per_seed": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "family": "ivfpq",
+      "dataset": "matched2_lance_part",
+      "pair": "recallmatched",
+      "mean_equal_recall_change": 0.20112091360093948,
+      "pooled_equal_recall_change": 0.2,
+      "n_equal_recall_total": 310,
+      "n_equal_recall_changed_total": 62,
+      "raw_recall_A_per_seed": [
+        0.9450000000000001,
+        0.9495,
+        0.955
+      ],
+      "raw_recall_B_per_seed": [
+        0.9475,
+        0.9515,
+        0.955
+      ],
+      "target_placeable_per_seed": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "family": "ivfpq",
+      "dataset": "floor_disjoint",
+      "pair": "matched",
+      "mean_equal_recall_change": 0.1745618838992333,
+      "pooled_equal_recall_change": 0.16483516483516483,
+      "n_equal_recall_total": 273,
+      "n_equal_recall_changed_total": 45,
+      "raw_recall_A_per_seed": [
+        0.9415,
+        0.9625,
+        0.9415
+      ],
+      "raw_recall_B_per_seed": [
+        0.9405,
+        0.961,
+        0.9455
+      ],
+      "target_placeable_per_seed": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "family": "ivfpq",
+      "dataset": "floor_disjoint",
+      "pair": "disjointfloor",
+      "mean_equal_recall_change": 0.22025916382647767,
+      "pooled_equal_recall_change": 0.2087912087912088,
+      "n_equal_recall_total": 273,
+      "n_equal_recall_changed_total": 57,
+      "raw_recall_A_per_seed": [
+        0.9390000000000001,
+        0.927,
+        0.966
+      ],
+      "raw_recall_B_per_seed": [
+        0.9415,
+        0.9295,
+        0.966
+      ],
+      "target_placeable_per_seed": [
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "all_disjoint_floor_levels": [
+    {
+      "family": "hnsw",
+      "seed": 20261008,
+      "level": "R09",
+      "n": 200,
+      "n_changed": 167,
+      "answer_change_all": 0.835,
+      "recall_A_raw": 0.899,
+      "recall_B_raw": 0.901,
+      "n_equal_recall": 67,
+      "n_equal_recall_changed": 34,
+      "answer_change_equal_recall": 0.5074626865671642,
+      "n_unequal_recall": 133,
+      "n_unequal_recall_changed": 133,
+      "equal_recall_strata": {
+        "0.7": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.8": {
+          "n": 9,
+          "changed": 9
+        },
+        "0.9": {
+          "n": 24,
+          "changed": 24
+        },
+        "1.0": {
+          "n": 33,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 29, \"nprobes\": 11}",
+        "kB": "{\"ef\": 15, \"nprobes\": 14}",
+        "recall_A": 0.899,
+        "recall_B": 0.901,
+        "gap": 0.002,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      }
+    },
+    {
+      "family": "hnsw",
+      "seed": 20261008,
+      "level": "R095",
+      "n": 200,
+      "n_changed": 121,
+      "answer_change_all": 0.605,
+      "recall_A_raw": 0.9515,
+      "recall_B_raw": 0.9485,
+      "n_equal_recall": 104,
+      "n_equal_recall_changed": 25,
+      "answer_change_equal_recall": 0.2403846153846154,
+      "n_unequal_recall": 96,
+      "n_unequal_recall_changed": 96,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 2,
+          "changed": 2
+        },
+        "0.9": {
+          "n": 27,
+          "changed": 23
+        },
+        "1.0": {
+          "n": 75,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 17, \"nprobes\": 16}",
+        "kB": "{\"ef\": 24, \"nprobes\": 14}",
+        "recall_A": 0.9515,
+        "recall_B": 0.9485,
+        "gap": 0.003,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      }
+    },
+    {
+      "family": "hnsw",
+      "seed": 20261008,
+      "level": "R099",
+      "n": 200,
+      "n_changed": 38,
+      "answer_change_all": 0.19,
+      "recall_A_raw": 0.9895,
+      "recall_B_raw": 0.986,
+      "n_equal_recall": 168,
+      "n_equal_recall_changed": 6,
+      "answer_change_equal_recall": 0.03571428571428571,
+      "n_unequal_recall": 32,
+      "n_unequal_recall_changed": 32,
+      "equal_recall_strata": {
+        "0.9": {
+          "n": 7,
+          "changed": 6
+        },
+        "1.0": {
+          "n": 161,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 30, \"nprobes\": 16}",
+        "kB": "{\"ef\": 30, \"nprobes\": 16}",
+        "recall_A": 0.9895,
+        "recall_B": 0.986,
+        "gap": 0.0035,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0022
+      }
+    },
+    {
+      "family": "ivfpq",
+      "seed": 20261008,
+      "level": "R09",
+      "n": 200,
+      "n_changed": 161,
+      "answer_change_all": 0.805,
+      "recall_A_raw": 0.9105,
+      "recall_B_raw": 0.912,
+      "n_equal_recall": 64,
+      "n_equal_recall_changed": 25,
+      "answer_change_equal_recall": 0.390625,
+      "n_unequal_recall": 136,
+      "n_unequal_recall_changed": 136,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 5,
+          "changed": 5
+        },
+        "0.9": {
+          "n": 22,
+          "changed": 20
+        },
+        "1.0": {
+          "n": 37,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": 12, \"refine_factor\": 6}",
+        "kB": "{\"nprobes\": 12, \"refine_factor\": 6}",
+        "recall_A": 0.9105,
+        "recall_B": 0.912,
+        "gap": 0.0015,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0113,
+        "note": "no in-window pair; genuine <=0.004 match elsewhere"
+      }
+    },
+    {
+      "family": "ivfpq",
+      "seed": 20261008,
+      "level": "R095",
+      "n": 200,
+      "n_changed": 136,
+      "answer_change_all": 0.68,
+      "recall_A_raw": 0.9390000000000001,
+      "recall_B_raw": 0.9415,
+      "n_equal_recall": 86,
+      "n_equal_recall_changed": 22,
+      "answer_change_equal_recall": 0.2558139534883721,
+      "n_unequal_recall": 114,
+      "n_unequal_recall_changed": 114,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 3,
+          "changed": 3
+        },
+        "0.9": {
+          "n": 19,
+          "changed": 19
+        },
+        "1.0": {
+          "n": 64,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": 12, \"refine_factor\": 20}",
+        "kB": "{\"nprobes\": 12, \"refine_factor\": 30}",
+        "recall_A": 0.939,
+        "recall_B": 0.9415,
+        "gap": 0.0025,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0097,
+        "note": "no in-window pair; genuine <=0.004 match elsewhere"
+      }
+    },
+    {
+      "family": "ivfpq",
+      "seed": 20261008,
+      "level": "R099",
+      "n": 200,
+      "n_changed": 19,
+      "answer_change_all": 0.095,
+      "recall_A_raw": 0.9945,
+      "recall_B_raw": 0.9955,
+      "n_equal_recall": 182,
+      "n_equal_recall_changed": 1,
+      "answer_change_equal_recall": 0.005494505494505495,
+      "n_unequal_recall": 18,
+      "n_unequal_recall_changed": 18,
+      "equal_recall_strata": {
+        "0.9": {
+          "n": 1,
+          "changed": 1
+        },
+        "1.0": {
+          "n": 181,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"nprobes\": 16, \"refine_factor\": 12}",
+        "kB": "{\"nprobes\": 16, \"refine_factor\": 12}",
+        "recall_A": 0.9945,
+        "recall_B": 0.9955,
+        "gap": 0.001,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.005
+      }
+    },
+    {
+      "family": "hnsw",
+      "seed": 20261009,
+      "level": "R09",
+      "n": 200,
+      "n_changed": 173,
+      "answer_change_all": 0.865,
+      "recall_A_raw": 0.9,
+      "recall_B_raw": 0.9005,
+      "n_equal_recall": 61,
+      "n_equal_recall_changed": 34,
+      "answer_change_equal_recall": 0.5573770491803278,
+      "n_unequal_recall": 139,
+      "n_unequal_recall_changed": 139,
+      "equal_recall_strata": {
+        "0.7": {
+          "n": 2,
+          "changed": 2
+        },
+        "0.8": {
+          "n": 6,
+          "changed": 6
+        },
+        "0.9": {
+          "n": 27,
+          "changed": 26
+        },
+        "1.0": {
+          "n": 26,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 27, \"nprobes\": 11}",
+        "kB": "{\"ef\": 13, \"nprobes\": 15}",
+        "recall_A": 0.9,
+        "recall_B": 0.9005,
+        "gap": 0.0005,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0002
+      }
+    },
+    {
+      "family": "hnsw",
+      "seed": 20261009,
+      "level": "R095",
+      "n": 200,
+      "n_changed": 128,
+      "answer_change_all": 0.64,
+      "recall_A_raw": 0.951,
+      "recall_B_raw": 0.949,
+      "n_equal_recall": 93,
+      "n_equal_recall_changed": 21,
+      "answer_change_equal_recall": 0.22580645161290322,
+      "n_unequal_recall": 107,
+      "n_unequal_recall_changed": 107,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 3,
+          "changed": 3
+        },
+        "0.9": {
+          "n": 20,
+          "changed": 18
+        },
+        "1.0": {
+          "n": 70,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 30, \"nprobes\": 13}",
+        "kB": "{\"ef\": 23, \"nprobes\": 14}",
+        "recall_A": 0.951,
+        "recall_B": 0.949,
+        "gap": 0.002,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      }
+    },
+    {
+      "family": "hnsw",
+      "seed": 20261009,
+      "level": "R099",
+      "n": 200,
+      "n_changed": 43,
+      "answer_change_all": 0.215,
+      "recall_A_raw": 0.9875,
+      "recall_B_raw": 0.986,
+      "n_equal_recall": 161,
+      "n_equal_recall_changed": 4,
+      "answer_change_equal_recall": 0.024844720496894408,
+      "n_unequal_recall": 39,
+      "n_unequal_recall_changed": 39,
+      "equal_recall_strata": {
+        "0.9": {
+          "n": 4,
+          "changed": 4
+        },
+        "1.0": {
+          "n": 157,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 30, \"nprobes\": 16}",
+        "kB": "{\"ef\": 30, \"nprobes\": 16}",
+        "recall_A": 0.9875,
+        "recall_B": 0.986,
+        "gap": 0.0015,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0032
+      }
+    },
+    {
+      "family": "ivfpq",
+      "seed": 20261009,
+      "level": "R09",
+      "n": 200,
+      "n_changed": 161,
+      "answer_change_all": 0.805,
+      "recall_A_raw": 0.915,
+      "recall_B_raw": 0.9125,
+      "n_equal_recall": 63,
+      "n_equal_recall_changed": 24,
+      "answer_change_equal_recall": 0.38095238095238093,
+      "n_unequal_recall": 137,
+      "n_unequal_recall_changed": 137,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 4,
+          "changed": 4
+        },
+        "0.9": {
+          "n": 23,
+          "changed": 20
+        },
+        "1.0": {
+          "n": 36,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": 12, \"refine_factor\": 6}",
+        "kB": "{\"nprobes\": 12, \"refine_factor\": 8}",
+        "recall_A": 0.915,
+        "recall_B": 0.9125,
+        "gap": 0.0025,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0138,
+        "note": "no in-window pair; genuine <=0.004 match elsewhere"
+      }
+    },
+    {
+      "family": "ivfpq",
+      "seed": 20261009,
+      "level": "R095",
+      "n": 200,
+      "n_changed": 145,
+      "answer_change_all": 0.725,
+      "recall_A_raw": 0.927,
+      "recall_B_raw": 0.9295,
+      "n_equal_recall": 78,
+      "n_equal_recall_changed": 23,
+      "answer_change_equal_recall": 0.2948717948717949,
+      "n_unequal_recall": 122,
+      "n_unequal_recall_changed": 122,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.9": {
+          "n": 24,
+          "changed": 22
+        },
+        "1.0": {
+          "n": 53,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": 12, \"refine_factor\": 8}",
+        "kB": "{\"nprobes\": 12, \"refine_factor\": 30}",
+        "recall_A": 0.927,
+        "recall_B": 0.9295,
+        "gap": 0.0025,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0217,
+        "note": "no in-window pair; genuine <=0.004 match elsewhere"
+      }
+    },
+    {
+      "family": "ivfpq",
+      "seed": 20261009,
+      "level": "R099",
+      "n": 200,
+      "n_changed": 29,
+      "answer_change_all": 0.145,
+      "recall_A_raw": 0.993,
+      "recall_B_raw": 0.9905,
+      "n_equal_recall": 174,
+      "n_equal_recall_changed": 3,
+      "answer_change_equal_recall": 0.017241379310344827,
+      "n_unequal_recall": 26,
+      "n_unequal_recall_changed": 26,
+      "equal_recall_strata": {
+        "0.9": {
+          "n": 3,
+          "changed": 3
+        },
+        "1.0": {
+          "n": 171,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"nprobes\": 16, \"refine_factor\": 12}",
+        "kB": "{\"nprobes\": 16, \"refine_factor\": 12}",
+        "recall_A": 0.993,
+        "recall_B": 0.9905,
+        "gap": 0.0025,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0018
+      }
+    },
+    {
+      "family": "hnsw",
+      "seed": 20261010,
+      "level": "R09",
+      "n": 200,
+      "n_changed": 177,
+      "answer_change_all": 0.885,
+      "recall_A_raw": 0.8985,
+      "recall_B_raw": 0.9015,
+      "n_equal_recall": 60,
+      "n_equal_recall_changed": 37,
+      "answer_change_equal_recall": 0.6166666666666667,
+      "n_unequal_recall": 140,
+      "n_unequal_recall_changed": 140,
+      "equal_recall_strata": {
+        "0.6": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.7": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.8": {
+          "n": 8,
+          "changed": 8
+        },
+        "0.9": {
+          "n": 29,
+          "changed": 27
+        },
+        "1.0": {
+          "n": 21,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 27, \"nprobes\": 11}",
+        "kB": "{\"ef\": 13, \"nprobes\": 15}",
+        "recall_A": 0.8985,
+        "recall_B": 0.9015,
+        "gap": 0.003,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      }
+    },
+    {
+      "family": "hnsw",
+      "seed": 20261010,
+      "level": "R095",
+      "n": 200,
+      "n_changed": 121,
+      "answer_change_all": 0.605,
+      "recall_A_raw": 0.9485,
+      "recall_B_raw": 0.9515,
+      "n_equal_recall": 99,
+      "n_equal_recall_changed": 20,
+      "answer_change_equal_recall": 0.20202020202020202,
+      "n_unequal_recall": 101,
+      "n_unequal_recall_changed": 101,
+      "equal_recall_strata": {
+        "0.8": {
+          "n": 1,
+          "changed": 1
+        },
+        "0.9": {
+          "n": 20,
+          "changed": 19
+        },
+        "1.0": {
+          "n": 78,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 27, \"nprobes\": 13}",
+        "kB": "{\"ef\": 22, \"nprobes\": 14}",
+        "recall_A": 0.9485,
+        "recall_B": 0.9515,
+        "gap": 0.003,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      }
+    },
+    {
+      "family": "hnsw",
+      "seed": 20261010,
+      "level": "R099",
+      "n": 200,
+      "n_changed": 37,
+      "answer_change_all": 0.185,
+      "recall_A_raw": 0.9915,
+      "recall_B_raw": 0.9885,
+      "n_equal_recall": 164,
+      "n_equal_recall_changed": 1,
+      "answer_change_equal_recall": 0.006097560975609756,
+      "n_unequal_recall": 36,
+      "n_unequal_recall_changed": 36,
+      "equal_recall_strata": {
+        "0.9": {
+          "n": 1,
+          "changed": 1
+        },
+        "1.0": {
+          "n": 163,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"ef\": 30, \"nprobes\": 16}",
+        "kB": "{\"ef\": 29, \"nprobes\": 16}",
+        "recall_A": 0.9915,
+        "recall_B": 0.9885,
+        "gap": 0.003,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0
+      }
+    },
+    {
+      "family": "ivfpq",
+      "seed": 20261010,
+      "level": "R09",
+      "n": 200,
+      "n_changed": 175,
+      "answer_change_all": 0.875,
+      "recall_A_raw": 0.899,
+      "recall_B_raw": 0.9095,
+      "n_equal_recall": 68,
+      "n_equal_recall_changed": 43,
+      "answer_change_equal_recall": 0.6323529411764706,
+      "n_unequal_recall": 132,
+      "n_unequal_recall_changed": 132,
+      "equal_recall_strata": {
+        "0.7": {
+          "n": 2,
+          "changed": 2
+        },
+        "0.8": {
+          "n": 5,
+          "changed": 4
+        },
+        "0.9": {
+          "n": 38,
+          "changed": 37
+        },
+        "1.0": {
+          "n": 23,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"nprobes\": 12, \"refine_factor\": 6}",
+        "kB": "{\"nprobes\": 12, \"refine_factor\": 6}",
+        "recall_A": 0.899,
+        "recall_B": 0.9095,
+        "gap": 0.0105,
+        "reached_le_0p004": false,
+        "dist_to_target": 0.0043
+      }
+    },
+    {
+      "family": "ivfpq",
+      "seed": 20261010,
+      "level": "R095",
+      "n": 200,
+      "n_changed": 103,
+      "answer_change_all": 0.515,
+      "recall_A_raw": 0.966,
+      "recall_B_raw": 0.966,
+      "n_equal_recall": 109,
+      "n_equal_recall_changed": 12,
+      "answer_change_equal_recall": 0.11009174311926606,
+      "n_unequal_recall": 91,
+      "n_unequal_recall_changed": 91,
+      "equal_recall_strata": {
+        "0.9": {
+          "n": 13,
+          "changed": 12
+        },
+        "1.0": {
+          "n": 96,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": false,
+        "kA": "{\"nprobes\": 16, \"refine_factor\": 6}",
+        "kB": "{\"nprobes\": 16, \"refine_factor\": 6}",
+        "recall_A": 0.966,
+        "recall_B": 0.966,
+        "gap": 0.0,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.016,
+        "note": "no in-window pair; genuine <=0.004 match elsewhere"
+      }
+    },
+    {
+      "family": "ivfpq",
+      "seed": 20261010,
+      "level": "R099",
+      "n": 200,
+      "n_changed": 22,
+      "answer_change_all": 0.11,
+      "recall_A_raw": 0.994,
+      "recall_B_raw": 0.9945,
+      "n_equal_recall": 178,
+      "n_equal_recall_changed": 0,
+      "answer_change_equal_recall": 0.0,
+      "n_unequal_recall": 22,
+      "n_unequal_recall_changed": 22,
+      "equal_recall_strata": {
+        "1.0": {
+          "n": 178,
+          "changed": 0
+        }
+      },
+      "selection": {
+        "window": 0.01,
+        "placeable": true,
+        "kA": "{\"nprobes\": 16, \"refine_factor\": 12}",
+        "kB": "{\"nprobes\": 16, \"refine_factor\": 12}",
+        "recall_A": 0.994,
+        "recall_B": 0.9945,
+        "gap": 0.0005,
+        "reached_le_0p004": true,
+        "dist_to_target": 0.0043
+      }
+    }
+  ],
+  "recall_conditioned_crosschecks": [
+    {
+      "cell": "match2_hnsw_s20261008_recallmatched_R095",
+      "raw_vs_recall_conditioned_match": true,
+      "integer_fields": {
+        "n": 200,
+        "n_tear": 115,
+        "n_eq": 101,
+        "n_eq_tear": 16,
+        "n_ne": 99,
+        "n_ne_tear": 99
+      }
+    },
+    {
+      "cell": "match2_hnsw_s20261008_floor_lance_R095",
+      "raw_vs_recall_conditioned_match": true,
+      "integer_fields": {
+        "n": 200,
+        "n_tear": 76,
+        "n_eq": 133,
+        "n_eq_tear": 9,
+        "n_ne": 67,
+        "n_ne_tear": 67
+      }
+    },
+    {
+      "cell": "match2_hnsw_s20261009_recallmatched_R095",
+      "raw_vs_recall_conditioned_match": true,
+      "integer_fields": {
+        "n": 200,
+        "n_tear": 119,
+        "n_eq": 100,
+        "n_eq_tear": 19,
+        "n_ne": 100,
+        "n_ne_tear": 100
+      }
+    },
+    {
+      "cell": "match2_hnsw_s20261009_floor_lance_R095",
+      "raw_vs_recall_conditioned_match": true,
+      "integer_fields": {
+        "n": 200,
+        "n_tear": 97,
+        "n_eq": 117,
+        "n_eq_tear": 14,
+        "n_ne": 83,
+        "n_ne_tear": 83
+      }
+    },
+    {
+      "cell": "match2_hnsw_s20261010_recallmatched_R095",
+      "raw_vs_recall_conditioned_match": true,
+      "integer_fields": {
+        "n": 200,
+        "n_tear": 127,
+        "n_eq": 89,
+        "n_eq_tear": 16,
+        "n_ne": 111,
+        "n_ne_tear": 111
+      }
+    },
+    {
+      "cell": "match2_hnsw_s20261010_floor_lance_R095",
+      "raw_vs_recall_conditioned_match": true,
+      "integer_fields": {
+        "n": 200,
+        "n_tear": 115,
+        "n_eq": 101,
+        "n_eq_tear": 16,
+        "n_ne": 99,
+        "n_ne_tear": 99
+      }
+    },
+    {
+      "cell": "match2_ivfpq_s20261008_recallmatched_R095",
+      "raw_vs_recall_conditioned_match": true,
+      "integer_fields": {
+        "n": 200,
+        "n_tear": 126,
+        "n_eq": 97,
+        "n_eq_tear": 23,
+        "n_ne": 103,
+        "n_ne_tear": 103
+      }
+    },
+    {
+      "cell": "match2_ivfpq_s20261008_floor_lance_R095",
+      "raw_vs_recall_conditioned_match": true,
+      "integer_fields": {
+        "n": 200,
+        "n_tear": 117,
+        "n_eq": 105,
+        "n_eq_tear": 22,
+        "n_ne": 95,
+        "n_ne_tear": 95
+      }
+    },
+    {
+      "cell": "match2_ivfpq_s20261009_recallmatched_R095",
+      "raw_vs_recall_conditioned_match": true,
+      "integer_fields": {
+        "n": 200,
+        "n_tear": 114,
+        "n_eq": 106,
+        "n_eq_tear": 20,
+        "n_ne": 94,
+        "n_ne_tear": 94
+      }
+    },
+    {
+      "cell": "match2_ivfpq_s20261009_floor_lance_R095",
+      "raw_vs_recall_conditioned_match": true,
+      "integer_fields": {
+        "n": 200,
+        "n_tear": 124,
+        "n_eq": 101,
+        "n_eq_tear": 25,
+        "n_ne": 99,
+        "n_ne_tear": 99
+      }
+    },
+    {
+      "cell": "match2_ivfpq_s20261010_recallmatched_R095",
+      "raw_vs_recall_conditioned_match": true,
+      "integer_fields": {
+        "n": 200,
+        "n_tear": 112,
+        "n_eq": 107,
+        "n_eq_tear": 19,
+        "n_ne": 93,
+        "n_ne_tear": 93
+      }
+    },
+    {
+      "cell": "match2_ivfpq_s20261010_floor_lance_R095",
+      "raw_vs_recall_conditioned_match": true,
+      "integer_fields": {
+        "n": 200,
+        "n_tear": 122,
+        "n_eq": 98,
+        "n_eq_tear": 20,
+        "n_ne": 102,
+        "n_ne_tear": 102
+      }
+    }
+  ],
+  "all_crosschecks_pass": true,
+  "findings": [
+    "The manuscript uses the old matched2 numerator and a later floor_disjoint denominator, rather than the matched numerator rerun alongside that denominator. These are distinct native builds.",
+    "Every IvfPq disjoint R095 floor has placeable=false despite a recall gap <=0.004. Achieved recalls are 0.939/0.9415, 0.927/0.9295, 0.966/0.966.",
+    "The gap criterion compares the two builds within each pair; it does not establish common achieved recall across numerator and floor.",
+    "Equal-per-query-recall conditioning selects different query subsets and recall strata for every pair. It is descriptive, not a causal adjustment or proof of a zero rewrite-specific contribution.",
+    "HnswFlat R095 independent floors satisfy the stated target window and gap, but one independent pair per seed remains insufficient to establish equivalence or isolate a causal maintenance effect.",
+    "Byte-identical physical row ordering rules out that measured mediator; it does not establish ANN build nondeterminism as the sole cause, or certify native structural incompatibility."
+  ],
+  "recommended_replacement": "At nominal R=0.95, equal-recall answer-change rates are 17.6% (HnswFlat) and 20.1% (IvfPq) in the matched2 maintenance runs, while independent rebuild pairs record 22.3% and 22.0%. The IvfPq floor pairs achieve 0.939/0.9415, 0.927/0.9295 and 0.966/0.966, outside the target window; each pair is internally mean-recall matched. These descriptive controls show substantial variation between rebuilds but do not isolate or rule out a rewrite-specific component. They do not provide in-engine structural certification."
+}

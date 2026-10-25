@@ -1,0 +1,226 @@
+{
+  "scope": "maintenance tear: replace last 25% of vectors then rebuild; node set unchanged",
+  "seeds": [
+    {
+      "seed": 11,
+      "adjacency_jaccard": 0.2608,
+      "A_only_edges": 24749,
+      "D_only_edges": 24753,
+      "common_edges": 17468,
+      "cells": [
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "answer_agree": 0,
+          "invisible_tear": 0,
+          "ef": 16,
+          "no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.0,
+          "invisible_tear_rate": 0.0
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "answer_agree": 0,
+          "invisible_tear": 0,
+          "ef": 64,
+          "no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.0,
+          "invisible_tear_rate": 0.0
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "answer_agree": 0,
+          "invisible_tear": 0,
+          "ef": 128,
+          "no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.0,
+          "invisible_tear_rate": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 29,
+      "adjacency_jaccard": 0.2607,
+      "A_only_edges": 24016,
+      "D_only_edges": 24534,
+      "common_edges": 17119,
+      "cells": [
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "answer_agree": 1,
+          "invisible_tear": 1,
+          "ef": 16,
+          "no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.005,
+          "invisible_tear_rate": 0.005
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "answer_agree": 1,
+          "invisible_tear": 1,
+          "ef": 64,
+          "no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.005,
+          "invisible_tear_rate": 0.005
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "answer_agree": 1,
+          "invisible_tear": 1,
+          "ef": 128,
+          "no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.005,
+          "invisible_tear_rate": 0.005
+        }
+      ]
+    },
+    {
+      "seed": 47,
+      "adjacency_jaccard": 0.2698,
+      "A_only_edges": 24227,
+      "D_only_edges": 23929,
+      "common_edges": 17789,
+      "cells": [
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "answer_agree": 1,
+          "invisible_tear": 1,
+          "ef": 16,
+          "no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.005,
+          "invisible_tear_rate": 0.005
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "answer_agree": 1,
+          "invisible_tear": 1,
+          "ef": 64,
+          "no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.005,
+          "invisible_tear_rate": 0.005
+        },
+        {
+          "episodes": 200,
+          "positive_edge_no_embedding": 200,
+          "answer_agree": 1,
+          "invisible_tear": 1,
+          "ef": 128,
+          "no_embedding_rate": 1.0,
+          "answer_agree_rate": 0.005,
+          "invisible_tear_rate": 0.005
+        }
+      ]
+    }
+  ],
+  "aggregate": [
+    {
+      "ef": 16,
+      "episodes": 600,
+      "no_embedding_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "answer_agree_rate": {
+        "mean": 0.0033,
+        "min": 0.0,
+        "max": 0.005,
+        "per_seed": [
+          0.0,
+          0.005,
+          0.005
+        ]
+      },
+      "invisible_tear_rate": {
+        "mean": 0.0033,
+        "min": 0.0,
+        "max": 0.005,
+        "per_seed": [
+          0.0,
+          0.005,
+          0.005
+        ]
+      }
+    },
+    {
+      "ef": 64,
+      "episodes": 600,
+      "no_embedding_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "answer_agree_rate": {
+        "mean": 0.0033,
+        "min": 0.0,
+        "max": 0.005,
+        "per_seed": [
+          0.0,
+          0.005,
+          0.005
+        ]
+      },
+      "invisible_tear_rate": {
+        "mean": 0.0033,
+        "min": 0.0,
+        "max": 0.005,
+        "per_seed": [
+          0.0,
+          0.005,
+          0.005
+        ]
+      }
+    },
+    {
+      "ef": 128,
+      "episodes": 600,
+      "no_embedding_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "answer_agree_rate": {
+        "mean": 0.0033,
+        "min": 0.0,
+        "max": 0.005,
+        "per_seed": [
+          0.0,
+          0.005,
+          0.005
+        ]
+      },
+      "invisible_tear_rate": {
+        "mean": 0.0033,
+        "min": 0.0,
+        "max": 0.005,
+        "per_seed": [
+          0.0,
+          0.005,
+          0.005
+        ]
+      }
+    }
+  ]
+}

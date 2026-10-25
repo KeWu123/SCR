@@ -1,0 +1,237 @@
+{
+ "protocol": {
+  "engine": "faiss-cpu 1.15.1",
+  "index": "IndexHNSWFlat",
+  "N": 20000,
+  "d": 64,
+  "M": 32,
+  "efConstruction": 40,
+  "k": 10,
+  "n_queries": 200,
+  "ef_values": [
+   16,
+   32,
+   64,
+   128
+  ],
+  "seeds": [
+   20261008,
+   20261009,
+   20261010
+  ],
+  "data": "uniform [0,1)^d, L2",
+  "generations": "A: natural insertion order; B: permuted insertion order over the same vectors, ids remapped",
+  "replay": "HNSW layer-0 beam search over the exported adjacency (engine entry point), every expanded edge recorded",
+  "predicate": "certified <=> some B-walked edge outside E_A AND some A-walked edge outside E_B (union of walked edges embeds in neither published generation)",
+  "control": "two traversals of generation A with different entry points; must be 0"
+ },
+ "per_seed": {
+  "20261008": {
+   "16": {
+    "certified_rate": 1.0,
+    "answer_agree_rate": 0.005,
+    "certified_given_agree": 1.0,
+    "certified_and_agree_rate": 0.005,
+    "mean_escape_edges_B_not_in_A": 450.715,
+    "mean_escape_edges_A_not_in_B": 478.05,
+    "mean_walked_edges_per_retrieval": 991.1525,
+    "replay_recall_A": 0.5780000000000003,
+    "replay_recall_B": 0.5635,
+    "control_one_generation_rate": 0.0
+   },
+   "32": {
+    "certified_rate": 1.0,
+    "answer_agree_rate": 0.025,
+    "certified_given_agree": 1.0,
+    "certified_and_agree_rate": 0.025,
+    "mean_escape_edges_B_not_in_A": 735.39,
+    "mean_escape_edges_A_not_in_B": 762.845,
+    "mean_walked_edges_per_retrieval": 1597.925,
+    "replay_recall_A": 0.7455000000000002,
+    "replay_recall_B": 0.7459999999999998,
+    "control_one_generation_rate": 0.0
+   },
+   "64": {
+    "certified_rate": 1.0,
+    "answer_agree_rate": 0.19,
+    "certified_given_agree": 1.0,
+    "certified_and_agree_rate": 0.19,
+    "mean_escape_edges_B_not_in_A": 1254.645,
+    "mean_escape_edges_A_not_in_B": 1283.61,
+    "mean_walked_edges_per_retrieval": 2681.6075,
+    "replay_recall_A": 0.8715000000000015,
+    "replay_recall_B": 0.8895000000000012,
+    "control_one_generation_rate": 0.0
+   },
+   "128": {
+    "certified_rate": 1.0,
+    "answer_agree_rate": 0.53,
+    "certified_given_agree": 1.0,
+    "certified_and_agree_rate": 0.53,
+    "mean_escape_edges_B_not_in_A": 2153.205,
+    "mean_escape_edges_A_not_in_B": 2186.02,
+    "mean_walked_edges_per_retrieval": 4525.5125,
+    "replay_recall_A": 0.9615000000000009,
+    "replay_recall_B": 0.964500000000001,
+    "control_one_generation_rate": 0.0
+   }
+  },
+  "20261009": {
+   "16": {
+    "certified_rate": 1.0,
+    "answer_agree_rate": 0.02,
+    "certified_given_agree": 1.0,
+    "certified_and_agree_rate": 0.02,
+    "mean_escape_edges_B_not_in_A": 462.63,
+    "mean_escape_edges_A_not_in_B": 438.535,
+    "mean_walked_edges_per_retrieval": 984.83,
+    "replay_recall_A": 0.5435000000000005,
+    "replay_recall_B": 0.5565,
+    "control_one_generation_rate": 0.0
+   },
+   "32": {
+    "certified_rate": 1.0,
+    "answer_agree_rate": 0.035,
+    "certified_given_agree": 1.0,
+    "certified_and_agree_rate": 0.035,
+    "mean_escape_edges_B_not_in_A": 745.275,
+    "mean_escape_edges_A_not_in_B": 724.5,
+    "mean_walked_edges_per_retrieval": 1594.3575,
+    "replay_recall_A": 0.7335000000000003,
+    "replay_recall_B": 0.7219999999999999,
+    "control_one_generation_rate": 0.0
+   },
+   "64": {
+    "certified_rate": 1.0,
+    "answer_agree_rate": 0.23,
+    "certified_given_agree": 1.0,
+    "certified_and_agree_rate": 0.23,
+    "mean_escape_edges_B_not_in_A": 1261.235,
+    "mean_escape_edges_A_not_in_B": 1238.505,
+    "mean_walked_edges_per_retrieval": 2685.4225,
+    "replay_recall_A": 0.8860000000000012,
+    "replay_recall_B": 0.877000000000001,
+    "control_one_generation_rate": 0.0
+   },
+   "128": {
+    "certified_rate": 1.0,
+    "answer_agree_rate": 0.65,
+    "certified_given_agree": 1.0,
+    "certified_and_agree_rate": 0.65,
+    "mean_escape_edges_B_not_in_A": 2142.56,
+    "mean_escape_edges_A_not_in_B": 2126.945,
+    "mean_walked_edges_per_retrieval": 4530.365,
+    "replay_recall_A": 0.9755000000000008,
+    "replay_recall_B": 0.9740000000000011,
+    "control_one_generation_rate": 0.0
+   }
+  },
+  "20261010": {
+   "16": {
+    "certified_rate": 1.0,
+    "answer_agree_rate": 0.015,
+    "certified_given_agree": 1.0,
+    "certified_and_agree_rate": 0.015,
+    "mean_escape_edges_B_not_in_A": 435.19,
+    "mean_escape_edges_A_not_in_B": 461.6,
+    "mean_walked_edges_per_retrieval": 988.285,
+    "replay_recall_A": 0.5815,
+    "replay_recall_B": 0.5764999999999995,
+    "control_one_generation_rate": 0.0
+   },
+   "32": {
+    "certified_rate": 1.0,
+    "answer_agree_rate": 0.065,
+    "certified_given_agree": 1.0,
+    "certified_and_agree_rate": 0.065,
+    "mean_escape_edges_B_not_in_A": 708.145,
+    "mean_escape_edges_A_not_in_B": 742.93,
+    "mean_walked_edges_per_retrieval": 1581.7725,
+    "replay_recall_A": 0.7470000000000004,
+    "replay_recall_B": 0.7375000000000004,
+    "control_one_generation_rate": 0.0
+   },
+   "64": {
+    "certified_rate": 1.0,
+    "answer_agree_rate": 0.23,
+    "certified_given_agree": 1.0,
+    "certified_and_agree_rate": 0.23,
+    "mean_escape_edges_B_not_in_A": 1229.23,
+    "mean_escape_edges_A_not_in_B": 1262.515,
+    "mean_walked_edges_per_retrieval": 2677.03,
+    "replay_recall_A": 0.8865000000000015,
+    "replay_recall_B": 0.8940000000000015,
+    "control_one_generation_rate": 0.0
+   },
+   "128": {
+    "certified_rate": 1.0,
+    "answer_agree_rate": 0.58,
+    "certified_given_agree": 1.0,
+    "certified_and_agree_rate": 0.58,
+    "mean_escape_edges_B_not_in_A": 2112.1,
+    "mean_escape_edges_A_not_in_B": 2153.36,
+    "mean_walked_edges_per_retrieval": 4510.8975,
+    "replay_recall_A": 0.9715000000000006,
+    "replay_recall_B": 0.9675000000000006,
+    "control_one_generation_rate": 0.0
+   }
+  }
+ },
+ "aggregate": {
+  "16": {
+   "certified_rate": 1.0,
+   "answer_agree_rate": 0.013333333333333334,
+   "certified_given_agree": 1.0,
+   "certified_and_agree_rate": 0.013333333333333334,
+   "mean_escape_edges_B_not_in_A": 449.5116666666666,
+   "mean_escape_edges_A_not_in_B": 459.395,
+   "mean_walked_edges_per_retrieval": 988.0891666666666,
+   "replay_recall_A": 0.5676666666666669,
+   "replay_recall_B": 0.5654999999999998,
+   "control_one_generation_rate": 0.0
+  },
+  "32": {
+   "certified_rate": 1.0,
+   "answer_agree_rate": 0.041666666666666664,
+   "certified_given_agree": 1.0,
+   "certified_and_agree_rate": 0.041666666666666664,
+   "mean_escape_edges_B_not_in_A": 729.6033333333334,
+   "mean_escape_edges_A_not_in_B": 743.4250000000001,
+   "mean_walked_edges_per_retrieval": 1591.3516666666667,
+   "replay_recall_A": 0.7420000000000003,
+   "replay_recall_B": 0.7351666666666666,
+   "control_one_generation_rate": 0.0
+  },
+  "64": {
+   "certified_rate": 1.0,
+   "answer_agree_rate": 0.21666666666666667,
+   "certified_given_agree": 1.0,
+   "certified_and_agree_rate": 0.21666666666666667,
+   "mean_escape_edges_B_not_in_A": 1248.37,
+   "mean_escape_edges_A_not_in_B": 1261.5433333333333,
+   "mean_walked_edges_per_retrieval": 2681.3533333333335,
+   "replay_recall_A": 0.8813333333333347,
+   "replay_recall_B": 0.8868333333333345,
+   "control_one_generation_rate": 0.0
+  },
+  "128": {
+   "certified_rate": 1.0,
+   "answer_agree_rate": 0.5866666666666667,
+   "certified_given_agree": 1.0,
+   "certified_and_agree_rate": 0.5866666666666667,
+   "mean_escape_edges_B_not_in_A": 2135.955,
+   "mean_escape_edges_A_not_in_B": 2155.441666666667,
+   "mean_walked_edges_per_retrieval": 4522.258333333333,
+   "replay_recall_A": 0.9695000000000008,
+   "replay_recall_B": 0.9686666666666676,
+   "control_one_generation_rate": 0.0
+  }
+ },
+ "graph_meta": {
+  "edges_A": 948003,
+  "edges_B": 946577,
+  "entry_A": 12586,
+  "entry_B": 15047
+ },
+ "elapsed_seconds": 35.4
+}

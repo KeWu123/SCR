@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "rounds": 2,
+  "exhaustive_configurations": 672,
+  "threaded_interleavings": 2,
+  "source_sha256": "b4e707f91648d174f0f3a601b0445e1792dd09dc621365f4df96b2acc78dbd88",
+  "checker_sha256": "995e49ee82a2f9e217c5fa11e8e7d98cdf2984ae22c18ece932031c47a22a109"
+}

@@ -1,0 +1,9 @@
+# Native cross-store experiment: locked protocol
+
+Protocol specified before measurement on 2026-10-16. Runtime versions are recorded with the results.
+
+Use sklearn digits normalized by16 with100 seeded held-out queries and remaining1,697 indexed objects; independently draw2,000 uniform64-dimensional vectors and100 queries. Seeds11,29,47. Replacements are seeded training-vector permutations with Gaussian .02 noise. Each real SQLite WAL read transaction is established by reading all row versions and commit epoch0; a separate writer applies25% replacements,10% deletes and reinserts half of deleted keys with version3, atomically with source epoch1. LanceDB0.40 receives corresponding edits, rebuilds IVF_HNSW_FLAT (4 partitions,M16,construction64), and completes optimize before second old-handle query. Old handles explicitly checkout indexed table versions. All searches probe4 partitions,ef128,k10.
+
+Four arms: supporting old source/index manifest; old SQL with latest index; that mismatched pair with exact output-version filtering over40 native candidates; aligned current source/index. Prediction: old pair preserves sound versions and exact repeated answers; current artifact lacks approximately35% of old population; filtering restores returned-version soundness but cannot restore historical coverage. Evaluate per-query exact-version recall, fill, invalid returned versions, actual table candidate populations and native query plans. Save inputs, version maps, update sets, source epochs, generation versions, answers and hashes. No latency claim or production anomaly rate.
+
+Independent checker reconstructs version maps and every exact oracle using scalar distances, verifies plans use native IVF_HNSW, checks SQLite old snapshot after writer commit, and independently recomputes every metric. Initial counterfactual intentionally mismatches snapshots; it is not a product API violation.

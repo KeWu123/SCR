@@ -1,0 +1,86 @@
+[
+  {
+    "dataset": "digits",
+    "seed": 11,
+    "cut": "old",
+    "version": 2,
+    "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/digits_11.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=9649a6c4-b686-448b-8f8c-47535c9eb170, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+  },
+  {
+    "dataset": "digits",
+    "seed": 11,
+    "cut": "current",
+    "version": 9,
+    "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/digits_11.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=bb9d2ef9-8369-4326-a327-6aed6bf1c8e5, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+  },
+  {
+    "dataset": "digits",
+    "seed": 29,
+    "cut": "old",
+    "version": 2,
+    "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/digits_29.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=8032ad23-df3c-4af3-b583-3572ee394c9d, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+  },
+  {
+    "dataset": "digits",
+    "seed": 29,
+    "cut": "current",
+    "version": 9,
+    "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/digits_29.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=d2adf217-c935-4d6c-8a1f-134216b39102, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+  },
+  {
+    "dataset": "digits",
+    "seed": 47,
+    "cut": "old",
+    "version": 2,
+    "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/digits_47.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=00f5ef16-4708-4216-b581-d1d37255f2c7, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+  },
+  {
+    "dataset": "digits",
+    "seed": 47,
+    "cut": "current",
+    "version": 9,
+    "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/digits_47.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=00983cd2-9e78-4348-80fe-b0237a081e90, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+  },
+  {
+    "dataset": "uniform",
+    "seed": 11,
+    "cut": "old",
+    "version": 2,
+    "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/uniform_11.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=49f5d57c-3597-4605-855f-0f584eb6a677, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+  },
+  {
+    "dataset": "uniform",
+    "seed": 11,
+    "cut": "current",
+    "version": 9,
+    "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/uniform_11.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=0cead9a7-26fc-4115-a4b9-5cb8fded132f, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+  },
+  {
+    "dataset": "uniform",
+    "seed": 29,
+    "cut": "old",
+    "version": 2,
+    "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/uniform_29.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=667d4a54-bf1c-4a47-9fd5-4cc1d9fd6a3e, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+  },
+  {
+    "dataset": "uniform",
+    "seed": 29,
+    "cut": "current",
+    "version": 9,
+    "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/uniform_29.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=e232e2b1-a8a7-4f67-ae20-389a124b4c8d, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+  },
+  {
+    "dataset": "uniform",
+    "seed": 47,
+    "cut": "old",
+    "version": 2,
+    "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/uniform_47.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=6b2ab822-a288-4ced-97a8-f177dd5ac3d5, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+  },
+  {
+    "dataset": "uniform",
+    "seed": 47,
+    "cut": "current",
+    "version": 9,
+    "plan": "ProjectionExec: expr=[row@2 as row, version@3 as version, vector@4 as vector, _distance@0 as _distance]\n  LanceRead: uri=experiments/cross_store_db/20261016155416284521/lance/uniform_47.lance/data, projection=[row, version, vector], source=stream(_rowid)\n    SortExec: TopK(fetch=10), expr=[_distance@0 ASC NULLS LAST, _rowid@1 ASC NULLS LAST], preserve_partitioning=[false]\n      ANNSubIndex: name=vector_idx, k=10, deltas=1, metric=L2\n        ANNIvfPartition: uuid=2beeba01-5d23-41eb-9013-047a3c96e02e, minimum_nprobes=4, maximum_nprobes=Some(4), deltas=1\n"
+  }
+]

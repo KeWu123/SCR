@@ -1,0 +1,117 @@
+{
+  "passed": true,
+  "result_sha256": "95e11ed70efac29cbda616f93dc03e67de15aa048e6177a583618959f31dfc6b",
+  "checker_sha256": "448517360ebe6e3e60f9aa624e06645b278a9e876d4b866f03565a350a2e45b9",
+  "broker_sha256": "609302b76decc2c90011869582c4180b693a40cc7e3267f77abca39312692c73",
+  "cells": [
+    {
+      "n": 2000,
+      "d": 32,
+      "seed": 11,
+      "scalar_oracle_queries": 16,
+      "mean_recall10": 1.0,
+      "min_recall10": 1.0,
+      "all_three_arm_answers_equal": true,
+      "invalid_returned_versions": 0,
+      "population_checked": 2000
+    },
+    {
+      "n": 2000,
+      "d": 32,
+      "seed": 29,
+      "scalar_oracle_queries": 16,
+      "mean_recall10": 1.0,
+      "min_recall10": 1.0,
+      "all_three_arm_answers_equal": true,
+      "invalid_returned_versions": 0,
+      "population_checked": 2000
+    },
+    {
+      "n": 2000,
+      "d": 32,
+      "seed": 47,
+      "scalar_oracle_queries": 16,
+      "mean_recall10": 1.0,
+      "min_recall10": 1.0,
+      "all_three_arm_answers_equal": true,
+      "invalid_returned_versions": 0,
+      "population_checked": 2000
+    },
+    {
+      "n": 10000,
+      "d": 64,
+      "seed": 11,
+      "scalar_oracle_queries": 16,
+      "mean_recall10": 1.0,
+      "min_recall10": 1.0,
+      "all_three_arm_answers_equal": true,
+      "invalid_returned_versions": 0,
+      "population_checked": 10000
+    },
+    {
+      "n": 10000,
+      "d": 64,
+      "seed": 29,
+      "scalar_oracle_queries": 16,
+      "mean_recall10": 1.0,
+      "min_recall10": 1.0,
+      "all_three_arm_answers_equal": true,
+      "invalid_returned_versions": 0,
+      "population_checked": 10000
+    },
+    {
+      "n": 10000,
+      "d": 64,
+      "seed": 47,
+      "scalar_oracle_queries": 16,
+      "mean_recall10": 1.0,
+      "min_recall10": 1.0,
+      "all_three_arm_answers_equal": true,
+      "invalid_returned_versions": 0,
+      "population_checked": 10000
+    },
+    {
+      "n": 50000,
+      "d": 64,
+      "seed": 11,
+      "scalar_oracle_queries": 16,
+      "mean_recall10": 0.96875,
+      "min_recall10": 0.8,
+      "all_three_arm_answers_equal": true,
+      "invalid_returned_versions": 0,
+      "population_checked": 50000
+    },
+    {
+      "n": 50000,
+      "d": 64,
+      "seed": 29,
+      "scalar_oracle_queries": 16,
+      "mean_recall10": 0.98125,
+      "min_recall10": 0.9,
+      "all_three_arm_answers_equal": true,
+      "invalid_returned_versions": 0,
+      "population_checked": 50000
+    },
+    {
+      "n": 50000,
+      "d": 64,
+      "seed": 47,
+      "scalar_oracle_queries": 16,
+      "mean_recall10": 0.9375,
+      "min_recall10": 0.8,
+      "all_three_arm_answers_equal": true,
+      "invalid_returned_versions": 0,
+      "population_checked": 50000
+    }
+  ],
+  "timed_query_samples_checked": 6480,
+  "real_writer_cases_checked": 72,
+  "scalar_oracle_queries": 144,
+  "deterministic_race_arms": 3,
+  "notes": [
+    "Scalar Float64 distance oracle independently recomputed; native initial vectors and retained final source/native vectors inspected.",
+    "p99 is exploratory: 240 timing samples per arm/cell; concurrency tails use their explicitly recorded per-case sample counts.",
+    "N and d increase together; these cells are joint scale settings, not an isolated dimensionality causal experiment.",
+    "Retained wrapper and SCR are equivalent at exact point support; runtime differences reflect implementation choices."
+  ]
+}

@@ -1,0 +1,9 @@
+# Direct scientific dependencies used for the recorded native experiments.
+# Python 3.12, 64-bit.
+numpy==1.26.4
+scipy==1.13.1
+scikit-learn==1.4.2
+pyarrow==21.0.0
+lancedb==0.40.0
+faiss-cpu==1.15.1
+

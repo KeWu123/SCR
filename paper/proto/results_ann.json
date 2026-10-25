@@ -1,0 +1,171 @@
+{
+ "config": {
+  "n_rows": 15000,
+  "n_writes": 5000,
+  "n_reads": 500,
+  "k": 10,
+  "think_us": 20000.0,
+  "embed_cost_us": 150.0
+ },
+ "E3_ablation": [
+  {
+   "episodes": 500,
+   "anomaly_episode_rate": 0.006,
+   "temporal_anomaly_episode_rate": 0.006,
+   "dirty_rate": 0.0006,
+   "stale_rate": 0.0,
+   "phantom_rate": 0.0,
+   "citation_validity": 0.9994,
+   "recall_at_k": 0.987,
+   "p50_us": 2511.6,
+   "p99_us": 15561.2,
+   "index_MB": 5.46,
+   "scheme": "SCR 忽略快照令牌（消融）"
+  },
+  {
+   "episodes": 500,
+   "anomaly_episode_rate": 0.0,
+   "temporal_anomaly_episode_rate": 0.0,
+   "dirty_rate": 0.0,
+   "stale_rate": 0.0,
+   "phantom_rate": 0.0,
+   "citation_validity": 1.0,
+   "recall_at_k": 1.0,
+   "p50_us": 2532.3,
+   "p99_us": 14460.4,
+   "index_MB": 5.46,
+   "scheme": "SCR 正确使用快照令牌"
+  },
+  {
+   "episodes": 500,
+   "anomaly_episode_rate": 0.306,
+   "temporal_anomaly_episode_rate": 0.0,
+   "dirty_rate": 0.0,
+   "stale_rate": 0.0272,
+   "phantom_rate": 0.0062,
+   "citation_validity": 0.9666,
+   "recall_at_k": 0.901,
+   "p50_us": 2496.7,
+   "p99_us": 13977.4,
+   "index_MB": 5.44,
+   "scheme": "异步索引 L=500（对照）"
+  }
+ ],
+ "E4_bound": [
+  {
+   "L": 10,
+   "analytic": 0.006647,
+   "measured": 0.004167,
+   "rel_err": 0.3731
+  },
+  {
+   "L": 50,
+   "analytic": 0.032838,
+   "measured": 0.021667,
+   "rel_err": 0.3402
+  },
+  {
+   "L": 200,
+   "analytic": 0.125611,
+   "measured": 0.110833,
+   "rel_err": 0.1177
+  },
+  {
+   "L": 500,
+   "analytic": 0.287529,
+   "measured": 0.27,
+   "rel_err": 0.061
+  }
+ ],
+ "E5_ann": [
+  {
+   "episodes": 500,
+   "anomaly_episode_rate": 0.902,
+   "temporal_anomaly_episode_rate": 0.0,
+   "dirty_rate": 0.0,
+   "stale_rate": 0.2096,
+   "phantom_rate": 0.0252,
+   "citation_validity": 0.7652,
+   "recall_at_k": 0.7474,
+   "p50_us": 2718.3,
+   "p99_us": 13711.9,
+   "index_MB": 5.44,
+   "scheme": "遍历内过滤(SCR)",
+   "mode": "in"
+  },
+  {
+   "episodes": 500,
+   "anomaly_episode_rate": 0.9,
+   "temporal_anomaly_episode_rate": 0.0,
+   "dirty_rate": 0.0,
+   "stale_rate": 0.2014,
+   "phantom_rate": 0.0258,
+   "citation_validity": 0.7728,
+   "recall_at_k": 0.7564,
+   "p50_us": 2657.7,
+   "p99_us": 12863.9,
+   "index_MB": 5.44,
+   "scheme": "事后过滤(现有)",
+   "mode": "post"
+  }
+ ],
+ "E5b_selectivity": [
+  {
+   "visible_frac": 0.99,
+   "recall_in": 0.9473,
+   "recall_post": 0.9473,
+   "post_fill_rate": 1.0
+  },
+  {
+   "visible_frac": 0.9,
+   "recall_in": 0.945,
+   "recall_post": 0.945,
+   "post_fill_rate": 1.0
+  },
+  {
+   "visible_frac": 0.75,
+   "recall_in": 0.942,
+   "recall_post": 0.942,
+   "post_fill_rate": 1.0
+  },
+  {
+   "visible_frac": 0.5,
+   "recall_in": 0.9287,
+   "recall_post": 0.9287,
+   "post_fill_rate": 1.0
+  },
+  {
+   "visible_frac": 0.35,
+   "recall_in": 0.9277,
+   "recall_post": 0.924,
+   "post_fill_rate": 0.9893
+  },
+  {
+   "visible_frac": 0.25,
+   "recall_in": 0.93,
+   "recall_post": 0.857,
+   "post_fill_rate": 0.893
+  },
+  {
+   "visible_frac": 0.2,
+   "recall_in": 0.927,
+   "recall_post": 0.7673,
+   "post_fill_rate": 0.783
+  },
+  {
+   "visible_frac": 0.1,
+   "recall_in": 0.9127,
+   "recall_post": 0.3993,
+   "post_fill_rate": 0.3993
+  }
+ ],
+ "E6_gc": {
+  "versions_before": 20000,
+  "versions_after": 15500,
+  "pruned": 4500,
+  "MB_before": 5.46,
+  "MB_after": 4.231,
+  "shrink_ratio": 0.775,
+  "version_ratio": 0.775
+ }
+}

@@ -1,0 +1,6 @@
+* -text
+*.npz binary
+*.bin binary
+*.gz binary
+*.zip binary
+

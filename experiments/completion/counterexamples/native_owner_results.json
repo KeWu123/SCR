@@ -1,0 +1,12 @@
+{
+  "source_sha256": "609302b76decc2c90011869582c4180b693a40cc7e3267f77abca39312692c73",
+  "multiple_manifests_one_owner": true,
+  "distinct_tables_shared_database": true,
+  "competing_owner_error": "ValueError: native table retention authority already active",
+  "open_support_cleanup_error": "ValueError: close native table support and active references before cleanup",
+  "active_pin_cleanup_error": "ValueError: close native table support and active references before cleanup",
+  "retired_table_owner_held_until_close_error": "ValueError: native table retention authority already active",
+  "cleanup_after_closed_zero_refs_succeeded": true,
+  "owner_transfer_after_close_succeeded": true,
+  "same_name_foreign_database_error": "ValueError: native table outside configured artifact domain"
+}

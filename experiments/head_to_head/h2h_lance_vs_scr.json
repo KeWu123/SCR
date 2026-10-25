@@ -1,0 +1,507 @@
+{
+ "scope": "head-to-head LanceDB native versioning vs SCR coverage certification (real SQLite WAL + LanceDB 0.40.0; paper 9-cut disconnected schedule)",
+ "cells": [
+  {
+   "seed": 11,
+   "N": 2000,
+   "per_cut": [
+    {
+     "cut": 0,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 0.5,
+      "recall@10_mean": 0.5,
+      "recall@10_min": 0.2
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 1,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 0.5,
+      "recall@10_mean": 0.5,
+      "recall@10_min": 0.2
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 2,
+     "Sg*": false,
+     "armB_scr": "reject",
+     "armA1_latest_version": {
+      "coverage": 0.5,
+      "recall@10_mean": 0.5062,
+      "recall@10_min": 0.2
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 3,
+     "Sg*": false,
+     "armB_scr": "reject",
+     "armA1_latest_version": {
+      "coverage": 0.5,
+      "recall@10_mean": 0.5437,
+      "recall@10_min": 0.3
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 4,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 0.6667,
+      "recall@10_mean": 0.5437,
+      "recall@10_min": 0.3
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 5,
+     "Sg*": false,
+     "armB_scr": "reject",
+     "armA1_latest_version": {
+      "coverage": 0.6667,
+      "recall@10_mean": 0.5437,
+      "recall@10_min": 0.3
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 6,
+     "Sg*": false,
+     "armB_scr": "reject",
+     "armA1_latest_version": {
+      "coverage": 0.75,
+      "recall@10_mean": 0.775,
+      "recall@10_min": 0.7
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 7,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 8,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    }
+   ],
+   "Sg*": [
+    0,
+    1,
+    4,
+    7,
+    8
+   ],
+   "holes": [
+    2,
+    3,
+    5,
+    6
+   ],
+   "lance_versions_by_cut": {
+    "0": 2,
+    "1": 2,
+    "2": 4,
+    "3": 6,
+    "4": 7,
+    "5": 9,
+    "6": 10,
+    "7": 12,
+    "8": 12
+   },
+   "versions_vs_cuts": "LanceDB versions do not map 1:1 to source cuts",
+   "old_version_reopen_after_cleanup": false
+  },
+  {
+   "seed": 29,
+   "N": 2000,
+   "per_cut": [
+    {
+     "cut": 0,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 0.5,
+      "recall@10_mean": 0.4813,
+      "recall@10_min": 0.2
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 1,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 0.5,
+      "recall@10_mean": 0.4813,
+      "recall@10_min": 0.2
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 2,
+     "Sg*": false,
+     "armB_scr": "reject",
+     "armA1_latest_version": {
+      "coverage": 0.5,
+      "recall@10_mean": 0.5063,
+      "recall@10_min": 0.3
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 3,
+     "Sg*": false,
+     "armB_scr": "reject",
+     "armA1_latest_version": {
+      "coverage": 0.5,
+      "recall@10_mean": 0.5437,
+      "recall@10_min": 0.3
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 4,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 0.6667,
+      "recall@10_mean": 0.5437,
+      "recall@10_min": 0.3
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 5,
+     "Sg*": false,
+     "armB_scr": "reject",
+     "armA1_latest_version": {
+      "coverage": 0.6667,
+      "recall@10_mean": 0.5437,
+      "recall@10_min": 0.3
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 6,
+     "Sg*": false,
+     "armB_scr": "reject",
+     "armA1_latest_version": {
+      "coverage": 0.75,
+      "recall@10_mean": 0.7812,
+      "recall@10_min": 0.5
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 7,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 8,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    }
+   ],
+   "Sg*": [
+    0,
+    1,
+    4,
+    7,
+    8
+   ],
+   "holes": [
+    2,
+    3,
+    5,
+    6
+   ],
+   "lance_versions_by_cut": {
+    "0": 2,
+    "1": 2,
+    "2": 4,
+    "3": 6,
+    "4": 7,
+    "5": 9,
+    "6": 10,
+    "7": 12,
+    "8": 12
+   },
+   "versions_vs_cuts": "LanceDB versions do not map 1:1 to source cuts",
+   "old_version_reopen_after_cleanup": false
+  },
+  {
+   "seed": 47,
+   "N": 2000,
+   "per_cut": [
+    {
+     "cut": 0,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 0.5,
+      "recall@10_mean": 0.4938,
+      "recall@10_min": 0.4
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 1,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 0.5,
+      "recall@10_mean": 0.4938,
+      "recall@10_min": 0.4
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 2,
+     "Sg*": false,
+     "armB_scr": "reject",
+     "armA1_latest_version": {
+      "coverage": 0.5,
+      "recall@10_mean": 0.5125,
+      "recall@10_min": 0.4
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 3,
+     "Sg*": false,
+     "armB_scr": "reject",
+     "armA1_latest_version": {
+      "coverage": 0.5,
+      "recall@10_mean": 0.5312,
+      "recall@10_min": 0.4
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 4,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 0.6667,
+      "recall@10_mean": 0.5312,
+      "recall@10_min": 0.4
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 5,
+     "Sg*": false,
+     "armB_scr": "reject",
+     "armA1_latest_version": {
+      "coverage": 0.6667,
+      "recall@10_mean": 0.5312,
+      "recall@10_min": 0.4
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 6,
+     "Sg*": false,
+     "armB_scr": "reject",
+     "armA1_latest_version": {
+      "coverage": 0.75,
+      "recall@10_mean": 0.7375,
+      "recall@10_min": 0.6
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 7,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    },
+    {
+     "cut": 8,
+     "Sg*": true,
+     "armB_scr": "admit",
+     "armA1_latest_version": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     },
+     "armA2_version_at_cut": {
+      "coverage": 1.0,
+      "recall@10_mean": 1.0,
+      "recall@10_min": 1.0
+     }
+    }
+   ],
+   "Sg*": [
+    0,
+    1,
+    4,
+    7,
+    8
+   ],
+   "holes": [
+    2,
+    3,
+    5,
+    6
+   ],
+   "lance_versions_by_cut": {
+    "0": 2,
+    "1": 2,
+    "2": 4,
+    "3": 6,
+    "4": 7,
+    "5": 9,
+    "6": 10,
+    "7": 12,
+    "8": 12
+   },
+   "versions_vs_cuts": "LanceDB versions do not map 1:1 to source cuts",
+   "old_version_reopen_after_cleanup": false
+  }
+ ],
+ "sha": "75982790998aee0bd8699541d182c3a2ac34dbae4aad2a061634b365f0078a8e"
+}

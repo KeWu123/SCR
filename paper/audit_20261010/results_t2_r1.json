@@ -1,0 +1,356 @@
+{
+  "generated_by": "audit_20261010/check_t2_r1.py",
+  "classification": "fresh personally executed targeted simulator validation; not engine instrumentation",
+  "injected_pinned_fault": {
+    "episodes": 7,
+    "observed_changes": 7,
+    "rate": 1.0,
+    "native_changes": 0,
+    "hardcoded_zero_would_fail": true
+  },
+  "E6_headline_runs": [
+    {
+      "seed": 11,
+      "N": 5000,
+      "episodes": 300,
+      "k": 10,
+      "ef": 48,
+      "rebuild_diverse": true,
+      "straddle_rate": 0.953333,
+      "native_tear_rate_set": 0.003333,
+      "native_tear_rate_ord": 0.003333,
+      "native_tear_rate_ci": [
+        0.000589,
+        0.018637
+      ],
+      "native_tear_given_straddle": 0.003497,
+      "native_tear_given_straddle_ci": [
+        0.000617,
+        0.019537
+      ],
+      "native_tear_given_nostraddle": 0.0,
+      "native_jaccard_mean": 0.999394,
+      "native_jaccard_min": 0.818182,
+      "scr_tear_rate": 0.0,
+      "scr_tear_given_straddle": 0.0,
+      "scr_answer_change_count": 0,
+      "scr_order_change_count": 0,
+      "straddle_count": 286,
+      "native_answer_change_count": 1,
+      "metric_scope": "returned-set answer-change proxy; not an adjacency certificate",
+      "write_scope": "pre-window visibility timestamp/deletion updates; static vectors",
+      "filter_violations": 0,
+      "native_recall_r1": 0.999667,
+      "scr_recall": 0.999667,
+      "retained_MB_native": 0.24,
+      "retained_MB_scr": 0.816,
+      "retained_MB_fullcopy_modeled": 10.64,
+      "generations": 7
+    },
+    {
+      "seed": 22,
+      "N": 5000,
+      "episodes": 300,
+      "k": 10,
+      "ef": 48,
+      "rebuild_diverse": true,
+      "straddle_rate": 0.93,
+      "native_tear_rate_set": 0.0,
+      "native_tear_rate_ord": 0.0,
+      "native_tear_rate_ci": [
+        0.0,
+        0.012643
+      ],
+      "native_tear_given_straddle": 0.0,
+      "native_tear_given_straddle_ci": [
+        0.0,
+        0.013582
+      ],
+      "native_tear_given_nostraddle": 0.0,
+      "native_jaccard_mean": 1.0,
+      "native_jaccard_min": 1.0,
+      "scr_tear_rate": 0.0,
+      "scr_tear_given_straddle": 0.0,
+      "scr_answer_change_count": 0,
+      "scr_order_change_count": 0,
+      "straddle_count": 279,
+      "native_answer_change_count": 0,
+      "metric_scope": "returned-set answer-change proxy; not an adjacency certificate",
+      "write_scope": "pre-window visibility timestamp/deletion updates; static vectors",
+      "filter_violations": 0,
+      "native_recall_r1": 0.999,
+      "scr_recall": 0.999,
+      "retained_MB_native": 0.24,
+      "retained_MB_scr": 0.816,
+      "retained_MB_fullcopy_modeled": 10.64,
+      "generations": 7
+    },
+    {
+      "seed": 33,
+      "N": 5000,
+      "episodes": 300,
+      "k": 10,
+      "ef": 48,
+      "rebuild_diverse": true,
+      "straddle_rate": 0.936667,
+      "native_tear_rate_set": 0.003333,
+      "native_tear_rate_ord": 0.003333,
+      "native_tear_rate_ci": [
+        0.000589,
+        0.018637
+      ],
+      "native_tear_given_straddle": 0.003559,
+      "native_tear_given_straddle_ci": [
+        0.000628,
+        0.01988
+      ],
+      "native_tear_given_nostraddle": 0.0,
+      "native_jaccard_mean": 0.999394,
+      "native_jaccard_min": 0.818182,
+      "scr_tear_rate": 0.0,
+      "scr_tear_given_straddle": 0.0,
+      "scr_answer_change_count": 0,
+      "scr_order_change_count": 0,
+      "straddle_count": 281,
+      "native_answer_change_count": 1,
+      "metric_scope": "returned-set answer-change proxy; not an adjacency certificate",
+      "write_scope": "pre-window visibility timestamp/deletion updates; static vectors",
+      "filter_violations": 0,
+      "native_recall_r1": 0.999,
+      "scr_recall": 0.999,
+      "retained_MB_native": 0.24,
+      "retained_MB_scr": 0.816,
+      "retained_MB_fullcopy_modeled": 10.64,
+      "generations": 7
+    }
+  ],
+  "E7_runs": [
+    {
+      "seed": 7,
+      "N": 8000,
+      "nq": 150,
+      "ef_search": 48,
+      "r": 4,
+      "strict_entry_scope": "exact nearest-visible vector oracle; cost not timed",
+      "post_fill_metric": "fraction of queries returning at least k results",
+      "rows": [
+        {
+          "visible_frac": 0.9,
+          "visible_nodes": 7200,
+          "recall_all": 0.851333,
+          "recall_through": 0.926667,
+          "recall_post": 0.912,
+          "recall_strict": 0.918,
+          "post_fill_rate": 1.0,
+          "visible_reach_frac": 0.999861
+        },
+        {
+          "visible_frac": 0.7,
+          "visible_nodes": 5600,
+          "recall_all": 0.677333,
+          "recall_through": 0.940667,
+          "recall_post": 0.906,
+          "recall_strict": 0.912,
+          "post_fill_rate": 1.0,
+          "visible_reach_frac": 0.997857
+        },
+        {
+          "visible_frac": 0.5,
+          "visible_nodes": 4000,
+          "recall_all": 0.492,
+          "recall_through": 0.951333,
+          "recall_post": 0.891333,
+          "recall_strict": 0.878,
+          "post_fill_rate": 1.0,
+          "visible_reach_frac": 0.9875
+        },
+        {
+          "visible_frac": 0.3,
+          "visible_nodes": 2400,
+          "recall_all": 0.29,
+          "recall_through": 0.959333,
+          "recall_post": 0.84,
+          "recall_strict": 0.803333,
+          "post_fill_rate": 0.806667,
+          "visible_reach_frac": 0.91675
+        },
+        {
+          "visible_frac": 0.2,
+          "visible_nodes": 1600,
+          "recall_all": 0.206667,
+          "recall_through": 0.974,
+          "recall_post": 0.710667,
+          "recall_strict": 0.646667,
+          "post_fill_rate": 0.246667,
+          "visible_reach_frac": 0.785625
+        },
+        {
+          "visible_frac": 0.1,
+          "visible_nodes": 800,
+          "recall_all": 0.099333,
+          "recall_through": 0.986,
+          "recall_post": 0.388,
+          "recall_strict": 0.238,
+          "post_fill_rate": 0.0,
+          "visible_reach_frac": 0.00925
+        },
+        {
+          "visible_frac": 0.05,
+          "visible_nodes": 400,
+          "recall_all": 0.044667,
+          "recall_through": 0.989333,
+          "recall_post": 0.187333,
+          "recall_strict": 0.150667,
+          "post_fill_rate": 0.0,
+          "visible_reach_frac": 0.0075
+        }
+      ]
+    },
+    {
+      "seed": 8,
+      "N": 8000,
+      "nq": 150,
+      "ef_search": 48,
+      "r": 4,
+      "strict_entry_scope": "exact nearest-visible vector oracle; cost not timed",
+      "post_fill_metric": "fraction of queries returning at least k results",
+      "rows": [
+        {
+          "visible_frac": 0.9,
+          "visible_nodes": 7200,
+          "recall_all": 0.864667,
+          "recall_through": 0.942667,
+          "recall_post": 0.923333,
+          "recall_strict": 0.938,
+          "post_fill_rate": 1.0,
+          "visible_reach_frac": 0.999306
+        },
+        {
+          "visible_frac": 0.7,
+          "visible_nodes": 5600,
+          "recall_all": 0.698,
+          "recall_through": 0.948667,
+          "recall_post": 0.920667,
+          "recall_strict": 0.934,
+          "post_fill_rate": 1.0,
+          "visible_reach_frac": 0.997321
+        },
+        {
+          "visible_frac": 0.5,
+          "visible_nodes": 4000,
+          "recall_all": 0.498,
+          "recall_through": 0.961333,
+          "recall_post": 0.91,
+          "recall_strict": 0.907333,
+          "post_fill_rate": 1.0,
+          "visible_reach_frac": 0.9895
+        },
+        {
+          "visible_frac": 0.3,
+          "visible_nodes": 2400,
+          "recall_all": 0.295333,
+          "recall_through": 0.965333,
+          "recall_post": 0.864,
+          "recall_strict": 0.833333,
+          "post_fill_rate": 0.8,
+          "visible_reach_frac": 0.937583
+        },
+        {
+          "visible_frac": 0.2,
+          "visible_nodes": 1600,
+          "recall_all": 0.222667,
+          "recall_through": 0.981333,
+          "recall_post": 0.722,
+          "recall_strict": 0.573333,
+          "post_fill_rate": 0.286667,
+          "visible_reach_frac": 0.7095
+        },
+        {
+          "visible_frac": 0.1,
+          "visible_nodes": 800,
+          "recall_all": 0.109333,
+          "recall_through": 0.987333,
+          "recall_post": 0.433333,
+          "recall_strict": 0.303333,
+          "post_fill_rate": 0.006667,
+          "visible_reach_frac": 0.00875
+        },
+        {
+          "visible_frac": 0.05,
+          "visible_nodes": 400,
+          "recall_all": 0.039333,
+          "recall_through": 0.994,
+          "recall_post": 0.195333,
+          "recall_strict": 0.156667,
+          "post_fill_rate": 0.0,
+          "visible_reach_frac": 0.003
+        }
+      ]
+    }
+  ],
+  "E9_main_corner_runs": [
+    {
+      "seed": 11,
+      "merge_frac": 0.4,
+      "rewritten_nodes": 2000,
+      "ef": 16,
+      "rebuild_diverse": true,
+      "episodes": 200,
+      "straddle_rate": 0.855,
+      "tear_rate": 0.045,
+      "tear_rate_ci": [
+        0.023852,
+        0.083298
+      ],
+      "jaccard_mean": 0.991818,
+      "filter_violations": 0
+    },
+    {
+      "seed": 22,
+      "merge_frac": 0.4,
+      "rewritten_nodes": 2000,
+      "ef": 16,
+      "rebuild_diverse": true,
+      "episodes": 200,
+      "straddle_rate": 0.86,
+      "tear_rate": 0.07,
+      "tear_rate_ci": [
+        0.042152,
+        0.114056
+      ],
+      "jaccard_mean": 0.985874,
+      "filter_violations": 0
+    }
+  ],
+  "runtime_s": 102.1,
+  "E6_archived_key_comparisons": [
+    {
+      "seed": 11,
+      "matching_keys": true,
+      "fresh_native_change_count": 1,
+      "fresh_pinned_change_count": 0,
+      "old_pinned_rate_was_constant": 0.0
+    },
+    {
+      "seed": 22,
+      "matching_keys": true,
+      "fresh_native_change_count": 0,
+      "fresh_pinned_change_count": 0,
+      "old_pinned_rate_was_constant": 0.0
+    },
+    {
+      "seed": 33,
+      "matching_keys": true,
+      "fresh_native_change_count": 1,
+      "fresh_pinned_change_count": 0,
+      "old_pinned_rate_was_constant": 0.0
+    }
+  ],
+  "E7_archived_comparison": false,
+  "E7_archived_numeric_comparison": true,
+  "memory_scope": {
+    "unique_adj_arrays": "measured NumPy array payload only; dictionary/object allocator omitted",
+    "whole_index": "array payload plus shared embedding array; excludes Python metadata",
+    "naive_fullcopy": "modeled G*(N*d*4+N*M*4), not an allocated implementation"
+  }
+}

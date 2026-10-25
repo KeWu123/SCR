@@ -1,0 +1,60 @@
+{
+  "source_sha256": "609302b76decc2c90011869582c4180b693a40cc7e3267f77abca39312692c73",
+  "descriptor_exposes_handle": false,
+  "baseline": [
+    [
+      0,
+      1,
+      "0:old"
+    ],
+    [
+      1,
+      1,
+      "1:old"
+    ]
+  ],
+  "external_alias_changed_generation_query": [
+    [
+      0,
+      1,
+      "0:old"
+    ],
+    [
+      1,
+      1,
+      "1:old"
+    ]
+  ],
+  "source_view_mutation_error": "AttributeError: 'mappingproxy' object has no attribute '__setitem__'",
+  "closing_audit_error": "ValueError: episode closing",
+  "two_queries_retained_until_last_finish": true,
+  "answers": [
+    [
+      [
+        0,
+        1,
+        "0:old"
+      ],
+      [
+        1,
+        1,
+        "1:old"
+      ]
+    ],
+    [
+      [
+        0,
+        1,
+        "0:old"
+      ],
+      [
+        1,
+        1,
+        "1:old"
+      ]
+    ]
+  ],
+  "removed_after_last_query": [
+    "old"
+  ]
+}

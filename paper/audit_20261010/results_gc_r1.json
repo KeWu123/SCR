@@ -1,0 +1,24 @@
+{
+  "seed": 20261008,
+  "N": 15000,
+  "writes": 5000,
+  "floor": 4500,
+  "cuts": [
+    4500,
+    4750,
+    5000
+  ],
+  "row_resolution_checks": 45000,
+  "answer_checks": 60,
+  "versions_before": 20000,
+  "versions_after": 15500,
+  "pruned": 4500,
+  "represented_bytes_before": 5460000,
+  "represented_bytes_after": 4231500,
+  "byte_scope": "vectors, timestamps, versions, delete flags; excludes row ids, base table, Python/RSS",
+  "delete_reinsert_checks": 3,
+  "wrong_floor_fault_detected": true,
+  "timestamp_tie_gc_checks": 3,
+  "tied_candidate_permutations": 3,
+  "scope": "sequential real-index lifetime check; atomic pin race checked separately"
+}

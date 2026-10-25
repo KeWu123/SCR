@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.24)
+project(scr_native_trace LANGUAGES C CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(FAISS_ENABLE_GPU OFF CACHE BOOL "Build the CPU experiment")
+set(FAISS_ENABLE_METAL OFF CACHE BOOL "Build the CPU experiment")
+set(FAISS_ENABLE_PYTHON OFF CACHE BOOL "Use the native C++ harness")
+set(FAISS_ENABLE_C_API OFF CACHE BOOL "Disable unused bindings")
+set(FAISS_ENABLE_EXTRAS OFF CACHE BOOL "Disable unrelated benchmarks")
+set(FAISS_ENABLE_MKL OFF CACHE BOOL "Use a system BLAS implementation")
+set(FAISS_OPT_LEVEL generic CACHE STRING "Portable CPU target")
+set(BUILD_TESTING OFF CACHE BOOL "Build only the experiment")
+
+if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/faiss-1.15.1/faiss/impl/HNSW.h")
+  message(FATAL_ERROR "Run python prepare_source.py before configuring.")
+endif()
+
+add_subdirectory(faiss-1.15.1)
+find_package(OpenMP REQUIRED COMPONENTS CXX)
+add_executable(scr_native_trace native_trace.cpp)
+target_link_libraries(scr_native_trace PRIVATE faiss OpenMP::OpenMP_CXX)

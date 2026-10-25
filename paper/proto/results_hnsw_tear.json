@@ -1,0 +1,2973 @@
+{
+  "protocol": {
+    "engine": "faiss-cpu",
+    "engine_version": "1.15.1",
+    "index_type": "IndexHNSWFlat",
+    "N": 20000,
+    "d": 64,
+    "M": 32,
+    "level0_slots": 64,
+    "efConstruction": 40,
+    "efSearch_values": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "k_values": [
+      10,
+      100
+    ],
+    "n_queries": 1000,
+    "n_episodes": 1000,
+    "seeds": [
+      20261008,
+      20261009,
+      20261010
+    ],
+    "data_model": "uniform random in [0,1)^d (no clusters, no near-duplicates); L2 metric",
+    "episode_model": "retrieval 1 traverses generation A; retrieval 2 traverses generation B; both generations are FAISS-built HNSW graphs over the SAME N nodes",
+    "generation_B_construction": "same node vectors, different insertion order (a permutation of the ids) -> a different but equally legitimate HNSW graph",
+    "repair_model": "monotone, reciprocity-preserving repair: for every non-reciprocal directed edge u->v we ADD the reverse v->u if v has a free level-0 slot; edges are never deleted (backward-compatible). Applied to both generations so BOTH become ~1.0 reciprocal before the tear is measured.",
+    "tear_any_def": "the two top-k sets differ at all (symmetric difference > 0)",
+    "tear_structural_def": "symmetric difference > max(noiseA, noiseB), where noiseX is the symmetric difference of generation X's result against the EXACT top-k; i.e. the disagreement cannot be explained by ANN approximation alone",
+    "N_used": 20000,
+    "n_queries_used": 1000,
+    "efSearch_used": [
+      16,
+      32,
+      64,
+      128
+    ]
+  },
+  "per_seed": [
+    {
+      "seed": 20261008,
+      "build_seconds": 0.22,
+      "raw_reciprocity_genA": {
+        "frac": 0.6861028508323621,
+        "mutual": 651102,
+        "directed": 948986
+      },
+      "raw_reciprocity_genB": {
+        "frac": 0.6827215288578666,
+        "mutual": 647900,
+        "directed": 948996
+      },
+      "level0_slots": 64,
+      "recall_raw_genA": {
+        "16": 0.5697,
+        "32": 0.7419,
+        "64": 0.8876,
+        "128": 0.9692
+      },
+      "recall_raw_genB": {
+        "16": 0.5795,
+        "32": 0.7483,
+        "64": 0.8904,
+        "128": 0.9667
+      },
+      "gen_edge_diff_raw": {
+        "directed_A": 948986,
+        "directed_B": 948996,
+        "only_in_A": 510931,
+        "only_in_B": 510941,
+        "jaccard": 0.30005267386657003
+      },
+      "mutual": {
+        "genA_removed": 296956,
+        "genB_removed": 300169,
+        "genA_rounds": 1,
+        "genB_rounds": 1
+      },
+      "mutual_reciprocity_genA": {
+        "frac": 0.9984802781198387,
+        "mutual": 651102,
+        "directed": 652093
+      },
+      "mutual_reciprocity_genB": {
+        "frac": 0.9984712402063826,
+        "mutual": 647900,
+        "directed": 648892
+      },
+      "recall_mutual_genA": {
+        "16": 0.2484,
+        "32": 0.3784,
+        "64": 0.5203,
+        "128": 0.6649
+      },
+      "recall_mutual_genB": {
+        "16": 0.2465,
+        "32": 0.3729,
+        "64": 0.5174,
+        "128": 0.6634
+      },
+      "gen_edge_diff_mutual": {
+        "directed_A": 652093,
+        "directed_B": 648892,
+        "only_in_A": 335186,
+        "only_in_B": 331985,
+        "jaccard": 0.32203443222996553
+      },
+      "repair": {
+        "genA_added": 87630,
+        "genA_leftover": 420508,
+        "genA_rounds": 2,
+        "genB_added": 85961,
+        "genB_leftover": 430270,
+        "genB_rounds": 2
+      },
+      "repaired_reciprocity_genA": {
+        "frac": 0.7971727235543344,
+        "mutual": 826362,
+        "directed": 1036616
+      },
+      "repaired_reciprocity_genB": {
+        "frac": 0.7921314605341091,
+        "mutual": 819822,
+        "directed": 1034957
+      },
+      "recall_repaired_genA": {
+        "16": 0.6028,
+        "32": 0.7726,
+        "64": 0.9133,
+        "128": 0.9798
+      },
+      "recall_repaired_genB": {
+        "16": 0.6128,
+        "32": 0.7821,
+        "64": 0.9113,
+        "128": 0.9785
+      },
+      "gen_edge_diff_repaired": {
+        "directed_A": 1036616,
+        "directed_B": 1034957,
+        "only_in_A": 547121,
+        "only_in_B": 545462,
+        "jaccard": 0.3094000422229498
+      },
+      "query_sampling": "without_replacement",
+      "unique_query_count": 1000,
+      "tear": {
+        "raw|k=10,ef=16": {
+          "variant": "raw",
+          "k": 10,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 988,
+          "tear_any_rate": 0.988,
+          "tear_any_wilson95": [
+            0.9791427315245017,
+            0.9931223521935965
+          ],
+          "tear_structural_count": 132,
+          "tear_structural_rate": 0.132,
+          "tear_structural_wilson95": [
+            0.1124216361480769,
+            0.15439485809729173
+          ],
+          "jaccard_mean": 0.4533991737536629,
+          "jaccard_median": 0.42857142857142855,
+          "symdiff_mean": 8.05,
+          "symdiff_median": 8.0,
+          "symdiff_p90": 14.0,
+          "symdiff_max": 20
+        },
+        "raw|k=10,ef=32": {
+          "variant": "raw",
+          "k": 10,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 949,
+          "tear_any_rate": 0.949,
+          "tear_any_wilson95": [
+            0.9335645136552383,
+            0.9609990572247332
+          ],
+          "tear_structural_count": 101,
+          "tear_structural_rate": 0.101,
+          "tear_structural_wilson95": [
+            0.08382401065239914,
+            0.12122974261907385
+          ],
+          "jaccard_mean": 0.617435144920439,
+          "jaccard_median": 0.6666666666666666,
+          "symdiff_mean": 5.028,
+          "symdiff_median": 4.0,
+          "symdiff_p90": 8.0,
+          "symdiff_max": 16
+        },
+        "raw|k=10,ef=64": {
+          "variant": "raw",
+          "k": 10,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 780,
+          "tear_any_rate": 0.78,
+          "tear_any_wilson95": [
+            0.7532805086371258,
+            0.8045765066109635
+          ],
+          "tear_structural_count": 40,
+          "tear_structural_rate": 0.04,
+          "tear_structural_wilson95": [
+            0.02951097368545276,
+            0.05400964412125796
+          ],
+          "jaccard_mean": 0.7881315351315352,
+          "jaccard_median": 0.8181818181818182,
+          "symdiff_mean": 2.526,
+          "symdiff_median": 2.0,
+          "symdiff_p90": 4.0,
+          "symdiff_max": 10
+        },
+        "raw|k=10,ef=128": {
+          "variant": "raw",
+          "k": 10,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 394,
+          "tear_any_rate": 0.394,
+          "tear_any_wilson95": [
+            0.3641755734830001,
+            0.4246356993159376
+          ],
+          "tear_structural_count": 3,
+          "tear_structural_rate": 0.003,
+          "tear_structural_wilson95": [
+            0.0010207838811386186,
+            0.008783014053503173
+          ],
+          "jaccard_mean": 0.9198438228438228,
+          "jaccard_median": 1.0,
+          "symdiff_mean": 0.902,
+          "symdiff_median": 0.0,
+          "symdiff_p90": 2.0,
+          "symdiff_max": 6
+        },
+        "raw|k=100,ef=16": {
+          "variant": "raw",
+          "k": 100,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 43,
+          "tear_structural_rate": 0.043,
+          "tear_structural_wilson95": [
+            0.03207865341171336,
+            0.057419003844084014
+          ],
+          "jaccard_mean": 0.3601580343086494,
+          "jaccard_median": 0.36054421768707484,
+          "symdiff_mean": 95.426,
+          "symdiff_median": 94.0,
+          "symdiff_p90": 122.20000000000005,
+          "symdiff_max": 156
+        },
+        "raw|k=100,ef=32": {
+          "variant": "raw",
+          "k": 100,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 7,
+          "tear_structural_rate": 0.007,
+          "tear_structural_wilson95": [
+            0.0033948684009907646,
+            0.014378315465766588
+          ],
+          "jaccard_mean": 0.522715192224886,
+          "jaccard_median": 0.5267175572519084,
+          "symdiff_mean": 63.358,
+          "symdiff_median": 62.0,
+          "symdiff_p90": 82.0,
+          "symdiff_max": 114
+        },
+        "raw|k=100,ef=64": {
+          "variant": "raw",
+          "k": 100,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 10,
+          "tear_structural_rate": 0.01,
+          "tear_structural_wilson95": [
+            0.005440754445529249,
+            0.018309468870314774
+          ],
+          "jaccard_mean": 0.7000265345620889,
+          "jaccard_median": 0.6949152542372882,
+          "symdiff_mean": 35.568,
+          "symdiff_median": 36.0,
+          "symdiff_p90": 46.0,
+          "symdiff_max": 72
+        },
+        "raw|k=100,ef=128": {
+          "variant": "raw",
+          "k": 100,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 40,
+          "tear_structural_rate": 0.04,
+          "tear_structural_wilson95": [
+            0.02951097368545276,
+            0.05400964412125796
+          ],
+          "jaccard_mean": 0.8564804431956313,
+          "jaccard_median": 0.8518518518518519,
+          "symdiff_mean": 15.576,
+          "symdiff_median": 16.0,
+          "symdiff_p90": 22.0,
+          "symdiff_max": 34
+        },
+        "additive|k=10,ef=16": {
+          "variant": "additive",
+          "k": 10,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 987,
+          "tear_any_rate": 0.987,
+          "tear_any_wilson95": [
+            0.9778855576244203,
+            0.9923871796106489
+          ],
+          "tear_structural_count": 118,
+          "tear_structural_rate": 0.118,
+          "tear_structural_wilson95": [
+            0.09945155840122327,
+            0.13947208508174083
+          ],
+          "jaccard_mean": 0.48366191307832174,
+          "jaccard_median": 0.42857142857142855,
+          "symdiff_mean": 7.44,
+          "symdiff_median": 8.0,
+          "symdiff_p90": 12.0,
+          "symdiff_max": 20
+        },
+        "additive|k=10,ef=32": {
+          "variant": "additive",
+          "k": 10,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 936,
+          "tear_any_rate": 0.936,
+          "tear_any_wilson95": [
+            0.9190992674988255,
+            0.9495637991017706
+          ],
+          "tear_structural_count": 91,
+          "tear_structural_rate": 0.091,
+          "tear_structural_wilson95": [
+            0.07470470437164412,
+            0.11042558406953998
+          ],
+          "jaccard_mean": 0.651187706084765,
+          "jaccard_median": 0.6666666666666666,
+          "symdiff_mean": 4.51,
+          "symdiff_median": 4.0,
+          "symdiff_p90": 8.0,
+          "symdiff_max": 16
+        },
+        "additive|k=10,ef=64": {
+          "variant": "additive",
+          "k": 10,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 696,
+          "tear_any_rate": 0.696,
+          "tear_any_wilson95": [
+            0.6667851800100445,
+            0.7237147306636179
+          ],
+          "tear_structural_count": 28,
+          "tear_structural_rate": 0.028,
+          "tear_structural_wilson95": [
+            0.019442276812770925,
+            0.04017018319759311
+          ],
+          "jaccard_mean": 0.827047619047619,
+          "jaccard_median": 0.8181818181818182,
+          "symdiff_mean": 2.024,
+          "symdiff_median": 2.0,
+          "symdiff_p90": 4.0,
+          "symdiff_max": 8
+        },
+        "additive|k=10,ef=128": {
+          "variant": "additive",
+          "k": 10,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 285,
+          "tear_any_rate": 0.285,
+          "tear_any_wilson95": [
+            0.25788577698507104,
+            0.3137597291637176
+          ],
+          "tear_structural_count": 0,
+          "tear_structural_rate": 0.0,
+          "tear_structural_wilson95": [
+            0.0,
+            0.0038267584855551234
+          ],
+          "jaccard_mean": 0.944871794871795,
+          "jaccard_median": 1.0,
+          "symdiff_mean": 0.614,
+          "symdiff_median": 0.0,
+          "symdiff_p90": 2.0,
+          "symdiff_max": 6
+        },
+        "additive|k=100,ef=16": {
+          "variant": "additive",
+          "k": 100,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 48,
+          "tear_structural_rate": 0.048,
+          "tear_structural_wilson95": [
+            0.036393301020807914,
+            0.06306608865013393
+          ],
+          "jaccard_mean": 0.3871865038399789,
+          "jaccard_median": 0.3888888888888889,
+          "symdiff_mean": 89.57,
+          "symdiff_median": 88.0,
+          "symdiff_p90": 114.0,
+          "symdiff_max": 162
+        },
+        "additive|k=100,ef=32": {
+          "variant": "additive",
+          "k": 100,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 9,
+          "tear_structural_rate": 0.009,
+          "tear_structural_wilson95": [
+            0.004742060667477063,
+            0.01701581616533807
+          ],
+          "jaccard_mean": 0.5570023195520308,
+          "jaccard_median": 0.5625,
+          "symdiff_mean": 57.442,
+          "symdiff_median": 56.0,
+          "symdiff_p90": 72.0,
+          "symdiff_max": 102
+        },
+        "additive|k=100,ef=64": {
+          "variant": "additive",
+          "k": 100,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 11,
+          "tear_structural_rate": 0.011,
+          "tear_structural_wilson95": [
+            0.006153174098086638,
+            0.019589395700786275
+          ],
+          "jaccard_mean": 0.736267050273704,
+          "jaccard_median": 0.7391304347826086,
+          "symdiff_mean": 30.644,
+          "symdiff_median": 30.0,
+          "symdiff_p90": 40.0,
+          "symdiff_max": 58
+        },
+        "additive|k=100,ef=128": {
+          "variant": "additive",
+          "k": 100,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 40,
+          "tear_structural_rate": 0.04,
+          "tear_structural_wilson95": [
+            0.02951097368545276,
+            0.05400964412125796
+          ],
+          "jaccard_mean": 0.8859175975988586,
+          "jaccard_median": 0.8867924528301887,
+          "symdiff_mean": 12.184,
+          "symdiff_median": 12.0,
+          "symdiff_p90": 18.0,
+          "symdiff_max": 30
+        },
+        "mutual|k=10,ef=16": {
+          "variant": "mutual",
+          "k": 10,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 999,
+          "tear_any_rate": 0.999,
+          "tear_any_wilson95": [
+            0.9943574414020421,
+            0.9998234536293739
+          ],
+          "tear_structural_count": 210,
+          "tear_structural_rate": 0.21,
+          "tear_structural_wilson95": [
+            0.18588891937362567,
+            0.23633060054799632
+          ],
+          "jaccard_mean": 0.17669390164359203,
+          "jaccard_median": 0.1111111111111111,
+          "symdiff_mean": 14.351,
+          "symdiff_median": 14.0,
+          "symdiff_p90": 20.0,
+          "symdiff_max": 20
+        },
+        "mutual|k=10,ef=32": {
+          "variant": "mutual",
+          "k": 10,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 999,
+          "tear_any_rate": 0.999,
+          "tear_any_wilson95": [
+            0.9943574414020421,
+            0.9998234536293739
+          ],
+          "tear_structural_count": 116,
+          "tear_structural_rate": 0.116,
+          "tear_structural_wilson95": [
+            0.09760567703963383,
+            0.13733327347727253
+          ],
+          "jaccard_mean": 0.29408475056075667,
+          "jaccard_median": 0.25,
+          "symdiff_mean": 11.187,
+          "symdiff_median": 12.0,
+          "symdiff_p90": 16.0,
+          "symdiff_max": 20
+        },
+        "mutual|k=10,ef=64": {
+          "variant": "mutual",
+          "k": 10,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 995,
+          "tear_any_rate": 0.995,
+          "tear_any_wilson95": [
+            0.9883490446266249,
+            0.9978624644726756
+          ],
+          "tear_structural_count": 83,
+          "tear_structural_rate": 0.083,
+          "tear_structural_wilson95": [
+            0.06745502144289929,
+            0.10173649513405368
+          ],
+          "jaccard_mean": 0.4253890292713822,
+          "jaccard_median": 0.42857142857142855,
+          "symdiff_mean": 8.255,
+          "symdiff_median": 8.0,
+          "symdiff_p90": 12.0,
+          "symdiff_max": 20
+        },
+        "mutual|k=10,ef=128": {
+          "variant": "mutual",
+          "k": 10,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 986,
+          "tear_any_rate": 0.986,
+          "tear_any_wilson95": [
+            0.9766379658824644,
+            0.9916424248695761
+          ],
+          "tear_structural_count": 68,
+          "tear_structural_rate": 0.068,
+          "tear_structural_wilson95": [
+            0.05399245780853015,
+            0.08531386152298948
+          ],
+          "jaccard_mean": 0.5597072237188335,
+          "jaccard_median": 0.5384615384615384,
+          "symdiff_mean": 5.799,
+          "symdiff_median": 6.0,
+          "symdiff_p90": 10.0,
+          "symdiff_max": 18
+        },
+        "mutual|k=100,ef=16": {
+          "variant": "mutual",
+          "k": 100,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 272,
+          "tear_structural_rate": 0.272,
+          "tear_structural_wilson95": [
+            0.24533124703883705,
+            0.3004137548305761
+          ],
+          "jaccard_mean": 0.13613882275294634,
+          "jaccard_median": 0.11731843575418995,
+          "symdiff_mean": 150.901,
+          "symdiff_median": 155.0,
+          "symdiff_p90": 190.0,
+          "symdiff_max": 200
+        },
+        "mutual|k=100,ef=32": {
+          "variant": "mutual",
+          "k": 100,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 67,
+          "tear_structural_rate": 0.067,
+          "tear_structural_wilson95": [
+            0.05310191960662385,
+            0.08421205324186688
+          ],
+          "jaccard_mean": 0.2399537168814219,
+          "jaccard_median": 0.2422360248447205,
+          "symdiff_mean": 121.039,
+          "symdiff_median": 118.0,
+          "symdiff_p90": 158.0,
+          "symdiff_max": 188
+        },
+        "mutual|k=100,ef=64": {
+          "variant": "mutual",
+          "k": 100,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 14,
+          "tear_structural_rate": 0.014,
+          "tear_structural_wilson95": [
+            0.00835757513042392,
+            0.02336203411753566
+          ],
+          "jaccard_mean": 0.35916972719893286,
+          "jaccard_median": 0.3698630136986301,
+          "symdiff_mean": 92.529,
+          "symdiff_median": 92.0,
+          "symdiff_p90": 116.0,
+          "symdiff_max": 176
+        },
+        "mutual|k=100,ef=128": {
+          "variant": "mutual",
+          "k": 100,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 7,
+          "tear_structural_rate": 0.007,
+          "tear_structural_wilson95": [
+            0.0033948684009907646,
+            0.014378315465766588
+          ],
+          "jaccard_mean": 0.4878025276785022,
+          "jaccard_median": 0.5037593984962406,
+          "symdiff_mean": 67.223,
+          "symdiff_median": 66.0,
+          "symdiff_p90": 88.0,
+          "symdiff_max": 108
+        }
+      }
+    },
+    {
+      "seed": 20261009,
+      "build_seconds": 0.23,
+      "raw_reciprocity_genA": {
+        "frac": 0.6898286237984432,
+        "mutual": 656354,
+        "directed": 951474
+      },
+      "raw_reciprocity_genB": {
+        "frac": 0.6909207205520178,
+        "mutual": 656754,
+        "directed": 950549
+      },
+      "level0_slots": 64,
+      "recall_raw_genA": {
+        "16": 0.5749,
+        "32": 0.7415,
+        "64": 0.8938,
+        "128": 0.971
+      },
+      "recall_raw_genB": {
+        "16": 0.5729,
+        "32": 0.7426,
+        "64": 0.889,
+        "128": 0.9684
+      },
+      "gen_edge_diff_raw": {
+        "directed_A": 951474,
+        "directed_B": 950549,
+        "only_in_A": 508799,
+        "only_in_B": 507874,
+        "jaccard": 0.30333751785043733
+      },
+      "mutual": {
+        "genA_removed": 294078,
+        "genB_removed": 292831,
+        "genA_rounds": 1,
+        "genB_rounds": 1
+      },
+      "mutual_reciprocity_genA": {
+        "frac": 0.9983238422038889,
+        "mutual": 656354,
+        "directed": 657456
+      },
+      "mutual_reciprocity_genB": {
+        "frac": 0.9984842288343158,
+        "mutual": 656754,
+        "directed": 657751
+      },
+      "recall_mutual_genA": {
+        "16": 0.2357,
+        "32": 0.3574,
+        "64": 0.5073,
+        "128": 0.6553
+      },
+      "recall_mutual_genB": {
+        "16": 0.2445,
+        "32": 0.3709,
+        "64": 0.521,
+        "128": 0.6665
+      },
+      "gen_edge_diff_mutual": {
+        "directed_A": 657456,
+        "directed_B": 657751,
+        "only_in_A": 334158,
+        "only_in_B": 334453,
+        "jaccard": 0.3259351412276731
+      },
+      "repair": {
+        "genA_added": 88179,
+        "genA_leftover": 413882,
+        "genA_rounds": 2,
+        "genB_added": 88087,
+        "genB_leftover": 411416,
+        "genB_rounds": 2
+      },
+      "repaired_reciprocity_genA": {
+        "frac": 0.8009518560519712,
+        "mutual": 832712,
+        "directed": 1039653
+      },
+      "repaired_reciprocity_genB": {
+        "frac": 0.8019440882079959,
+        "mutual": 832928,
+        "directed": 1038636
+      },
+      "recall_repaired_genA": {
+        "16": 0.601,
+        "32": 0.7771,
+        "64": 0.9159,
+        "128": 0.9822
+      },
+      "recall_repaired_genB": {
+        "16": 0.6045,
+        "32": 0.7783,
+        "64": 0.9143,
+        "128": 0.9786
+      },
+      "gen_edge_diff_repaired": {
+        "directed_A": 1039653,
+        "directed_B": 1038636,
+        "only_in_A": 544033,
+        "only_in_B": 543016,
+        "jaccard": 0.31315455095158873
+      },
+      "query_sampling": "without_replacement",
+      "unique_query_count": 1000,
+      "tear": {
+        "raw|k=10,ef=16": {
+          "variant": "raw",
+          "k": 10,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 990,
+          "tear_any_rate": 0.99,
+          "tear_any_wilson95": [
+            0.9816905311296853,
+            0.9945592455544707
+          ],
+          "tear_structural_count": 118,
+          "tear_structural_rate": 0.118,
+          "tear_structural_wilson95": [
+            0.09945155840122327,
+            0.13947208508174083
+          ],
+          "jaccard_mean": 0.4521734362129099,
+          "jaccard_median": 0.42857142857142855,
+          "symdiff_mean": 8.024,
+          "symdiff_median": 8.0,
+          "symdiff_p90": 12.0,
+          "symdiff_max": 20
+        },
+        "raw|k=10,ef=32": {
+          "variant": "raw",
+          "k": 10,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 953,
+          "tear_any_rate": 0.953,
+          "tear_any_wilson95": [
+            0.9380600619184716,
+            0.9644728948936154
+          ],
+          "tear_structural_count": 72,
+          "tear_structural_rate": 0.072,
+          "tear_structural_wilson95": [
+            0.05756392168091441,
+            0.08971178358272076
+          ],
+          "jaccard_mean": 0.6213439501674796,
+          "jaccard_median": 0.6666666666666666,
+          "symdiff_mean": 4.956,
+          "symdiff_median": 4.0,
+          "symdiff_p90": 8.0,
+          "symdiff_max": 14
+        },
+        "raw|k=10,ef=64": {
+          "variant": "raw",
+          "k": 10,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 763,
+          "tear_any_rate": 0.763,
+          "tear_any_wilson95": [
+            0.7356684892970144,
+            0.7883186357395835
+          ],
+          "tear_structural_count": 25,
+          "tear_structural_rate": 0.025,
+          "tear_structural_wilson95": [
+            0.016990131293434067,
+            0.0366452892678433
+          ],
+          "jaccard_mean": 0.7990152347652347,
+          "jaccard_median": 0.8181818181818182,
+          "symdiff_mean": 2.392,
+          "symdiff_median": 2.0,
+          "symdiff_p90": 4.0,
+          "symdiff_max": 12
+        },
+        "raw|k=10,ef=128": {
+          "variant": "raw",
+          "k": 10,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 369,
+          "tear_any_rate": 0.369,
+          "tear_any_wilson95": [
+            0.33964716115877136,
+            0.399355449564444
+          ],
+          "tear_structural_count": 3,
+          "tear_structural_rate": 0.003,
+          "tear_structural_wilson95": [
+            0.0010207838811386186,
+            0.008783014053503173
+          ],
+          "jaccard_mean": 0.9214498834498834,
+          "jaccard_median": 1.0,
+          "symdiff_mean": 0.894,
+          "symdiff_median": 0.0,
+          "symdiff_p90": 2.0,
+          "symdiff_max": 10
+        },
+        "raw|k=100,ef=16": {
+          "variant": "raw",
+          "k": 100,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 49,
+          "tear_structural_rate": 0.049,
+          "tear_structural_wilson95": [
+            0.037261034647360615,
+            0.06419070150661013
+          ],
+          "jaccard_mean": 0.3554873251819178,
+          "jaccard_median": 0.35135135135135137,
+          "symdiff_mean": 96.308,
+          "symdiff_median": 96.0,
+          "symdiff_p90": 122.0,
+          "symdiff_max": 162
+        },
+        "raw|k=100,ef=32": {
+          "variant": "raw",
+          "k": 100,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 6,
+          "tear_structural_rate": 0.006,
+          "tear_structural_wilson95": [
+            0.0027526691418763745,
+            0.01302816824185209
+          ],
+          "jaccard_mean": 0.5216305173804733,
+          "jaccard_median": 0.5209345362017117,
+          "symdiff_mean": 63.498,
+          "symdiff_median": 63.0,
+          "symdiff_p90": 80.0,
+          "symdiff_max": 112
+        },
+        "raw|k=100,ef=64": {
+          "variant": "raw",
+          "k": 100,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 11,
+          "tear_structural_rate": 0.011,
+          "tear_structural_wilson95": [
+            0.006153174098086638,
+            0.019589395700786275
+          ],
+          "jaccard_mean": 0.7003632466478736,
+          "jaccard_median": 0.6949152542372882,
+          "symdiff_mean": 35.556,
+          "symdiff_median": 36.0,
+          "symdiff_p90": 46.0,
+          "symdiff_max": 70
+        },
+        "raw|k=100,ef=128": {
+          "variant": "raw",
+          "k": 100,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 43,
+          "tear_structural_rate": 0.043,
+          "tear_structural_wilson95": [
+            0.03207865341171336,
+            0.057419003844084014
+          ],
+          "jaccard_mean": 0.859008226823906,
+          "jaccard_median": 0.8691588785046729,
+          "symdiff_mean": 15.286,
+          "symdiff_median": 14.0,
+          "symdiff_p90": 22.0,
+          "symdiff_max": 40
+        },
+        "additive|k=10,ef=16": {
+          "variant": "additive",
+          "k": 10,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 988,
+          "tear_any_rate": 0.988,
+          "tear_any_wilson95": [
+            0.9791427315245017,
+            0.9931223521935965
+          ],
+          "tear_structural_count": 112,
+          "tear_structural_rate": 0.112,
+          "tear_structural_wilson95": [
+            0.09391954090888108,
+            0.1330500236759097
+          ],
+          "jaccard_mean": 0.47227989064598974,
+          "jaccard_median": 0.42857142857142855,
+          "symdiff_mean": 7.646,
+          "symdiff_median": 8.0,
+          "symdiff_p90": 12.0,
+          "symdiff_max": 20
+        },
+        "additive|k=10,ef=32": {
+          "variant": "additive",
+          "k": 10,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 935,
+          "tear_any_rate": 0.935,
+          "tear_any_wilson95": [
+            0.9179944906866292,
+            0.948676229430938
+          ],
+          "tear_structural_count": 60,
+          "tear_structural_rate": 0.06,
+          "tear_structural_wilson95": [
+            0.04689647267593196,
+            0.07647107479135655
+          ],
+          "jaccard_mean": 0.6551389688742632,
+          "jaccard_median": 0.6666666666666666,
+          "symdiff_mean": 4.434,
+          "symdiff_median": 4.0,
+          "symdiff_p90": 8.0,
+          "symdiff_max": 14
+        },
+        "additive|k=10,ef=64": {
+          "variant": "additive",
+          "k": 10,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 728,
+          "tear_any_rate": 0.728,
+          "tear_any_wilson95": [
+            0.6995862451694239,
+            0.7546687529611629
+          ],
+          "tear_structural_count": 24,
+          "tear_structural_rate": 0.024,
+          "tear_structural_wilson95": [
+            0.016180168466636995,
+            0.03546290561161149
+          ],
+          "jaccard_mean": 0.8211738261738263,
+          "jaccard_median": 0.8181818181818182,
+          "symdiff_mean": 2.098,
+          "symdiff_median": 2.0,
+          "symdiff_p90": 4.0,
+          "symdiff_max": 10
+        },
+        "additive|k=10,ef=128": {
+          "variant": "additive",
+          "k": 10,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 277,
+          "tear_any_rate": 0.277,
+          "tear_any_wilson95": [
+            0.25015649034831283,
+            0.3055502439362448
+          ],
+          "tear_structural_count": 1,
+          "tear_structural_rate": 0.001,
+          "tear_structural_wilson95": [
+            0.00017654637062607809,
+            0.0056425585979579355
+          ],
+          "jaccard_mean": 0.9444145854145855,
+          "jaccard_median": 1.0,
+          "symdiff_mean": 0.626,
+          "symdiff_median": 0.0,
+          "symdiff_p90": 2.0,
+          "symdiff_max": 10
+        },
+        "additive|k=100,ef=16": {
+          "variant": "additive",
+          "k": 100,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 46,
+          "tear_structural_rate": 0.046,
+          "tear_structural_wilson95": [
+            0.03466249276326498,
+            0.06081220394161907
+          ],
+          "jaccard_mean": 0.3775505393346025,
+          "jaccard_median": 0.3793103448275862,
+          "symdiff_mean": 91.63,
+          "symdiff_median": 90.0,
+          "symdiff_p90": 118.0,
+          "symdiff_max": 162
+        },
+        "additive|k=100,ef=32": {
+          "variant": "additive",
+          "k": 100,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 6,
+          "tear_structural_rate": 0.006,
+          "tear_structural_wilson95": [
+            0.0027526691418763745,
+            0.01302816824185209
+          ],
+          "jaccard_mean": 0.5553494809370436,
+          "jaccard_median": 0.5503875968992248,
+          "symdiff_mean": 57.754,
+          "symdiff_median": 58.0,
+          "symdiff_p90": 74.0,
+          "symdiff_max": 96
+        },
+        "additive|k=100,ef=64": {
+          "variant": "additive",
+          "k": 100,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 23,
+          "tear_structural_rate": 0.023,
+          "tear_structural_wilson95": [
+            0.015374276932992918,
+            0.03427645066222667
+          ],
+          "jaccard_mean": 0.7363646197801524,
+          "jaccard_median": 0.7391304347826086,
+          "symdiff_mean": 30.638,
+          "symdiff_median": 30.0,
+          "symdiff_p90": 42.0,
+          "symdiff_max": 60
+        },
+        "additive|k=100,ef=128": {
+          "variant": "additive",
+          "k": 100,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 42,
+          "tear_structural_rate": 0.042,
+          "tear_structural_wilson95": [
+            0.031220885546165447,
+            0.056284425226603055
+          ],
+          "jaccard_mean": 0.887970973941402,
+          "jaccard_median": 0.8867924528301887,
+          "symdiff_mean": 11.956,
+          "symdiff_median": 12.0,
+          "symdiff_p90": 18.0,
+          "symdiff_max": 30
+        },
+        "mutual|k=10,ef=16": {
+          "variant": "mutual",
+          "k": 10,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 216,
+          "tear_structural_rate": 0.216,
+          "tear_structural_wilson95": [
+            0.19160700894892252,
+            0.24256658987087282
+          ],
+          "jaccard_mean": 0.1730585805663205,
+          "jaccard_median": 0.1111111111111111,
+          "symdiff_mean": 14.327,
+          "symdiff_median": 14.0,
+          "symdiff_p90": 20.0,
+          "symdiff_max": 20
+        },
+        "mutual|k=10,ef=32": {
+          "variant": "mutual",
+          "k": 10,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 998,
+          "tear_any_rate": 0.998,
+          "tear_any_wilson95": [
+            0.9927371921365079,
+            0.9994513564118793
+          ],
+          "tear_structural_count": 153,
+          "tear_structural_rate": 0.153,
+          "tear_structural_wilson95": [
+            0.13201921562431126,
+            0.17663655476466403
+          ],
+          "jaccard_mean": 0.2777972397399642,
+          "jaccard_median": 0.25,
+          "symdiff_mean": 11.533,
+          "symdiff_median": 12.0,
+          "symdiff_p90": 18.0,
+          "symdiff_max": 20
+        },
+        "mutual|k=10,ef=64": {
+          "variant": "mutual",
+          "k": 10,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 997,
+          "tear_any_rate": 0.997,
+          "tear_any_wilson95": [
+            0.9912169859464969,
+            0.9989792161188614
+          ],
+          "tear_structural_count": 95,
+          "tear_structural_rate": 0.095,
+          "tear_structural_wilson95": [
+            0.07834523457904741,
+            0.11475443979425223
+          ],
+          "jaccard_mean": 0.40865790246904793,
+          "jaccard_median": 0.42857142857142855,
+          "symdiff_mean": 8.541,
+          "symdiff_median": 8.0,
+          "symdiff_p90": 12.0,
+          "symdiff_max": 18
+        },
+        "mutual|k=10,ef=128": {
+          "variant": "mutual",
+          "k": 10,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 980,
+          "tear_any_rate": 0.98,
+          "tear_any_wilson95": [
+            0.9693099947702822,
+            0.987016317083585
+          ],
+          "tear_structural_count": 71,
+          "tear_structural_rate": 0.071,
+          "tear_structural_wilson95": [
+            0.056669695350451466,
+            0.08861366343015481
+          ],
+          "jaccard_mean": 0.5453248630454514,
+          "jaccard_median": 0.5384615384615384,
+          "symdiff_mean": 6.021,
+          "symdiff_median": 6.0,
+          "symdiff_p90": 10.0,
+          "symdiff_max": 16
+        },
+        "mutual|k=100,ef=16": {
+          "variant": "mutual",
+          "k": 100,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 292,
+          "tear_structural_rate": 0.292,
+          "tear_structural_wilson95": [
+            0.2646576946068598,
+            0.3209342369231311
+          ],
+          "jaccard_mean": 0.12899927797643632,
+          "jaccard_median": 0.1111111111111111,
+          "symdiff_mean": 151.869,
+          "symdiff_median": 154.0,
+          "symdiff_p90": 190.0,
+          "symdiff_max": 200
+        },
+        "mutual|k=100,ef=32": {
+          "variant": "mutual",
+          "k": 100,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 112,
+          "tear_structural_rate": 0.112,
+          "tear_structural_wilson95": [
+            0.09391954090888108,
+            0.1330500236759097
+          ],
+          "jaccard_mean": 0.21955421142353673,
+          "jaccard_median": 0.21951219512195122,
+          "symdiff_mean": 125.441,
+          "symdiff_median": 124.0,
+          "symdiff_p90": 160.0,
+          "symdiff_max": 194
+        },
+        "mutual|k=100,ef=64": {
+          "variant": "mutual",
+          "k": 100,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 30,
+          "tear_structural_rate": 0.03,
+          "tear_structural_wilson95": [
+            0.0210937388288347,
+            0.042503414147587126
+          ],
+          "jaccard_mean": 0.34036783187608727,
+          "jaccard_median": 0.35135135135135137,
+          "symdiff_mean": 95.843,
+          "symdiff_median": 96.0,
+          "symdiff_p90": 120.0,
+          "symdiff_max": 162
+        },
+        "mutual|k=100,ef=128": {
+          "variant": "mutual",
+          "k": 100,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 26,
+          "tear_structural_rate": 0.026,
+          "tear_structural_wilson95": [
+            0.017803938201616326,
+            0.03782382884268993
+          ],
+          "jaccard_mean": 0.47664410848293665,
+          "jaccard_median": 0.5037593984962406,
+          "symdiff_mean": 68.605,
+          "symdiff_median": 66.0,
+          "symdiff_p90": 90.0,
+          "symdiff_max": 116
+        }
+      }
+    },
+    {
+      "seed": 20261010,
+      "build_seconds": 0.24,
+      "raw_reciprocity_genA": {
+        "frac": 0.6828775858304246,
+        "mutual": 647370,
+        "directed": 948003
+      },
+      "raw_reciprocity_genB": {
+        "frac": 0.6833299950452777,
+        "mutual": 648200,
+        "directed": 948590
+      },
+      "level0_slots": 64,
+      "recall_raw_genA": {
+        "16": 0.5723,
+        "32": 0.7431,
+        "64": 0.8908,
+        "128": 0.9724
+      },
+      "recall_raw_genB": {
+        "16": 0.5802,
+        "32": 0.7487,
+        "64": 0.8915,
+        "128": 0.9724
+      },
+      "gen_edge_diff_raw": {
+        "directed_A": 948003,
+        "directed_B": 948590,
+        "only_in_A": 510246,
+        "only_in_B": 510833,
+        "jaccard": 0.3000727977647933
+      },
+      "mutual": {
+        "genA_removed": 299721,
+        "genB_removed": 299407,
+        "genA_rounds": 1,
+        "genB_rounds": 1
+      },
+      "mutual_reciprocity_genA": {
+        "frac": 0.9985300536923725,
+        "mutual": 647370,
+        "directed": 648323
+      },
+      "mutual_reciprocity_genB": {
+        "frac": 0.9983842870762989,
+        "mutual": 648200,
+        "directed": 649249
+      },
+      "recall_mutual_genA": {
+        "16": 0.2413,
+        "32": 0.3704,
+        "64": 0.5109,
+        "128": 0.6576
+      },
+      "recall_mutual_genB": {
+        "16": 0.2483,
+        "32": 0.377,
+        "64": 0.5224,
+        "128": 0.6694
+      },
+      "gen_edge_diff_mutual": {
+        "directed_A": 648323,
+        "directed_B": 649249,
+        "only_in_A": 332354,
+        "only_in_B": 333280,
+        "jaccard": 0.3218908255170369
+      },
+      "repair": {
+        "genA_added": 85652,
+        "genA_leftover": 429962,
+        "genA_rounds": 2,
+        "genB_added": 87252,
+        "genB_leftover": 426276,
+        "genB_rounds": 2
+      },
+      "repaired_reciprocity_genA": {
+        "frac": 0.7920186135606174,
+        "mutual": 818674,
+        "directed": 1033655
+      },
+      "repaired_reciprocity_genB": {
+        "frac": 0.7942369589184451,
+        "mutual": 822704,
+        "directed": 1035842
+      },
+      "recall_repaired_genA": {
+        "16": 0.6115,
+        "32": 0.7796,
+        "64": 0.916,
+        "128": 0.9817
+      },
+      "recall_repaired_genB": {
+        "16": 0.6138,
+        "32": 0.7829,
+        "64": 0.9184,
+        "128": 0.9816
+      },
+      "gen_edge_diff_repaired": {
+        "directed_A": 1033655,
+        "directed_B": 1035842,
+        "only_in_A": 545001,
+        "only_in_B": 547188,
+        "jaccard": 0.3091097597927182
+      },
+      "query_sampling": "without_replacement",
+      "unique_query_count": 1000,
+      "tear": {
+        "raw|k=10,ef=16": {
+          "variant": "raw",
+          "k": 10,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 989,
+          "tear_any_rate": 0.989,
+          "tear_any_wilson95": [
+            0.9804106042992137,
+            0.9938468259019134
+          ],
+          "tear_structural_count": 144,
+          "tear_structural_rate": 0.144,
+          "tear_structural_wilson95": [
+            0.1236009499120135,
+            0.16712370212970176
+          ],
+          "jaccard_mean": 0.45631868192007513,
+          "jaccard_median": 0.42857142857142855,
+          "symdiff_mean": 7.972,
+          "symdiff_median": 8.0,
+          "symdiff_p90": 14.0,
+          "symdiff_max": 20
+        },
+        "raw|k=10,ef=32": {
+          "variant": "raw",
+          "k": 10,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 965,
+          "tear_any_rate": 0.965,
+          "tear_any_wilson95": [
+            0.9517133776255466,
+            0.9747277369828871
+          ],
+          "tear_structural_count": 76,
+          "tear_structural_rate": 0.076,
+          "tear_structural_wilson95": [
+            0.06114944807170235,
+            0.0940956431240484
+          ],
+          "jaccard_mean": 0.619622318857613,
+          "jaccard_median": 0.6666666666666666,
+          "symdiff_mean": 4.976,
+          "symdiff_median": 4.0,
+          "symdiff_p90": 8.0,
+          "symdiff_max": 14
+        },
+        "raw|k=10,ef=64": {
+          "variant": "raw",
+          "k": 10,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 764,
+          "tear_any_rate": 0.764,
+          "tear_any_wilson95": [
+            0.7367028474727885,
+            0.7892766240468384
+          ],
+          "tear_structural_count": 28,
+          "tear_structural_rate": 0.028,
+          "tear_structural_wilson95": [
+            0.019442276812770925,
+            0.04017018319759311
+          ],
+          "jaccard_mean": 0.7960003330003329,
+          "jaccard_median": 0.8181818181818182,
+          "symdiff_mean": 2.43,
+          "symdiff_median": 2.0,
+          "symdiff_p90": 4.0,
+          "symdiff_max": 10
+        },
+        "raw|k=10,ef=128": {
+          "variant": "raw",
+          "k": 10,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 362,
+          "tear_any_rate": 0.362,
+          "tear_any_wilson95": [
+            0.33279441286747335,
+            0.39226177247453986
+          ],
+          "tear_structural_count": 2,
+          "tear_structural_rate": 0.002,
+          "tear_structural_wilson95": [
+            0.000548643588120728,
+            0.007262807863492177
+          ],
+          "jaccard_mean": 0.9279297369297369,
+          "jaccard_median": 1.0,
+          "symdiff_mean": 0.808,
+          "symdiff_median": 0.0,
+          "symdiff_p90": 2.0,
+          "symdiff_max": 8
+        },
+        "raw|k=100,ef=16": {
+          "variant": "raw",
+          "k": 100,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 50,
+          "tear_structural_rate": 0.05,
+          "tear_structural_wilson95": [
+            0.03813026239274882,
+            0.06531382024425081
+          ],
+          "jaccard_mean": 0.3590131467296736,
+          "jaccard_median": 0.36054421768707484,
+          "symdiff_mean": 95.578,
+          "symdiff_median": 94.0,
+          "symdiff_p90": 122.0,
+          "symdiff_max": 162
+        },
+        "raw|k=100,ef=32": {
+          "variant": "raw",
+          "k": 100,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 11,
+          "tear_structural_rate": 0.011,
+          "tear_structural_wilson95": [
+            0.006153174098086638,
+            0.019589395700786275
+          ],
+          "jaccard_mean": 0.5259016660627921,
+          "jaccard_median": 0.5267175572519084,
+          "symdiff_mean": 62.744,
+          "symdiff_median": 62.0,
+          "symdiff_p90": 80.0,
+          "symdiff_max": 110
+        },
+        "raw|k=100,ef=64": {
+          "variant": "raw",
+          "k": 100,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 12,
+          "tear_structural_rate": 0.012,
+          "tear_structural_wilson95": [
+            0.006877647806403522,
+            0.02085726847549828
+          ],
+          "jaccard_mean": 0.7030194618367653,
+          "jaccard_median": 0.7094017094017094,
+          "symdiff_mean": 35.172,
+          "symdiff_median": 34.0,
+          "symdiff_p90": 46.0,
+          "symdiff_max": 70
+        },
+        "raw|k=100,ef=128": {
+          "variant": "raw",
+          "k": 100,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 47,
+          "tear_structural_rate": 0.047,
+          "tear_structural_wilson95": [
+            0.0355271051063845,
+            0.06193993808152845
+          ],
+          "jaccard_mean": 0.8580478899919471,
+          "jaccard_median": 0.8691588785046729,
+          "symdiff_mean": 15.398,
+          "symdiff_median": 14.0,
+          "symdiff_p90": 22.0,
+          "symdiff_max": 34
+        },
+        "additive|k=10,ef=16": {
+          "variant": "additive",
+          "k": 10,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 982,
+          "tear_any_rate": 0.982,
+          "tear_any_wilson95": [
+            0.9717267448294926,
+            0.9885842599904322
+          ],
+          "tear_structural_count": 125,
+          "tear_structural_rate": 0.125,
+          "tear_structural_wilson95": [
+            0.10592623063520473,
+            0.14694383822896162
+          ],
+          "jaccard_mean": 0.48975417247011677,
+          "jaccard_median": 0.48351648351648346,
+          "symdiff_mean": 7.376,
+          "symdiff_median": 7.0,
+          "symdiff_p90": 12.0,
+          "symdiff_max": 20
+        },
+        "additive|k=10,ef=32": {
+          "variant": "additive",
+          "k": 10,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 930,
+          "tear_any_rate": 0.93,
+          "tear_any_wilson95": [
+            0.9124853518487167,
+            0.9442236358537061
+          ],
+          "tear_structural_count": 78,
+          "tear_structural_rate": 0.078,
+          "tear_structural_wilson95": [
+            0.06294716759073615,
+            0.09628261657107237
+          ],
+          "jaccard_mean": 0.6594295949148891,
+          "jaccard_median": 0.6666666666666666,
+          "symdiff_mean": 4.376,
+          "symdiff_median": 4.0,
+          "symdiff_p90": 8.0,
+          "symdiff_max": 14
+        },
+        "additive|k=10,ef=64": {
+          "variant": "additive",
+          "k": 10,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 692,
+          "tear_any_rate": 0.692,
+          "tear_any_wilson95": [
+            0.662696751104677,
+            0.7198337736368697
+          ],
+          "tear_structural_count": 23,
+          "tear_structural_rate": 0.023,
+          "tear_structural_wilson95": [
+            0.015374276932992918,
+            0.03427645066222667
+          ],
+          "jaccard_mean": 0.8275651015651015,
+          "jaccard_median": 0.8181818181818182,
+          "symdiff_mean": 2.022,
+          "symdiff_median": 2.0,
+          "symdiff_p90": 4.0,
+          "symdiff_max": 8
+        },
+        "additive|k=10,ef=128": {
+          "variant": "additive",
+          "k": 10,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 253,
+          "tear_any_rate": 0.253,
+          "tear_any_wilson95": [
+            0.22703579958556788,
+            0.28085461910629633
+          ],
+          "tear_structural_count": 0,
+          "tear_structural_rate": 0.0,
+          "tear_structural_wilson95": [
+            0.0,
+            0.0038267584855551234
+          ],
+          "jaccard_mean": 0.9508414918414919,
+          "jaccard_median": 1.0,
+          "symdiff_mean": 0.548,
+          "symdiff_median": 0.0,
+          "symdiff_p90": 2.0,
+          "symdiff_max": 6
+        },
+        "additive|k=100,ef=16": {
+          "variant": "additive",
+          "k": 100,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 44,
+          "tear_structural_rate": 0.044,
+          "tear_structural_wilson95": [
+            0.0329382145884185,
+            0.058551789150407776
+          ],
+          "jaccard_mean": 0.38841166042965175,
+          "jaccard_median": 0.3888888888888889,
+          "symdiff_mean": 89.344,
+          "symdiff_median": 88.0,
+          "symdiff_p90": 114.0,
+          "symdiff_max": 180
+        },
+        "additive|k=100,ef=32": {
+          "variant": "additive",
+          "k": 100,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 8,
+          "tear_structural_rate": 0.008,
+          "tear_structural_wilson95": [
+            0.004059195818806103,
+            0.015706334530980144
+          ],
+          "jaccard_mean": 0.5601564740493472,
+          "jaccard_median": 0.5625,
+          "symdiff_mean": 56.946,
+          "symdiff_median": 56.0,
+          "symdiff_p90": 72.0,
+          "symdiff_max": 98
+        },
+        "additive|k=100,ef=64": {
+          "variant": "additive",
+          "k": 100,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 18,
+          "tear_structural_rate": 0.018,
+          "tear_structural_wilson95": [
+            0.011415740009567788,
+            0.028273255170507345
+          ],
+          "jaccard_mean": 0.7382334630510006,
+          "jaccard_median": 0.7391304347826086,
+          "symdiff_mean": 30.364,
+          "symdiff_median": 30.0,
+          "symdiff_p90": 40.0,
+          "symdiff_max": 58
+        },
+        "additive|k=100,ef=128": {
+          "variant": "additive",
+          "k": 100,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 999,
+          "tear_any_rate": 0.999,
+          "tear_any_wilson95": [
+            0.9943574414020421,
+            0.9998234536293739
+          ],
+          "tear_structural_count": 51,
+          "tear_structural_rate": 0.051,
+          "tear_structural_wilson95": [
+            0.03900094277526684,
+            0.06643548634476165
+          ],
+          "jaccard_mean": 0.8870324322434768,
+          "jaccard_median": 0.8867924528301887,
+          "symdiff_mean": 12.066,
+          "symdiff_median": 12.0,
+          "symdiff_p90": 18.0,
+          "symdiff_max": 28
+        },
+        "mutual|k=10,ef=16": {
+          "variant": "mutual",
+          "k": 10,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 232,
+          "tear_structural_rate": 0.232,
+          "tear_structural_wilson95": [
+            0.20689343939858929,
+            0.2591577031496683
+          ],
+          "jaccard_mean": 0.16612856596447925,
+          "jaccard_median": 0.1111111111111111,
+          "symdiff_mean": 14.48,
+          "symdiff_median": 16.0,
+          "symdiff_p90": 20.0,
+          "symdiff_max": 20
+        },
+        "mutual|k=10,ef=32": {
+          "variant": "mutual",
+          "k": 10,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 115,
+          "tear_structural_rate": 0.115,
+          "tear_structural_wilson95": [
+            0.09668343178743777,
+            0.1362631722464397
+          ],
+          "jaccard_mean": 0.2852034333056005,
+          "jaccard_median": 0.25,
+          "symdiff_mean": 11.26,
+          "symdiff_median": 12.0,
+          "symdiff_p90": 16.0,
+          "symdiff_max": 20
+        },
+        "mutual|k=10,ef=64": {
+          "variant": "mutual",
+          "k": 10,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 996,
+          "tear_any_rate": 0.996,
+          "tear_any_wilson95": [
+            0.9897604437227377,
+            0.9984434118595916
+          ],
+          "tear_structural_count": 76,
+          "tear_structural_rate": 0.076,
+          "tear_structural_wilson95": [
+            0.06114944807170235,
+            0.0940956431240484
+          ],
+          "jaccard_mean": 0.4126922369855806,
+          "jaccard_median": 0.42857142857142855,
+          "symdiff_mean": 8.378,
+          "symdiff_median": 8.0,
+          "symdiff_p90": 12.0,
+          "symdiff_max": 18
+        },
+        "mutual|k=10,ef=128": {
+          "variant": "mutual",
+          "k": 10,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 984,
+          "tear_any_rate": 0.984,
+          "tear_any_wilson95": [
+            0.97416793978826,
+            0.9901277579977227
+          ],
+          "tear_structural_count": 71,
+          "tear_structural_rate": 0.071,
+          "tear_structural_wilson95": [
+            0.056669695350451466,
+            0.08861366343015481
+          ],
+          "jaccard_mean": 0.5419636719489661,
+          "jaccard_median": 0.5384615384615384,
+          "symdiff_mean": 5.986,
+          "symdiff_median": 6.0,
+          "symdiff_p90": 10.0,
+          "symdiff_max": 16
+        },
+        "mutual|k=100,ef=16": {
+          "variant": "mutual",
+          "k": 100,
+          "ef": 16,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 330,
+          "tear_structural_rate": 0.33,
+          "tear_structural_wilson95": [
+            0.3015555405204304,
+            0.35974555736465835
+          ],
+          "jaccard_mean": 0.12254903876787282,
+          "jaccard_median": 0.0989010989010989,
+          "symdiff_mean": 152.38,
+          "symdiff_median": 158.0,
+          "symdiff_p90": 190.0,
+          "symdiff_max": 200
+        },
+        "mutual|k=100,ef=32": {
+          "variant": "mutual",
+          "k": 100,
+          "ef": 32,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 104,
+          "tear_structural_rate": 0.104,
+          "tear_structural_wilson95": [
+            0.08657102809826807,
+            0.12445976462229157
+          ],
+          "jaccard_mean": 0.22501605052016008,
+          "jaccard_median": 0.22699386503067484,
+          "symdiff_mean": 122.672,
+          "symdiff_median": 120.0,
+          "symdiff_p90": 160.0,
+          "symdiff_max": 188
+        },
+        "mutual|k=100,ef=64": {
+          "variant": "mutual",
+          "k": 100,
+          "ef": 64,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 24,
+          "tear_structural_rate": 0.024,
+          "tear_structural_wilson95": [
+            0.016180168466636995,
+            0.03546290561161149
+          ],
+          "jaccard_mean": 0.3437034806614622,
+          "jaccard_median": 0.36054421768707484,
+          "symdiff_mean": 93.922,
+          "symdiff_median": 94.0,
+          "symdiff_p90": 118.0,
+          "symdiff_max": 162
+        },
+        "mutual|k=100,ef=128": {
+          "variant": "mutual",
+          "k": 100,
+          "ef": 128,
+          "n_episodes": 1000,
+          "tear_any_count": 1000,
+          "tear_any_rate": 1.0,
+          "tear_any_wilson95": [
+            0.996173241514445,
+            1.0
+          ],
+          "tear_structural_count": 25,
+          "tear_structural_rate": 0.025,
+          "tear_structural_wilson95": [
+            0.016990131293434067,
+            0.0366452892678433
+          ],
+          "jaccard_mean": 0.4762602499530402,
+          "jaccard_median": 0.5037593984962406,
+          "symdiff_mean": 67.728,
+          "symdiff_median": 66.0,
+          "symdiff_p90": 92.0,
+          "symdiff_max": 114
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "raw|k=10,ef=16": {
+      "variant": "raw",
+      "k": 10,
+      "ef": 16,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        0.988,
+        0.99,
+        0.989
+      ],
+      "tear_any_rate_mean": 0.989,
+      "tear_any_rate_pooled": 0.989,
+      "tear_any_wilson95_pooled": [
+        0.9845926241085233,
+        0.9921566618381078
+      ],
+      "tear_structural_rate_per_seed": [
+        0.132,
+        0.118,
+        0.144
+      ],
+      "tear_structural_rate_mean": 0.13133333333333333,
+      "tear_structural_rate_pooled": 0.13133333333333333,
+      "tear_structural_wilson95_pooled": [
+        0.11971680828338488,
+        0.14389279617675543
+      ],
+      "jaccard_mean_per_seed": [
+        0.4533991737536629,
+        0.4521734362129099,
+        0.45631868192007513
+      ],
+      "jaccard_mean_of_seeds": 0.453963763962216,
+      "symdiff_median_of_seeds": 8.0,
+      "symdiff_max_of_seeds": 20
+    },
+    "raw|k=10,ef=32": {
+      "variant": "raw",
+      "k": 10,
+      "ef": 32,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        0.949,
+        0.953,
+        0.965
+      ],
+      "tear_any_rate_mean": 0.9556666666666667,
+      "tear_any_rate_pooled": 0.9556666666666667,
+      "tear_any_wilson95_pooled": [
+        0.9477000572790363,
+        0.9624678185826167
+      ],
+      "tear_structural_rate_per_seed": [
+        0.101,
+        0.072,
+        0.076
+      ],
+      "tear_structural_rate_mean": 0.083,
+      "tear_structural_rate_pooled": 0.083,
+      "tear_structural_wilson95_pooled": [
+        0.07365305508272373,
+        0.09341350475419812
+      ],
+      "jaccard_mean_per_seed": [
+        0.617435144920439,
+        0.6213439501674796,
+        0.619622318857613
+      ],
+      "jaccard_mean_of_seeds": 0.6194671379818438,
+      "symdiff_median_of_seeds": 4.0,
+      "symdiff_max_of_seeds": 16
+    },
+    "raw|k=10,ef=64": {
+      "variant": "raw",
+      "k": 10,
+      "ef": 64,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        0.78,
+        0.763,
+        0.764
+      ],
+      "tear_any_rate_mean": 0.7690000000000001,
+      "tear_any_rate_pooled": 0.769,
+      "tear_any_wilson95_pooled": [
+        0.7535797915046974,
+        0.7837321878810771
+      ],
+      "tear_structural_rate_per_seed": [
+        0.04,
+        0.025,
+        0.028
+      ],
+      "tear_structural_rate_mean": 0.031,
+      "tear_structural_rate_pooled": 0.031,
+      "tear_structural_wilson95_pooled": [
+        0.02537281666935177,
+        0.03782674343500397
+      ],
+      "jaccard_mean_per_seed": [
+        0.7881315351315352,
+        0.7990152347652347,
+        0.7960003330003329
+      ],
+      "jaccard_mean_of_seeds": 0.7943823676323677,
+      "symdiff_median_of_seeds": 2.0,
+      "symdiff_max_of_seeds": 12
+    },
+    "raw|k=10,ef=128": {
+      "variant": "raw",
+      "k": 10,
+      "ef": 128,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        0.394,
+        0.369,
+        0.362
+      ],
+      "tear_any_rate_mean": 0.375,
+      "tear_any_rate_pooled": 0.375,
+      "tear_any_wilson95_pooled": [
+        0.3578464010926593,
+        0.3924733110886722
+      ],
+      "tear_structural_rate_per_seed": [
+        0.003,
+        0.003,
+        0.002
+      ],
+      "tear_structural_rate_mean": 0.0026666666666666666,
+      "tear_structural_rate_pooled": 0.0026666666666666666,
+      "tear_structural_wilson95_pooled": [
+        0.0013518647401935516,
+        0.005253496791930672
+      ],
+      "jaccard_mean_per_seed": [
+        0.9198438228438228,
+        0.9214498834498834,
+        0.9279297369297369
+      ],
+      "jaccard_mean_of_seeds": 0.923074481074481,
+      "symdiff_median_of_seeds": 0.0,
+      "symdiff_max_of_seeds": 10
+    },
+    "raw|k=100,ef=16": {
+      "variant": "raw",
+      "k": 100,
+      "ef": 16,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tear_any_rate_mean": 1.0,
+      "tear_any_rate_pooled": 1.0,
+      "tear_any_wilson95_pooled": [
+        0.9987211512746742,
+        1.0
+      ],
+      "tear_structural_rate_per_seed": [
+        0.043,
+        0.049,
+        0.05
+      ],
+      "tear_structural_rate_mean": 0.04733333333333334,
+      "tear_structural_rate_pooled": 0.04733333333333333,
+      "tear_structural_wilson95_pooled": [
+        0.04029631456999429,
+        0.055528136476000814
+      ],
+      "jaccard_mean_per_seed": [
+        0.3601580343086494,
+        0.3554873251819178,
+        0.3590131467296736
+      ],
+      "jaccard_mean_of_seeds": 0.3582195020734136,
+      "symdiff_median_of_seeds": 94.66666666666667,
+      "symdiff_max_of_seeds": 162
+    },
+    "raw|k=100,ef=32": {
+      "variant": "raw",
+      "k": 100,
+      "ef": 32,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tear_any_rate_mean": 1.0,
+      "tear_any_rate_pooled": 1.0,
+      "tear_any_wilson95_pooled": [
+        0.9987211512746742,
+        1.0
+      ],
+      "tear_structural_rate_per_seed": [
+        0.007,
+        0.006,
+        0.011
+      ],
+      "tear_structural_rate_mean": 0.008,
+      "tear_structural_rate_pooled": 0.008,
+      "tear_structural_wilson95_pooled": [
+        0.005381913474637302,
+        0.011876473671083446
+      ],
+      "jaccard_mean_per_seed": [
+        0.522715192224886,
+        0.5216305173804733,
+        0.5259016660627921
+      ],
+      "jaccard_mean_of_seeds": 0.5234157918893838,
+      "symdiff_median_of_seeds": 62.333333333333336,
+      "symdiff_max_of_seeds": 114
+    },
+    "raw|k=100,ef=64": {
+      "variant": "raw",
+      "k": 100,
+      "ef": 64,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tear_any_rate_mean": 1.0,
+      "tear_any_rate_pooled": 1.0,
+      "tear_any_wilson95_pooled": [
+        0.9987211512746742,
+        1.0
+      ],
+      "tear_structural_rate_per_seed": [
+        0.01,
+        0.011,
+        0.012
+      ],
+      "tear_structural_rate_mean": 0.011000000000000001,
+      "tear_structural_rate_pooled": 0.011,
+      "tear_structural_wilson95_pooled": [
+        0.007843338161892114,
+        0.015407375891476676
+      ],
+      "jaccard_mean_per_seed": [
+        0.7000265345620889,
+        0.7003632466478736,
+        0.7030194618367653
+      ],
+      "jaccard_mean_of_seeds": 0.7011364143489093,
+      "symdiff_median_of_seeds": 35.333333333333336,
+      "symdiff_max_of_seeds": 72
+    },
+    "raw|k=100,ef=128": {
+      "variant": "raw",
+      "k": 100,
+      "ef": 128,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tear_any_rate_mean": 1.0,
+      "tear_any_rate_pooled": 1.0,
+      "tear_any_wilson95_pooled": [
+        0.9987211512746742,
+        1.0
+      ],
+      "tear_structural_rate_per_seed": [
+        0.04,
+        0.043,
+        0.047
+      ],
+      "tear_structural_rate_mean": 0.043333333333333335,
+      "tear_structural_rate_pooled": 0.043333333333333335,
+      "tear_structural_wilson95_pooled": [
+        0.0366127910180945,
+        0.051221890817703224
+      ],
+      "jaccard_mean_per_seed": [
+        0.8564804431956313,
+        0.859008226823906,
+        0.8580478899919471
+      ],
+      "jaccard_mean_of_seeds": 0.8578455200038282,
+      "symdiff_median_of_seeds": 14.666666666666666,
+      "symdiff_max_of_seeds": 40
+    },
+    "additive|k=10,ef=16": {
+      "variant": "additive",
+      "k": 10,
+      "ef": 16,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        0.987,
+        0.988,
+        0.982
+      ],
+      "tear_any_rate_mean": 0.9856666666666666,
+      "tear_any_rate_pooled": 0.9856666666666667,
+      "tear_any_wilson95_pooled": [
+        0.98074985475262,
+        0.9893412901855135
+      ],
+      "tear_structural_rate_per_seed": [
+        0.118,
+        0.112,
+        0.125
+      ],
+      "tear_structural_rate_mean": 0.11833333333333333,
+      "tear_structural_rate_pooled": 0.11833333333333333,
+      "tear_structural_wilson95_pooled": [
+        0.10726023209736554,
+        0.13038262242963325
+      ],
+      "jaccard_mean_per_seed": [
+        0.48366191307832174,
+        0.47227989064598974,
+        0.48975417247011677
+      ],
+      "jaccard_mean_of_seeds": 0.481898658731476,
+      "symdiff_median_of_seeds": 7.666666666666667,
+      "symdiff_max_of_seeds": 20
+    },
+    "additive|k=10,ef=32": {
+      "variant": "additive",
+      "k": 10,
+      "ef": 32,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        0.936,
+        0.935,
+        0.93
+      ],
+      "tear_any_rate_mean": 0.9336666666666668,
+      "tear_any_rate_pooled": 0.9336666666666666,
+      "tear_any_wilson95_pooled": [
+        0.9241951899148757,
+        0.9420289552906915
+      ],
+      "tear_structural_rate_per_seed": [
+        0.091,
+        0.06,
+        0.078
+      ],
+      "tear_structural_rate_mean": 0.07633333333333332,
+      "tear_structural_rate_pooled": 0.07633333333333334,
+      "tear_structural_wilson95_pooled": [
+        0.06736405211705591,
+        0.08638622570287029
+      ],
+      "jaccard_mean_per_seed": [
+        0.651187706084765,
+        0.6551389688742632,
+        0.6594295949148891
+      ],
+      "jaccard_mean_of_seeds": 0.6552520899579725,
+      "symdiff_median_of_seeds": 4.0,
+      "symdiff_max_of_seeds": 16
+    },
+    "additive|k=10,ef=64": {
+      "variant": "additive",
+      "k": 10,
+      "ef": 64,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        0.696,
+        0.728,
+        0.692
+      ],
+      "tear_any_rate_mean": 0.7053333333333333,
+      "tear_any_rate_pooled": 0.7053333333333334,
+      "tear_any_wilson95_pooled": [
+        0.688765449466902,
+        0.7213760366565642
+      ],
+      "tear_structural_rate_per_seed": [
+        0.028,
+        0.024,
+        0.023
+      ],
+      "tear_structural_rate_mean": 0.025000000000000005,
+      "tear_structural_rate_pooled": 0.025,
+      "tear_structural_wilson95_pooled": [
+        0.019991321290431362,
+        0.031223584998628307
+      ],
+      "jaccard_mean_per_seed": [
+        0.827047619047619,
+        0.8211738261738263,
+        0.8275651015651015
+      ],
+      "jaccard_mean_of_seeds": 0.8252621822621823,
+      "symdiff_median_of_seeds": 2.0,
+      "symdiff_max_of_seeds": 10
+    },
+    "additive|k=10,ef=128": {
+      "variant": "additive",
+      "k": 10,
+      "ef": 128,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        0.285,
+        0.277,
+        0.253
+      ],
+      "tear_any_rate_mean": 0.27166666666666667,
+      "tear_any_rate_pooled": 0.27166666666666667,
+      "tear_any_wilson95_pooled": [
+        0.2560488229327064,
+        0.2878685179851925
+      ],
+      "tear_structural_rate_per_seed": [
+        0.0,
+        0.001,
+        0.0
+      ],
+      "tear_structural_rate_mean": 0.0003333333333333333,
+      "tear_structural_rate_pooled": 0.0003333333333333333,
+      "tear_structural_wilson95_pooled": [
+        5.8843941871566355e-05,
+        0.0018858188843041794
+      ],
+      "jaccard_mean_per_seed": [
+        0.944871794871795,
+        0.9444145854145855,
+        0.9508414918414919
+      ],
+      "jaccard_mean_of_seeds": 0.9467092907092908,
+      "symdiff_median_of_seeds": 0.0,
+      "symdiff_max_of_seeds": 10
+    },
+    "additive|k=100,ef=16": {
+      "variant": "additive",
+      "k": 100,
+      "ef": 16,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tear_any_rate_mean": 1.0,
+      "tear_any_rate_pooled": 1.0,
+      "tear_any_wilson95_pooled": [
+        0.9987211512746742,
+        1.0
+      ],
+      "tear_structural_rate_per_seed": [
+        0.048,
+        0.046,
+        0.044
+      ],
+      "tear_structural_rate_mean": 0.046000000000000006,
+      "tear_structural_rate_pooled": 0.046,
+      "tear_structural_wilson95_pooled": [
+        0.03906673741365379,
+        0.05409445722894219
+      ],
+      "jaccard_mean_per_seed": [
+        0.3871865038399789,
+        0.3775505393346025,
+        0.38841166042965175
+      ],
+      "jaccard_mean_of_seeds": 0.38438290120141105,
+      "symdiff_median_of_seeds": 88.66666666666667,
+      "symdiff_max_of_seeds": 180
+    },
+    "additive|k=100,ef=32": {
+      "variant": "additive",
+      "k": 100,
+      "ef": 32,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tear_any_rate_mean": 1.0,
+      "tear_any_rate_pooled": 1.0,
+      "tear_any_wilson95_pooled": [
+        0.9987211512746742,
+        1.0
+      ],
+      "tear_structural_rate_per_seed": [
+        0.009,
+        0.006,
+        0.008
+      ],
+      "tear_structural_rate_mean": 0.007666666666666666,
+      "tear_structural_rate_pooled": 0.007666666666666666,
+      "tear_structural_wilson95_pooled": [
+        0.005114186560027724,
+        0.01147838648484324
+      ],
+      "jaccard_mean_per_seed": [
+        0.5570023195520308,
+        0.5553494809370436,
+        0.5601564740493472
+      ],
+      "jaccard_mean_of_seeds": 0.5575027581794739,
+      "symdiff_median_of_seeds": 56.666666666666664,
+      "symdiff_max_of_seeds": 102
+    },
+    "additive|k=100,ef=64": {
+      "variant": "additive",
+      "k": 100,
+      "ef": 64,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tear_any_rate_mean": 1.0,
+      "tear_any_rate_pooled": 1.0,
+      "tear_any_wilson95_pooled": [
+        0.9987211512746742,
+        1.0
+      ],
+      "tear_structural_rate_per_seed": [
+        0.011,
+        0.023,
+        0.018
+      ],
+      "tear_structural_rate_mean": 0.017333333333333336,
+      "tear_structural_rate_pooled": 0.017333333333333333,
+      "tear_structural_wilson95_pooled": [
+        0.013242778833405518,
+        0.022658403136109142
+      ],
+      "jaccard_mean_per_seed": [
+        0.736267050273704,
+        0.7363646197801524,
+        0.7382334630510006
+      ],
+      "jaccard_mean_of_seeds": 0.7369550443682856,
+      "symdiff_median_of_seeds": 30.0,
+      "symdiff_max_of_seeds": 60
+    },
+    "additive|k=100,ef=128": {
+      "variant": "additive",
+      "k": 100,
+      "ef": 128,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        1.0,
+        1.0,
+        0.999
+      ],
+      "tear_any_rate_mean": 0.9996666666666667,
+      "tear_any_rate_pooled": 0.9996666666666667,
+      "tear_any_wilson95_pooled": [
+        0.9981141811156959,
+        0.9999411560581286
+      ],
+      "tear_structural_rate_per_seed": [
+        0.04,
+        0.042,
+        0.051
+      ],
+      "tear_structural_rate_mean": 0.044333333333333336,
+      "tear_structural_rate_pooled": 0.044333333333333336,
+      "tear_structural_wilson95_pooled": [
+        0.03753218141738335,
+        0.05229994272096372
+      ],
+      "jaccard_mean_per_seed": [
+        0.8859175975988586,
+        0.887970973941402,
+        0.8870324322434768
+      ],
+      "jaccard_mean_of_seeds": 0.8869736679279124,
+      "symdiff_median_of_seeds": 12.0,
+      "symdiff_max_of_seeds": 30
+    },
+    "mutual|k=10,ef=16": {
+      "variant": "mutual",
+      "k": 10,
+      "ef": 16,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        0.999,
+        1.0,
+        1.0
+      ],
+      "tear_any_rate_mean": 0.9996666666666667,
+      "tear_any_rate_pooled": 0.9996666666666667,
+      "tear_any_wilson95_pooled": [
+        0.9981141811156959,
+        0.9999411560581286
+      ],
+      "tear_structural_rate_per_seed": [
+        0.21,
+        0.216,
+        0.232
+      ],
+      "tear_structural_rate_mean": 0.21933333333333335,
+      "tear_structural_rate_pooled": 0.21933333333333332,
+      "tear_structural_wilson95_pooled": [
+        0.20489019385837173,
+        0.2344943332261112
+      ],
+      "jaccard_mean_per_seed": [
+        0.17669390164359203,
+        0.1730585805663205,
+        0.16612856596447925
+      ],
+      "jaccard_mean_of_seeds": 0.1719603493914639,
+      "symdiff_median_of_seeds": 14.666666666666666,
+      "symdiff_max_of_seeds": 20
+    },
+    "mutual|k=10,ef=32": {
+      "variant": "mutual",
+      "k": 10,
+      "ef": 32,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        0.999,
+        0.998,
+        1.0
+      ],
+      "tear_any_rate_mean": 0.999,
+      "tear_any_rate_pooled": 0.999,
+      "tear_any_wilson95_pooled": [
+        0.9970638561911638,
+        0.9996598527809608
+      ],
+      "tear_structural_rate_per_seed": [
+        0.116,
+        0.153,
+        0.115
+      ],
+      "tear_structural_rate_mean": 0.128,
+      "tear_structural_rate_pooled": 0.128,
+      "tear_structural_wilson95_pooled": [
+        0.11651888013349412,
+        0.14043258331814837
+      ],
+      "jaccard_mean_per_seed": [
+        0.29408475056075667,
+        0.2777972397399642,
+        0.2852034333056005
+      ],
+      "jaccard_mean_of_seeds": 0.2856951412021071,
+      "symdiff_median_of_seeds": 12.0,
+      "symdiff_max_of_seeds": 20
+    },
+    "mutual|k=10,ef=64": {
+      "variant": "mutual",
+      "k": 10,
+      "ef": 64,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        0.995,
+        0.997,
+        0.996
+      ],
+      "tear_any_rate_mean": 0.996,
+      "tear_any_rate_pooled": 0.996,
+      "tear_any_wilson95_pooled": [
+        0.9930210628765852,
+        0.9977103191878915
+      ],
+      "tear_structural_rate_per_seed": [
+        0.083,
+        0.095,
+        0.076
+      ],
+      "tear_structural_rate_mean": 0.08466666666666667,
+      "tear_structural_rate_pooled": 0.08466666666666667,
+      "tear_structural_wilson95_pooled": [
+        0.07522833065847884,
+        0.09516729968269191
+      ],
+      "jaccard_mean_per_seed": [
+        0.4253890292713822,
+        0.40865790246904793,
+        0.4126922369855806
+      ],
+      "jaccard_mean_of_seeds": 0.41557972290867023,
+      "symdiff_median_of_seeds": 8.0,
+      "symdiff_max_of_seeds": 20
+    },
+    "mutual|k=10,ef=128": {
+      "variant": "mutual",
+      "k": 10,
+      "ef": 128,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        0.986,
+        0.98,
+        0.984
+      ],
+      "tear_any_rate_mean": 0.9833333333333334,
+      "tear_any_rate_pooled": 0.9833333333333333,
+      "tear_any_wilson95_pooled": [
+        0.9780955943533322,
+        0.9873348518788526
+      ],
+      "tear_structural_rate_per_seed": [
+        0.068,
+        0.071,
+        0.071
+      ],
+      "tear_structural_rate_mean": 0.07,
+      "tear_structural_rate_pooled": 0.07,
+      "tear_structural_wilson95_pooled": [
+        0.061409038063304944,
+        0.07969077184047538
+      ],
+      "jaccard_mean_per_seed": [
+        0.5597072237188335,
+        0.5453248630454514,
+        0.5419636719489661
+      ],
+      "jaccard_mean_of_seeds": 0.5489985862377503,
+      "symdiff_median_of_seeds": 6.0,
+      "symdiff_max_of_seeds": 18
+    },
+    "mutual|k=100,ef=16": {
+      "variant": "mutual",
+      "k": 100,
+      "ef": 16,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tear_any_rate_mean": 1.0,
+      "tear_any_rate_pooled": 1.0,
+      "tear_any_wilson95_pooled": [
+        0.9987211512746742,
+        1.0
+      ],
+      "tear_structural_rate_per_seed": [
+        0.272,
+        0.292,
+        0.33
+      ],
+      "tear_structural_rate_mean": 0.29800000000000004,
+      "tear_structural_rate_pooled": 0.298,
+      "tear_structural_wilson95_pooled": [
+        0.2818999421001036,
+        0.3146167127849281
+      ],
+      "jaccard_mean_per_seed": [
+        0.13613882275294634,
+        0.12899927797643632,
+        0.12254903876787282
+      ],
+      "jaccard_mean_of_seeds": 0.12922904649908515,
+      "symdiff_median_of_seeds": 155.66666666666666,
+      "symdiff_max_of_seeds": 200
+    },
+    "mutual|k=100,ef=32": {
+      "variant": "mutual",
+      "k": 100,
+      "ef": 32,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tear_any_rate_mean": 1.0,
+      "tear_any_rate_pooled": 1.0,
+      "tear_any_wilson95_pooled": [
+        0.9987211512746742,
+        1.0
+      ],
+      "tear_structural_rate_per_seed": [
+        0.067,
+        0.112,
+        0.104
+      ],
+      "tear_structural_rate_mean": 0.09433333333333332,
+      "tear_structural_rate_pooled": 0.09433333333333334,
+      "tear_structural_wilson95_pooled": [
+        0.08438660427552336,
+        0.10531763499029112
+      ],
+      "jaccard_mean_per_seed": [
+        0.2399537168814219,
+        0.21955421142353673,
+        0.22501605052016008
+      ],
+      "jaccard_mean_of_seeds": 0.2281746596083729,
+      "symdiff_median_of_seeds": 120.66666666666667,
+      "symdiff_max_of_seeds": 194
+    },
+    "mutual|k=100,ef=64": {
+      "variant": "mutual",
+      "k": 100,
+      "ef": 64,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tear_any_rate_mean": 1.0,
+      "tear_any_rate_pooled": 1.0,
+      "tear_any_wilson95_pooled": [
+        0.9987211512746742,
+        1.0
+      ],
+      "tear_structural_rate_per_seed": [
+        0.014,
+        0.03,
+        0.024
+      ],
+      "tear_structural_rate_mean": 0.02266666666666667,
+      "tear_structural_rate_pooled": 0.02266666666666667,
+      "tear_structural_wilson95_pooled": [
+        0.017919601836232955,
+        0.028634605746878237
+      ],
+      "jaccard_mean_per_seed": [
+        0.35916972719893286,
+        0.34036783187608727,
+        0.3437034806614622
+      ],
+      "jaccard_mean_of_seeds": 0.3477470132454941,
+      "symdiff_median_of_seeds": 94.0,
+      "symdiff_max_of_seeds": 176
+    },
+    "mutual|k=100,ef=128": {
+      "variant": "mutual",
+      "k": 100,
+      "ef": 128,
+      "n_episodes_total": 3000,
+      "tear_any_rate_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tear_any_rate_mean": 1.0,
+      "tear_any_rate_pooled": 1.0,
+      "tear_any_wilson95_pooled": [
+        0.9987211512746742,
+        1.0
+      ],
+      "tear_structural_rate_per_seed": [
+        0.007,
+        0.026,
+        0.025
+      ],
+      "tear_structural_rate_mean": 0.019333333333333334,
+      "tear_structural_rate_pooled": 0.019333333333333334,
+      "tear_structural_wilson95_pooled": [
+        0.014985749590420355,
+        0.02491031698419301
+      ],
+      "jaccard_mean_per_seed": [
+        0.4878025276785022,
+        0.47664410848293665,
+        0.4762602499530402
+      ],
+      "jaccard_mean_of_seeds": 0.48023562870482633,
+      "symdiff_median_of_seeds": 66.0,
+      "symdiff_max_of_seeds": 116
+    }
+  },
+  "conclusion_headline": "**[variant = mutual]** At k=10, efSearch=16: generation A recall@10=0.242, generation B recall@10=0.246, reciprocity A=0.9984, B=0.9984. tear_any=99.97%, tear_structural=21.93% (Wilson 95% upper 23.45%), mean Jaccard 0.1720.\n\nStructural tear is 21.93% (mean Jaccard 0.1720) \u2014 but note the recall at efSearch=16 is only 0.24/0.25, so at this narrow beam the two generations are individually low-quality; the disagreement here is dominated by beam-starved approximation rather than by a healthy index. Read this cell alongside the higher-ef rows, where recall > 0.9 and the tear is much smaller.",
+  "conclusion_raw_headline": "**[variant = raw]** At k=10, efSearch=16: generation A recall@10=0.572, generation B recall@10=0.578, reciprocity A=0.6863, B=0.6857. tear_any=98.90%, tear_structural=13.13% (Wilson 95% upper 14.39%), mean Jaccard 0.4540.\n\nStructural tear is 13.13% (mean Jaccard 0.4540) \u2014 but note the recall at efSearch=16 is only 0.57/0.58, so at this narrow beam the two generations are individually low-quality; the disagreement here is dominated by beam-starved approximation rather than by a healthy index. Read this cell alongside the higher-ef rows, where recall > 0.9 and the tear is much smaller.",
+  "conclusion_repair_headline": "**[variant = additive]** At k=10, efSearch=16: generation A recall@10=0.605, generation B recall@10=0.610, reciprocity A=0.7967, B=0.7961. tear_any=98.57%, tear_structural=11.83% (Wilson 95% upper 13.04%), mean Jaccard 0.4819.\n\nStructural tear is 11.83% (mean Jaccard 0.4819) \u2014 but note the recall at efSearch=16 is only 0.61/0.61, so at this narrow beam the two generations are individually low-quality; the disagreement here is dominated by beam-starved approximation rather than by a healthy index. Read this cell alongside the higher-ef rows, where recall > 0.9 and the tear is much smaller.",
+  "conclusion_implication": "The paper (\u00a76.6 / Q5) currently reports a structural tear of up to 7.75% from a hand-rolled compaction that *drops reciprocal back-links* (the paper itself measures recall 0.56 without a compensating fix). That schedule is a defect, not a maintenance design. Measured inside real FAISS HNSW (N=20000, d=64, M=32):\n\n- **The tear is dominated by beam width, not by the maintenance event.** On the *additivity-repaired* generations (recall@10 \u2248 0.98 at ef=128), the k=10 structural tear falls monotonically with efSearch: **11.8% at ef=16 \u2192 7.6% at ef=32 \u2192 2.5% at ef=64 \u2192 0.03% at ef=128** (Wilson 95% upper 0.19%). At production beam widths (ef \u2265 64) the tear is **well below** the paper's 7.75%.\n- **The raw FAISS generations are only 68.6% reciprocal** \u2014 a real engine property (level-0 has 2\u00b7M slots; hubs cannot reciprocate everything). Their k=10 tear is 13.1% at ef=16 and **0.27% at ef=128** \u2014 i.e. the engine's own asymmetry alone produces *less* tear than the paper's prototype, and it does not require a hand-rolled repair.\n- **Full reciprocal closure (deletion-only) is not a viable model**: it reaches reciprocity 99.8% but recall collapses (~0.65), so the resulting index is broken and its tear is meaningless as a comparison.\n\n**Verdict for \u00a76.6.** The honest engine-level number is *beam-dependent*: at narrow beams (efSearch 16\u201332) the K=10 structural tear on a healthy, additivity-repaired real HNSW is 7\u201312%, comparable-to-somewhat-higher than the paper's number; at production beams (ef \u2265 64) it is ~0.1\u20132.7%, well below it. The paper's single headline number is therefore not reproducible as a beam-independent property of HNSW; it is a low-beam effect. Critically, the effect exists at all only because a *maintenance event changed adjacency* \u2014 the tear is real, but its magnitude is set by the retrieval beam, and the disagreements are small (median symmetric difference 0\u20132 documents at k=10, ef\u226564). This measurement was *not* tuned to reproduce the old number."
+}

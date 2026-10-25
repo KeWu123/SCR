@@ -1,0 +1,114 @@
+{
+  "python": "<measurement-python>",
+  "python_version": "3.13.14",
+  "scope": "final source and artifact hashes; post-measurement documentation/guard edits are disclosed in evidence_r1.md",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "faiss-cpu": "1.15.1",
+    "lancedb": "0.40.0",
+    "pylance": "13.0.0",
+    "psycopg2-binary": "2.9.13",
+    "pyarrow": "25.0.1"
+  },
+  "sources": {
+    "paper/proto/run_episodes_v3.py": "28f71b52f2c6df4e2a3a642e30e7e27f43182b8e35ed2b390586df1dbd5d1bb8",
+    "paper/proto/run_answer_level.py": "a9fbd83738a1b9d8d5b589786cfd0acb13df1c6da242cae7f4573552f2eca49a",
+    "paper/proto/run_baselines.py": "43ed2645511e012c19057ca0f955af3ee4b3c99471a1772680117df700287a0c",
+    "paper/proto/real_hnsw_tear.py": "1e59e698d77fa0ea94021707f5db44f7e55243ece9d33c7d02f94ccd1dd8bea4",
+    "paper/proto/floor_disjoint.py": "99fe868486f83cf5556447e560acfdb906b1ed59844bdb839e94b5f41cb71593",
+    "paper/proto/ann_experiments.py": "dfb0b57704944bf59b6d1b4dc833e08e60a421ab529c68b40e645892702b3639",
+    "paper/exp/skeleton/experiments.py": "85b14c6a12cd534d5e1f8aeeebb1fed286132472a78f781d728744114a7748ce"
+  },
+  "results": {
+    "results_episodes_r1_corrected.json": {
+      "sha256": "3bccdcc66f7e086d357cf831add57450b95e231bcf982edc9d9c2340ed16041c",
+      "bytes": 107249
+    },
+    "results_baselines_r1_merged.json": {
+      "sha256": "e665c63bc19112650ae90827fb41d49017cb3f0011ab3014924fc39b359eec20",
+      "bytes": 29032
+    },
+    "results_faiss_r1_distinct.json": {
+      "sha256": "f22ad86bc8204a686c602a0bbf54254f16832bc85e62bfafb629126ef9e69256",
+      "bytes": 47853
+    },
+    "results_certified_r1.json": {
+      "sha256": "e17d9a87962bc52e78926c024b7cfb5eb4b3b077a1ded9f4a928c1aefd6019c4",
+      "bytes": 7013
+    },
+    "results_pg_r1.json": {
+      "sha256": "19a045c612a9b5609c9638446a8ed1450cd45139d737f5497a2addd0c64f00d6",
+      "bytes": 244619
+    },
+    "results_lance_r1.json": {
+      "sha256": "68c461003e10c2e2f2d6ab64aee140668a4e11b4be1fede5e489a740733af796",
+      "bytes": 2542495
+    },
+    "results_lance_r095_r1_merged.json": {
+      "sha256": "f7b92e331180060127f922705714fa14fe866fc81f219ea4dd41a95e38048374",
+      "bytes": 1546115
+    },
+    "results_a4_witness_r1.json": {
+      "sha256": "104143b372d12e2f9fd6302793f2d4284ba3c52d413e84740d63bcbd88b7bfb9",
+      "bytes": 939
+    },
+    "results_t2_r1.json": {
+      "sha256": "913ed4963d38a716fadd7e055d62e641f06a949ab92a6ae97c05fbcde366b0f9",
+      "bytes": 10655
+    },
+    "results_t2_e9_r1.json": {
+      "sha256": "f02cb8f942a785198729f6edacf0e118e7f31fdf15b5f6d209081e16b2c66a98",
+      "bytes": 17821
+    },
+    "results_t2_e6_sweep_r1.json": {
+      "sha256": "20e30286918dbef20372d3c7e277707aa0c33b0c790b5285764b1c8ec4673ebe",
+      "bytes": 18022
+    },
+    "results_ablation_r1.json": {
+      "sha256": "f4c5ce5188c3e9fd66a4f6c834c4ca850b2a9212677ad8e4bb37fe24890cea1c",
+      "bytes": 3518
+    },
+    "results_ann_checks_r1.json": {
+      "sha256": "fbe309fff2897280f147e9e7087cd6b3a567f10f1a2721436eb06fde0f320d2e",
+      "bytes": 10435
+    },
+    "results_ivf_before_r1.json": {
+      "sha256": "62504425bb7319f527332dc7262c4b2a18167dd21b0bf00a3bbe27e52ec5dff1",
+      "bytes": 1164
+    },
+    "results_final_checks_r1.json": {
+      "sha256": "e680cf5ef3aea867f281ade924d0f6e1f9266e712d2499de6e8a1dcdde49f5b5",
+      "bytes": 1767
+    },
+    "code_checks_r1.json": {
+      "sha256": "6f9f7c6113dd2e2a230c7edfbb19ea1fce8d992a374cfb23d3c0945074b64a9a",
+      "bytes": 691
+    },
+    "results_stress_smoke_r1.json": {
+      "sha256": "ee595e731fbb47213fc851dcbaf6f8c87eeb312e444a780a73f3df845551775f",
+      "bytes": 1098
+    },
+    "results_ann_interfaces_r1.json": {
+      "sha256": "f8a7e3f29c3481875cd425e6d8167613f433e35d60a0ec06e181178e6601506d",
+      "bytes": 1263
+    }
+  },
+  "frozen_tex": {
+    "s5_implementation.tex": "7d92cd3655ba8f09c82b9cd992b94b8b147554ba50848f448f0ccba1dd0bc7ce",
+    "s6_evaluation.tex": "395899d9fd11d844f27e1b4e600250435bd13ae3a71aead963ea9ad7a727f471"
+  },
+  "report_sha256": "8c4edf01689f590020b3336816433ebc80748bfcaf11805ddb68918f8c389423",
+  "completion_checks": {
+    "e6_sweep_runs": 12,
+    "e6_pinned_count": 0,
+    "e6_episodes": 3600,
+    "e9_runs": 24,
+    "e9_pinned_count": 0,
+    "e9_episodes": 4800,
+    "E3_variants": 3,
+    "E3_writes_complete": true,
+    "ANN_early_reader_completion_checked": true,
+    "E3_legacy_field_scope_annotated": true
+  }
+}

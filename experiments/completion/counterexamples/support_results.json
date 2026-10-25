@@ -1,0 +1,14 @@
+{
+  "random_integer_lineage_cases": 10000,
+  "typed_domain_counterexample_found": false,
+  "noninteger_contains": {
+    "rejected": "ValueError: integer commit cuts required"
+  },
+  "noninteger_lifetime_intervals": {
+    "rejected": "ValueError: invalid or duplicate version lifetime"
+  },
+  "noninteger_event_accepted": {
+    "rejected": "ValueError: source lineage identity/commit error"
+  },
+  "interpretation": "Boundary validation gap only: integral Lifetime/event/contains inputs are intended typed-domain preconditions."
+}

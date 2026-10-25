@@ -1,0 +1,7152 @@
+{
+ "generated_by": "proto/run_episodes_v3.py",
+ "protocol": "locked Begin+relation read -> query from that observed row -> 20ms deliberation -> retrieval -> 1ms tool gap -> retrieval; A1-A3 and bundle validity are fixed-snapshot oracle scores; observed-read conflict uses only the observed row and is not a no-state certificate",
+ "config": {
+  "n_rows": 15000,
+  "n_writes": 5000,
+  "n_reads": 1200,
+  "k": 10,
+  "seeds": [
+   20261008,
+   20261009,
+   20261010
+  ],
+  "think_us": 20000.0,
+  "between_calls_us": 1000.0,
+  "latency_scope": "one retrieval call",
+  "std_ddof": 1,
+  "rng_streams": "separate deterministic writer and reader streams"
+ },
+ "aggregate": {
+  "async50": {
+   "anomaly_episode_rate": {
+    "mean": 0.028889,
+    "std": 0.007876,
+    "values": [
+     0.031667,
+     0.035,
+     0.02
+    ]
+   },
+   "a1_dirty_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a2_superseded_episode_rate": {
+    "mean": 0.026389,
+    "std": 0.006255,
+    "values": [
+     0.026667,
+     0.0325,
+     0.02
+    ]
+   },
+   "a3_phantom_episode_rate": {
+    "mean": 0.0025,
+    "std": 0.0025,
+    "values": [
+     0.005,
+     0.0025,
+     0.0
+    ]
+   },
+   "observed_read_conflict_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "observed_read_conflict_only_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "citation_disagreement_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "bundle_invalidation_rate": {
+    "mean": 0.028889,
+    "std": 0.007876,
+    "values": [
+     0.031667,
+     0.035,
+     0.02
+    ]
+   },
+   "citation_validity": {
+    "mean": 0.997083,
+    "std": 0.000804,
+    "values": [
+     0.99675,
+     0.9965,
+     0.998
+    ]
+   },
+   "mean_symmetric_difference": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "frac_disagreement_gt1": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "recall_at_k": {
+    "mean": 0.994194,
+    "std": 0.000173,
+    "values": [
+     0.994333,
+     0.994,
+     0.99425
+    ]
+   },
+   "p50_us": {
+    "mean": 1808.733333,
+    "std": 74.000293,
+    "values": [
+     1790.0,
+     1745.9,
+     1890.3
+    ]
+   },
+   "p99_us": {
+    "mean": 10323.166667,
+    "std": 1123.884809,
+    "values": [
+     10948.4,
+     9025.7,
+     10995.4
+    ]
+   }
+  },
+  "async200": {
+   "anomaly_episode_rate": {
+    "mean": 0.106111,
+    "std": 0.01468,
+    "values": [
+     0.121667,
+     0.104167,
+     0.0925
+    ]
+   },
+   "a1_dirty_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a2_superseded_episode_rate": {
+    "mean": 0.092222,
+    "std": 0.011795,
+    "values": [
+     0.105833,
+     0.085833,
+     0.085
+    ]
+   },
+   "a3_phantom_episode_rate": {
+    "mean": 0.014722,
+    "std": 0.005912,
+    "values": [
+     0.015833,
+     0.02,
+     0.008333
+    ]
+   },
+   "observed_read_conflict_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "observed_read_conflict_only_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "citation_disagreement_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "bundle_invalidation_rate": {
+    "mean": 0.106111,
+    "std": 0.01468,
+    "values": [
+     0.121667,
+     0.104167,
+     0.0925
+    ]
+   },
+   "citation_validity": {
+    "mean": 0.988722,
+    "std": 0.001512,
+    "values": [
+     0.987333,
+     0.9885,
+     0.990333
+    ]
+   },
+   "mean_symmetric_difference": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "frac_disagreement_gt1": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "recall_at_k": {
+    "mean": 0.978611,
+    "std": 0.000937,
+    "values": [
+     0.977583,
+     0.979417,
+     0.978833
+    ]
+   },
+   "p50_us": {
+    "mean": 1872.7,
+    "std": 120.619567,
+    "values": [
+     1997.3,
+     1864.3,
+     1756.5
+    ]
+   },
+   "p99_us": {
+    "mean": 11130.733333,
+    "std": 1113.633137,
+    "values": [
+     12139.3,
+     11317.3,
+     9935.6
+    ]
+   }
+  },
+  "async500": {
+   "anomaly_episode_rate": {
+    "mean": 0.2525,
+    "std": 0.007638,
+    "values": [
+     0.260833,
+     0.250833,
+     0.245833
+    ]
+   },
+   "a1_dirty_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a2_superseded_episode_rate": {
+    "mean": 0.225833,
+    "std": 0.010138,
+    "values": [
+     0.2375,
+     0.220833,
+     0.219167
+    ]
+   },
+   "a3_phantom_episode_rate": {
+    "mean": 0.034444,
+    "std": 0.005672,
+    "values": [
+     0.03,
+     0.040833,
+     0.0325
+    ]
+   },
+   "observed_read_conflict_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "observed_read_conflict_only_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "citation_disagreement_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "bundle_invalidation_rate": {
+    "mean": 0.2525,
+    "std": 0.007638,
+    "values": [
+     0.260833,
+     0.250833,
+     0.245833
+    ]
+   },
+   "citation_validity": {
+    "mean": 0.970917,
+    "std": 0.001175,
+    "values": [
+     0.969667,
+     0.971083,
+     0.972
+    ]
+   },
+   "mean_symmetric_difference": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "frac_disagreement_gt1": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "recall_at_k": {
+    "mean": 0.949306,
+    "std": 0.002464,
+    "values": [
+     0.947167,
+     0.952,
+     0.94875
+    ]
+   },
+   "p50_us": {
+    "mean": 2009.2,
+    "std": 328.324519,
+    "values": [
+     1762.7,
+     1883.0,
+     2381.9
+    ]
+   },
+   "p99_us": {
+    "mean": 14947.066667,
+    "std": 403.178674,
+    "values": [
+     14624.3,
+     14817.9,
+     15399.0
+    ]
+   }
+  },
+  "lock": {
+   "anomaly_episode_rate": {
+    "mean": 0.002222,
+    "std": 0.000481,
+    "values": [
+     0.0025,
+     0.001667,
+     0.0025
+    ]
+   },
+   "a1_dirty_episode_rate": {
+    "mean": 0.001667,
+    "std": 0.0,
+    "values": [
+     0.001667,
+     0.001667,
+     0.001667
+    ]
+   },
+   "a2_superseded_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a3_phantom_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "observed_read_conflict_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "observed_read_conflict_only_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "citation_disagreement_rate": {
+    "mean": 0.000833,
+    "std": 0.000834,
+    "values": [
+     0.001667,
+     0.0,
+     0.000833
+    ]
+   },
+   "bundle_invalidation_rate": {
+    "mean": 0.002222,
+    "std": 0.000481,
+    "values": [
+     0.0025,
+     0.001667,
+     0.0025
+    ]
+   },
+   "citation_validity": {
+    "mean": 0.999847,
+    "std": 2.4e-05,
+    "values": [
+     0.999875,
+     0.999833,
+     0.999833
+    ]
+   },
+   "mean_symmetric_difference": {
+    "mean": 0.001667,
+    "std": 0.001667,
+    "values": [
+     0.003333,
+     0.0,
+     0.001667
+    ]
+   },
+   "frac_disagreement_gt1": {
+    "mean": 0.000833,
+    "std": 0.000834,
+    "values": [
+     0.001667,
+     0.0,
+     0.000833
+    ]
+   },
+   "recall_at_k": {
+    "mean": 0.99975,
+    "std": 8.3e-05,
+    "values": [
+     0.99975,
+     0.999833,
+     0.999667
+    ]
+   },
+   "p50_us": {
+    "mean": 336.133333,
+    "std": 13.712889,
+    "values": [
+     323.8,
+     350.9,
+     333.7
+    ]
+   },
+   "p99_us": {
+    "mean": 8549.433333,
+    "std": 1131.466563,
+    "values": [
+     7358.1,
+     8680.6,
+     9609.6
+    ]
+   }
+  },
+  "scr": {
+   "anomaly_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a1_dirty_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a2_superseded_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a3_phantom_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "observed_read_conflict_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "observed_read_conflict_only_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "citation_disagreement_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "bundle_invalidation_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "citation_validity": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "mean_symmetric_difference": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "frac_disagreement_gt1": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "recall_at_k": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "p50_us": {
+    "mean": 1863.433333,
+    "std": 39.964651,
+    "values": [
+     1836.1,
+     1844.9,
+     1909.3
+    ]
+   },
+   "p99_us": {
+    "mean": 10619.933333,
+    "std": 677.020563,
+    "values": [
+     9838.5,
+     11030.1,
+     10991.2
+    ]
+   }
+  }
+ },
+ "runs": [
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.031667,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.026667,
+   "a3_phantom_episode_rate": 0.005,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.031667,
+   "n_invalid_bundles": 38,
+   "anomaly_count": 38,
+   "a1_count": 0,
+   "a2_count": 32,
+   "a3_count": 6,
+   "citation_validity": 0.99675,
+   "writer_seed": 14960413133887563520,
+   "reader_seed": 7538176542343406497,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 129,
+   "episodes_overlapped_write": 129,
+   "between_calls_us": 1000.0,
+   "witnesses": [
+    {
+     "episode": 34,
+     "snapshot": 6275,
+     "observed_row": 14703,
+     "observed_version": 14703,
+     "citations_1": [
+      [
+       1078,
+       1078
+      ],
+      [
+       1340,
+       1340
+      ],
+      [
+       2016,
+       2016
+      ],
+      [
+       2723,
+       2723
+      ],
+      [
+       4748,
+       4748
+      ],
+      [
+       4965,
+       4965
+      ],
+      [
+       6733,
+       6733
+      ],
+      [
+       8811,
+       8811
+      ],
+      [
+       11345,
+       11345
+      ],
+      [
+       14703,
+       14703
+      ]
+     ],
+     "citations_2": [
+      [
+       1078,
+       1078
+      ],
+      [
+       1340,
+       1340
+      ],
+      [
+       2016,
+       2016
+      ],
+      [
+       2723,
+       2723
+      ],
+      [
+       4748,
+       4748
+      ],
+      [
+       4965,
+       4965
+      ],
+      [
+       6733,
+       6733
+      ],
+      [
+       8811,
+       8811
+      ],
+      [
+       11345,
+       11345
+      ],
+      [
+       14703,
+       14703
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 168,
+     "snapshot": 10000,
+     "observed_row": 3300,
+     "observed_version": 3300,
+     "citations_1": [
+      [
+       109,
+       109
+      ],
+      [
+       157,
+       157
+      ],
+      [
+       203,
+       203
+      ],
+      [
+       1669,
+       1669
+      ],
+      [
+       1879,
+       19389
+      ],
+      [
+       1978,
+       1978
+      ],
+      [
+       3300,
+       3300
+      ],
+      [
+       4390,
+       4390
+      ],
+      [
+       5112,
+       17996
+      ],
+      [
+       13851,
+       13851
+      ]
+     ],
+     "citations_2": [
+      [
+       109,
+       109
+      ],
+      [
+       157,
+       157
+      ],
+      [
+       203,
+       203
+      ],
+      [
+       1669,
+       1669
+      ],
+      [
+       1879,
+       19389
+      ],
+      [
+       1978,
+       1978
+      ],
+      [
+       3300,
+       3300
+      ],
+      [
+       4390,
+       4390
+      ],
+      [
+       5112,
+       17996
+      ],
+      [
+       13851,
+       13851
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 264,
+     "snapshot": 10000,
+     "observed_row": 13890,
+     "observed_version": 18879,
+     "citations_1": [
+      [
+       3171,
+       19767
+      ],
+      [
+       4808,
+       4808
+      ],
+      [
+       5196,
+       5196
+      ],
+      [
+       6620,
+       6620
+      ],
+      [
+       7474,
+       7474
+      ],
+      [
+       9846,
+       9846
+      ],
+      [
+       11063,
+       19364
+      ],
+      [
+       11634,
+       16106
+      ],
+      [
+       13890,
+       18879
+      ],
+      [
+       13985,
+       13985
+      ]
+     ],
+     "citations_2": [
+      [
+       3171,
+       19767
+      ],
+      [
+       4808,
+       4808
+      ],
+      [
+       5196,
+       5196
+      ],
+      [
+       6620,
+       6620
+      ],
+      [
+       7474,
+       7474
+      ],
+      [
+       9846,
+       9846
+      ],
+      [
+       11063,
+       19364
+      ],
+      [
+       11634,
+       16106
+      ],
+      [
+       13890,
+       18879
+      ],
+      [
+       13985,
+       13985
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 283,
+     "snapshot": 10000,
+     "observed_row": 5224,
+     "observed_version": 5224,
+     "citations_1": [
+      [
+       4626,
+       4626
+      ],
+      [
+       4670,
+       4670
+      ],
+      [
+       4719,
+       4719
+      ],
+      [
+       5224,
+       5224
+      ],
+      [
+       5958,
+       16392
+      ],
+      [
+       6341,
+       18192
+      ],
+      [
+       8333,
+       8333
+      ],
+      [
+       8803,
+       8803
+      ],
+      [
+       9151,
+       9151
+      ],
+      [
+       9761,
+       9761
+      ]
+     ],
+     "citations_2": [
+      [
+       4626,
+       4626
+      ],
+      [
+       4670,
+       4670
+      ],
+      [
+       4719,
+       4719
+      ],
+      [
+       5224,
+       5224
+      ],
+      [
+       5958,
+       16392
+      ],
+      [
+       6341,
+       18192
+      ],
+      [
+       8333,
+       8333
+      ],
+      [
+       8803,
+       8803
+      ],
+      [
+       9151,
+       9151
+      ],
+      [
+       9761,
+       9761
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 302,
+     "snapshot": 10000,
+     "observed_row": 86,
+     "observed_version": 86,
+     "citations_1": [
+      [
+       86,
+       86
+      ],
+      [
+       717,
+       16120
+      ],
+      [
+       2549,
+       16877
+      ],
+      [
+       3103,
+       3103
+      ],
+      [
+       4847,
+       4847
+      ],
+      [
+       6066,
+       16301
+      ],
+      [
+       8827,
+       8827
+      ],
+      [
+       9928,
+       9928
+      ],
+      [
+       10701,
+       18059
+      ],
+      [
+       13511,
+       13511
+      ]
+     ],
+     "citations_2": [
+      [
+       86,
+       86
+      ],
+      [
+       717,
+       16120
+      ],
+      [
+       2549,
+       16877
+      ],
+      [
+       3103,
+       3103
+      ],
+      [
+       4847,
+       4847
+      ],
+      [
+       6066,
+       16301
+      ],
+      [
+       8827,
+       8827
+      ],
+      [
+       9928,
+       9928
+      ],
+      [
+       10701,
+       18059
+      ],
+      [
+       13511,
+       13511
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 315,
+     "snapshot": 10000,
+     "observed_row": 7300,
+     "observed_version": 7300,
+     "citations_1": [
+      [
+       75,
+       19390
+      ],
+      [
+       3251,
+       3251
+      ],
+      [
+       3930,
+       3930
+      ],
+      [
+       4825,
+       4825
+      ],
+      [
+       6623,
+       17266
+      ],
+      [
+       7300,
+       7300
+      ],
+      [
+       8928,
+       8928
+      ],
+      [
+       9595,
+       9595
+      ],
+      [
+       11433,
+       18331
+      ],
+      [
+       12911,
+       12911
+      ]
+     ],
+     "citations_2": [
+      [
+       75,
+       19390
+      ],
+      [
+       3251,
+       3251
+      ],
+      [
+       3930,
+       3930
+      ],
+      [
+       4825,
+       4825
+      ],
+      [
+       6623,
+       17266
+      ],
+      [
+       7300,
+       7300
+      ],
+      [
+       8928,
+       8928
+      ],
+      [
+       9595,
+       9595
+      ],
+      [
+       11433,
+       18331
+      ],
+      [
+       12911,
+       12911
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    }
+   ],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.994333,
+   "p50_us": 1790.0,
+   "p99_us": 10948.4,
+   "scheme": "async50",
+   "seed": 20261008
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.035,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.0325,
+   "a3_phantom_episode_rate": 0.0025,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.035,
+   "n_invalid_bundles": 42,
+   "anomaly_count": 42,
+   "a1_count": 0,
+   "a2_count": 39,
+   "a3_count": 3,
+   "citation_validity": 0.9965,
+   "writer_seed": 17422883757799728462,
+   "reader_seed": 13649048377345391540,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 128,
+   "episodes_overlapped_write": 128,
+   "between_calls_us": 1000.0,
+   "witnesses": [
+    {
+     "episode": 3,
+     "snapshot": 5080,
+     "observed_row": 3853,
+     "observed_version": 3853,
+     "citations_1": [
+      [
+       2656,
+       2656
+      ],
+      [
+       3853,
+       3853
+      ],
+      [
+       4392,
+       4392
+      ],
+      [
+       5495,
+       5495
+      ],
+      [
+       6943,
+       6943
+      ],
+      [
+       9507,
+       9507
+      ],
+      [
+       10983,
+       10983
+      ],
+      [
+       12936,
+       12936
+      ],
+      [
+       13610,
+       13610
+      ],
+      [
+       14811,
+       14811
+      ]
+     ],
+     "citations_2": [
+      [
+       2656,
+       2656
+      ],
+      [
+       3853,
+       3853
+      ],
+      [
+       4392,
+       4392
+      ],
+      [
+       5495,
+       5495
+      ],
+      [
+       6943,
+       6943
+      ],
+      [
+       9507,
+       9507
+      ],
+      [
+       10983,
+       10983
+      ],
+      [
+       12936,
+       12936
+      ],
+      [
+       13610,
+       13610
+      ],
+      [
+       14811,
+       14811
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 37,
+     "snapshot": 6426,
+     "observed_row": 8618,
+     "observed_version": 8618,
+     "citations_1": [
+      [
+       1874,
+       1874
+      ],
+      [
+       2077,
+       2077
+      ],
+      [
+       3651,
+       3651
+      ],
+      [
+       4824,
+       4824
+      ],
+      [
+       4935,
+       4935
+      ],
+      [
+       7494,
+       7494
+      ],
+      [
+       8618,
+       8618
+      ],
+      [
+       10565,
+       10565
+      ],
+      [
+       11247,
+       11247
+      ],
+      [
+       11722,
+       11722
+      ]
+     ],
+     "citations_2": [
+      [
+       1874,
+       1874
+      ],
+      [
+       2077,
+       2077
+      ],
+      [
+       3651,
+       3651
+      ],
+      [
+       4824,
+       4824
+      ],
+      [
+       4935,
+       4935
+      ],
+      [
+       7494,
+       7494
+      ],
+      [
+       8618,
+       8618
+      ],
+      [
+       10565,
+       10565
+      ],
+      [
+       11247,
+       11247
+      ],
+      [
+       11722,
+       11722
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 67,
+     "snapshot": 7597,
+     "observed_row": 10562,
+     "observed_version": 16986,
+     "citations_1": [
+      [
+       1479,
+       1479
+      ],
+      [
+       1554,
+       1554
+      ],
+      [
+       2569,
+       2569
+      ],
+      [
+       2933,
+       2933
+      ],
+      [
+       7877,
+       7877
+      ],
+      [
+       10562,
+       16986
+      ],
+      [
+       11726,
+       11726
+      ],
+      [
+       12233,
+       12233
+      ],
+      [
+       13561,
+       13561
+      ],
+      [
+       14025,
+       14025
+      ]
+     ],
+     "citations_2": [
+      [
+       1479,
+       1479
+      ],
+      [
+       1554,
+       1554
+      ],
+      [
+       2569,
+       2569
+      ],
+      [
+       2933,
+       2933
+      ],
+      [
+       7877,
+       7877
+      ],
+      [
+       10562,
+       16986
+      ],
+      [
+       11726,
+       11726
+      ],
+      [
+       12233,
+       12233
+      ],
+      [
+       13561,
+       13561
+      ],
+      [
+       14025,
+       14025
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 115,
+     "snapshot": 9487,
+     "observed_row": 11476,
+     "observed_version": 11476,
+     "citations_1": [
+      [
+       1341,
+       17983
+      ],
+      [
+       2816,
+       2816
+      ],
+      [
+       4438,
+       4438
+      ],
+      [
+       9208,
+       15000
+      ],
+      [
+       9765,
+       9765
+      ],
+      [
+       10474,
+       18094
+      ],
+      [
+       10492,
+       18320
+      ],
+      [
+       11476,
+       11476
+      ],
+      [
+       13236,
+       13236
+      ],
+      [
+       14525,
+       17832
+      ]
+     ],
+     "citations_2": [
+      [
+       1341,
+       17983
+      ],
+      [
+       2816,
+       2816
+      ],
+      [
+       4438,
+       4438
+      ],
+      [
+       9208,
+       15000
+      ],
+      [
+       9765,
+       9765
+      ],
+      [
+       10474,
+       18094
+      ],
+      [
+       10492,
+       18320
+      ],
+      [
+       11476,
+       11476
+      ],
+      [
+       13236,
+       13236
+      ],
+      [
+       14525,
+       17832
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 162,
+     "snapshot": 10000,
+     "observed_row": 14458,
+     "observed_version": 14458,
+     "citations_1": [
+      [
+       1172,
+       1172
+      ],
+      [
+       2339,
+       2339
+      ],
+      [
+       5073,
+       19634
+      ],
+      [
+       6692,
+       6692
+      ],
+      [
+       8589,
+       8589
+      ],
+      [
+       11475,
+       11475
+      ],
+      [
+       11827,
+       19432
+      ],
+      [
+       11923,
+       11923
+      ],
+      [
+       14023,
+       14023
+      ],
+      [
+       14458,
+       14458
+      ]
+     ],
+     "citations_2": [
+      [
+       1172,
+       1172
+      ],
+      [
+       2339,
+       2339
+      ],
+      [
+       5073,
+       19634
+      ],
+      [
+       6692,
+       6692
+      ],
+      [
+       8589,
+       8589
+      ],
+      [
+       11475,
+       11475
+      ],
+      [
+       11827,
+       19432
+      ],
+      [
+       11923,
+       11923
+      ],
+      [
+       14023,
+       14023
+      ],
+      [
+       14458,
+       14458
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 166,
+     "snapshot": 10000,
+     "observed_row": 993,
+     "observed_version": 993,
+     "citations_1": [
+      [
+       993,
+       993
+      ],
+      [
+       2423,
+       15650
+      ],
+      [
+       3096,
+       3096
+      ],
+      [
+       6979,
+       18735
+      ],
+      [
+       9553,
+       9553
+      ],
+      [
+       9672,
+       9672
+      ],
+      [
+       10720,
+       10720
+      ],
+      [
+       13104,
+       13104
+      ],
+      [
+       14318,
+       15607
+      ],
+      [
+       14933,
+       14933
+      ]
+     ],
+     "citations_2": [
+      [
+       993,
+       993
+      ],
+      [
+       2423,
+       15650
+      ],
+      [
+       3096,
+       3096
+      ],
+      [
+       6979,
+       18735
+      ],
+      [
+       9553,
+       9553
+      ],
+      [
+       9672,
+       9672
+      ],
+      [
+       10720,
+       10720
+      ],
+      [
+       13104,
+       13104
+      ],
+      [
+       14318,
+       15607
+      ],
+      [
+       14933,
+       14933
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    }
+   ],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.994,
+   "p50_us": 1745.9,
+   "p99_us": 9025.7,
+   "scheme": "async50",
+   "seed": 20261009
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.02,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.02,
+   "a3_phantom_episode_rate": 0.0,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.02,
+   "n_invalid_bundles": 24,
+   "anomaly_count": 24,
+   "a1_count": 0,
+   "a2_count": 24,
+   "a3_count": 0,
+   "citation_validity": 0.998,
+   "writer_seed": 12540436062695003653,
+   "reader_seed": 10076647842287591123,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 132,
+   "episodes_overlapped_write": 132,
+   "between_calls_us": 1000.0,
+   "witnesses": [
+    {
+     "episode": 41,
+     "snapshot": 6525,
+     "observed_row": 8646,
+     "observed_version": 8646,
+     "citations_1": [
+      [
+       1999,
+       1999
+      ],
+      [
+       4383,
+       4383
+      ],
+      [
+       8646,
+       8646
+      ],
+      [
+       10269,
+       10269
+      ],
+      [
+       11090,
+       11090
+      ],
+      [
+       13032,
+       13032
+      ],
+      [
+       13186,
+       13186
+      ],
+      [
+       13968,
+       13968
+      ],
+      [
+       14378,
+       14378
+      ],
+      [
+       14789,
+       14789
+      ]
+     ],
+     "citations_2": [
+      [
+       1999,
+       1999
+      ],
+      [
+       4383,
+       4383
+      ],
+      [
+       8646,
+       8646
+      ],
+      [
+       10269,
+       10269
+      ],
+      [
+       11090,
+       11090
+      ],
+      [
+       13032,
+       13032
+      ],
+      [
+       13186,
+       13186
+      ],
+      [
+       13968,
+       13968
+      ],
+      [
+       14378,
+       14378
+      ],
+      [
+       14789,
+       14789
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 56,
+     "snapshot": 7093,
+     "observed_row": 559,
+     "observed_version": 559,
+     "citations_1": [
+      [
+       559,
+       559
+      ],
+      [
+       2536,
+       2536
+      ],
+      [
+       5190,
+       5190
+      ],
+      [
+       5471,
+       5471
+      ],
+      [
+       7171,
+       7171
+      ],
+      [
+       9381,
+       9381
+      ],
+      [
+       9502,
+       9502
+      ],
+      [
+       10054,
+       10054
+      ],
+      [
+       13469,
+       16336
+      ],
+      [
+       14394,
+       14394
+      ]
+     ],
+     "citations_2": [
+      [
+       559,
+       559
+      ],
+      [
+       2536,
+       2536
+      ],
+      [
+       5190,
+       5190
+      ],
+      [
+       5471,
+       5471
+      ],
+      [
+       7171,
+       7171
+      ],
+      [
+       9381,
+       9381
+      ],
+      [
+       9502,
+       9502
+      ],
+      [
+       10054,
+       10054
+      ],
+      [
+       13469,
+       16336
+      ],
+      [
+       14394,
+       14394
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 69,
+     "snapshot": 7591,
+     "observed_row": 4356,
+     "observed_version": 4356,
+     "citations_1": [
+      [
+       1752,
+       1752
+      ],
+      [
+       2706,
+       2706
+      ],
+      [
+       3048,
+       3048
+      ],
+      [
+       4356,
+       4356
+      ],
+      [
+       4800,
+       4800
+      ],
+      [
+       5278,
+       17302
+      ],
+      [
+       9055,
+       9055
+      ],
+      [
+       9069,
+       9069
+      ],
+      [
+       14055,
+       14055
+      ],
+      [
+       14880,
+       14880
+      ]
+     ],
+     "citations_2": [
+      [
+       1752,
+       1752
+      ],
+      [
+       2706,
+       2706
+      ],
+      [
+       3048,
+       3048
+      ],
+      [
+       4356,
+       4356
+      ],
+      [
+       4800,
+       4800
+      ],
+      [
+       5278,
+       17302
+      ],
+      [
+       9055,
+       9055
+      ],
+      [
+       9069,
+       9069
+      ],
+      [
+       14055,
+       14055
+      ],
+      [
+       14880,
+       14880
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 244,
+     "snapshot": 10000,
+     "observed_row": 25,
+     "observed_version": 25,
+     "citations_1": [
+      [
+       25,
+       25
+      ],
+      [
+       6341,
+       6341
+      ],
+      [
+       6509,
+       6509
+      ],
+      [
+       7360,
+       7360
+      ],
+      [
+       9932,
+       9932
+      ],
+      [
+       11132,
+       11132
+      ],
+      [
+       11243,
+       17700
+      ],
+      [
+       11443,
+       11443
+      ],
+      [
+       12116,
+       12116
+      ],
+      [
+       14231,
+       14231
+      ]
+     ],
+     "citations_2": [
+      [
+       25,
+       25
+      ],
+      [
+       6341,
+       6341
+      ],
+      [
+       6509,
+       6509
+      ],
+      [
+       7360,
+       7360
+      ],
+      [
+       9932,
+       9932
+      ],
+      [
+       11132,
+       11132
+      ],
+      [
+       11243,
+       17700
+      ],
+      [
+       11443,
+       11443
+      ],
+      [
+       12116,
+       12116
+      ],
+      [
+       14231,
+       14231
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 321,
+     "snapshot": 10000,
+     "observed_row": 8649,
+     "observed_version": 17659,
+     "citations_1": [
+      [
+       2672,
+       2672
+      ],
+      [
+       4312,
+       17803
+      ],
+      [
+       4488,
+       4488
+      ],
+      [
+       5122,
+       5122
+      ],
+      [
+       6636,
+       19367
+      ],
+      [
+       8485,
+       8485
+      ],
+      [
+       8649,
+       17659
+      ],
+      [
+       12601,
+       12601
+      ],
+      [
+       12903,
+       12903
+      ],
+      [
+       13319,
+       13319
+      ]
+     ],
+     "citations_2": [
+      [
+       2672,
+       2672
+      ],
+      [
+       4312,
+       17803
+      ],
+      [
+       4488,
+       4488
+      ],
+      [
+       5122,
+       5122
+      ],
+      [
+       6636,
+       19367
+      ],
+      [
+       8485,
+       8485
+      ],
+      [
+       8649,
+       17659
+      ],
+      [
+       12601,
+       12601
+      ],
+      [
+       12903,
+       12903
+      ],
+      [
+       13319,
+       13319
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 357,
+     "snapshot": 10000,
+     "observed_row": 4456,
+     "observed_version": 4456,
+     "citations_1": [
+      [
+       1215,
+       1215
+      ],
+      [
+       1836,
+       1836
+      ],
+      [
+       3117,
+       15587
+      ],
+      [
+       4456,
+       4456
+      ],
+      [
+       5740,
+       5740
+      ],
+      [
+       6807,
+       6807
+      ],
+      [
+       8676,
+       8676
+      ],
+      [
+       11443,
+       11443
+      ],
+      [
+       13070,
+       13070
+      ],
+      [
+       13342,
+       13342
+      ]
+     ],
+     "citations_2": [
+      [
+       1215,
+       1215
+      ],
+      [
+       1836,
+       1836
+      ],
+      [
+       3117,
+       15587
+      ],
+      [
+       4456,
+       4456
+      ],
+      [
+       5740,
+       5740
+      ],
+      [
+       6807,
+       6807
+      ],
+      [
+       8676,
+       8676
+      ],
+      [
+       11443,
+       11443
+      ],
+      [
+       13070,
+       13070
+      ],
+      [
+       13342,
+       13342
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    }
+   ],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.99425,
+   "p50_us": 1890.3,
+   "p99_us": 10995.4,
+   "scheme": "async50",
+   "seed": 20261010
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.121667,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.105833,
+   "a3_phantom_episode_rate": 0.015833,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.121667,
+   "n_invalid_bundles": 146,
+   "anomaly_count": 146,
+   "a1_count": 0,
+   "a2_count": 127,
+   "a3_count": 19,
+   "citation_validity": 0.987333,
+   "writer_seed": 14960413133887563520,
+   "reader_seed": 7538176542343406497,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 136,
+   "episodes_overlapped_write": 136,
+   "between_calls_us": 1000.0,
+   "witnesses": [
+    {
+     "episode": 7,
+     "snapshot": 5230,
+     "observed_row": 1553,
+     "observed_version": 1553,
+     "citations_1": [
+      [
+       1553,
+       1553
+      ],
+      [
+       2242,
+       2242
+      ],
+      [
+       3563,
+       3563
+      ],
+      [
+       3662,
+       3662
+      ],
+      [
+       3812,
+       3812
+      ],
+      [
+       7527,
+       7527
+      ],
+      [
+       7849,
+       7849
+      ],
+      [
+       7925,
+       7925
+      ],
+      [
+       8183,
+       8183
+      ],
+      [
+       12414,
+       12414
+      ]
+     ],
+     "citations_2": [
+      [
+       1553,
+       1553
+      ],
+      [
+       2242,
+       2242
+      ],
+      [
+       3563,
+       3563
+      ],
+      [
+       3662,
+       3662
+      ],
+      [
+       3812,
+       3812
+      ],
+      [
+       7527,
+       7527
+      ],
+      [
+       7849,
+       7849
+      ],
+      [
+       7925,
+       7925
+      ],
+      [
+       8183,
+       8183
+      ],
+      [
+       12414,
+       12414
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 29,
+     "snapshot": 6052,
+     "observed_row": 11056,
+     "observed_version": 11056,
+     "citations_1": [
+      [
+       695,
+       695
+      ],
+      [
+       830,
+       830
+      ],
+      [
+       1590,
+       1590
+      ],
+      [
+       2371,
+       2371
+      ],
+      [
+       4211,
+       4211
+      ],
+      [
+       7251,
+       7251
+      ],
+      [
+       9895,
+       9895
+      ],
+      [
+       10159,
+       10159
+      ],
+      [
+       10565,
+       10565
+      ],
+      [
+       11056,
+       11056
+      ]
+     ],
+     "citations_2": [
+      [
+       695,
+       695
+      ],
+      [
+       830,
+       830
+      ],
+      [
+       1590,
+       1590
+      ],
+      [
+       2371,
+       2371
+      ],
+      [
+       4211,
+       4211
+      ],
+      [
+       7251,
+       7251
+      ],
+      [
+       9895,
+       9895
+      ],
+      [
+       10159,
+       10159
+      ],
+      [
+       10565,
+       10565
+      ],
+      [
+       11056,
+       11056
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 45,
+     "snapshot": 6654,
+     "observed_row": 13724,
+     "observed_version": 13724,
+     "citations_1": [
+      [
+       961,
+       961
+      ],
+      [
+       2012,
+       2012
+      ],
+      [
+       3954,
+       3954
+      ],
+      [
+       4228,
+       4228
+      ],
+      [
+       8091,
+       8091
+      ],
+      [
+       8865,
+       8865
+      ],
+      [
+       11427,
+       11427
+      ],
+      [
+       12293,
+       12293
+      ],
+      [
+       13517,
+       13517
+      ],
+      [
+       13724,
+       13724
+      ]
+     ],
+     "citations_2": [
+      [
+       961,
+       961
+      ],
+      [
+       2012,
+       2012
+      ],
+      [
+       3954,
+       3954
+      ],
+      [
+       4228,
+       4228
+      ],
+      [
+       8091,
+       8091
+      ],
+      [
+       8865,
+       8865
+      ],
+      [
+       11427,
+       11427
+      ],
+      [
+       12293,
+       12293
+      ],
+      [
+       13517,
+       13517
+      ],
+      [
+       13724,
+       13724
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 48,
+     "snapshot": 6769,
+     "observed_row": 1249,
+     "observed_version": 1249,
+     "citations_1": [
+      [
+       767,
+       767
+      ],
+      [
+       1249,
+       1249
+      ],
+      [
+       2904,
+       2904
+      ],
+      [
+       3856,
+       3856
+      ],
+      [
+       4488,
+       4488
+      ],
+      [
+       5914,
+       5914
+      ],
+      [
+       6481,
+       6481
+      ],
+      [
+       6796,
+       6796
+      ],
+      [
+       8013,
+       8013
+      ],
+      [
+       9531,
+       9531
+      ]
+     ],
+     "citations_2": [
+      [
+       767,
+       767
+      ],
+      [
+       1249,
+       1249
+      ],
+      [
+       2904,
+       2904
+      ],
+      [
+       3856,
+       3856
+      ],
+      [
+       4488,
+       4488
+      ],
+      [
+       5914,
+       5914
+      ],
+      [
+       6481,
+       6481
+      ],
+      [
+       6796,
+       6796
+      ],
+      [
+       8013,
+       8013
+      ],
+      [
+       9531,
+       9531
+      ]
+     ],
+     "a1": false,
+     "a2": false,
+     "a3": true,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 58,
+     "snapshot": 7145,
+     "observed_row": 1459,
+     "observed_version": 1459,
+     "citations_1": [
+      [
+       463,
+       463
+      ],
+      [
+       470,
+       470
+      ],
+      [
+       1459,
+       1459
+      ],
+      [
+       4687,
+       4687
+      ],
+      [
+       6361,
+       6361
+      ],
+      [
+       6879,
+       6879
+      ],
+      [
+       11899,
+       11899
+      ],
+      [
+       13135,
+       13135
+      ],
+      [
+       13822,
+       13822
+      ],
+      [
+       13889,
+       16900
+      ]
+     ],
+     "citations_2": [
+      [
+       463,
+       463
+      ],
+      [
+       470,
+       470
+      ],
+      [
+       1459,
+       1459
+      ],
+      [
+       4687,
+       4687
+      ],
+      [
+       6361,
+       6361
+      ],
+      [
+       6879,
+       6879
+      ],
+      [
+       11899,
+       11899
+      ],
+      [
+       13135,
+       13135
+      ],
+      [
+       13822,
+       13822
+      ],
+      [
+       13889,
+       16900
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 72,
+     "snapshot": 7659,
+     "observed_row": 4833,
+     "observed_version": 15281,
+     "citations_1": [
+      [
+       837,
+       837
+      ],
+      [
+       1826,
+       1826
+      ],
+      [
+       2017,
+       2017
+      ],
+      [
+       2254,
+       17017
+      ],
+      [
+       4379,
+       4379
+      ],
+      [
+       4833,
+       15281
+      ],
+      [
+       6512,
+       6512
+      ],
+      [
+       6565,
+       6565
+      ],
+      [
+       11893,
+       11893
+      ],
+      [
+       13264,
+       13264
+      ]
+     ],
+     "citations_2": [
+      [
+       837,
+       837
+      ],
+      [
+       1826,
+       1826
+      ],
+      [
+       2017,
+       2017
+      ],
+      [
+       2254,
+       17017
+      ],
+      [
+       4379,
+       4379
+      ],
+      [
+       4833,
+       15281
+      ],
+      [
+       6512,
+       6512
+      ],
+      [
+       6565,
+       6565
+      ],
+      [
+       11893,
+       11893
+      ],
+      [
+       13264,
+       13264
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    }
+   ],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.977583,
+   "p50_us": 1997.3,
+   "p99_us": 12139.3,
+   "scheme": "async200",
+   "seed": 20261008
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.104167,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.085833,
+   "a3_phantom_episode_rate": 0.02,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.104167,
+   "n_invalid_bundles": 125,
+   "anomaly_count": 125,
+   "a1_count": 0,
+   "a2_count": 103,
+   "a3_count": 24,
+   "citation_validity": 0.9885,
+   "writer_seed": 17422883757799728462,
+   "reader_seed": 13649048377345391540,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 131,
+   "episodes_overlapped_write": 131,
+   "between_calls_us": 1000.0,
+   "witnesses": [
+    {
+     "episode": 3,
+     "snapshot": 5076,
+     "observed_row": 3853,
+     "observed_version": 3853,
+     "citations_1": [
+      [
+       2656,
+       2656
+      ],
+      [
+       3853,
+       3853
+      ],
+      [
+       4392,
+       4392
+      ],
+      [
+       5495,
+       5495
+      ],
+      [
+       6943,
+       6943
+      ],
+      [
+       9507,
+       9507
+      ],
+      [
+       10983,
+       10983
+      ],
+      [
+       12936,
+       12936
+      ],
+      [
+       13610,
+       13610
+      ],
+      [
+       14811,
+       14811
+      ]
+     ],
+     "citations_2": [
+      [
+       2656,
+       2656
+      ],
+      [
+       3853,
+       3853
+      ],
+      [
+       4392,
+       4392
+      ],
+      [
+       5495,
+       5495
+      ],
+      [
+       6943,
+       6943
+      ],
+      [
+       9507,
+       9507
+      ],
+      [
+       10983,
+       10983
+      ],
+      [
+       12936,
+       12936
+      ],
+      [
+       13610,
+       13610
+      ],
+      [
+       14811,
+       14811
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 29,
+     "snapshot": 6061,
+     "observed_row": 5106,
+     "observed_version": 5106,
+     "citations_1": [
+      [
+       2360,
+       2360
+      ],
+      [
+       5106,
+       5106
+      ],
+      [
+       6745,
+       6745
+      ],
+      [
+       8780,
+       8780
+      ],
+      [
+       10585,
+       10585
+      ],
+      [
+       11649,
+       15508
+      ],
+      [
+       11729,
+       11729
+      ],
+      [
+       12180,
+       12180
+      ],
+      [
+       13604,
+       13604
+      ],
+      [
+       14983,
+       14983
+      ]
+     ],
+     "citations_2": [
+      [
+       2360,
+       2360
+      ],
+      [
+       5106,
+       5106
+      ],
+      [
+       6745,
+       6745
+      ],
+      [
+       8780,
+       8780
+      ],
+      [
+       10585,
+       10585
+      ],
+      [
+       11649,
+       15508
+      ],
+      [
+       11729,
+       11729
+      ],
+      [
+       12180,
+       12180
+      ],
+      [
+       13604,
+       13604
+      ],
+      [
+       14983,
+       14983
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 30,
+     "snapshot": 6100,
+     "observed_row": 10973,
+     "observed_version": 15358,
+     "citations_1": [
+      [
+       3987,
+       15825
+      ],
+      [
+       6645,
+       6645
+      ],
+      [
+       7656,
+       7656
+      ],
+      [
+       8280,
+       8280
+      ],
+      [
+       9101,
+       9101
+      ],
+      [
+       10506,
+       10506
+      ],
+      [
+       10837,
+       10837
+      ],
+      [
+       10973,
+       15358
+      ],
+      [
+       11497,
+       11497
+      ],
+      [
+       11597,
+       11597
+      ]
+     ],
+     "citations_2": [
+      [
+       3987,
+       15825
+      ],
+      [
+       6645,
+       6645
+      ],
+      [
+       7656,
+       7656
+      ],
+      [
+       8280,
+       8280
+      ],
+      [
+       9101,
+       9101
+      ],
+      [
+       10506,
+       10506
+      ],
+      [
+       10837,
+       10837
+      ],
+      [
+       10973,
+       15358
+      ],
+      [
+       11497,
+       11497
+      ],
+      [
+       11597,
+       11597
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 54,
+     "snapshot": 7033,
+     "observed_row": 5135,
+     "observed_version": 15832,
+     "citations_1": [
+      [
+       2434,
+       2434
+      ],
+      [
+       2779,
+       2779
+      ],
+      [
+       2971,
+       2971
+      ],
+      [
+       5135,
+       15832
+      ],
+      [
+       6863,
+       6863
+      ],
+      [
+       7764,
+       15064
+      ],
+      [
+       10367,
+       10367
+      ],
+      [
+       12831,
+       12831
+      ],
+      [
+       14365,
+       14365
+      ],
+      [
+       14411,
+       14411
+      ]
+     ],
+     "citations_2": [
+      [
+       2434,
+       2434
+      ],
+      [
+       2779,
+       2779
+      ],
+      [
+       2971,
+       2971
+      ],
+      [
+       5135,
+       15832
+      ],
+      [
+       6863,
+       6863
+      ],
+      [
+       7764,
+       15064
+      ],
+      [
+       10367,
+       10367
+      ],
+      [
+       12831,
+       12831
+      ],
+      [
+       14365,
+       14365
+      ],
+      [
+       14411,
+       14411
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 62,
+     "snapshot": 7339,
+     "observed_row": 9461,
+     "observed_version": 9461,
+     "citations_1": [
+      [
+       671,
+       671
+      ],
+      [
+       2041,
+       2041
+      ],
+      [
+       2431,
+       16117
+      ],
+      [
+       2448,
+       2448
+      ],
+      [
+       8036,
+       16577
+      ],
+      [
+       8082,
+       8082
+      ],
+      [
+       9389,
+       9389
+      ],
+      [
+       9461,
+       9461
+      ],
+      [
+       12396,
+       12396
+      ],
+      [
+       14239,
+       14239
+      ]
+     ],
+     "citations_2": [
+      [
+       671,
+       671
+      ],
+      [
+       2041,
+       2041
+      ],
+      [
+       2431,
+       16117
+      ],
+      [
+       2448,
+       2448
+      ],
+      [
+       8036,
+       16577
+      ],
+      [
+       8082,
+       8082
+      ],
+      [
+       9389,
+       9389
+      ],
+      [
+       9461,
+       9461
+      ],
+      [
+       12396,
+       12396
+      ],
+      [
+       14239,
+       14239
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 65,
+     "snapshot": 7454,
+     "observed_row": 13036,
+     "observed_version": 13036,
+     "citations_1": [
+      [
+       2748,
+       2748
+      ],
+      [
+       3114,
+       3114
+      ],
+      [
+       3723,
+       3723
+      ],
+      [
+       7701,
+       7701
+      ],
+      [
+       8393,
+       8393
+      ],
+      [
+       8558,
+       16302
+      ],
+      [
+       10540,
+       10540
+      ],
+      [
+       11088,
+       11088
+      ],
+      [
+       13036,
+       13036
+      ],
+      [
+       14626,
+       14626
+      ]
+     ],
+     "citations_2": [
+      [
+       2748,
+       2748
+      ],
+      [
+       3114,
+       3114
+      ],
+      [
+       3723,
+       3723
+      ],
+      [
+       7701,
+       7701
+      ],
+      [
+       8393,
+       8393
+      ],
+      [
+       8558,
+       16302
+      ],
+      [
+       10540,
+       10540
+      ],
+      [
+       11088,
+       11088
+      ],
+      [
+       13036,
+       13036
+      ],
+      [
+       14626,
+       14626
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    }
+   ],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.979417,
+   "p50_us": 1864.3,
+   "p99_us": 11317.3,
+   "scheme": "async200",
+   "seed": 20261009
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.0925,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.085,
+   "a3_phantom_episode_rate": 0.008333,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.0925,
+   "n_invalid_bundles": 111,
+   "anomaly_count": 111,
+   "a1_count": 0,
+   "a2_count": 102,
+   "a3_count": 10,
+   "citation_validity": 0.990333,
+   "writer_seed": 12540436062695003653,
+   "reader_seed": 10076647842287591123,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 131,
+   "episodes_overlapped_write": 131,
+   "between_calls_us": 1000.0,
+   "witnesses": [
+    {
+     "episode": 22,
+     "snapshot": 5803,
+     "observed_row": 8128,
+     "observed_version": 8128,
+     "citations_1": [
+      [
+       4055,
+       4055
+      ],
+      [
+       7197,
+       7197
+      ],
+      [
+       8128,
+       8128
+      ],
+      [
+       8528,
+       8528
+      ],
+      [
+       9296,
+       9296
+      ],
+      [
+       9894,
+       9894
+      ],
+      [
+       10375,
+       10375
+      ],
+      [
+       14106,
+       14106
+      ],
+      [
+       14410,
+       14410
+      ],
+      [
+       14917,
+       14917
+      ]
+     ],
+     "citations_2": [
+      [
+       4055,
+       4055
+      ],
+      [
+       7197,
+       7197
+      ],
+      [
+       8128,
+       8128
+      ],
+      [
+       8528,
+       8528
+      ],
+      [
+       9296,
+       9296
+      ],
+      [
+       9894,
+       9894
+      ],
+      [
+       10375,
+       10375
+      ],
+      [
+       14106,
+       14106
+      ],
+      [
+       14410,
+       14410
+      ],
+      [
+       14917,
+       14917
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 24,
+     "snapshot": 5881,
+     "observed_row": 3658,
+     "observed_version": 15869,
+     "citations_1": [
+      [
+       452,
+       452
+      ],
+      [
+       1569,
+       1569
+      ],
+      [
+       1962,
+       1962
+      ],
+      [
+       3079,
+       3079
+      ],
+      [
+       3414,
+       3414
+      ],
+      [
+       3818,
+       3818
+      ],
+      [
+       6122,
+       6122
+      ],
+      [
+       8230,
+       8230
+      ],
+      [
+       13545,
+       13545
+      ],
+      [
+       14374,
+       14374
+      ]
+     ],
+     "citations_2": [
+      [
+       452,
+       452
+      ],
+      [
+       1569,
+       1569
+      ],
+      [
+       1962,
+       1962
+      ],
+      [
+       3079,
+       3079
+      ],
+      [
+       3414,
+       3414
+      ],
+      [
+       3818,
+       3818
+      ],
+      [
+       6122,
+       6122
+      ],
+      [
+       8230,
+       8230
+      ],
+      [
+       13545,
+       13545
+      ],
+      [
+       14374,
+       14374
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 31,
+     "snapshot": 6152,
+     "observed_row": 8353,
+     "observed_version": 8353,
+     "citations_1": [
+      [
+       377,
+       377
+      ],
+      [
+       1828,
+       1828
+      ],
+      [
+       2047,
+       15382
+      ],
+      [
+       7510,
+       7510
+      ],
+      [
+       7599,
+       15774
+      ],
+      [
+       8353,
+       8353
+      ],
+      [
+       9734,
+       9734
+      ],
+      [
+       13837,
+       13837
+      ],
+      [
+       14273,
+       14273
+      ],
+      [
+       14689,
+       14689
+      ]
+     ],
+     "citations_2": [
+      [
+       377,
+       377
+      ],
+      [
+       1828,
+       1828
+      ],
+      [
+       2047,
+       15382
+      ],
+      [
+       7510,
+       7510
+      ],
+      [
+       7599,
+       15774
+      ],
+      [
+       8353,
+       8353
+      ],
+      [
+       9734,
+       9734
+      ],
+      [
+       13837,
+       13837
+      ],
+      [
+       14273,
+       14273
+      ],
+      [
+       14689,
+       14689
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 36,
+     "snapshot": 6344,
+     "observed_row": 6945,
+     "observed_version": 6945,
+     "citations_1": [
+      [
+       613,
+       613
+      ],
+      [
+       4316,
+       4316
+      ],
+      [
+       4964,
+       4964
+      ],
+      [
+       5253,
+       5253
+      ],
+      [
+       6660,
+       6660
+      ],
+      [
+       6945,
+       6945
+      ],
+      [
+       8121,
+       8121
+      ],
+      [
+       12070,
+       12070
+      ],
+      [
+       13795,
+       13795
+      ],
+      [
+       14589,
+       14589
+      ]
+     ],
+     "citations_2": [
+      [
+       613,
+       613
+      ],
+      [
+       4316,
+       4316
+      ],
+      [
+       4964,
+       4964
+      ],
+      [
+       5253,
+       5253
+      ],
+      [
+       6660,
+       6660
+      ],
+      [
+       6945,
+       6945
+      ],
+      [
+       8121,
+       8121
+      ],
+      [
+       12070,
+       12070
+      ],
+      [
+       13795,
+       13795
+      ],
+      [
+       14589,
+       14589
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 41,
+     "snapshot": 6542,
+     "observed_row": 8646,
+     "observed_version": 8646,
+     "citations_1": [
+      [
+       1999,
+       1999
+      ],
+      [
+       4383,
+       4383
+      ],
+      [
+       8646,
+       8646
+      ],
+      [
+       10269,
+       10269
+      ],
+      [
+       11090,
+       11090
+      ],
+      [
+       13032,
+       13032
+      ],
+      [
+       13186,
+       13186
+      ],
+      [
+       13968,
+       13968
+      ],
+      [
+       14378,
+       14378
+      ],
+      [
+       14789,
+       14789
+      ]
+     ],
+     "citations_2": [
+      [
+       1999,
+       1999
+      ],
+      [
+       4383,
+       4383
+      ],
+      [
+       8646,
+       8646
+      ],
+      [
+       10269,
+       10269
+      ],
+      [
+       11090,
+       11090
+      ],
+      [
+       13032,
+       13032
+      ],
+      [
+       13186,
+       13186
+      ],
+      [
+       13968,
+       13968
+      ],
+      [
+       14378,
+       14378
+      ],
+      [
+       14789,
+       14789
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 50,
+     "snapshot": 6883,
+     "observed_row": 153,
+     "observed_version": 153,
+     "citations_1": [
+      [
+       153,
+       153
+      ],
+      [
+       2105,
+       2105
+      ],
+      [
+       3026,
+       3026
+      ],
+      [
+       3232,
+       3232
+      ],
+      [
+       9022,
+       9022
+      ],
+      [
+       11658,
+       11658
+      ],
+      [
+       12066,
+       12066
+      ],
+      [
+       12464,
+       15040
+      ],
+      [
+       13748,
+       15754
+      ],
+      [
+       14354,
+       15763
+      ]
+     ],
+     "citations_2": [
+      [
+       153,
+       153
+      ],
+      [
+       2105,
+       2105
+      ],
+      [
+       3026,
+       3026
+      ],
+      [
+       3232,
+       3232
+      ],
+      [
+       9022,
+       9022
+      ],
+      [
+       11658,
+       11658
+      ],
+      [
+       12066,
+       12066
+      ],
+      [
+       12464,
+       15040
+      ],
+      [
+       13748,
+       15754
+      ],
+      [
+       14354,
+       15763
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    }
+   ],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.978833,
+   "p50_us": 1756.5,
+   "p99_us": 9935.6,
+   "scheme": "async200",
+   "seed": 20261010
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.260833,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.2375,
+   "a3_phantom_episode_rate": 0.03,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.260833,
+   "n_invalid_bundles": 313,
+   "anomaly_count": 313,
+   "a1_count": 0,
+   "a2_count": 285,
+   "a3_count": 36,
+   "citation_validity": 0.969667,
+   "writer_seed": 14960413133887563520,
+   "reader_seed": 7538176542343406497,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 140,
+   "episodes_overlapped_write": 140,
+   "between_calls_us": 1000.0,
+   "witnesses": [
+    {
+     "episode": 7,
+     "snapshot": 5227,
+     "observed_row": 1553,
+     "observed_version": 1553,
+     "citations_1": [
+      [
+       1553,
+       1553
+      ],
+      [
+       2242,
+       2242
+      ],
+      [
+       3563,
+       3563
+      ],
+      [
+       3662,
+       3662
+      ],
+      [
+       3812,
+       3812
+      ],
+      [
+       7527,
+       7527
+      ],
+      [
+       7849,
+       7849
+      ],
+      [
+       7925,
+       7925
+      ],
+      [
+       8183,
+       8183
+      ],
+      [
+       12414,
+       12414
+      ]
+     ],
+     "citations_2": [
+      [
+       1553,
+       1553
+      ],
+      [
+       2242,
+       2242
+      ],
+      [
+       3563,
+       3563
+      ],
+      [
+       3662,
+       3662
+      ],
+      [
+       3812,
+       3812
+      ],
+      [
+       7527,
+       7527
+      ],
+      [
+       7849,
+       7849
+      ],
+      [
+       7925,
+       7925
+      ],
+      [
+       8183,
+       8183
+      ],
+      [
+       12414,
+       12414
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 14,
+     "snapshot": 5489,
+     "observed_row": 38,
+     "observed_version": 38,
+     "citations_1": [
+      [
+       38,
+       38
+      ],
+      [
+       701,
+       701
+      ],
+      [
+       705,
+       705
+      ],
+      [
+       5240,
+       5240
+      ],
+      [
+       6741,
+       6741
+      ],
+      [
+       6754,
+       6754
+      ],
+      [
+       7334,
+       7334
+      ],
+      [
+       7885,
+       7885
+      ],
+      [
+       12702,
+       12702
+      ],
+      [
+       13024,
+       13024
+      ]
+     ],
+     "citations_2": [
+      [
+       38,
+       38
+      ],
+      [
+       701,
+       701
+      ],
+      [
+       705,
+       705
+      ],
+      [
+       5240,
+       5240
+      ],
+      [
+       6741,
+       6741
+      ],
+      [
+       6754,
+       6754
+      ],
+      [
+       7334,
+       7334
+      ],
+      [
+       7885,
+       7885
+      ],
+      [
+       12702,
+       12702
+      ],
+      [
+       13024,
+       13024
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 22,
+     "snapshot": 5784,
+     "observed_row": 8123,
+     "observed_version": 15557,
+     "citations_1": [
+      [
+       381,
+       381
+      ],
+      [
+       3358,
+       3358
+      ],
+      [
+       3679,
+       3679
+      ],
+      [
+       4486,
+       4486
+      ],
+      [
+       5995,
+       5995
+      ],
+      [
+       7075,
+       7075
+      ],
+      [
+       7199,
+       7199
+      ],
+      [
+       9111,
+       9111
+      ],
+      [
+       11209,
+       11209
+      ],
+      [
+       11476,
+       11476
+      ]
+     ],
+     "citations_2": [
+      [
+       381,
+       381
+      ],
+      [
+       3358,
+       3358
+      ],
+      [
+       3679,
+       3679
+      ],
+      [
+       4486,
+       4486
+      ],
+      [
+       5995,
+       5995
+      ],
+      [
+       7075,
+       7075
+      ],
+      [
+       7199,
+       7199
+      ],
+      [
+       9111,
+       9111
+      ],
+      [
+       11209,
+       11209
+      ],
+      [
+       11476,
+       11476
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 29,
+     "snapshot": 6044,
+     "observed_row": 11056,
+     "observed_version": 11056,
+     "citations_1": [
+      [
+       695,
+       695
+      ],
+      [
+       830,
+       830
+      ],
+      [
+       1590,
+       1590
+      ],
+      [
+       2371,
+       2371
+      ],
+      [
+       4211,
+       4211
+      ],
+      [
+       7251,
+       7251
+      ],
+      [
+       9895,
+       9895
+      ],
+      [
+       10159,
+       10159
+      ],
+      [
+       10565,
+       10565
+      ],
+      [
+       11056,
+       11056
+      ]
+     ],
+     "citations_2": [
+      [
+       695,
+       695
+      ],
+      [
+       830,
+       830
+      ],
+      [
+       1590,
+       1590
+      ],
+      [
+       2371,
+       2371
+      ],
+      [
+       4211,
+       4211
+      ],
+      [
+       7251,
+       7251
+      ],
+      [
+       9895,
+       9895
+      ],
+      [
+       10159,
+       10159
+      ],
+      [
+       10565,
+       10565
+      ],
+      [
+       11056,
+       11056
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 31,
+     "snapshot": 6115,
+     "observed_row": 12428,
+     "observed_version": 12428,
+     "citations_1": [
+      [
+       2395,
+       2395
+      ],
+      [
+       2505,
+       2505
+      ],
+      [
+       2892,
+       2892
+      ],
+      [
+       2917,
+       2917
+      ],
+      [
+       3296,
+       3296
+      ],
+      [
+       6215,
+       6215
+      ],
+      [
+       8490,
+       8490
+      ],
+      [
+       9535,
+       9535
+      ],
+      [
+       9741,
+       9741
+      ],
+      [
+       12428,
+       12428
+      ]
+     ],
+     "citations_2": [
+      [
+       2395,
+       2395
+      ],
+      [
+       2505,
+       2505
+      ],
+      [
+       2892,
+       2892
+      ],
+      [
+       2917,
+       2917
+      ],
+      [
+       3296,
+       3296
+      ],
+      [
+       6215,
+       6215
+      ],
+      [
+       8490,
+       8490
+      ],
+      [
+       9535,
+       9535
+      ],
+      [
+       9741,
+       9741
+      ],
+      [
+       12428,
+       12428
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 32,
+     "snapshot": 6149,
+     "observed_row": 6415,
+     "observed_version": 6415,
+     "citations_1": [
+      [
+       2364,
+       2364
+      ],
+      [
+       3576,
+       3576
+      ],
+      [
+       5190,
+       5190
+      ],
+      [
+       6368,
+       6368
+      ],
+      [
+       6415,
+       6415
+      ],
+      [
+       7538,
+       7538
+      ],
+      [
+       8115,
+       8115
+      ],
+      [
+       11855,
+       11855
+      ],
+      [
+       13107,
+       13107
+      ],
+      [
+       13666,
+       13666
+      ]
+     ],
+     "citations_2": [
+      [
+       2364,
+       2364
+      ],
+      [
+       3576,
+       3576
+      ],
+      [
+       5190,
+       5190
+      ],
+      [
+       6368,
+       6368
+      ],
+      [
+       6415,
+       6415
+      ],
+      [
+       7538,
+       7538
+      ],
+      [
+       8115,
+       8115
+      ],
+      [
+       11855,
+       11855
+      ],
+      [
+       13107,
+       13107
+      ],
+      [
+       13666,
+       13666
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    }
+   ],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.947167,
+   "p50_us": 1762.7,
+   "p99_us": 14624.3,
+   "scheme": "async500",
+   "seed": 20261008
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.250833,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.220833,
+   "a3_phantom_episode_rate": 0.040833,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.250833,
+   "n_invalid_bundles": 301,
+   "anomaly_count": 301,
+   "a1_count": 0,
+   "a2_count": 265,
+   "a3_count": 49,
+   "citation_validity": 0.971083,
+   "writer_seed": 17422883757799728462,
+   "reader_seed": 13649048377345391540,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 131,
+   "episodes_overlapped_write": 131,
+   "between_calls_us": 1000.0,
+   "witnesses": [
+    {
+     "episode": 3,
+     "snapshot": 5078,
+     "observed_row": 3853,
+     "observed_version": 3853,
+     "citations_1": [
+      [
+       2656,
+       2656
+      ],
+      [
+       3853,
+       3853
+      ],
+      [
+       4392,
+       4392
+      ],
+      [
+       5495,
+       5495
+      ],
+      [
+       6943,
+       6943
+      ],
+      [
+       9507,
+       9507
+      ],
+      [
+       10983,
+       10983
+      ],
+      [
+       12936,
+       12936
+      ],
+      [
+       13610,
+       13610
+      ],
+      [
+       14811,
+       14811
+      ]
+     ],
+     "citations_2": [
+      [
+       2656,
+       2656
+      ],
+      [
+       3853,
+       3853
+      ],
+      [
+       4392,
+       4392
+      ],
+      [
+       5495,
+       5495
+      ],
+      [
+       6943,
+       6943
+      ],
+      [
+       9507,
+       9507
+      ],
+      [
+       10983,
+       10983
+      ],
+      [
+       12936,
+       12936
+      ],
+      [
+       13610,
+       13610
+      ],
+      [
+       14811,
+       14811
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 29,
+     "snapshot": 6094,
+     "observed_row": 5106,
+     "observed_version": 5106,
+     "citations_1": [
+      [
+       2360,
+       2360
+      ],
+      [
+       5106,
+       5106
+      ],
+      [
+       6745,
+       6745
+      ],
+      [
+       8780,
+       8780
+      ],
+      [
+       10585,
+       10585
+      ],
+      [
+       11649,
+       15508
+      ],
+      [
+       11729,
+       11729
+      ],
+      [
+       12180,
+       12180
+      ],
+      [
+       13604,
+       13604
+      ],
+      [
+       14983,
+       14983
+      ]
+     ],
+     "citations_2": [
+      [
+       2360,
+       2360
+      ],
+      [
+       5106,
+       5106
+      ],
+      [
+       6745,
+       6745
+      ],
+      [
+       8780,
+       8780
+      ],
+      [
+       10585,
+       10585
+      ],
+      [
+       11649,
+       15508
+      ],
+      [
+       11729,
+       11729
+      ],
+      [
+       12180,
+       12180
+      ],
+      [
+       13604,
+       13604
+      ],
+      [
+       14983,
+       14983
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 30,
+     "snapshot": 6130,
+     "observed_row": 10973,
+     "observed_version": 15358,
+     "citations_1": [
+      [
+       6645,
+       6645
+      ],
+      [
+       7656,
+       7656
+      ],
+      [
+       8280,
+       8280
+      ],
+      [
+       9101,
+       9101
+      ],
+      [
+       9363,
+       9363
+      ],
+      [
+       10506,
+       10506
+      ],
+      [
+       10837,
+       10837
+      ],
+      [
+       10973,
+       15358
+      ],
+      [
+       11497,
+       11497
+      ],
+      [
+       11597,
+       11597
+      ]
+     ],
+     "citations_2": [
+      [
+       6645,
+       6645
+      ],
+      [
+       7656,
+       7656
+      ],
+      [
+       8280,
+       8280
+      ],
+      [
+       9101,
+       9101
+      ],
+      [
+       9363,
+       9363
+      ],
+      [
+       10506,
+       10506
+      ],
+      [
+       10837,
+       10837
+      ],
+      [
+       10973,
+       15358
+      ],
+      [
+       11497,
+       11497
+      ],
+      [
+       11597,
+       11597
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 33,
+     "snapshot": 6245,
+     "observed_row": 13970,
+     "observed_version": 13970,
+     "citations_1": [
+      [
+       3197,
+       3197
+      ],
+      [
+       8371,
+       8371
+      ],
+      [
+       9081,
+       9081
+      ],
+      [
+       9713,
+       9713
+      ],
+      [
+       11208,
+       11208
+      ],
+      [
+       13320,
+       13320
+      ],
+      [
+       13816,
+       13816
+      ],
+      [
+       13970,
+       13970
+      ],
+      [
+       14070,
+       14070
+      ],
+      [
+       14959,
+       14959
+      ]
+     ],
+     "citations_2": [
+      [
+       3197,
+       3197
+      ],
+      [
+       8371,
+       8371
+      ],
+      [
+       9081,
+       9081
+      ],
+      [
+       9713,
+       9713
+      ],
+      [
+       11208,
+       11208
+      ],
+      [
+       13320,
+       13320
+      ],
+      [
+       13816,
+       13816
+      ],
+      [
+       13970,
+       13970
+      ],
+      [
+       14070,
+       14070
+      ],
+      [
+       14959,
+       14959
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 37,
+     "snapshot": 6403,
+     "observed_row": 8618,
+     "observed_version": 8618,
+     "citations_1": [
+      [
+       1874,
+       1874
+      ],
+      [
+       2077,
+       2077
+      ],
+      [
+       3651,
+       3651
+      ],
+      [
+       4824,
+       4824
+      ],
+      [
+       4935,
+       4935
+      ],
+      [
+       8618,
+       8618
+      ],
+      [
+       10565,
+       10565
+      ],
+      [
+       11247,
+       11247
+      ],
+      [
+       11693,
+       11693
+      ],
+      [
+       11722,
+       11722
+      ]
+     ],
+     "citations_2": [
+      [
+       1874,
+       1874
+      ],
+      [
+       2077,
+       2077
+      ],
+      [
+       3651,
+       3651
+      ],
+      [
+       4824,
+       4824
+      ],
+      [
+       4935,
+       4935
+      ],
+      [
+       8618,
+       8618
+      ],
+      [
+       10565,
+       10565
+      ],
+      [
+       11247,
+       11247
+      ],
+      [
+       11693,
+       11693
+      ],
+      [
+       11722,
+       11722
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 38,
+     "snapshot": 6439,
+     "observed_row": 4921,
+     "observed_version": 4921,
+     "citations_1": [
+      [
+       1031,
+       1031
+      ],
+      [
+       4921,
+       4921
+      ],
+      [
+       4957,
+       4957
+      ],
+      [
+       5079,
+       5079
+      ],
+      [
+       5584,
+       5584
+      ],
+      [
+       6967,
+       6967
+      ],
+      [
+       8025,
+       8025
+      ],
+      [
+       8942,
+       8942
+      ],
+      [
+       11558,
+       11558
+      ],
+      [
+       14958,
+       14958
+      ]
+     ],
+     "citations_2": [
+      [
+       1031,
+       1031
+      ],
+      [
+       4921,
+       4921
+      ],
+      [
+       4957,
+       4957
+      ],
+      [
+       5079,
+       5079
+      ],
+      [
+       5584,
+       5584
+      ],
+      [
+       6967,
+       6967
+      ],
+      [
+       8025,
+       8025
+      ],
+      [
+       8942,
+       8942
+      ],
+      [
+       11558,
+       11558
+      ],
+      [
+       14958,
+       14958
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    }
+   ],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.952,
+   "p50_us": 1883.0,
+   "p99_us": 14817.9,
+   "scheme": "async500",
+   "seed": 20261009
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.245833,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.219167,
+   "a3_phantom_episode_rate": 0.0325,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.245833,
+   "n_invalid_bundles": 295,
+   "anomaly_count": 295,
+   "a1_count": 0,
+   "a2_count": 263,
+   "a3_count": 39,
+   "citation_validity": 0.972,
+   "writer_seed": 12540436062695003653,
+   "reader_seed": 10076647842287591123,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 136,
+   "episodes_overlapped_write": 136,
+   "between_calls_us": 1000.0,
+   "witnesses": [
+    {
+     "episode": 19,
+     "snapshot": 5670,
+     "observed_row": 4430,
+     "observed_version": 4430,
+     "citations_1": [
+      [
+       633,
+       633
+      ],
+      [
+       2281,
+       15042
+      ],
+      [
+       4430,
+       4430
+      ],
+      [
+       6494,
+       6494
+      ],
+      [
+       7028,
+       7028
+      ],
+      [
+       9194,
+       9194
+      ],
+      [
+       12173,
+       12173
+      ],
+      [
+       13274,
+       13274
+      ],
+      [
+       13720,
+       13720
+      ],
+      [
+       14471,
+       14471
+      ]
+     ],
+     "citations_2": [
+      [
+       633,
+       633
+      ],
+      [
+       2281,
+       15042
+      ],
+      [
+       4430,
+       4430
+      ],
+      [
+       6494,
+       6494
+      ],
+      [
+       7028,
+       7028
+      ],
+      [
+       9194,
+       9194
+      ],
+      [
+       12173,
+       12173
+      ],
+      [
+       13274,
+       13274
+      ],
+      [
+       13720,
+       13720
+      ],
+      [
+       14471,
+       14471
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 22,
+     "snapshot": 5785,
+     "observed_row": 8128,
+     "observed_version": 8128,
+     "citations_1": [
+      [
+       4055,
+       4055
+      ],
+      [
+       7197,
+       7197
+      ],
+      [
+       8128,
+       8128
+      ],
+      [
+       8528,
+       8528
+      ],
+      [
+       9894,
+       9894
+      ],
+      [
+       10375,
+       10375
+      ],
+      [
+       11858,
+       11858
+      ],
+      [
+       14106,
+       14106
+      ],
+      [
+       14410,
+       14410
+      ],
+      [
+       14917,
+       14917
+      ]
+     ],
+     "citations_2": [
+      [
+       4055,
+       4055
+      ],
+      [
+       7197,
+       7197
+      ],
+      [
+       8128,
+       8128
+      ],
+      [
+       8528,
+       8528
+      ],
+      [
+       9894,
+       9894
+      ],
+      [
+       10375,
+       10375
+      ],
+      [
+       11858,
+       11858
+      ],
+      [
+       14106,
+       14106
+      ],
+      [
+       14410,
+       14410
+      ],
+      [
+       14917,
+       14917
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 26,
+     "snapshot": 5933,
+     "observed_row": 8746,
+     "observed_version": 8746,
+     "citations_1": [
+      [
+       2435,
+       2435
+      ],
+      [
+       5739,
+       5739
+      ],
+      [
+       5808,
+       5808
+      ],
+      [
+       6091,
+       6091
+      ],
+      [
+       7434,
+       7434
+      ],
+      [
+       8746,
+       8746
+      ],
+      [
+       9429,
+       9429
+      ],
+      [
+       12245,
+       15114
+      ],
+      [
+       14036,
+       14036
+      ],
+      [
+       14722,
+       14722
+      ]
+     ],
+     "citations_2": [
+      [
+       2435,
+       2435
+      ],
+      [
+       5739,
+       5739
+      ],
+      [
+       5808,
+       5808
+      ],
+      [
+       6091,
+       6091
+      ],
+      [
+       7434,
+       7434
+      ],
+      [
+       8746,
+       8746
+      ],
+      [
+       9429,
+       9429
+      ],
+      [
+       12245,
+       15114
+      ],
+      [
+       14036,
+       14036
+      ],
+      [
+       14722,
+       14722
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 28,
+     "snapshot": 6006,
+     "observed_row": 227,
+     "observed_version": 227,
+     "citations_1": [
+      [
+       227,
+       227
+      ],
+      [
+       3062,
+       3062
+      ],
+      [
+       3224,
+       3224
+      ],
+      [
+       3538,
+       3538
+      ],
+      [
+       6877,
+       6877
+      ],
+      [
+       7746,
+       7746
+      ],
+      [
+       8637,
+       8637
+      ],
+      [
+       8946,
+       8946
+      ],
+      [
+       9844,
+       9844
+      ],
+      [
+       14325,
+       14325
+      ]
+     ],
+     "citations_2": [
+      [
+       227,
+       227
+      ],
+      [
+       3062,
+       3062
+      ],
+      [
+       3224,
+       3224
+      ],
+      [
+       3538,
+       3538
+      ],
+      [
+       6877,
+       6877
+      ],
+      [
+       7746,
+       7746
+      ],
+      [
+       8637,
+       8637
+      ],
+      [
+       8946,
+       8946
+      ],
+      [
+       9844,
+       9844
+      ],
+      [
+       14325,
+       14325
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 31,
+     "snapshot": 6119,
+     "observed_row": 8353,
+     "observed_version": 8353,
+     "citations_1": [
+      [
+       377,
+       377
+      ],
+      [
+       1828,
+       1828
+      ],
+      [
+       2047,
+       15382
+      ],
+      [
+       7510,
+       7510
+      ],
+      [
+       8353,
+       8353
+      ],
+      [
+       9734,
+       9734
+      ],
+      [
+       12198,
+       15091
+      ],
+      [
+       13837,
+       13837
+      ],
+      [
+       14273,
+       14273
+      ],
+      [
+       14689,
+       14689
+      ]
+     ],
+     "citations_2": [
+      [
+       377,
+       377
+      ],
+      [
+       1828,
+       1828
+      ],
+      [
+       2047,
+       15382
+      ],
+      [
+       7510,
+       7510
+      ],
+      [
+       8353,
+       8353
+      ],
+      [
+       9734,
+       9734
+      ],
+      [
+       12198,
+       15091
+      ],
+      [
+       13837,
+       13837
+      ],
+      [
+       14273,
+       14273
+      ],
+      [
+       14689,
+       14689
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 32,
+     "snapshot": 6156,
+     "observed_row": 12118,
+     "observed_version": 12118,
+     "citations_1": [
+      [
+       1649,
+       1649
+      ],
+      [
+       4238,
+       4238
+      ],
+      [
+       4431,
+       4431
+      ],
+      [
+       6374,
+       6374
+      ],
+      [
+       6418,
+       6418
+      ],
+      [
+       7169,
+       7169
+      ],
+      [
+       9664,
+       9664
+      ],
+      [
+       11307,
+       11307
+      ],
+      [
+       12118,
+       12118
+      ],
+      [
+       14840,
+       14840
+      ]
+     ],
+     "citations_2": [
+      [
+       1649,
+       1649
+      ],
+      [
+       4238,
+       4238
+      ],
+      [
+       4431,
+       4431
+      ],
+      [
+       6374,
+       6374
+      ],
+      [
+       6418,
+       6418
+      ],
+      [
+       7169,
+       7169
+      ],
+      [
+       9664,
+       9664
+      ],
+      [
+       11307,
+       11307
+      ],
+      [
+       12118,
+       12118
+      ],
+      [
+       14840,
+       14840
+      ]
+     ],
+     "a1": false,
+     "a2": true,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    }
+   ],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.94875,
+   "p50_us": 2381.9,
+   "p99_us": 15399.0,
+   "scheme": "async500",
+   "seed": 20261010
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.0025,
+   "a1_dirty_episode_rate": 0.001667,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.001667,
+   "bundle_invalidation_rate": 0.0025,
+   "n_invalid_bundles": 3,
+   "anomaly_count": 3,
+   "a1_count": 2,
+   "a2_count": 0,
+   "a3_count": 0,
+   "citation_validity": 0.999875,
+   "writer_seed": 14960413133887563520,
+   "reader_seed": 7538176542343406497,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 135,
+   "episodes_overlapped_write": 135,
+   "between_calls_us": 1000.0,
+   "witnesses": [
+    {
+     "episode": 17,
+     "snapshot": 5602,
+     "observed_row": 8748,
+     "observed_version": 8748,
+     "citations_1": [
+      [
+       249,
+       249
+      ],
+      [
+       4227,
+       4227
+      ],
+      [
+       4991,
+       4991
+      ],
+      [
+       5498,
+       5498
+      ],
+      [
+       5733,
+       5733
+      ],
+      [
+       6269,
+       6269
+      ],
+      [
+       8748,
+       8748
+      ],
+      [
+       9031,
+       15609
+      ],
+      [
+       10651,
+       10651
+      ],
+      [
+       10694,
+       10694
+      ]
+     ],
+     "citations_2": [
+      [
+       249,
+       249
+      ],
+      [
+       4227,
+       4227
+      ],
+      [
+       4991,
+       4991
+      ],
+      [
+       5498,
+       5498
+      ],
+      [
+       5733,
+       5733
+      ],
+      [
+       6269,
+       6269
+      ],
+      [
+       8748,
+       8748
+      ],
+      [
+       9031,
+       15609
+      ],
+      [
+       10651,
+       10651
+      ],
+      [
+       10694,
+       10694
+      ]
+     ],
+     "a1": true,
+     "a2": false,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 34,
+     "snapshot": 6238,
+     "observed_row": 14703,
+     "observed_version": 14703,
+     "citations_1": [
+      [
+       1078,
+       1078
+      ],
+      [
+       1340,
+       1340
+      ],
+      [
+       2016,
+       2016
+      ],
+      [
+       2723,
+       2723
+      ],
+      [
+       4748,
+       4748
+      ],
+      [
+       4965,
+       4965
+      ],
+      [
+       6733,
+       6733
+      ],
+      [
+       8811,
+       8811
+      ],
+      [
+       11345,
+       11345
+      ],
+      [
+       14703,
+       14703
+      ]
+     ],
+     "citations_2": [
+      [
+       1078,
+       1078
+      ],
+      [
+       1338,
+       1338
+      ],
+      [
+       1340,
+       1340
+      ],
+      [
+       2016,
+       2016
+      ],
+      [
+       2723,
+       2723
+      ],
+      [
+       4965,
+       4965
+      ],
+      [
+       6733,
+       6733
+      ],
+      [
+       8811,
+       8811
+      ],
+      [
+       11345,
+       11345
+      ],
+      [
+       14703,
+       14703
+      ]
+     ],
+     "a1": false,
+     "a2": false,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 132,
+     "snapshot": 9876,
+     "observed_row": 6499,
+     "observed_version": 6499,
+     "citations_1": [
+      [
+       16,
+       16
+      ],
+      [
+       1884,
+       1884
+      ],
+      [
+       4227,
+       4227
+      ],
+      [
+       5173,
+       5173
+      ],
+      [
+       6499,
+       6499
+      ],
+      [
+       7093,
+       7093
+      ],
+      [
+       8158,
+       16039
+      ],
+      [
+       9949,
+       9949
+      ],
+      [
+       12074,
+       15874
+      ],
+      [
+       13178,
+       13178
+      ]
+     ],
+     "citations_2": [
+      [
+       16,
+       16
+      ],
+      [
+       1884,
+       1884
+      ],
+      [
+       4227,
+       4227
+      ],
+      [
+       4728,
+       19908
+      ],
+      [
+       6499,
+       6499
+      ],
+      [
+       7093,
+       7093
+      ],
+      [
+       8158,
+       16039
+      ],
+      [
+       9949,
+       9949
+      ],
+      [
+       12074,
+       15874
+      ],
+      [
+       13178,
+       13178
+      ]
+     ],
+     "a1": true,
+     "a2": false,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    }
+   ],
+   "mean_symmetric_difference": 0.003333,
+   "max_symmetric_difference": 2,
+   "frac_disagreement_gt1": 0.001667,
+   "mean_jaccard_k1_k2": 0.999697,
+   "min_jaccard_k1_k2": 0.818182,
+   "recall_at_k": 0.99975,
+   "p50_us": 323.8,
+   "p99_us": 7358.1,
+   "scheme": "lock",
+   "seed": 20261008
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.001667,
+   "a1_dirty_episode_rate": 0.001667,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.001667,
+   "n_invalid_bundles": 2,
+   "anomaly_count": 2,
+   "a1_count": 2,
+   "a2_count": 0,
+   "a3_count": 0,
+   "citation_validity": 0.999833,
+   "writer_seed": 17422883757799728462,
+   "reader_seed": 13649048377345391540,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 139,
+   "episodes_overlapped_write": 139,
+   "between_calls_us": 1000.0,
+   "witnesses": [
+    {
+     "episode": 51,
+     "snapshot": 6816,
+     "observed_row": 9106,
+     "observed_version": 9106,
+     "citations_1": [
+      [
+       53,
+       16835
+      ],
+      [
+       1511,
+       15088
+      ],
+      [
+       1611,
+       1611
+      ],
+      [
+       3333,
+       3333
+      ],
+      [
+       3971,
+       3971
+      ],
+      [
+       4945,
+       4945
+      ],
+      [
+       5072,
+       5072
+      ],
+      [
+       7413,
+       7413
+      ],
+      [
+       9106,
+       9106
+      ],
+      [
+       13521,
+       13521
+      ]
+     ],
+     "citations_2": [
+      [
+       53,
+       16835
+      ],
+      [
+       1511,
+       15088
+      ],
+      [
+       1611,
+       1611
+      ],
+      [
+       3333,
+       3333
+      ],
+      [
+       3971,
+       3971
+      ],
+      [
+       4945,
+       4945
+      ],
+      [
+       5072,
+       5072
+      ],
+      [
+       7413,
+       7413
+      ],
+      [
+       9106,
+       9106
+      ],
+      [
+       13521,
+       13521
+      ]
+     ],
+     "a1": true,
+     "a2": false,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 77,
+     "snapshot": 7765,
+     "observed_row": 6087,
+     "observed_version": 6087,
+     "citations_1": [
+      [
+       1528,
+       16148
+      ],
+      [
+       1625,
+       1625
+      ],
+      [
+       6087,
+       6087
+      ],
+      [
+       7088,
+       7088
+      ],
+      [
+       8669,
+       17774
+      ],
+      [
+       9343,
+       9343
+      ],
+      [
+       9704,
+       9704
+      ],
+      [
+       12086,
+       12086
+      ],
+      [
+       13158,
+       13158
+      ],
+      [
+       13699,
+       13699
+      ]
+     ],
+     "citations_2": [
+      [
+       1528,
+       16148
+      ],
+      [
+       1625,
+       1625
+      ],
+      [
+       6087,
+       6087
+      ],
+      [
+       7088,
+       7088
+      ],
+      [
+       8669,
+       17774
+      ],
+      [
+       9343,
+       9343
+      ],
+      [
+       9704,
+       9704
+      ],
+      [
+       12086,
+       12086
+      ],
+      [
+       13158,
+       13158
+      ],
+      [
+       13699,
+       13699
+      ]
+     ],
+     "a1": true,
+     "a2": false,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    }
+   ],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.999833,
+   "p50_us": 350.9,
+   "p99_us": 8680.6,
+   "scheme": "lock",
+   "seed": 20261009
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.0025,
+   "a1_dirty_episode_rate": 0.001667,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.000833,
+   "bundle_invalidation_rate": 0.0025,
+   "n_invalid_bundles": 3,
+   "anomaly_count": 3,
+   "a1_count": 2,
+   "a2_count": 0,
+   "a3_count": 0,
+   "citation_validity": 0.999833,
+   "writer_seed": 12540436062695003653,
+   "reader_seed": 10076647842287591123,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 140,
+   "episodes_overlapped_write": 140,
+   "between_calls_us": 1000.0,
+   "witnesses": [
+    {
+     "episode": 8,
+     "snapshot": 5258,
+     "observed_row": 13774,
+     "observed_version": 13774,
+     "citations_1": [
+      [
+       216,
+       216
+      ],
+      [
+       767,
+       767
+      ],
+      [
+       2751,
+       2751
+      ],
+      [
+       5288,
+       5288
+      ],
+      [
+       7222,
+       7222
+      ],
+      [
+       7514,
+       7514
+      ],
+      [
+       7749,
+       7749
+      ],
+      [
+       9452,
+       9452
+      ],
+      [
+       13774,
+       13774
+      ],
+      [
+       14024,
+       14024
+      ]
+     ],
+     "citations_2": [
+      [
+       216,
+       216
+      ],
+      [
+       767,
+       767
+      ],
+      [
+       2751,
+       2751
+      ],
+      [
+       3026,
+       3026
+      ],
+      [
+       5288,
+       5288
+      ],
+      [
+       7222,
+       7222
+      ],
+      [
+       7749,
+       7749
+      ],
+      [
+       9452,
+       9452
+      ],
+      [
+       13774,
+       13774
+      ],
+      [
+       14024,
+       14024
+      ]
+     ],
+     "a1": false,
+     "a2": false,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 52,
+     "snapshot": 6831,
+     "observed_row": 3920,
+     "observed_version": 3920,
+     "citations_1": [
+      [
+       2419,
+       2419
+      ],
+      [
+       3920,
+       3920
+      ],
+      [
+       3995,
+       16856
+      ],
+      [
+       5074,
+       5074
+      ],
+      [
+       6484,
+       6484
+      ],
+      [
+       7584,
+       7584
+      ],
+      [
+       8910,
+       8910
+      ],
+      [
+       9658,
+       9658
+      ],
+      [
+       12028,
+       12028
+      ],
+      [
+       14264,
+       14264
+      ]
+     ],
+     "citations_2": [
+      [
+       2419,
+       2419
+      ],
+      [
+       3920,
+       3920
+      ],
+      [
+       3995,
+       16856
+      ],
+      [
+       5074,
+       5074
+      ],
+      [
+       6484,
+       6484
+      ],
+      [
+       7584,
+       7584
+      ],
+      [
+       8910,
+       8910
+      ],
+      [
+       9658,
+       9658
+      ],
+      [
+       12028,
+       12028
+      ],
+      [
+       14264,
+       14264
+      ]
+     ],
+     "a1": true,
+     "a2": false,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    },
+    {
+     "episode": 58,
+     "snapshot": 7045,
+     "observed_row": 9300,
+     "observed_version": 9300,
+     "citations_1": [
+      [
+       251,
+       251
+      ],
+      [
+       3655,
+       3655
+      ],
+      [
+       5837,
+       5837
+      ],
+      [
+       5887,
+       17062
+      ],
+      [
+       5908,
+       5908
+      ],
+      [
+       9300,
+       9300
+      ],
+      [
+       9405,
+       9405
+      ],
+      [
+       9536,
+       15899
+      ],
+      [
+       10644,
+       10644
+      ],
+      [
+       14781,
+       14781
+      ]
+     ],
+     "citations_2": [
+      [
+       251,
+       251
+      ],
+      [
+       3655,
+       3655
+      ],
+      [
+       5837,
+       5837
+      ],
+      [
+       5887,
+       17062
+      ],
+      [
+       5908,
+       5908
+      ],
+      [
+       9300,
+       9300
+      ],
+      [
+       9405,
+       9405
+      ],
+      [
+       9536,
+       15899
+      ],
+      [
+       10644,
+       10644
+      ],
+      [
+       14781,
+       14781
+      ]
+     ],
+     "a1": true,
+     "a2": false,
+     "a3": false,
+     "observed_read_conflict": false,
+     "interpretation": "fixed-snapshot violation; no no-state certificate"
+    }
+   ],
+   "mean_symmetric_difference": 0.001667,
+   "max_symmetric_difference": 2,
+   "frac_disagreement_gt1": 0.000833,
+   "mean_jaccard_k1_k2": 0.999848,
+   "min_jaccard_k1_k2": 0.818182,
+   "recall_at_k": 0.999667,
+   "p50_us": 333.7,
+   "p99_us": 9609.6,
+   "scheme": "lock",
+   "seed": 20261010
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.0,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.0,
+   "n_invalid_bundles": 0,
+   "anomaly_count": 0,
+   "a1_count": 0,
+   "a2_count": 0,
+   "a3_count": 0,
+   "citation_validity": 1.0,
+   "writer_seed": 14960413133887563520,
+   "reader_seed": 7538176542343406497,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 134,
+   "episodes_overlapped_write": 134,
+   "between_calls_us": 1000.0,
+   "witnesses": [],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 1.0,
+   "p50_us": 1836.1,
+   "p99_us": 9838.5,
+   "scheme": "scr",
+   "seed": 20261008
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.0,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.0,
+   "n_invalid_bundles": 0,
+   "anomaly_count": 0,
+   "a1_count": 0,
+   "a2_count": 0,
+   "a3_count": 0,
+   "citation_validity": 1.0,
+   "writer_seed": 17422883757799728462,
+   "reader_seed": 13649048377345391540,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 133,
+   "episodes_overlapped_write": 133,
+   "between_calls_us": 1000.0,
+   "witnesses": [],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 1.0,
+   "p50_us": 1844.9,
+   "p99_us": 11030.1,
+   "scheme": "scr",
+   "seed": 20261009
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.0,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "observed_read_conflict_rate": 0.0,
+   "observed_read_conflict_only_rate": 0.0,
+   "observed_read_conflict_detail": {
+    "resolved": 0,
+    "deleted": 0,
+    "absent": 0
+   },
+   "citation_disagreement_rate": 0.0,
+   "bundle_invalidation_rate": 0.0,
+   "n_invalid_bundles": 0,
+   "anomaly_count": 0,
+   "a1_count": 0,
+   "a2_count": 0,
+   "a3_count": 0,
+   "citation_validity": 1.0,
+   "writer_seed": 12540436062695003653,
+   "reader_seed": 10076647842287591123,
+   "writes_completed": 5000,
+   "episodes_started_during_writer": 133,
+   "episodes_overlapped_write": 133,
+   "between_calls_us": 1000.0,
+   "witnesses": [],
+   "mean_symmetric_difference": 0.0,
+   "max_symmetric_difference": 0,
+   "frac_disagreement_gt1": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 1.0,
+   "p50_us": 1909.3,
+   "p99_us": 10991.2,
+   "scheme": "scr",
+   "seed": 20261010
+  }
+ ],
+ "runtime_s": 590.7
+}

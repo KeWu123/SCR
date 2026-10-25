@@ -1,0 +1,2060 @@
+{
+ "generated_by": "proto/run_baselines.py",
+ "protocol": "Run baselines.py: identical cross-store episode protocol to run_episodes_v3.py -- Begin() at the writer clock -> real relational read of row r -> query derived from that read -> 20ms think (writes commit) -> two retrievals at token S -> validate. A4 torn scored against the episode's OWN relational read; A5 is K1 != K2 at the same token. One episode active at a time (single-reader prototype). Maintenance period P=250 commits.",
+ "maintenance_delay_definition": "A maintenance point becomes DUE every P=250 commits since the last applied compaction. Its delay is apply_time - due_time in commits (the logical clock). Reported mean/max/p99 over applied points, plus the count of points still unapplied at run end (accumulation check).",
+ "policies": {
+  "async500": "Append-only asynchronous index, lag L=500 commits; never compacts. No maintenance operator -> delay 0 by construction, which is exactly why it is the anomaly-ridden reference.",
+  "lock": "Global lock serialises reads against in-flight embedding work; index always the current compacted state. Compaction inline, delay 0; every retrieval waits for the lock.",
+  "scr": "Compaction staged and published at epoch boundaries; each snapshot pins one published generation. Publication immediate -> delay ~0; zero anomalies by construction; retains G=7 generations at 1.38x whole-index footprint (measured, Table 5 convention).",
+  "quiesce": "B1: a due compaction is DEFERRED while an episode is active; the index keeps serving the current (uncompacted) adjacency. Applied when no episode is active. No drain guard (max_defer=None) -- i.e. the pure 'no compaction while episodes run' rule. Zero extra space (one index copy).",
+  "double_buffer": "B2: maintenance builds a PRIVATE copy of the whole index and swaps atomically. Policy: a swap is only performed when no episode spans it (no episode active); an episode that would span the swap is DELAYED until the swap completes and is charged the extra latency. Peak space = 2x the non-versioned index (the private copy co-resident with the live one)."
+ },
+ "space_convention": "native_bytes = n_rows*(DIM*4 + M*4) with DIM=64, M=12: embeddings (float32) + graph adjacency (int32), i.e. the paper's memory_scope.py convention (embeddings + adjacency, no provenance). We report the retention POLICY per scheme rather than the prototype's raw index_bytes(), because every prototype index appends one entry per version (N+W entries) and would inflate all schemes equally. SCR's paper figure (1.38x whole index, 7.00x naive) is reproduced from memory_scope.py on testbed T2 (N=5000, G=7) and quoted here as the paper's convention; quiesce/lock retain exactly one index copy (1.00x); double-buffer peaks at 2.00x (live + private copy); async is reported as its measured append count / N.",
+ "config": {
+  "n_rows": 15000,
+  "n_writes": 5000,
+  "n_reads": 1200,
+  "k": 10,
+  "seeds": [
+   20261008,
+   20261009,
+   20261010
+  ],
+  "think_us": 20000.0,
+  "embed_cost_us": 150.0,
+  "maintenance_period_commits": 250
+ },
+ "aggregate": {
+  "async500": {
+   "anomaly_episode_rate": {
+    "mean": 0.251389,
+    "std": 0.00631,
+    "values": [
+     0.244167,
+     0.255833,
+     0.254167
+    ]
+   },
+   "a1_dirty_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a2_superseded_episode_rate": {
+    "mean": 0.220833,
+    "std": 0.006614,
+    "values": [
+     0.213333,
+     0.225833,
+     0.223333
+    ]
+   },
+   "a3_phantom_episode_rate": {
+    "mean": 0.038611,
+    "std": 0.003155,
+    "values": [
+     0.04,
+     0.035,
+     0.040833
+    ]
+   },
+   "a4_torn_episode_rate": {
+    "mean": 0.251389,
+    "std": 0.00631,
+    "values": [
+     0.244167,
+     0.255833,
+     0.254167
+    ]
+   },
+   "a5_retrieval_disagreement_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a4_dirty_disagreements": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "a4_stale_disagreements": {
+    "mean": 298.0,
+    "std": 8.544004,
+    "values": [
+     290,
+     297,
+     307
+    ]
+   },
+   "a4_deleted_disagreements": {
+    "mean": 46.666667,
+    "std": 4.041452,
+    "values": [
+     49,
+     42,
+     49
+    ]
+   },
+   "mean_symmetric_difference": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "mean_jaccard_k1_k2": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "recall_at_k": {
+    "mean": 0.949056,
+    "std": 0.000127,
+    "values": [
+     0.949083,
+     0.949167,
+     0.948917
+    ]
+   },
+   "p50_us": {
+    "mean": 3354.166667,
+    "std": 69.186005,
+    "values": [
+     3296.3,
+     3430.8,
+     3335.4
+    ]
+   },
+   "p99_us": {
+    "mean": 12230.633333,
+    "std": 365.929151,
+    "values": [
+     12357.3,
+     11818.2,
+     12516.4
+    ]
+   },
+   "throughput_ep_per_s": {
+    "mean": 32.756667,
+    "std": 0.306649,
+    "values": [
+     32.66,
+     32.51,
+     33.1
+    ]
+   },
+   "lock_wait_p50_us": {
+    "mean": 5.266667,
+    "std": 1.021437,
+    "values": [
+     6.0,
+     5.7,
+     4.1
+    ]
+   },
+   "lock_wait_p99_us": {
+    "mean": 1469.433333,
+    "std": 139.892006,
+    "values": [
+     1550.3,
+     1550.1,
+     1307.9
+    ]
+   },
+   "maintenance_delay_mean_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "maintenance_delay_max_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "maintenance_delay_median_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "maintenance_delay_max_excl_first_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "maintenance_delay_mean_excl_first_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "space_factor_retained": {
+    "mean": 2.333,
+    "std": 0.0,
+    "values": [
+     2.333,
+     2.333,
+     2.333
+    ]
+   },
+   "peak_space_factor": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "maintenance_delay_first_applied_commits": {
+    "values": [
+     0,
+     0,
+     0
+    ],
+    "mean": 0.0
+   },
+   "anomaly_counts": {
+    "anomaly_episodes": 905,
+    "episodes": 3600,
+    "wilson_upper_95_anomaly": 0.26582,
+    "a5_episodes": 0,
+    "wilson_upper_95_a5": 0.001066
+   },
+   "maintenance_totals": {
+    "due": [
+     20,
+     20,
+     20
+    ],
+    "applied": [
+     20,
+     20,
+     20
+    ],
+    "unapplied_at_end": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "lock": {
+   "anomaly_episode_rate": {
+    "mean": 0.002778,
+    "std": 0.002679,
+    "values": [
+     0.000833,
+     0.005833,
+     0.001667
+    ]
+   },
+   "a1_dirty_episode_rate": {
+    "mean": 0.002222,
+    "std": 0.001735,
+    "values": [
+     0.000833,
+     0.004167,
+     0.001667
+    ]
+   },
+   "a2_superseded_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a3_phantom_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a4_torn_episode_rate": {
+    "mean": 0.002778,
+    "std": 0.002679,
+    "values": [
+     0.000833,
+     0.005833,
+     0.001667
+    ]
+   },
+   "a5_retrieval_disagreement_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a4_dirty_disagreements": {
+    "mean": 3.333333,
+    "std": 3.21455,
+    "values": [
+     1,
+     7,
+     2
+    ]
+   },
+   "a4_stale_disagreements": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "a4_deleted_disagreements": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "mean_symmetric_difference": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "mean_jaccard_k1_k2": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "recall_at_k": {
+    "mean": 0.999667,
+    "std": 0.000144,
+    "values": [
+     0.99975,
+     0.9995,
+     0.99975
+    ]
+   },
+   "p50_us": {
+    "mean": 533.266667,
+    "std": 33.704945,
+    "values": [
+     567.3,
+     532.6,
+     499.9
+    ]
+   },
+   "p99_us": {
+    "mean": 9508.1,
+    "std": 645.884905,
+    "values": [
+     10253.2,
+     9163.6,
+     9107.5
+    ]
+   },
+   "throughput_ep_per_s": {
+    "mean": 36.506667,
+    "std": 0.614356,
+    "values": [
+     36.03,
+     36.29,
+     37.2
+    ]
+   },
+   "lock_wait_p50_us": {
+    "mean": 4.433333,
+    "std": 0.757188,
+    "values": [
+     4.1,
+     3.9,
+     5.3
+    ]
+   },
+   "lock_wait_p99_us": {
+    "mean": 1521.7,
+    "std": 8.701724,
+    "values": [
+     1530.5,
+     1513.1,
+     1521.5
+    ]
+   },
+   "maintenance_delay_mean_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "maintenance_delay_max_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "maintenance_delay_median_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "maintenance_delay_max_excl_first_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "maintenance_delay_mean_excl_first_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "space_factor_retained": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "peak_space_factor": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "maintenance_delay_first_applied_commits": {
+    "values": [
+     0,
+     0,
+     0
+    ],
+    "mean": 0.0
+   },
+   "anomaly_counts": {
+    "anomaly_episodes": 10,
+    "episodes": 3600,
+    "wilson_upper_95_anomaly": 0.005106,
+    "a5_episodes": 0,
+    "wilson_upper_95_a5": 0.001066
+   },
+   "maintenance_totals": {
+    "due": [
+     20,
+     20,
+     20
+    ],
+    "applied": [
+     20,
+     20,
+     20
+    ],
+    "unapplied_at_end": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "scr": {
+   "anomaly_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a1_dirty_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a2_superseded_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a3_phantom_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a4_torn_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a5_retrieval_disagreement_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a4_dirty_disagreements": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "a4_stale_disagreements": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "a4_deleted_disagreements": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "mean_symmetric_difference": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "mean_jaccard_k1_k2": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "recall_at_k": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "p50_us": {
+    "mean": 3302.433333,
+    "std": 22.130597,
+    "values": [
+     3311.0,
+     3277.3,
+     3319.0
+    ]
+   },
+   "p99_us": {
+    "mean": 11292.366667,
+    "std": 659.190794,
+    "values": [
+     11614.0,
+     11729.0,
+     10534.1
+    ]
+   },
+   "throughput_ep_per_s": {
+    "mean": 33.663333,
+    "std": 0.015275,
+    "values": [
+     33.66,
+     33.68,
+     33.65
+    ]
+   },
+   "lock_wait_p50_us": {
+    "mean": 5.633333,
+    "std": 0.057735,
+    "values": [
+     5.6,
+     5.7,
+     5.6
+    ]
+   },
+   "lock_wait_p99_us": {
+    "mean": 1494.566667,
+    "std": 30.859412,
+    "values": [
+     1499.6,
+     1522.6,
+     1461.5
+    ]
+   },
+   "maintenance_delay_mean_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "maintenance_delay_max_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "maintenance_delay_median_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "maintenance_delay_max_excl_first_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "maintenance_delay_mean_excl_first_commits": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "space_factor_retained": {
+    "mean": 1.38,
+    "std": 0.0,
+    "values": [
+     1.38,
+     1.38,
+     1.38
+    ]
+   },
+   "peak_space_factor": {
+    "mean": 1.38,
+    "std": 0.0,
+    "values": [
+     1.38,
+     1.38,
+     1.38
+    ]
+   },
+   "maintenance_delay_first_applied_commits": {
+    "values": [
+     0,
+     0,
+     0
+    ],
+    "mean": 0.0
+   },
+   "anomaly_counts": {
+    "anomaly_episodes": 0,
+    "episodes": 3600,
+    "wilson_upper_95_anomaly": 0.001066,
+    "a5_episodes": 0,
+    "wilson_upper_95_a5": 0.001066
+   },
+   "maintenance_totals": {
+    "due": [
+     20,
+     20,
+     20
+    ],
+    "applied": [
+     20,
+     20,
+     20
+    ],
+    "unapplied_at_end": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "quiesce": {
+   "anomaly_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a1_dirty_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a2_superseded_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a3_phantom_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a4_torn_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a5_retrieval_disagreement_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a4_dirty_disagreements": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "a4_stale_disagreements": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "a4_deleted_disagreements": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "mean_symmetric_difference": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "mean_jaccard_k1_k2": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "recall_at_k": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "p50_us": {
+    "mean": 3034.933333,
+    "std": 48.742213,
+    "values": [
+     3072.3,
+     2979.8,
+     3052.7
+    ]
+   },
+   "p99_us": {
+    "mean": 11652.966667,
+    "std": 3326.593742,
+    "values": [
+     10154.0,
+     9339.6,
+     15465.3
+    ]
+   },
+   "throughput_ep_per_s": {
+    "mean": 32.8,
+    "std": 1.42944,
+    "values": [
+     33.39,
+     33.84,
+     31.17
+    ]
+   },
+   "lock_wait_p50_us": {
+    "mean": 5.8,
+    "std": 0.1,
+    "values": [
+     5.8,
+     5.7,
+     5.9
+    ]
+   },
+   "lock_wait_p99_us": {
+    "mean": 1402.633333,
+    "std": 155.139754,
+    "values": [
+     1580.8,
+     1329.7,
+     1297.4
+    ]
+   },
+   "maintenance_delay_mean_commits": {
+    "mean": 270.719333,
+    "std": 5.681005,
+    "values": [
+     264.368,
+     275.316,
+     272.474
+    ]
+   },
+   "maintenance_delay_max_commits": {
+    "mean": 4788.333333,
+    "std": 0.57735,
+    "values": [
+     4788,
+     4789,
+     4788
+    ]
+   },
+   "maintenance_delay_median_commits": {
+    "mean": 21.333333,
+    "std": 15.885003,
+    "values": [
+     3.0,
+     31.0,
+     30.0
+    ]
+   },
+   "maintenance_delay_max_excl_first_commits": {
+    "mean": 36.666667,
+    "std": 0.57735,
+    "values": [
+     37,
+     36,
+     37
+    ]
+   },
+   "maintenance_delay_mean_excl_first_commits": {
+    "mean": 19.741,
+    "std": 5.973707,
+    "values": [
+     13.056,
+     24.556,
+     21.611
+    ]
+   },
+   "space_factor_retained": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "peak_space_factor": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "maintenance_delay_first_applied_commits": {
+    "values": [
+     4788,
+     4789,
+     4788
+    ],
+    "mean": 4788.333
+   },
+   "anomaly_counts": {
+    "anomaly_episodes": 0,
+    "episodes": 3600,
+    "wilson_upper_95_anomaly": 0.001066,
+    "a5_episodes": 0,
+    "wilson_upper_95_a5": 0.001066
+   },
+   "maintenance_totals": {
+    "due": [
+     19,
+     19,
+     19
+    ],
+    "applied": [
+     19,
+     19,
+     19
+    ],
+    "unapplied_at_end": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "double_buffer": {
+   "anomaly_episode_rate": {
+    "mean": 0.043889,
+    "std": 0.018584,
+    "values": [
+     0.03,
+     0.065,
+     0.036667
+    ]
+   },
+   "a1_dirty_episode_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a2_superseded_episode_rate": {
+    "mean": 0.040833,
+    "std": 0.016415,
+    "values": [
+     0.0275,
+     0.059167,
+     0.035833
+    ]
+   },
+   "a3_phantom_episode_rate": {
+    "mean": 0.003055,
+    "std": 0.002546,
+    "values": [
+     0.0025,
+     0.005833,
+     0.000833
+    ]
+   },
+   "a4_torn_episode_rate": {
+    "mean": 0.043889,
+    "std": 0.018584,
+    "values": [
+     0.03,
+     0.065,
+     0.036667
+    ]
+   },
+   "a5_retrieval_disagreement_rate": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "a4_dirty_disagreements": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0,
+     0,
+     0
+    ]
+   },
+   "a4_stale_disagreements": {
+    "mean": 50.0,
+    "std": 19.974984,
+    "values": [
+     33,
+     72,
+     45
+    ]
+   },
+   "a4_deleted_disagreements": {
+    "mean": 3.666667,
+    "std": 3.05505,
+    "values": [
+     3,
+     7,
+     1
+    ]
+   },
+   "mean_symmetric_difference": {
+    "mean": 0.0,
+    "std": 0.0,
+    "values": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "mean_jaccard_k1_k2": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "recall_at_k": {
+    "mean": 0.991917,
+    "std": 0.003363,
+    "values": [
+     0.994667,
+     0.988167,
+     0.992917
+    ]
+   },
+   "p50_us": {
+    "mean": 3046.033333,
+    "std": 61.343976,
+    "values": [
+     3111.7,
+     2990.2,
+     3036.2
+    ]
+   },
+   "p99_us": {
+    "mean": 21881.166667,
+    "std": 17360.969858,
+    "values": [
+     41821.3,
+     13699.0,
+     10123.2
+    ]
+   },
+   "throughput_ep_per_s": {
+    "mean": 31.07,
+    "std": 3.679144,
+    "values": [
+     26.83,
+     32.96,
+     33.42
+    ]
+   },
+   "lock_wait_p50_us": {
+    "mean": 4.6,
+    "std": 0.87178,
+    "values": [
+     4.0,
+     4.2,
+     5.6
+    ]
+   },
+   "lock_wait_p99_us": {
+    "mean": 1578.4,
+    "std": 60.027577,
+    "values": [
+     1627.0,
+     1596.9,
+     1511.3
+    ]
+   },
+   "maintenance_delay_mean_commits": {
+    "mean": 241.633333,
+    "std": 1.724336,
+    "values": [
+     240.1,
+     243.5,
+     241.3
+    ]
+   },
+   "maintenance_delay_max_commits": {
+    "mean": 4751.0,
+    "std": 0.0,
+    "values": [
+     4751,
+     4751,
+     4751
+    ]
+   },
+   "maintenance_delay_median_commits": {
+    "mean": 0.666667,
+    "std": 1.154701,
+    "values": [
+     0.0,
+     2.0,
+     0.0
+    ]
+   },
+   "maintenance_delay_max_excl_first_commits": {
+    "mean": 20.0,
+    "std": 2.645751,
+    "values": [
+     22,
+     21,
+     17
+    ]
+   },
+   "maintenance_delay_mean_excl_first_commits": {
+    "mean": 4.298,
+    "std": 1.815134,
+    "values": [
+     2.684,
+     6.263,
+     3.947
+    ]
+   },
+   "space_factor_retained": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "peak_space_factor": {
+    "mean": 2.0,
+    "std": 0.0,
+    "values": [
+     2.0,
+     2.0,
+     2.0
+    ]
+   },
+   "maintenance_delay_first_applied_commits": {
+    "values": [
+     4751,
+     4751,
+     4751
+    ],
+    "mean": 4751.0
+   },
+   "anomaly_counts": {
+    "anomaly_episodes": 158,
+    "episodes": 3600,
+    "wilson_upper_95_anomaly": 0.051081,
+    "a5_episodes": 0,
+    "wilson_upper_95_a5": 0.001066
+   },
+   "maintenance_totals": {
+    "due": [
+     20,
+     20,
+     20
+    ],
+    "applied": [
+     20,
+     20,
+     20
+    ],
+    "unapplied_at_end": [
+     0,
+     0,
+     0
+    ]
+   }
+  }
+ },
+ "deferral_stress": [
+  {
+   "reader_duty": 0.274,
+   "episodes": 73,
+   "due": 36,
+   "applied": 36,
+   "unapplied_at_end": 0,
+   "delay_mean_commits": 25.8,
+   "delay_max_commits": 36,
+   "delay_p99_commits": 36,
+   "compaction_lag_drift": 0
+  },
+  {
+   "reader_duty": 0.528,
+   "episodes": 140,
+   "due": 36,
+   "applied": 36,
+   "unapplied_at_end": 0,
+   "delay_mean_commits": 20.6,
+   "delay_max_commits": 38,
+   "delay_p99_commits": 38,
+   "compaction_lag_drift": 0
+  },
+  {
+   "reader_duty": 0.764,
+   "episodes": 202,
+   "due": 36,
+   "applied": 36,
+   "unapplied_at_end": 0,
+   "delay_mean_commits": 18.5,
+   "delay_max_commits": 39,
+   "delay_p99_commits": 39,
+   "compaction_lag_drift": 0
+  },
+  {
+   "reader_duty": 0.898,
+   "episodes": 235,
+   "due": 33,
+   "applied": 33,
+   "unapplied_at_end": 0,
+   "delay_mean_commits": 28.3,
+   "delay_max_commits": 36,
+   "delay_p99_commits": 36,
+   "compaction_lag_drift": 0
+  },
+  {
+   "reader_duty": 0.951,
+   "episodes": 248,
+   "due": 32,
+   "applied": 32,
+   "unapplied_at_end": 0,
+   "delay_mean_commits": 38.8,
+   "delay_max_commits": 206,
+   "delay_p99_commits": 206,
+   "compaction_lag_drift": 0
+  }
+ ],
+ "quiesce_multireader": {
+  "R=2": {
+   "None": {
+    "max_defer": null,
+    "readers": 2,
+    "due": 1,
+    "applied": 0,
+    "unapplied_at_end": 1,
+    "compaction_lag_drift": 1,
+    "delay_mean_commits": 0.0,
+    "delay_max_commits": 0,
+    "delay_median_commits": 0.0
+   },
+   "250": {
+    "max_defer": 250,
+    "readers": 2,
+    "due": 11,
+    "applied": 10,
+    "unapplied_at_end": 1,
+    "compaction_lag_drift": 1,
+    "delay_mean_commits": 250.0,
+    "delay_max_commits": 250,
+    "delay_median_commits": 250.0
+   },
+   "125": {
+    "max_defer": 125,
+    "readers": 2,
+    "due": 11,
+    "applied": 10,
+    "unapplied_at_end": 1,
+    "compaction_lag_drift": 1,
+    "delay_mean_commits": 125.0,
+    "delay_max_commits": 125,
+    "delay_median_commits": 125.0
+   }
+  },
+  "R=4": {
+   "None": {
+    "max_defer": null,
+    "readers": 4,
+    "due": 1,
+    "applied": 0,
+    "unapplied_at_end": 1,
+    "compaction_lag_drift": 1,
+    "delay_mean_commits": 0.0,
+    "delay_max_commits": 0,
+    "delay_median_commits": 0.0
+   },
+   "250": {
+    "max_defer": 250,
+    "readers": 4,
+    "due": 6,
+    "applied": 6,
+    "unapplied_at_end": 0,
+    "compaction_lag_drift": 0,
+    "delay_mean_commits": 250.0,
+    "delay_max_commits": 250,
+    "delay_median_commits": 250.0
+   },
+   "125": {
+    "max_defer": 125,
+    "readers": 4,
+    "due": 10,
+    "applied": 9,
+    "unapplied_at_end": 1,
+    "compaction_lag_drift": 1,
+    "delay_mean_commits": 125.0,
+    "delay_max_commits": 125,
+    "delay_median_commits": 125.0
+   }
+  },
+  "R=8": {
+   "None": {
+    "max_defer": null,
+    "readers": 8,
+    "due": 1,
+    "applied": 0,
+    "unapplied_at_end": 1,
+    "compaction_lag_drift": 1,
+    "delay_mean_commits": 0.0,
+    "delay_max_commits": 0,
+    "delay_median_commits": 0.0
+   },
+   "250": {
+    "max_defer": 250,
+    "readers": 8,
+    "due": 10,
+    "applied": 10,
+    "unapplied_at_end": 0,
+    "compaction_lag_drift": 0,
+    "delay_mean_commits": 250.0,
+    "delay_max_commits": 250,
+    "delay_median_commits": 250.0
+   },
+   "125": {
+    "max_defer": 125,
+    "readers": 8,
+    "due": 16,
+    "applied": 15,
+    "unapplied_at_end": 1,
+    "compaction_lag_drift": 1,
+    "delay_mean_commits": 125.0,
+    "delay_max_commits": 125,
+    "delay_median_commits": 125.0
+   }
+  },
+  "R=16": {
+   "None": {
+    "max_defer": null,
+    "readers": 16,
+    "due": 1,
+    "applied": 0,
+    "unapplied_at_end": 1,
+    "compaction_lag_drift": 1,
+    "delay_mean_commits": 0.0,
+    "delay_max_commits": 0,
+    "delay_median_commits": 0.0
+   },
+   "250": {
+    "max_defer": 250,
+    "readers": 16,
+    "due": 8,
+    "applied": 8,
+    "unapplied_at_end": 0,
+    "compaction_lag_drift": 0,
+    "delay_mean_commits": 250.0,
+    "delay_max_commits": 250,
+    "delay_median_commits": 250.0
+   },
+   "125": {
+    "max_defer": 125,
+    "readers": 16,
+    "due": 13,
+    "applied": 13,
+    "unapplied_at_end": 0,
+    "compaction_lag_drift": 0,
+    "delay_mean_commits": 125.0,
+    "delay_max_commits": 125,
+    "delay_median_commits": 125.0
+   }
+  }
+ },
+ "runs": [
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.244167,
+   "n_anomaly_episodes": 293,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.213333,
+   "a3_phantom_episode_rate": 0.04,
+   "a4_torn_episode_rate": 0.244167,
+   "a4_dirty_disagreements": 0,
+   "a4_stale_disagreements": 290,
+   "a4_deleted_disagreements": 49,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.949083,
+   "p50_us": 3296.3,
+   "p99_us": 12357.3,
+   "lock_wait_p50_us": 6.0,
+   "lock_wait_p99_us": 1550.3,
+   "episode_wall_s": 36.74,
+   "throughput_ep_per_s": 32.66,
+   "scheme": "async500",
+   "maintenance_compactions_due": 20,
+   "maintenance_compactions_applied": 20,
+   "maintenance_delay_mean_commits": 0.0,
+   "maintenance_delay_max_commits": 0,
+   "maintenance_delay_p99_commits": 0,
+   "maintenance_points_unapplied_at_end": 0,
+   "seed": 20261008,
+   "space_factor_retained": 2.333,
+   "peak_space_factor": 1.0,
+   "space_note": "append-only, one entry per version",
+   "index_bytes_MB_measured": 5.44
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.255833,
+   "n_anomaly_episodes": 307,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.225833,
+   "a3_phantom_episode_rate": 0.035,
+   "a4_torn_episode_rate": 0.255833,
+   "a4_dirty_disagreements": 0,
+   "a4_stale_disagreements": 297,
+   "a4_deleted_disagreements": 42,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.949167,
+   "p50_us": 3430.8,
+   "p99_us": 11818.2,
+   "lock_wait_p50_us": 5.7,
+   "lock_wait_p99_us": 1550.1,
+   "episode_wall_s": 36.906,
+   "throughput_ep_per_s": 32.51,
+   "scheme": "async500",
+   "maintenance_compactions_due": 20,
+   "maintenance_compactions_applied": 20,
+   "maintenance_delay_mean_commits": 0.0,
+   "maintenance_delay_max_commits": 0,
+   "maintenance_delay_p99_commits": 0,
+   "maintenance_points_unapplied_at_end": 0,
+   "seed": 20261009,
+   "space_factor_retained": 2.333,
+   "peak_space_factor": 1.0,
+   "space_note": "append-only, one entry per version",
+   "index_bytes_MB_measured": 5.44
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.254167,
+   "n_anomaly_episodes": 305,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.223333,
+   "a3_phantom_episode_rate": 0.040833,
+   "a4_torn_episode_rate": 0.254167,
+   "a4_dirty_disagreements": 0,
+   "a4_stale_disagreements": 307,
+   "a4_deleted_disagreements": 49,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.948917,
+   "p50_us": 3335.4,
+   "p99_us": 12516.4,
+   "lock_wait_p50_us": 4.1,
+   "lock_wait_p99_us": 1307.9,
+   "episode_wall_s": 36.252,
+   "throughput_ep_per_s": 33.1,
+   "scheme": "async500",
+   "maintenance_compactions_due": 20,
+   "maintenance_compactions_applied": 20,
+   "maintenance_delay_mean_commits": 0.0,
+   "maintenance_delay_max_commits": 0,
+   "maintenance_delay_p99_commits": 0,
+   "maintenance_points_unapplied_at_end": 0,
+   "seed": 20261010,
+   "space_factor_retained": 2.333,
+   "peak_space_factor": 1.0,
+   "space_note": "append-only, one entry per version",
+   "index_bytes_MB_measured": 5.44
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.000833,
+   "n_anomaly_episodes": 1,
+   "a1_dirty_episode_rate": 0.000833,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "a4_torn_episode_rate": 0.000833,
+   "a4_dirty_disagreements": 1,
+   "a4_stale_disagreements": 0,
+   "a4_deleted_disagreements": 0,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.99975,
+   "p50_us": 567.3,
+   "p99_us": 10253.2,
+   "lock_wait_p50_us": 4.1,
+   "lock_wait_p99_us": 1530.5,
+   "episode_wall_s": 33.306,
+   "throughput_ep_per_s": 36.03,
+   "scheme": "lock",
+   "maintenance_compactions_due": 20,
+   "maintenance_compactions_applied": 20,
+   "maintenance_delay_mean_commits": 0.0,
+   "maintenance_delay_max_commits": 0,
+   "maintenance_delay_p99_commits": 0,
+   "maintenance_points_unapplied_at_end": 0,
+   "seed": 20261008,
+   "space_factor_retained": 1.0,
+   "peak_space_factor": 1.0,
+   "space_note": "current compacted state only",
+   "index_bytes_MB_measured": 3.82
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.005833,
+   "n_anomaly_episodes": 7,
+   "a1_dirty_episode_rate": 0.004167,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "a4_torn_episode_rate": 0.005833,
+   "a4_dirty_disagreements": 7,
+   "a4_stale_disagreements": 0,
+   "a4_deleted_disagreements": 0,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.9995,
+   "p50_us": 532.6,
+   "p99_us": 9163.6,
+   "lock_wait_p50_us": 3.9,
+   "lock_wait_p99_us": 1513.1,
+   "episode_wall_s": 33.063,
+   "throughput_ep_per_s": 36.29,
+   "scheme": "lock",
+   "maintenance_compactions_due": 20,
+   "maintenance_compactions_applied": 20,
+   "maintenance_delay_mean_commits": 0.0,
+   "maintenance_delay_max_commits": 0,
+   "maintenance_delay_p99_commits": 0,
+   "maintenance_points_unapplied_at_end": 0,
+   "seed": 20261009,
+   "space_factor_retained": 1.0,
+   "peak_space_factor": 1.0,
+   "space_note": "current compacted state only",
+   "index_bytes_MB_measured": 3.829
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.001667,
+   "n_anomaly_episodes": 2,
+   "a1_dirty_episode_rate": 0.001667,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "a4_torn_episode_rate": 0.001667,
+   "a4_dirty_disagreements": 2,
+   "a4_stale_disagreements": 0,
+   "a4_deleted_disagreements": 0,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.99975,
+   "p50_us": 499.9,
+   "p99_us": 9107.5,
+   "lock_wait_p50_us": 5.3,
+   "lock_wait_p99_us": 1521.5,
+   "episode_wall_s": 32.261,
+   "throughput_ep_per_s": 37.2,
+   "scheme": "lock",
+   "maintenance_compactions_due": 20,
+   "maintenance_compactions_applied": 20,
+   "maintenance_delay_mean_commits": 0.0,
+   "maintenance_delay_max_commits": 0,
+   "maintenance_delay_p99_commits": 0,
+   "maintenance_points_unapplied_at_end": 0,
+   "seed": 20261010,
+   "space_factor_retained": 1.0,
+   "peak_space_factor": 1.0,
+   "space_note": "current compacted state only",
+   "index_bytes_MB_measured": 3.821
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.0,
+   "n_anomaly_episodes": 0,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "a4_torn_episode_rate": 0.0,
+   "a4_dirty_disagreements": 0,
+   "a4_stale_disagreements": 0,
+   "a4_deleted_disagreements": 0,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 1.0,
+   "p50_us": 3311.0,
+   "p99_us": 11614.0,
+   "lock_wait_p50_us": 5.6,
+   "lock_wait_p99_us": 1499.6,
+   "episode_wall_s": 35.653,
+   "throughput_ep_per_s": 33.66,
+   "scheme": "scr",
+   "maintenance_compactions_due": 20,
+   "maintenance_compactions_applied": 20,
+   "maintenance_delay_mean_commits": 0.0,
+   "maintenance_delay_max_commits": 0,
+   "maintenance_delay_p99_commits": 0,
+   "maintenance_points_unapplied_at_end": 0,
+   "seed": 20261008,
+   "space_factor_retained": 1.38,
+   "peak_space_factor": 1.38,
+   "space_note": "G=7 pinned generations, COW frame sharing (Table 5)",
+   "index_bytes_MB_measured": 5.46
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.0,
+   "n_anomaly_episodes": 0,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "a4_torn_episode_rate": 0.0,
+   "a4_dirty_disagreements": 0,
+   "a4_stale_disagreements": 0,
+   "a4_deleted_disagreements": 0,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 1.0,
+   "p50_us": 3277.3,
+   "p99_us": 11729.0,
+   "lock_wait_p50_us": 5.7,
+   "lock_wait_p99_us": 1522.6,
+   "episode_wall_s": 35.625,
+   "throughput_ep_per_s": 33.68,
+   "scheme": "scr",
+   "maintenance_compactions_due": 20,
+   "maintenance_compactions_applied": 20,
+   "maintenance_delay_mean_commits": 0.0,
+   "maintenance_delay_max_commits": 0,
+   "maintenance_delay_p99_commits": 0,
+   "maintenance_points_unapplied_at_end": 0,
+   "seed": 20261009,
+   "space_factor_retained": 1.38,
+   "peak_space_factor": 1.38,
+   "space_note": "G=7 pinned generations, COW frame sharing (Table 5)",
+   "index_bytes_MB_measured": 5.46
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.0,
+   "n_anomaly_episodes": 0,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "a4_torn_episode_rate": 0.0,
+   "a4_dirty_disagreements": 0,
+   "a4_stale_disagreements": 0,
+   "a4_deleted_disagreements": 0,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 1.0,
+   "p50_us": 3319.0,
+   "p99_us": 10534.1,
+   "lock_wait_p50_us": 5.6,
+   "lock_wait_p99_us": 1461.5,
+   "episode_wall_s": 35.666,
+   "throughput_ep_per_s": 33.65,
+   "scheme": "scr",
+   "maintenance_compactions_due": 20,
+   "maintenance_compactions_applied": 20,
+   "maintenance_delay_mean_commits": 0.0,
+   "maintenance_delay_max_commits": 0,
+   "maintenance_delay_p99_commits": 0,
+   "maintenance_points_unapplied_at_end": 0,
+   "seed": 20261010,
+   "space_factor_retained": 1.38,
+   "peak_space_factor": 1.38,
+   "space_note": "G=7 pinned generations, COW frame sharing (Table 5)",
+   "index_bytes_MB_measured": 5.46
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.0,
+   "n_anomaly_episodes": 0,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "a4_torn_episode_rate": 0.0,
+   "a4_dirty_disagreements": 0,
+   "a4_stale_disagreements": 0,
+   "a4_deleted_disagreements": 0,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 1.0,
+   "p50_us": 3072.3,
+   "p99_us": 10154.0,
+   "lock_wait_p50_us": 5.8,
+   "lock_wait_p99_us": 1580.8,
+   "episode_wall_s": 35.942,
+   "throughput_ep_per_s": 33.39,
+   "scheme": "quiesce",
+   "maintenance_delay_mean_commits": 264.368,
+   "maintenance_delay_max_commits": 4788,
+   "maintenance_delay_median_commits": 3.0,
+   "maintenance_delay_p99_commits": 4788,
+   "maintenance_delay_first_applied_commits": 4788,
+   "maintenance_delay_max_excl_first_commits": 37,
+   "maintenance_delay_mean_excl_first_commits": 13.056,
+   "maintenance_delay_n_applied": 19,
+   "maintenance_compactions_due": 19,
+   "maintenance_compactions_applied": 19,
+   "maintenance_points_unapplied_at_end": 0,
+   "seed": 20261008,
+   "space_factor_retained": 1.0,
+   "peak_space_factor": 1.0,
+   "space_note": "single index copy; deferral holds no extra state",
+   "index_bytes_MB_measured": 4.157
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.0,
+   "n_anomaly_episodes": 0,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "a4_torn_episode_rate": 0.0,
+   "a4_dirty_disagreements": 0,
+   "a4_stale_disagreements": 0,
+   "a4_deleted_disagreements": 0,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 1.0,
+   "p50_us": 2979.8,
+   "p99_us": 9339.6,
+   "lock_wait_p50_us": 5.7,
+   "lock_wait_p99_us": 1329.7,
+   "episode_wall_s": 35.458,
+   "throughput_ep_per_s": 33.84,
+   "scheme": "quiesce",
+   "maintenance_delay_mean_commits": 275.316,
+   "maintenance_delay_max_commits": 4789,
+   "maintenance_delay_median_commits": 31.0,
+   "maintenance_delay_p99_commits": 4789,
+   "maintenance_delay_first_applied_commits": 4789,
+   "maintenance_delay_max_excl_first_commits": 36,
+   "maintenance_delay_mean_excl_first_commits": 24.556,
+   "maintenance_delay_n_applied": 19,
+   "maintenance_compactions_due": 19,
+   "maintenance_compactions_applied": 19,
+   "maintenance_points_unapplied_at_end": 0,
+   "seed": 20261009,
+   "space_factor_retained": 1.0,
+   "peak_space_factor": 1.0,
+   "space_note": "single index copy; deferral holds no extra state",
+   "index_bytes_MB_measured": 4.1
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.0,
+   "n_anomaly_episodes": 0,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.0,
+   "a3_phantom_episode_rate": 0.0,
+   "a4_torn_episode_rate": 0.0,
+   "a4_dirty_disagreements": 0,
+   "a4_stale_disagreements": 0,
+   "a4_deleted_disagreements": 0,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 1.0,
+   "p50_us": 3052.7,
+   "p99_us": 15465.3,
+   "lock_wait_p50_us": 5.9,
+   "lock_wait_p99_us": 1297.4,
+   "episode_wall_s": 38.493,
+   "throughput_ep_per_s": 31.17,
+   "scheme": "quiesce",
+   "maintenance_delay_mean_commits": 272.474,
+   "maintenance_delay_max_commits": 4788,
+   "maintenance_delay_median_commits": 30.0,
+   "maintenance_delay_p99_commits": 4788,
+   "maintenance_delay_first_applied_commits": 4788,
+   "maintenance_delay_max_excl_first_commits": 37,
+   "maintenance_delay_mean_excl_first_commits": 21.611,
+   "maintenance_delay_n_applied": 19,
+   "maintenance_compactions_due": 19,
+   "maintenance_compactions_applied": 19,
+   "maintenance_points_unapplied_at_end": 0,
+   "seed": 20261010,
+   "space_factor_retained": 1.0,
+   "peak_space_factor": 1.0,
+   "space_note": "single index copy; deferral holds no extra state",
+   "index_bytes_MB_measured": 4.115
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.03,
+   "n_anomaly_episodes": 36,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.0275,
+   "a3_phantom_episode_rate": 0.0025,
+   "a4_torn_episode_rate": 0.03,
+   "a4_dirty_disagreements": 0,
+   "a4_stale_disagreements": 33,
+   "a4_deleted_disagreements": 3,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.994667,
+   "p50_us": 3111.7,
+   "p99_us": 41821.3,
+   "lock_wait_p50_us": 4.0,
+   "lock_wait_p99_us": 1627.0,
+   "episode_wall_s": 44.73,
+   "throughput_ep_per_s": 26.83,
+   "scheme": "double_buffer",
+   "maintenance_delay_mean_commits": 240.1,
+   "maintenance_delay_max_commits": 4751,
+   "maintenance_delay_median_commits": 0.0,
+   "maintenance_delay_p99_commits": 4751,
+   "maintenance_delay_first_applied_commits": 4751,
+   "maintenance_delay_max_excl_first_commits": 22,
+   "maintenance_delay_mean_excl_first_commits": 2.684,
+   "maintenance_delay_n_applied": 20,
+   "maintenance_compactions_due": 20,
+   "maintenance_compactions_applied": 20,
+   "maintenance_points_unapplied_at_end": 0,
+   "swap_episode_delay_mean_us": 0.0,
+   "swap_episode_delay_max_us": 0.0,
+   "swap_episode_delay_n": 0,
+   "seed": 20261008,
+   "space_factor_retained": 1.0,
+   "peak_space_factor": 2.0,
+   "space_note": "live index + one private copy during the swap window",
+   "index_bytes_MB_measured": 4.149
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.065,
+   "n_anomaly_episodes": 78,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.059167,
+   "a3_phantom_episode_rate": 0.005833,
+   "a4_torn_episode_rate": 0.065,
+   "a4_dirty_disagreements": 0,
+   "a4_stale_disagreements": 72,
+   "a4_deleted_disagreements": 7,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.988167,
+   "p50_us": 2990.2,
+   "p99_us": 13699.0,
+   "lock_wait_p50_us": 4.2,
+   "lock_wait_p99_us": 1596.9,
+   "episode_wall_s": 36.404,
+   "throughput_ep_per_s": 32.96,
+   "scheme": "double_buffer",
+   "maintenance_delay_mean_commits": 243.5,
+   "maintenance_delay_max_commits": 4751,
+   "maintenance_delay_median_commits": 2.0,
+   "maintenance_delay_p99_commits": 4751,
+   "maintenance_delay_first_applied_commits": 4751,
+   "maintenance_delay_max_excl_first_commits": 21,
+   "maintenance_delay_mean_excl_first_commits": 6.263,
+   "maintenance_delay_n_applied": 20,
+   "maintenance_compactions_due": 20,
+   "maintenance_compactions_applied": 20,
+   "maintenance_points_unapplied_at_end": 0,
+   "swap_episode_delay_mean_us": 0.0,
+   "swap_episode_delay_max_us": 0.0,
+   "swap_episode_delay_n": 0,
+   "seed": 20261009,
+   "space_factor_retained": 1.0,
+   "peak_space_factor": 2.0,
+   "space_note": "live index + one private copy during the swap window",
+   "index_bytes_MB_measured": 4.13
+  },
+  {
+   "episodes": 1200,
+   "anomaly_episode_rate": 0.036667,
+   "n_anomaly_episodes": 44,
+   "a1_dirty_episode_rate": 0.0,
+   "a2_superseded_episode_rate": 0.035833,
+   "a3_phantom_episode_rate": 0.000833,
+   "a4_torn_episode_rate": 0.036667,
+   "a4_dirty_disagreements": 0,
+   "a4_stale_disagreements": 45,
+   "a4_deleted_disagreements": 1,
+   "a5_retrieval_disagreement_rate": 0.0,
+   "n_a5_disagreement_episodes": 0,
+   "mean_symmetric_difference": 0.0,
+   "mean_jaccard_k1_k2": 1.0,
+   "min_jaccard_k1_k2": 1.0,
+   "recall_at_k": 0.992917,
+   "p50_us": 3036.2,
+   "p99_us": 10123.2,
+   "lock_wait_p50_us": 5.6,
+   "lock_wait_p99_us": 1511.3,
+   "episode_wall_s": 35.905,
+   "throughput_ep_per_s": 33.42,
+   "scheme": "double_buffer",
+   "maintenance_delay_mean_commits": 241.3,
+   "maintenance_delay_max_commits": 4751,
+   "maintenance_delay_median_commits": 0.0,
+   "maintenance_delay_p99_commits": 4751,
+   "maintenance_delay_first_applied_commits": 4751,
+   "maintenance_delay_max_excl_first_commits": 17,
+   "maintenance_delay_mean_excl_first_commits": 3.947,
+   "maintenance_delay_n_applied": 20,
+   "maintenance_compactions_due": 20,
+   "maintenance_compactions_applied": 20,
+   "maintenance_points_unapplied_at_end": 0,
+   "swap_episode_delay_mean_us": 0.0,
+   "swap_episode_delay_max_us": 0.0,
+   "swap_episode_delay_n": 0,
+   "seed": 20261010,
+   "space_factor_retained": 1.0,
+   "peak_space_factor": 2.0,
+   "space_note": "live index + one private copy during the swap window",
+   "index_bytes_MB_measured": 4.143
+  }
+ ],
+ "runtime_s": 639.1
+}

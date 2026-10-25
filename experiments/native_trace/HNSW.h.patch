@@ -1,0 +1,15 @@
+--- official/faiss/impl/HNSW.h
++++ instrumented/faiss/impl/HNSW.h
+@@ -23,6 +23,12 @@
+ #include <faiss/utils/random.h>
+ 
+ namespace faiss {
++// SCR observational hook: inactive during build and normal search.
++struct SCRNativeExpansion { int level; int source; std::vector<int> slots; };
++struct SCRNativeVisit { int level; int source; int target; };
++extern thread_local std::vector<SCRNativeExpansion>* scr_native_expansions;
++extern thread_local std::vector<SCRNativeVisit>* scr_native_visits;
++
+ 
+ // Forward declarations to avoid circular dependency.
+ struct IndexHNSW;

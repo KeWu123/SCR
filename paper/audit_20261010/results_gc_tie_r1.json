@@ -1,0 +1,40 @@
+{
+  "checks": [
+    {
+      "tied_delete": false,
+      "before": [
+        [
+          0,
+          2,
+          1.0
+        ]
+      ],
+      "after": [
+        [
+          0,
+          2,
+          1.0
+        ]
+      ]
+    },
+    {
+      "tied_delete": true,
+      "before": [
+        [
+          0,
+          2,
+          1.0
+        ]
+      ],
+      "after": [
+        [
+          0,
+          2,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "permutations_checked": 3,
+  "tie_break": "timestamp then version id"
+}

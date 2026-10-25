@@ -1,0 +1,11 @@
+{
+  "source_sha256": "609302b76decc2c90011869582c4180b693a40cc7e3267f77abca39312692c73",
+  "os_samefile": true,
+  "first_path": "experiments/completion/counterexamples/hardlink_f1518fd9/source.sqlite",
+  "second_path": "experiments/completion/counterexamples/hardlink_f1518fd9/same_file.sqlite",
+  "second_owner_accepted": false,
+  "second_owner_error": "ValueError: source retention authority already active",
+  "second_gc_floor": null,
+  "history": [],
+  "first_future_begin_error": null
+}

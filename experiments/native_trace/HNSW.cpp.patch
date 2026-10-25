@@ -1,0 +1,50 @@
+--- official/faiss/impl/HNSW.cpp
++++ instrumented/faiss/impl/HNSW.cpp
+@@ -24,6 +24,9 @@
+ #include <faiss/impl/hnsw/MinimaxHeap.h>
+ 
+ namespace faiss {
++thread_local std::vector<SCRNativeExpansion>* scr_native_expansions = nullptr;
++thread_local std::vector<SCRNativeVisit>* scr_native_visits = nullptr;
++
+ 
+ /**************************************************************
+  * HNSW structure implementation
+@@ -57,6 +60,13 @@
+     size_t o = offsets[no];
+     *begin = o + cum_nb_neighbors(layer_no);
+     *end = o + cum_nb_neighbors(layer_no + 1);
++    if (scr_native_expansions) {
++        SCRNativeExpansion event{layer_no, int(no), {}};
++        event.slots.reserve(*end - *begin);
++        for (size_t j = *begin; j < *end; ++j) event.slots.push_back(neighbors[j]);
++        scr_native_expansions->push_back(std::move(event));
++    }
++
+ }
+ 
+ HNSW::HNSW(int M) : rng(12345) {
+@@ -1203,7 +1213,10 @@
+             int v1 = hnsw.neighbors[j];
+ 
+             saved_j[counter] = v1;
+-            counter += vt.set(v1) ? 1 : 0;
++            const bool scr_first_visit = vt.set(v1);
++            counter += scr_first_visit ? 1 : 0;
++            if (scr_native_visits && scr_first_visit)
++                scr_native_visits->push_back({level, v0, v1});
+ 
+             if (counter == 4) {
+                 ndis += evaluator.evaluate(
+@@ -1634,7 +1647,10 @@
+             int v1 = hnsw.neighbors[j];
+ 
+             saved_j[counter] = v1;
+-            counter += vt.set(v1) ? 1 : 0;
++            const bool scr_first_visit = vt.set(v1);
++            counter += scr_first_visit ? 1 : 0;
++            if (scr_native_visits && scr_first_visit)
++                scr_native_visits->push_back({0, v0, v1});
+ 
+             if (counter == 4) {
+                 float dis[4];

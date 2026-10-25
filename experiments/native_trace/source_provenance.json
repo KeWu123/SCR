@@ -1,0 +1,57 @@
+{
+  "scope": "Original file identities before packaging; packaging changes affect paths, compression, source extraction, build configuration and evidence I/O only.",
+  "original_sha256": {
+    "native_trace.cpp": "60674dfffb14a0481282a33bd38922f39c7375fdb1255d000f0565a09b008ab9",
+    "prepare_inputs.py": "6f2042ebd8bb7a3e80608d85f7d42c1b8ddaaa7e558175fd51848fb09ca0ac18",
+    "verify_native.py": "4c39dcec258cd9b93121164f33f843cc6637d31faa029761749360086937b628",
+    "analyze_maint_tear.py": "bed5236aabd87a85d14062531e769b2f62c00976f312c247c63e050fabfd97f4",
+    "HNSW.h.patch": "82ee97e4f8f5c696998a19b5e160d3375648650d3ebf3610c2a79271a2aa3297",
+    "HNSW.cpp.patch": "aec531e28b6b32e0c8f0006815b5d871e089716c0b46e545fb08298f0d0960e1",
+    "faiss-v1.15.1.zip": "f46290cc461f5ae88bc52f400e2066c537746328e494f79faa1fa719815e7b66",
+    "official_source_hashes.json": "cd63b6b340619da84e39ed439b0240e486507be588f29fbe731b0ac82f0e8d75",
+    "instrumentation_hashes.json": "581a4ca047b6eaa91eacdeb830060d3b61e2f21e7acf4037dfee2327c79ed784",
+    "input_hashes.json": "38455b69e8a5cf3f3286d38f0bb088efdebf3a5c2d324e4f1a2a24e5453430fd",
+    "input_11.bin": "7f4136a6043bdec5a7bf3de68da2c5a230905a9cbe9060596d4da85b1a7c6c3e",
+    "input_11.npz": "451ac620fd84dda84403edaf9c55a4f9b32e21ec8894a2410340c08fe774a99d",
+    "input_29.bin": "307064c657fe5f00c18c3a4dfe13a4f1a2d5090dad1eb0255060d57155e933e5",
+    "input_29.npz": "21da95cc740ee796669014e79d6724161475aae0fba9e716a02008ce03c66b8b",
+    "input_47.bin": "1775e2ca794072fb7e12784dc01c4b9fff40144dc084d09677b067bbd0625547",
+    "input_47.npz": "abd23d091519be076f9503ec8ee5fd7ddc97898cb61b62904971518922635048",
+    "graph_11_A.json": "a5663cc6a6869cbe04475d7ca57b0fd2335fc11dccb77f97b0065b3647fb6b6b",
+    "graph_11_B.json": "34f2d5c0266a64a0c231409b50850a9130526c2bd017d862a6d2b5f4c801cbec",
+    "graph_11_C.json": "43b4eb588fd3dd1c5e1375250c534ed74aecb0b00465ec8cee99ab3160d4fdea",
+    "graph_11_D.json": "52e53e6553125b60aa8dded67eaf2f436a3cfd19cab68c30fa1bc012c79b65f2",
+    "graph_29_A.json": "f8684305c1f6bf29337d7bbd7dec91623243adb6501455f35c1e1099594c7439",
+    "graph_29_B.json": "cdf06b40509c586dff83468bd4d2514c1371ef94cc759661df37f9c3de78d3c0",
+    "graph_29_C.json": "5be85880f2d82cdb848917e52710d17fe87b028bd9a7a6242ab443bd796d5474",
+    "graph_29_D.json": "a27b2afa431bd9421cc148c762ec627dfc8d0e2fba033f8d0e1229b5ecc6cf2b",
+    "graph_47_A.json": "f32d967dccc2f1823c5d956817c0e978d7b994e399d856ff48bc275ae512bc1e",
+    "graph_47_B.json": "73735998911238f1d31336c86737eb402270b2f85e70c08724f41c52b0bfa6eb",
+    "graph_47_C.json": "66a8d7246aadd4b87927a30de54727c9e969a7e4ef79c70f071abbf444d1b85e",
+    "graph_47_D.json": "399ecb02a442d15015ad6038b53018164fbaa2061b0190ea4148276623aee53c",
+    "results_summary.json": "2d17dbebe9c906d391db47e88e2695520fb5a0af2711ef4c4e7cc216fdf8848a",
+    "maint_tear_summary.json": "d47bfbae34e3b0b663fcf0bbf613a9e55a96b3f113706ca34447ecd8d1460d62",
+    "prepare_source.py": "eb992fcc70bea0ad93dacf3f3a38dd8ba2bf51d7a0f3c1c44365fb44c34da77d",
+    "audit_source_patch.py": "d382058220bbd62d91c64fa110d676033d300d0e0274f7d937d99fc6d36ed8fd"
+  },
+  "raw_traces": {
+    "raw_11.jsonl.gz": {
+      "uncompressed_sha256": "cdfea94eaf1a4c31d6d7a8b4393b95edce520cb5be0f3f9ec48a42b62892a185",
+      "compressed_sha256": "3d8df63fbbdc61c4c3e17388e876d29bd8c606f18c3e7552768d62d850144c04",
+      "uncompressed_bytes": 63874112,
+      "compressed_bytes": 17031729
+    },
+    "raw_29.jsonl.gz": {
+      "uncompressed_sha256": "392c6dd3e861f832437a6a2208d2659b93d6f767dbc6d09cf3c5b524d116ddfa",
+      "compressed_sha256": "50603e1bef9d5e16af78b3d86e237d4b43c8d7aa31cbd51436c0e6293524f18e",
+      "uncompressed_bytes": 63700829,
+      "compressed_bytes": 16980982
+    },
+    "raw_47.jsonl.gz": {
+      "uncompressed_sha256": "02adaf7f4b54ebb693c540882ceb50ce7b947b3de60d2c94a0700532809f098a",
+      "compressed_sha256": "66a038176843f5fe4f8dd5756165d47bf48a03a61f42dbd472b3d02254933b70",
+      "uncompressed_bytes": 63544621,
+      "compressed_bytes": 16943909
+    }
+  }
+}

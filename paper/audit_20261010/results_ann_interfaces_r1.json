@@ -1,0 +1,52 @@
+{
+  "slow_writer_completion": [
+    {
+      "episodes": 1,
+      "writes_at_reader_end": 1,
+      "writes_completed": 80,
+      "future_version_episodes": 0,
+      "future_version_rate": 0.0
+    },
+    {
+      "episodes": 1,
+      "writes_at_reader_end": 1,
+      "writes_completed": 80,
+      "future_version_episodes": 0,
+      "future_version_rate": 0.0
+    },
+    {
+      "episodes": 1,
+      "writes_at_reader_end": 1,
+      "writes_completed": 80,
+      "future_version_episodes": 0,
+      "future_version_rate": 0.0
+    }
+  ],
+  "unfinished_writer_rejected": true,
+  "scope_cases": {
+    "superseded": {
+      "anomaly_episode_rate": 1.0,
+      "future_version_episodes": 0,
+      "future_version_rate": 0.0,
+      "dirty_rate": 0.0,
+      "stale_rate": 1.0,
+      "phantom_rate": 0.0
+    },
+    "deleted": {
+      "anomaly_episode_rate": 1.0,
+      "future_version_episodes": 0,
+      "future_version_rate": 0.0,
+      "dirty_rate": 0.0,
+      "stale_rate": 0.0,
+      "phantom_rate": 1.0
+    },
+    "future": {
+      "anomaly_episode_rate": 1.0,
+      "future_version_episodes": 1,
+      "future_version_rate": 1.0,
+      "dirty_rate": 1.0,
+      "stale_rate": 0.0,
+      "phantom_rate": 0.0
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "source_sha256": "609302b76decc2c90011869582c4180b693a40cc7e3267f77abca39312692c73",
+  "distinct_source_files": true,
+  "shared_native_uri": "experiments/completion/counterexamples/shared_native_81486c55/lance/shared.lance",
+  "second_publish_error": "ValueError: native table retention authority already active",
+  "a_removed": [],
+  "b_before_cleanup": null,
+  "b_after_cleanup": null,
+  "b_query_error": null,
+  "cleanup": "None",
+  "interpretation": "Physical optimize call is outside NativeBroker.maintain, which conservatively retains all versions; tests whether driver GC-to-cleanup scope is enforceable across source domains."
+}

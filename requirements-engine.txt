@@ -1,0 +1,4 @@
+-r requirements.txt
+psycopg2-binary==2.9.13
+pylance==13.0.0
+

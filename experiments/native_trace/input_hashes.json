@@ -1,0 +1,17 @@
+[
+  {
+    "seed": 11,
+    "binary_sha256": "7f4136a6043bdec5a7bf3de68da2c5a230905a9cbe9060596d4da85b1a7c6c3e",
+    "npz_sha256": "451ac620fd84dda84403edaf9c55a4f9b32e21ec8894a2410340c08fe774a99d"
+  },
+  {
+    "seed": 29,
+    "binary_sha256": "307064c657fe5f00c18c3a4dfe13a4f1a2d5090dad1eb0255060d57155e933e5",
+    "npz_sha256": "21da95cc740ee796669014e79d6724161475aae0fba9e716a02008ce03c66b8b"
+  },
+  {
+    "seed": 47,
+    "binary_sha256": "1775e2ca794072fb7e12784dc01c4b9fff40144dc084d09677b067bbd0625547",
+    "npz_sha256": "abd23d091519be076f9503ec8ee5fd7ddc97898cb61b62904971518922635048"
+  }
+]

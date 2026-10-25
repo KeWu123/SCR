@@ -1,0 +1,96 @@
+{
+  "source_sha256": "609302b76decc2c90011869582c4180b693a40cc7e3267f77abca39312692c73",
+  "cases": [
+    {
+      "case": "exclusive_owner_same_and_other_process",
+      "same_process_error": "ValueError: source retention authority already active",
+      "child_stdout": "ValueError: source retention authority already active",
+      "close_with_pin_error": "ValueError: release active references before closing authority",
+      "closed_owner_restart_rows": 1
+    },
+    {
+      "case": "gc_does_not_commit_transaction_started_after_check",
+      "gc_blocked": true,
+      "external_before": [
+        [
+          0,
+          0
+        ]
+      ],
+      "gc_result": [
+        0
+      ],
+      "external_after": [
+        [
+          0,
+          0
+        ]
+      ],
+      "history_count": 1
+    },
+    {
+      "case": "frontier_and_history_share_sqlite_snapshot",
+      "coherent_source": {
+        "0": [
+          1,
+          "old"
+        ]
+      },
+      "next_read_error": "ValueError: snapshot outside committed readable frontier",
+      "note": "External destructive source SQL is outside sole authority; used only to test read transaction atomicity."
+    },
+    {
+      "case": "tombstone_and_reinsert_anchors",
+      "floor_with_open_support_and_pin": 3,
+      "all_cuts_3_to_5_preserved": true,
+      "anchors_and_later": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          5,
+          1
+        ]
+      ],
+      "old_pin_query_after_withdraw": [
+        [
+          1,
+          2,
+          "b2"
+        ]
+      ],
+      "floor_after_pin_release": 5,
+      "final_anchors": [
+        [
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          5,
+          1
+        ]
+      ]
+    },
+    {
+      "case": "integer_boundary_validation_repaired",
+      "fractional_lifetime_error": "ValueError: invalid or duplicate version lifetime",
+      "fractional_event_error": "ValueError: source lineage identity/commit error",
+      "fractional_query_error": "ValueError: integer commit cuts required"
+    }
+  ]
+}

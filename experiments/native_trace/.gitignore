@@ -1,0 +1,7 @@
+/build/
+/faiss-1.15.1/
+/raw_*.jsonl
+/verification_summary.json
+/maintenance_verification.json
+/source_patch_audit.json
+/__pycache__/

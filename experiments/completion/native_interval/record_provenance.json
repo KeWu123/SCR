@@ -1,0 +1,143 @@
+{
+  "scope": "Recorded measurement paths are anonymized. Historical measurement hashes and published hashes remain distinct. Driver, broker and protocol bytes are unchanged. Physical databases are excluded.",
+  "files": [
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/results.json",
+      "historical_sha256": "ee859c950dc7ac6828208be2893bc5b5dd862772c04f36294ededdc4151f90f6",
+      "published_sha256": "d6243c20f532e3a725229951bfb742e7b4a9d5caace8e6325b525762ea39d124",
+      "change": "Machine-specific paths converted to repository-relative paths; numerical values preserved."
+    },
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/continuing_s11/lineage.json",
+      "historical_sha256": "b3c006a74417b9cd4af81eb6199433430f3dd068ac3a31ba79817e97d72454dd",
+      "published_sha256": "273fc7afb7d2aa75f5ccb3d44570a77a6e891972c080ad276c0592eaf3eeba96",
+      "change": "Machine-specific paths converted to repository-relative paths; numerical values preserved."
+    },
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/continuing_s11/queries.npz",
+      "historical_sha256": "cedc95c71375c54f6a0298847dfa1348bb921df4e57679cd5d2361d8f0bec80d",
+      "published_sha256": "cedc95c71375c54f6a0298847dfa1348bb921df4e57679cd5d2361d8f0bec80d",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/continuing_s29/lineage.json",
+      "historical_sha256": "ebef1bb4c553968b758c30c9678947db604dcb33fc77b28753ebeb60da2f2f8d",
+      "published_sha256": "f2c5a91a4e6ead961eb5174d2ba68aab9a7c834df47533500ae9bb32a43a4ed8",
+      "change": "Machine-specific paths converted to repository-relative paths; numerical values preserved."
+    },
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/continuing_s29/queries.npz",
+      "historical_sha256": "85132d6e5268a56320107f32893cfd43d68195b96341189a94902de6bef22f17",
+      "published_sha256": "85132d6e5268a56320107f32893cfd43d68195b96341189a94902de6bef22f17",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/continuing_s47/lineage.json",
+      "historical_sha256": "e0edeaade9e7f53333063153ee418733883f8462981fbfd09fe6804c130f50de",
+      "published_sha256": "532e7f4f4c7a45d9665e6f4908b55c8c5d38d7b10d9c7e23f6aa66a60a4116f2",
+      "change": "Machine-specific paths converted to repository-relative paths; numerical values preserved."
+    },
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/continuing_s47/queries.npz",
+      "historical_sha256": "61aeb1ed2cece7038c00d2c199326d1e0abd62ec66357dcf918245adceb92066",
+      "published_sha256": "61aeb1ed2cece7038c00d2c199326d1e0abd62ec66357dcf918245adceb92066",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/disconnected_s11/lineage.json",
+      "historical_sha256": "bcbbe93fd67ded2178b8ed6c8e4b646edca965da76d16ba4450fb9366357228a",
+      "published_sha256": "c8e275e8f60b3b6a51cbe916da54726f14c57f5ddbf3a32fc890002b243cf08f",
+      "change": "Machine-specific paths converted to repository-relative paths; numerical values preserved."
+    },
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/disconnected_s11/queries.npz",
+      "historical_sha256": "2f2a8768ad72ce08ae7e1342b8714539048f9d12b6b99fda9d63f9fd1900a12a",
+      "published_sha256": "2f2a8768ad72ce08ae7e1342b8714539048f9d12b6b99fda9d63f9fd1900a12a",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/disconnected_s29/lineage.json",
+      "historical_sha256": "b1e7d2e22ecaaede6e1f2f97e69543ec548225e309498dcac52ece3e0f5ee7b8",
+      "published_sha256": "2a7123f1fd93135f2553780fcc2e43630f052104784bc35a19287bb401da9669",
+      "change": "Machine-specific paths converted to repository-relative paths; numerical values preserved."
+    },
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/disconnected_s29/queries.npz",
+      "historical_sha256": "e7aa9c584ab668476297fa60023bb86bcb88e01f1f656ccf0412c0f9e0c6d9c7",
+      "published_sha256": "e7aa9c584ab668476297fa60023bb86bcb88e01f1f656ccf0412c0f9e0c6d9c7",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/disconnected_s47/lineage.json",
+      "historical_sha256": "4aa27df12293bd9f6c0a4ed98bfe3244bb725e21402f3e71c4a3e5ea0ee0af8e",
+      "published_sha256": "9eaaa52e11ec4e9520929ba39b085e34265abca66c840514299483c8f774238b",
+      "change": "Machine-specific paths converted to repository-relative paths; numerical values preserved."
+    },
+    {
+      "path": "experiments/completion/native_interval/run_20261016_181517/disconnected_s47/queries.npz",
+      "historical_sha256": "16721ae48f3a22ec0d526ed91fea7c4d82f7bd40c8f9d16fc923fb0b4080f954",
+      "published_sha256": "16721ae48f3a22ec0d526ed91fea7c4d82f7bd40c8f9d16fc923fb0b4080f954",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/spectrum_20261016_181725/results.json",
+      "historical_sha256": "013c516bdff6c12cb84aa7e56573497e9190e3a94d240050afeda7cc22bd2cb0",
+      "published_sha256": "fda84a68b9dc80dbc0ed09d18d4141e03dfd72749834f05d30db0770ff7d592c",
+      "change": "Machine-specific paths converted to repository-relative paths; numerical values preserved."
+    },
+    {
+      "path": "experiments/completion/native_interval/spectrum_20261016_181725/t128_s11/inputs.npz",
+      "historical_sha256": "715892ff6238b3b993bc29c0ad921134f727506bd81d773abb34100dec9b9309",
+      "published_sha256": "715892ff6238b3b993bc29c0ad921134f727506bd81d773abb34100dec9b9309",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/spectrum_20261016_181725/t128_s29/inputs.npz",
+      "historical_sha256": "6bd3af4d6a1b1234d9d5e2abff48b4f48bc9346962dbe528e483ef84595bbc31",
+      "published_sha256": "6bd3af4d6a1b1234d9d5e2abff48b4f48bc9346962dbe528e483ef84595bbc31",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/spectrum_20261016_181725/t128_s47/inputs.npz",
+      "historical_sha256": "15218ac09cb3f1ab9a943318353ec3ba9f23937e909a927ca529657e88d97353",
+      "published_sha256": "15218ac09cb3f1ab9a943318353ec3ba9f23937e909a927ca529657e88d97353",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/spectrum_20261016_181725/t32_s11/inputs.npz",
+      "historical_sha256": "299eaac09cb99f9b35be62dce41aae981f405d00730482dafc99eebc97f697c9",
+      "published_sha256": "299eaac09cb99f9b35be62dce41aae981f405d00730482dafc99eebc97f697c9",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/spectrum_20261016_181725/t32_s29/inputs.npz",
+      "historical_sha256": "2a32c06847b1b0e61202c37fabbdddf7b76e82a5c3726535441b2403b9141a29",
+      "published_sha256": "2a32c06847b1b0e61202c37fabbdddf7b76e82a5c3726535441b2403b9141a29",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/spectrum_20261016_181725/t32_s47/inputs.npz",
+      "historical_sha256": "14ea8f6011c0c0641c80d6e7e6494545b630df18c59f28a2fd677a935dbf09b4",
+      "published_sha256": "14ea8f6011c0c0641c80d6e7e6494545b630df18c59f28a2fd677a935dbf09b4",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/spectrum_20261016_181725/t512_s11/inputs.npz",
+      "historical_sha256": "f16ccefca1bc656116e87c6c5414a53af005f70fe8e839af8ee893e2c8079154",
+      "published_sha256": "f16ccefca1bc656116e87c6c5414a53af005f70fe8e839af8ee893e2c8079154",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/spectrum_20261016_181725/t512_s29/inputs.npz",
+      "historical_sha256": "2feac55aa11d7cf32534649c487bd538be9ffb1b256aee4ed4666505603875da",
+      "published_sha256": "2feac55aa11d7cf32534649c487bd538be9ffb1b256aee4ed4666505603875da",
+      "change": "Unchanged input bytes."
+    },
+    {
+      "path": "experiments/completion/native_interval/spectrum_20261016_181725/t512_s47/inputs.npz",
+      "historical_sha256": "8b732c5450fa430db430263f515ef00af145d67de47051f8923e242981edada9",
+      "published_sha256": "8b732c5450fa430db430263f515ef00af145d67de47051f8923e242981edada9",
+      "change": "Unchanged input bytes."
+    }
+  ]
+}

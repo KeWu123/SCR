@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "cells": 6,
+  "records": 2400,
+  "independent_scalar_oracles": 1200,
+  "checker_sha256": "f156f62e07b5faa2ca51c7360918e8083f7fc3f937200f222fb1a398b4e944f6",
+  "experiment_sha256": "bbe67e25eb5d19735a2f7472a33b31e197e508b91dd3b36016fdd0a7a0a487ad"
+}
